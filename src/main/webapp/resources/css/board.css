@@ -60,24 +60,3 @@ body{
 }
 /* 게시판 영역끝 */
 
-footer{
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    background-color: rgb(252, 242, 227);
-    
-}
-footer .section{
-    width: 1100px;
-    font-size: 10px;
-    display: flex;
-    flex-flow: row;
-    margin: 0 auto;
-    padding: 15px;
-    line-height: 15px;
-
-}
-footer .section img {
-    margin-right: 100px;
-    width: 80px;
-}
