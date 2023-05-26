@@ -1,5 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<head>
+        <meta charset="UTF-8">
+        <title>Insert title here</title>
+        <link href="${pageContext.request.contextPath}/css/mypage.css" rel="stylesheet">
+    </head>
+    
+<%@ include file="../include/header.jsp" %>
 
     <section>
         <div class="wrap">
@@ -35,3 +43,5 @@
             </div>
         </div>
     </section>
+    
+    <%@ include file="../include/footer.jsp" %>
