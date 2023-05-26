@@ -17,7 +17,7 @@
 <%@ include file="../include/header.jsp" %>
  
     <article class="around">
-      <div class="container">
+      
       <h1>캠핑장 둘러보기</h1>
           <select>
               <option value="0">지역</option>
@@ -114,7 +114,7 @@
          <a class="arrow nnext" href="#"></a>
       </div>
        </div>
-    </div>
+    
     </article>
  
  <%@ include file="../include/footer.jsp" %>
