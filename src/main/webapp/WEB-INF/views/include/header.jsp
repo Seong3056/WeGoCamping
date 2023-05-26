@@ -15,13 +15,31 @@
 
             <div class="menu clearfix">
                 <div class="menu-down">
-                    <a href="#" class="in-menu" id="reservation">예약하기</a>                    
-                </div>                
-                <div class="menu-down"><a href="#" class="in-menu" id="view">캠핑장 둘러보기</a></div>
-                <div class="menu-down"><a href="#" class="in-menu" id="board">게시판</a></div>
-                
-                
-                
+                    <a href="#"  id="reservation">예약하기</a>
+                    <div class="dropdown">
+                        <a  href="#">지역검색</a>
+                        <a  href="#">테마검색</a>
+                        <a  href="#">날짜검색</a>
+                    </div>
+                </div>
+                <div class="menu-down">
+                    <a href="#" class="in-menu" id="board">게시판</a>
+                    <div class="dropdown">
+                        <a  href="#">캠핑후기</a>
+                        <a  href="#">꿀팁공유</a>
+                        <a  href="#">메이트찾기</a>
+                        <a  href="#">건의사항</a>
+                    </div>
+                </div>
+                <div class="menu-down">
+                    <a href="#" class="in-menu" id="view">캠핑장 둘러보기</a>
+                    <div class="dropdown">
+                        <a  href="#">둘러보기</a>
+                    </div>
+                </div>
+
+
+
                 <!-- <div class="in-menu" id="reservation">예약하기</div>
                 <div class="in-menu" id="view">캠핑장 둘러보기</div>
                 <div class="in-menu" id="board">게시판</div> -->
@@ -40,4 +58,5 @@
         <div></div>
     </header>
 </body>
+
 </html>
