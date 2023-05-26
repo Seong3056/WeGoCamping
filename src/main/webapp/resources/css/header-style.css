@@ -40,9 +40,6 @@ header:hover {
     transition: all 0.5s ease-in-out;
     animation-fill-mode: both;
 }
-@keyframes dropdown {
-    
-}
 
 header .section{
     width: 1500px;
@@ -69,10 +66,25 @@ header .section .menu{
     flex-flow: row;
     justify-content: flex-end;
 }
-header .section .menu .in-menu{
+header .section .menu .menu-down{
     margin-left: 20px;
 }
-header .section .header-right{
+
+
+header .dropdown{ /*하위메뉴*/
+    display: none;
+    position: absolute;
+    top: 80px;
+    text-align: center;
+    font-size: 0.8em;
+    
+}
+header:hover .dropdown { /*하위메뉴:호버*/
+    display: flex;
+    flex-flow: column;
+    transition: all 2s ;
+}
+header .section .header-right{ /* 검색창 | 로그인정보*/
     width: 300px;
     position: absolute;
     right: 10px;
