@@ -3,7 +3,11 @@
 *{
     padding: 0;
     margin: 0;
+<<<<<<< HEAD
+    position: relative;
+=======
     
+>>>>>>> dbb794876eb3128bb4ff0f6d94eec0bea17b6858
 }
 a{
     text-decoration: none;
