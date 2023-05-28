@@ -1,12 +1,16 @@
-package com.project.camping;
+package com.camping.wego.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/around")
-public class AroundController {
-	@GetMapping("/around")
+@RequestMapping("/main")
+public class MainController {
+	@GetMapping("/main")
 	public void main() {}
+
+	
+
+	
 }
