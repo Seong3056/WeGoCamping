@@ -15,11 +15,21 @@
             <input class="title" type="text" name="title" placeholder="제목을 입력하세요">
             <input class="write" type="text" name="id">
         </div>
-        <input class="content" type="text" name="content" placeholder="내용은 최대 2000자 까지 가능합니다.">
+        <input class="content" type="text" name="content" >
 
-        <button class="submit" type="submit">글 올리기</button>
+        <button id="regist" class="submit" type="submit">글 올리기</button>
     </form>
 
 </body>
 
 <%@ include file="../include/footer.jsp" %>
+
+<script>
+    document.getElementById('regist').onclick = () =>{
+        if(document.querySelector('.title').textContent ==='') {
+            console.log('버튼이 클릭됨');
+            alert('제목이 비었습니다 !');
+            return;
+        }
+    }
+</script>

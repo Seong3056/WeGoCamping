@@ -49,7 +49,7 @@
         <c:forEach var="board" items="${boardList}">
         <tr>
             <td>분류</td>
-            <td id="title">
+            <td style="cursor:pointer;">
             <a onclick="location.href='${pageContext.request.contextPath}/board/content/${board.bno}'">${board.title}</a>            
             </td>
             <td>${board.id}</td>
@@ -74,6 +74,3 @@
     </div>
 </article>
 <%@ include file="../include/footer.jsp" %>
-<script>
-    document.getElementById('title').focus();
-</script>
