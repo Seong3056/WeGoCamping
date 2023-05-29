@@ -10,6 +10,7 @@ body{
     margin: 0 auto;
     margin-top: 200px;
     text-align: center;
+    
 }
 .board .board-selector { /* 게시판 선택 */
     margin-bottom: 70px;
@@ -23,6 +24,22 @@ body{
     line-height: 50px;
     border: 1px solid hwb(0 0% 100% / 0.01);
     margin: 0 10px;
+}
+.board .tab {
+	width: 90%;
+    height: 50px;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    
+}
+.board .tab .write{
+    width: 100px;
+    
+}
+.board .tab .search{
+    width: 250px;
+    
 }
 .board table{
     width: 100%;  

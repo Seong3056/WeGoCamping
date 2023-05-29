@@ -27,4 +27,5 @@ public class BoardVO {
 	private int cls;
 	private LocalDateTime regDate;
 	private String content;
+	private int hit;
 }
