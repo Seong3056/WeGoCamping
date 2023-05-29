@@ -18,9 +18,8 @@ local.properties
 .classpath
 .project
 .springBeans
-target/
-target/*
 */target/*
+
 
 # External tool builders
 .externalToolBuilders/
