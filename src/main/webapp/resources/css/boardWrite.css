@@ -1,0 +1,38 @@
+
+body{
+    
+}
+.board{
+    width: 1100px;
+    margin: 0 auto;
+    margin-top: 200px;
+    display: flex;
+    flex-flow: column;
+    position: relative;
+}
+.board div{
+    height: 100px;
+}
+.board .title {
+    width: 500px;
+    height: 40px;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #000;
+}
+.board .write {
+    width: 50px;
+}
+.board .content {
+    height: 500px;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #000;
+}
+.board .submit{
+    margin-top: 15px;
+    width: 80px;
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+}
