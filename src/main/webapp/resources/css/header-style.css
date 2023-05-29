@@ -3,6 +3,11 @@
 *{
     padding: 0;
     margin: 0;
+<<<<<<< HEAD
+    position: relative;
+=======
+    
+>>>>>>> dbb794876eb3128bb4ff0f6d94eec0bea17b6858
 }
 a{
     text-decoration: none;
@@ -18,7 +23,7 @@ a{
     clear:both;
 }
 body{
-    
+    position: relative;
 }
 
 header{
@@ -36,7 +41,7 @@ header{
 }
 header:hover {
     background-color: rgb(252, 242, 227);
-    height: 250px;
+    height: 185px;
     transition: all 0.5s ease-in-out;
     animation-fill-mode: both;
 }
@@ -76,13 +81,17 @@ header .dropdown{ /*하위메뉴*/
     position: absolute;
     top: 80px;
     text-align: center;
-    font-size: 0.8em;
+    font-size: 15px;   
     
 }
+
 header:hover .dropdown { /*하위메뉴:호버*/
     display: flex;
     flex-flow: column;
     transition: all 2s ;
+}
+header .dropdown a{
+    line-height: 20px;
 }
 header .section .header-right{ /* 검색창 | 로그인정보*/
     width: 300px;
