@@ -32,11 +32,19 @@
 	height: 200px;
 }
 
+<<<<<<< HEAD
 .mainpage > h1 {
     text-align: center;
     font-weight: bold;
     font-size:large;
     margin-top: 10%;
+=======
+h1{
+    text-align: center;
+    font-weight: bold;
+    font-size:large;
+    margin-top: 5%;
+>>>>>>> 1eae4cfb07bfe5a11338befcdd408c46cd828d83
 }
 
 .weather {

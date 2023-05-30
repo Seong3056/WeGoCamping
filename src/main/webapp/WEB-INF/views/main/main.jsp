@@ -1,16 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
+<<<<<<< HEAD
     <!-- 웹폰트 적용 -->
             <link rel="preconnect" href="https://fonts.googleapis.com">
 			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 			<link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&display=swap" rel="stylesheet">
     
+=======
+>>>>>>> 1eae4cfb07bfe5a11338befcdd408c46cd828d83
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main/main.css">
+=======
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/mainp/main.css">
+>>>>>>> 1eae4cfb07bfe5a11338befcdd408c46cd828d83
        
         <title>main</title>
        <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
