@@ -48,22 +48,28 @@
 
                         <div class="form-group">
                             <label for="email" class="JEmail">이메일</label> <br>
-                            <input type="text" name="userEmail1" id="email1" class="emailBtn">
-                            <select name="userEmail2" id="email2">
-                                <option>@naver.com</option>
-                                <option>@hanmail.net</option>
-                                <option>@gmail.com</option>
-                                <option>@nate.com</option>
-                            </select>
-
+                            <div class="mailbox">
+                                <div class="mailAuth">
+                                    <input type="text" name="userEmail1" id="email1" class="emailBtn">
+                                    <select name="userEmail2" id="email2">
+                                        <option>@naver.com</option>
+                                        <option>@hanmail.net</option>
+                                        <option>@gmail.com</option>
+                                        <option>@nate.com</option>
+                                    </select>
+                                    <button type="button" id="mailSendBtn">인증번호 전송</button>
+                                </div>
+                                
+                                <div class="mailCheckBox">
+                                    <input type="text" id="mailCheckInput" placeholder="인증번호 6자리를 입력하세요." maxlength="6"
+                                        disabled="disabled">
+                                        <br>
+                                    <button type="button" id="mailCheckBtn" class="checkBoxE">이메일 인증</button>
+                                </div>
+                            </div>
+                            
                         </div>
-                        <div class="mailCheckBox">
-                            <input type="text" class="mail-check-input" placeholder="인증번호 6자리를 입력하세요." maxlength="6"
-                                disabled="disabled">
-
-                            <button type="button" id="mail-check-btn" class="checkBoxE">이메일 인증</button>
-
-                        </div>
+                        
 
                         <div class="form-group">
                             <label for="address" class="JAddr">주소</label>
@@ -140,7 +146,7 @@
                         document.getElementById('userId').style.boxShadow = '1px 1px 5px #0080008a';
                 }
                 })
-            /* ----아이디 중복체크----*/
+            /* ====아이디 중복체크====*/
         } else {      
             if(document.getElementById('userId').value.length < 6) 
                 document.getElementById('msgId').textContent = '아이디가 너무 짧습니다.';
@@ -152,7 +158,7 @@
 
 
     }
-    /* ----------------------------아이디 유효성검사---------------------------*/
+    /*=============================아이디 유효성검사============================*/
 
     /* --------------------------비밀번호 유효성검사---------------------------*/
     document.getElementById('userPw').onkeyup = function() {
@@ -170,7 +176,7 @@
     }
     /* --------------------------비밀번호 유효성검사---------------------------*/
 
-    /* -----------------------------비밀번호 확인------------------------------*/
+    /* =============================비밀번호 확인==============================*/
     document.getElementById('pwCheck').onkeyup = function() {
         
         if(document.getElementById('userPw').value
@@ -185,9 +191,44 @@
             document.getElementById('pwCheck').style.boxShadow = '1px 1px 5px #ff000030';
         } 
     }
-    /* -----------------------------비밀번호 확인------------------------------*/
+    /* ==============================비밀번호 확인================================*/
 
 
+    /*-------------------------------이메일 인증-------------------------------*/
+    document.getElementById('mailSendBtn').onclick = () =>{
+
+        const reqObj = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                "userId": document.getElementById('userId').value,
+                'userEmail1': document.getElementById('email1').value,
+                'userEmail2': document.getElementById('email2').value
+            }),
+
+        }
+        document.getElementById('mailCheckInput').removeAttribute('disabled');
+        fetch('${pageContext.request.contextPath}/user/authMail',reqObj)
+        	.then(rs => rs.text())
+        		.then(data =>{
+                    console.log("인증번호: "+data);
+                    document.getElementById('mailCheckBtn').onclick = () =>{
+                        if(document.getElementById('mailCheckInput').value === data) {
+                            alert('이메일 인증이 완료되었습니다.');
+                            document.getElementById('mailCheckInput').disabled = true;
+                            document.getElementById('mailCheckBtn').disabled = true;
+                            document.getElementById('email1').readOnly = true;
+                            document.getElementById('email2').readOnly = true;
+                        } else{
+                            alert('인증번호가 다릅니다.');
+                        }
+                    }
+        			
+        		})
+    }
+    /*===============================이메일 인증===============================*/
 
 
    

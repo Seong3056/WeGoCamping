@@ -20,6 +20,8 @@ local.properties
 .springBeans
 target/
 */target/*
+email-config.xml
+
 
 
 # External tool builders

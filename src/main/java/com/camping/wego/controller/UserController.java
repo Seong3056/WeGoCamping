@@ -1,14 +1,19 @@
 package com.camping.wego.controller;
 
+import java.util.Map;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.camping.wego.user.service.IUserService;
+import com.camping.wego.util.MailAuthService;
 import com.camping.wego.vo.UserVO;
 
 import lombok.extern.slf4j.Slf4j;
@@ -20,6 +25,9 @@ public class UserController {
 	
 	@Autowired
 	private IUserService service;
+	@Autowired
+	private MailAuthService mailService;
+	
 	
 	@GetMapping("/join")
 	public void joinPage() {}
@@ -43,5 +51,13 @@ public class UserController {
 		log.info(vo.toString());
 		service.join(vo);
 		return "board/boardList";
+	}
+	
+	@ResponseBody
+	@PostMapping("/authMail")
+	public String authMail(@RequestBody Map<String, String> user) {
+		log.info("메일 인증요청");
+		return mailService.authMail(user);
+		
 	}
 }
