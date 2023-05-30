@@ -66,13 +66,28 @@ body{
     width: 60%;
     
 }
+
+
 .board table tr {
     /* border: 1px solid #000; */
     height: 30px;
+    
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+.board table tr td{
+    padding: 0 10px;
+    line-height: 16px;
 }
 .board table tr td:nth-child(2){ /* 제목 */
     text-align: left;
     text-indent: 120px;
+}
+.board table tr td:nth-child(2):hover a{
+	text-decoration: underline;
+}
+.board table tr td:nth-child(2):hover tr{
+    background-color: rgb(252, 242, 227);
 }
 .board .page{
     display: flex;

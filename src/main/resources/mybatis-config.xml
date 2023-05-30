@@ -26,6 +26,7 @@
 		<!-- 별칭 필요하시면 주석 해제하시고 경로랑 별칭 설정해서 사용하시면 됩니다. -->
 		<!-- <typeAlias type="com.camping.wego.~~~.~~~" alias="~~~" /> -->
 		<typeAlias type="com.camping.wego.vo.BoardVO" alias="board"/>
+		<typeAlias type="com.camping.wego.vo.UserVO" alias="user"/>
 	</typeAliases>
 	
 	<!-- 
