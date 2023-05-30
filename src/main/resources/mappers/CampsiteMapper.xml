@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.camping.wego.campsite.mapper.ICampsiteMapper">
+
+	<insert id="insert">
+		INSERT INTO campsite
+		(faclt_nm, line_intro, intro, first_image_url, tel, induty, addr, homepage, map_x, map_y)
+		VALUES
+		(#{facltNm}, #{lineIntro}, #{intro}, #{firstImageUrl}, #{tel}, #{induty}, #{addr}, #{homepage}, #{mapX}, #{mapY})
+	</insert>
+
+</mapper>
