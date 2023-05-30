@@ -4,6 +4,15 @@
     
 <mapper namespace="com.camping.wego.user.mapper.IUserMapper">
 
+	<insert id="join">
+		INSERT INTO users
+			(user_id, user_pw, user_name, user_phone, user_email1, user_email2,
+			 addr_basic, addr_detail, addr_zip_num)
+		VALUES
+			(#{userId}, #{userPw}, #{userName}, #{userPhone}, #{userEmail1}, #{userEmail2},
+			 #{addrBasic},#{addrDetail},#{addrZipNum})
+	</insert>
+
 <delete id="delete">
 	DELETE FROM user WHERE user_id = #{userId}
 </delete>
