@@ -7,7 +7,7 @@
 		INSERT INTO board
 		(id, title, content)
 		VALUES
-		(#{id},#{title}, #{content})
+		(#{id}, #{title}, #{content})
 	</insert>
 	
 	<select id="list" resultType="board">
