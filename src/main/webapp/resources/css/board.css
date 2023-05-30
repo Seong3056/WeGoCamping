@@ -1,0 +1,79 @@
+@import url("https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css");
+body{
+    position: relative;   
+     height: 700px;
+}
+
+/* 게시판 영역 */
+.board{
+    width: 1100px;
+    margin: 0 auto;
+    margin-top: 200px;
+    text-align: center;
+    
+}
+.board .board-selector { /* 게시판 선택 */
+    margin-bottom: 70px;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+.board .board-selector a{
+    width: 250px;
+    height: 50px;
+    line-height: 50px;
+    border: 1px solid hwb(0 0% 100% / 0.01);
+    margin: 0 10px;
+}
+.board .tab {
+	width: 90%;
+    height: 50px;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    
+}
+.board .tab .write{
+    width: 100px;
+    
+}
+.board .tab .search{
+    width: 250px;
+    
+}
+.board table{
+    width: 100%;  
+    border-top: 1px solid #777;  
+    border-bottom: 1px solid #777;
+    
+    
+}
+.board table th{
+    width: 10%;
+    font-weight: bold;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.board table .title {
+    width: 60%;
+    
+}
+.board table tr {
+    /* border: 1px solid #000; */
+    height: 30px;
+}
+.board table tr td:nth-child(2){ /* 제목 */
+    text-align: left;
+    text-indent: 120px;
+}
+.board .page{
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    margin-top: 10px;
+}
+.board .page div{
+    margin: 3px;
+}
+/* 게시판 영역끝 */
+
