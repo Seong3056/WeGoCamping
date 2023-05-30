@@ -2,9 +2,13 @@
 @import url("https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css");
 
 *{
+	
     padding: 0;
     margin: 0;
 	box-sizing: border-box;
+	font-family: 'Hahmlet', serif;
+	
+	
 }
 
 
@@ -14,21 +18,27 @@ iframe{
 }
 
 .detail {
+	font-family: 'Hahmlet', serif;
     width: 1100px;
     margin: 200px auto 0;
     padding-bottom: 200px;
+    
+    
 
 }
 
 .detail h1 {
-    margin: 4% auto 4%;
+	font-family: 'Hahmlet', serif;
+    margin: 5% auto 5%;
     text-align: center;
     font-size: 30px;
     font-weight: bold;
+    
 }
 
 .container {
     display: flex;
+    
 }
 
 .item {
@@ -57,11 +67,13 @@ iframe{
 .btn1 {
     position: absolute;
     top: 70%;
-    right: 20%;
+    right: 10%;
+    font-size: 17px;
 }
 
 .btn2 {
     position: absolute;
     top: 70%;
-    right:15%;
+    right:1%;
+    font-size: 17px;
 }
