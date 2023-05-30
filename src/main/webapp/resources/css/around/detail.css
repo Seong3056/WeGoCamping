@@ -1,0 +1,79 @@
+@charset "utf-8";
+@import url("https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css");
+
+*{
+	
+    padding: 0;
+    margin: 0;
+	box-sizing: border-box;
+	font-family: 'Hahmlet', serif;
+	
+	
+}
+
+
+
+iframe{
+    width: 100%;
+}
+
+.detail {
+	font-family: 'Hahmlet', serif;
+    width: 1100px;
+    margin: 200px auto 0;
+    padding-bottom: 200px;
+    
+    
+
+}
+
+.detail h1 {
+	font-family: 'Hahmlet', serif;
+    margin: 5% auto 5%;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    
+}
+
+.container {
+    display: flex;
+    
+}
+
+.item {
+    width: 50%;
+    margin-right: 3%;
+
+}
+
+.item > img {
+    width: 100%;
+}
+
+.item > h2 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 4%;
+}
+
+.weather > h3 {
+    font-size: 20px;
+    margin: 7% 0 2%;
+
+}
+
+
+.btn1 {
+    position: absolute;
+    top: 70%;
+    right: 10%;
+    font-size: 17px;
+}
+
+.btn2 {
+    position: absolute;
+    top: 70%;
+    right:1%;
+    font-size: 17px;
+}
