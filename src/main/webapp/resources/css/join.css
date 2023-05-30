@@ -3,7 +3,6 @@
 *{
     padding: 0;
     margin: 0;
-    position: relative;
 }
 a{
     text-decoration: none;
@@ -19,7 +18,7 @@ a{
     clear:both;
 }
 body{
-    position: relative;
+    
 }
 
 header{
@@ -37,9 +36,12 @@ header{
 }
 header:hover {
     background-color: rgb(252, 242, 227);
-    height: 185px;
+    height: 250px;
     transition: all 0.5s ease-in-out;
     animation-fill-mode: both;
+}
+@keyframes dropdown {
+    
 }
 
 header .section{
@@ -60,47 +62,17 @@ header .section .title{
     font-size: 30px;    
     line-height: 1.2;
 }
-/* 메뉴 영역 */
 header .section .menu{
-    width: 400px;
+    width: 350px;
     margin-left: 10px;
     display: flex;
     flex-flow: row;
     justify-content: flex-end;
 }
-header .menu .menu-down {
-    width: 120px;
-    
-    
+header .section .menu .in-menu{
+    margin-left: 20px;
 }
-header .menu .menu-down .in-menu{
-    padding: 3px 5px;
-    text-align: center;
-    display: flex;
-    justify-items: center;
-}
-header .dropdown{ /*하위메뉴*/
-    display: none;
-    position: absolute;
-    top: 80px;
-    font-size: 15px;   
-    
-}
-
-header:hover .dropdown { /*하위메뉴:호버*/
-    display: flex;
-    flex-flow: column;
-    transition: all 2s ;
-}
-header .dropdown a{
-    width: 100%;
-    line-height: 20px;
-    text-align: center;
-    justify-self: center;
-}
-/* 메뉴영역 끝*/
-
-header .section .header-right{ /* 검색창 | 로그인정보*/
+header .section .header-right{
     width: 300px;
     position: absolute;
     right: 10px;
@@ -126,24 +98,94 @@ header .section .header-right .profile img{
     width: 50px;
     height: 50px;
 }
-footer{
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    background-color: rgb(252, 242, 227);
+
+
+/* ---------- JOIN ------------ */
+
+.wrap {
+    /* background: yellowgreen; */
+    width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    /* overflow: auto; */
+    color: black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+}
+
+.wrap .join .joinBox .joinUser {
+    /* background: yellow; */
+    float: left;
+    width: 40%;
+    height: 700px;
+    text-align: center;
+    margin-top: 10%;
+    border-right: 2px solid darkgray;
     
 }
-footer .section{
-    width: 1100px;
-    font-size: 10px;
-    display: flex;
-    flex-flow: row;
-    margin: 0 auto;
-    padding: 15px;
-    line-height: 15px;
+
+.wrap .join .joinBox .joinUser h3 {
+    color: black;
+    margin-top: 30%;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+
+
+
+
+
+.wrap .join .joinBox .joinMain {
+    /* background: yellowgreen; */
+    float: right;
+    width: 57%;
+    height: 700px;
+    margin-top: 10%;
+    font-size: 25px;
+  
+}   
+
+.wrap .join .joinBox .joinMain input {
+    width: 180px;
+    height: 30px;
+    line-height: 1.2;
+}
+
+.wrap .join .joinBox .joinMain button {
+    width: 80px;
+    height: 35px;
+    background: skyblue;
+    border: 1px solid gray;
+}
+.wrap .join .joinBox .joinMain select {
+    height: 30px;
+    width: 130px;
 
 }
-footer .section img {
-    margin-right: 100px;
-    width: 80px;
+
+
+.wrap .join .joinBox .joinMain .id-box {
+    float: left;
 }
+
+.wrap .join .joinBox .joinMain .idcheck {
+   float: right;   
+}
+
+.wrap .join .joinBox .joinMain .bottomBtn {
+    display: flex;
+    margin-left: 50%;
+    margin-top: 5%;
+}
+
+
+
+
+
+
+
+
+
+
+
