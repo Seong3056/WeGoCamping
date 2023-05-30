@@ -18,6 +18,7 @@ local.properties
 .classpath
 .project
 .springBeans
+target/
 */target/*
 
 
