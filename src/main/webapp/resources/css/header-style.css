@@ -24,8 +24,7 @@ html{
 
 header{
     width: 100%;
-    height: 80px;
-    opacity: 0.1;
+    height: 80px;    
    
     z-index: 9999;
     background-color: #fff;
@@ -39,8 +38,8 @@ header{
 }
 header:hover {
     background-color: rgb(252, 242, 227);
-    height: 185px;
-    transition: all 0.5s ease-in-out;
+    height: 180px;
+    transition: all 0.5s ease-out;
     animation-fill-mode: both;
     opacity: 1; 
 }
@@ -76,8 +75,8 @@ header .section .menu{
 }
 header .menu .menu-down {
     width: 120px;
-    
-    
+    margin-top: 10px;
+    justify-items: center;
 }
 header .menu .menu-down .in-menu{
     padding: 3px 5px;
@@ -91,6 +90,7 @@ header .dropdown{ /*하위메뉴*/
     position: absolute;
     top: 50px;
     font-size: 15px;
+    margin-top: 10px;
     
     
 }
@@ -98,7 +98,12 @@ header .dropdown{ /*하위메뉴*/
 header:hover .dropdown { /*하위메뉴:호버*/
     display: flex;
     flex-flow: column;
-    transition: all 2s ;
+    transition: all 2s ease-out;
+    margin-top: 10px;
+    
+}
+header:hover a:hover{
+    text-decoration: underline;
 }
 header .dropdown a{
     width: 100%;
@@ -130,11 +135,19 @@ header .section .header-right .profile {
     display: flex;
     flex-flow: column;
 }
-header .section .header-right .profile img{
+#login img{
     margin-bottom: 5px;
     width: 50px;
     height: 50px;
 }
+
+header .section .header-right .login{
+    display: none;
+}
+
+
+
+
 footer{
     width: 100%;
     position: absolute;

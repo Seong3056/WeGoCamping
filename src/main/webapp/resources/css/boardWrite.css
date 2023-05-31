@@ -32,8 +32,8 @@
     line-height: 3;
 }
 
-.board .content {
-    height: 100%;
+.board #content {
+    height: 500px;
     padding: 10px;
     margin: 10px;
     border: 1px solid #000;
@@ -70,7 +70,12 @@
     font-size: 17px;
 }
 
-.board .userId {
+.board .formBottom{
+	display: flex;
+    flex-flow: row;
+	justify-content: space-between;
+}
+.board .formBottom .userId {
     width: 100px;
     height: 100px;
     background: red;

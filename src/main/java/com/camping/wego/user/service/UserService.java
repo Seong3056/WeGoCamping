@@ -1,5 +1,8 @@
 package com.camping.wego.user.service;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -47,6 +50,20 @@ public class UserService implements IUserService {
 		log.info("result: {}",result);
 		if(result == 1) return "duplicated";
 		else return "able";
+	}
+	
+	@Override
+	public UserVO login(String userId, String userPw) {
+		log.info("서비스의 로그인 호출");
+		Map<String, String> user = new HashMap<>();
+		
+		user.put("userId", userId);
+		user.put("userPw", userPw);
+		
+		
+		UserVO vo = mapper.login(user);		
+		return vo;
+				
 	}
 	
 	
