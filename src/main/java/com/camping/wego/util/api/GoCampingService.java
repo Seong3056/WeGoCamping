@@ -1,16 +1,16 @@
-package com.camping.wego.util.api;
-
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
-
-import com.camping.wego.vo.PageVO;
-
-import lombok.extern.slf4j.Slf4j;
-
+//package com.camping.wego.util.api;
+//
+//import org.springframework.beans.factory.annotation.Value;
+//import org.springframework.stereotype.Component;
+//
+//import com.camping.wego.vo.PageVO;
+//
+//import lombok.extern.slf4j.Slf4j;
+//
 //@Component
 //@Slf4j
-public class GoCampingService {
-	
+//public class GoCampingService {
+//	
 //	@Value("${GoCamping.serviceKey}")
 //	private String serviceKey;
 //	
@@ -24,5 +24,5 @@ public class GoCampingService {
 //		
 //		return requestUrl;
 //	}
-
-}
+//
+//}

@@ -19,10 +19,14 @@
 	<beans:bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
 		<beans:property name="locations">
 			<beans:list>
+				<beans:value>classpath:/properties/email.properties</beans:value>
 				<!-- <beans:value>classpath:/properties/GoCamping.properties</beans:value> -->
+				<!-- <beans:value>classpath:/properties/kakaoAuth.properties</beans:value> -->
 			</beans:list>
 		</beans:property>
 	</beans:bean>
+		
+	
 
 	<!-- 
 		css, img, js...의 파일 경로가 복잡할 때 사용합니다.
