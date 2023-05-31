@@ -10,13 +10,39 @@
 	
 }
 
+.reservation {
+    width: 1100px;
+	margin: 0 auto 0;
+	padding-bottom: 150px;
+	font-family: 'Hahmlet', serif;
+}
+
+
+.reservation > h1 {
+        font-family: 'Hahmlet', serif;
+        margin: 5% auto 5%;
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+}
 
 .container {
     display: flex;
     
 }
 
+ #map {
+      width:500px;
+      height:500px;
+ }
+ 
+
 .item { 
     width: 32%;
+    height: 300px;
+    border: 2px solid black;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
 }
+
 
