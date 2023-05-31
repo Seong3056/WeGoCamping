@@ -17,107 +17,30 @@ a{
 .clearfix:after {
     clear:both;
 }
-body{
-    
-}
 
-header{
-    width: 100%;
-    height: 100px;
-    
-   
-    
-    box-sizing: border-box;
-    position: relative;
-    position: fixed;
-    top: 0;
-    transition: background-color 1s;
-    
-}
-header:hover {
-    background-color: rgb(252, 242, 227);
-    height: 250px;
-    transition: all 0.5s ease-in-out;
-    animation-fill-mode: both;
-}
-@keyframes dropdown {
-    
-}
 
-header .section{
-    width: 1500px;
-    margin: auto auto;
-    position: relative;
-    display: flex;
-    flex-flow: row;
-    align-items: center;
-    
-}
-header .section .logo{
-    width: 100px;
-    margin-right: 10px;
-}
-header .section .title{
-    width: 200px;
-    font-size: 30px;    
-    line-height: 1.2;
-}
-header .section .menu{
-    width: 350px;
-    margin-left: 10px;
-    display: flex;
-    flex-flow: row;
-    justify-content: flex-end;
-}
-header .section .menu .in-menu{
-    margin-left: 20px;
-}
-header .section .header-right{
-    width: 300px;
-    position: absolute;
-    right: 10px;
-    display: flex;
-    justify-content: end;    
-
-}
-header .section .header-right .search{
-    width: 150px;
-    height: 30px;
-    
-    margin: auto 0;
-    margin-right: 20px;
-    
-
-}
-header .section .header-right .profile {
-    display: flex;
-    flex-flow: column;
-}
-header .section .header-right .profile img{
-    margin-bottom: 5px;
-    width: 50px;
-    height: 50px;
-}
 
 
 /* ---------- JOIN ------------ */
 
 .wrap {
     /* background: yellowgreen; */
-    width: 1200px;
+    width: 1100px;
     margin: 0 auto;
-    height: 100%;
+    margin-top: 150px;
+    /* height: ; */
     /* overflow: auto; */
     color: black;
     border-right: 1px solid black;
     border-left: 1px solid black;
+    box-sizing: border-box;
 }
 
 .wrap .join .joinBox .joinUser {
     /* background: yellow; */
     float: left;
     width: 40%;
-    height: 700px;
+    /* height: 700px; */
     text-align: center;
     margin-top: 10%;
     border-right: 2px solid darkgray;
@@ -126,7 +49,7 @@ header .section .header-right .profile img{
 
 .wrap .join .joinBox .joinUser h3 {
     color: black;
-    margin-top: 30%;
+    
     font-size: 40px;
     font-weight: bold;
 }
@@ -140,23 +63,53 @@ header .section .header-right .profile img{
     /* background: yellowgreen; */
     float: right;
     width: 57%;
-    height: 700px;
-    margin-top: 10%;
+    height: 600px;
+    
     font-size: 25px;
-  
-}   
+    display: flex;
+    flex-flow: column;
 
-.wrap .join .joinBox .joinMain input {
+    position: relative;
+  
+}
+.wrap .join .joinBox .joinMain .form-group{
+    display: flex;
+    flex-flow: row;
+    margin-top: 20px;
+}
+.wrap .join .joinBox .joinMain .form-group label{
+    font-size: 20px;
+    width: 140px;
+    line-height: 30px;
+}
+
+input {
     width: 180px;
     height: 30px;
-    line-height: 1.2;
+    line-height: 1.2; 
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+input:focus { 
+    outline: none !important; 
+    border-color: gray; 
+    box-shadow: 1px 3px 5px 1px gray;     
+}
+.msg{
+    margin-left: 8px;
+    font-size: 10px;
+    line-height: 30px;   
 }
 
 .wrap .join .joinBox .joinMain button {
     width: 80px;
-    height: 35px;
-    background: skyblue;
-    border: 1px solid gray;
+    height: 25px;
+    background: rgb(252, 242, 227);
+    border: 0;
+    box-shadow: 1px 1px 1px 1px gray;
+}
+#mailSendBtn {
+    width: 100px;
 }
 .wrap .join .joinBox .joinMain select {
     height: 30px;
@@ -165,18 +118,43 @@ header .section .header-right .profile img{
 }
 
 
-.wrap .join .joinBox .joinMain .id-box {
+/* .wrap .join .joinBox .joinMain .id-box {
     float: left;
 }
 
-.wrap .join .joinBox .joinMain .idcheck {
+.wrap .join .joinBox .joinMain .idCheck {
    float: right;   
+} */
+
+.wrap .join .joinBox .joinMain .mail-check-input{
+    margin-top: 15px;
+    margin-left: 140px;
+}
+
+.wrap .join .joinBox .joinMain .form-group .mailbox .mailCheckBox{
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-start;
+    /* background-color: yellow; */
+    margin-top: 5px;
+}
+.wrap .join .joinBox .joinMain .form-group .mailbox .mailCheckBox button{
+    margin-left: 10px;
+}
+.wrap .join .joinBox .joinMain .addr{
+    display: flex;
+    flex-flow: column;    
+}
+.wrap .join .joinBox .joinMain .input-group {
+    display: flex;
+    font-family: row;
 }
 
 .wrap .join .joinBox .joinMain .bottomBtn {
-    display: flex;
-    margin-left: 50%;
-    margin-top: 5%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
 }
 
 

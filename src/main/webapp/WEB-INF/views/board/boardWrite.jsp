@@ -10,6 +10,7 @@
 <%@ include file="../include/header.jsp" %>
 <body>
     
+
     <form class="board" action="${pageContext.request.contextPath}/board/boardWrite" method="post" >
         <h3>글쓰기</h3>
         
@@ -35,6 +36,7 @@
 
 <%@ include file="../include/footer.jsp" %>
 
+<<<<<<< HEAD
 
 
 <script>
@@ -52,4 +54,15 @@ document.getElementById('submit').addEventListener('click', e=> {
 });
 
 
+=======
+<script>
+    document.getElementById('regist').onclick = () =>{
+        console.log(document.querySelector('.title').textContent);
+        if(document.querySelector('.title').textContent ==='') {
+            console.log('버튼이 클릭됨');
+            alert('제목이 비었습니다 !');
+            return;
+        }
+    }
+>>>>>>> 6cc02e56d657e6f6149a9cf6fc4724343df0ea57
 </script>

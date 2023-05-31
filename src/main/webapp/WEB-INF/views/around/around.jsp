@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
+<!-- 웹폰트 적용 -->
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+			<link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&display=swap" rel="stylesheet">
 
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +13,9 @@
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
             <script src="https://ajax.googlehttps://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.cssapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+            
+            
+			
             <title>캠핑장 둘러보기</title>
 
             
@@ -16,8 +23,8 @@
 
 <%@ include file="../include/header.jsp" %>
  
-   
-    
+    <article class="around">
+      
       <h1>캠핑장 둘러보기</h1>
           <select>
               <option value="0">지역</option>
@@ -66,7 +73,8 @@
       
         </div>
       </div>
-            
+      
+      
       <div class="container">
        
         <div class="section">
@@ -99,21 +107,17 @@
       </div>
         </div>
       </div>
-            
-      
-      <div class="page_wrap">
-      <div class="page_nation">
-         <a class="arrow pprev" href="#"></a>
-         <a class="arrow prev" href="#"></a>
-         <a href="#" class="active">1</a>
-         <a href="#">2</a>
-         <a href="#">3</a>
-         <a href="#">4</a>
-         <a href="#">5</a>
-         <a class="arrow next" href="#"></a>
-         <a class="arrow nnext" href="#"></a>
-      </div>
-       </div>
+                  
+        <div class="page">
+        <div>이전</div>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>다음</div>
+    </div>
     
+    </article>
  
  <%@ include file="../include/footer.jsp" %>
