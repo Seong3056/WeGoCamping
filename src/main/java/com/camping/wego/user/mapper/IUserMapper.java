@@ -1,5 +1,7 @@
 package com.camping.wego.user.mapper;
 
+import java.util.Map;
+
 import com.camping.wego.vo.UserVO;
 
 public interface IUserMapper {
@@ -15,6 +17,9 @@ public interface IUserMapper {
 
 		//아이디 중복체크
 		int idCheck(String userId);
+		
+		//로그인
+		UserVO login(Map<String,String> user);
 
 		
 }

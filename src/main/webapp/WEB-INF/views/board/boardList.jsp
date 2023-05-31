@@ -47,22 +47,28 @@
             <td>12</td>
         </tr>
         <c:forEach var="board" items="${boardList}">
-        <tr>
-            <td>분류</td>
+        	<tr>
+            <td>
+            	<c:if test="${board.cls==1}">후기</c:if>
+            	<c:if test="${board.cls==2}">꿀팁</c:if>
+            	<c:if test="${board.cls==3}">메이트찾기</c:if>
+            	<c:if test="${board.cls==4}">건의사항</c:if>
+            </td>
             <td class="title" style="cursor:pointer;">
             <a onclick="location.href='${pageContext.request.contextPath}/board/content/${board.bno}'">${board.title}</a>            
             </td>
-            <td>${board.id}</td>
+            <td>${board.write}</td>
             <td>
-			<fmt:parseDate value="${board.regDate}" pattern="yyyy-MM-dd'T'HH:mm:ss" var="parsedDateTime" type="both" />
-	        <fmt:formatDate value="${parsedDateTime}" pattern="yy-MM-dd" />
+				<fmt:parseDate value="${board.regDate}" pattern="yyyy-MM-dd'T'HH:mm:ss" var="parsedDateTime" type="both" />
+	        	<fmt:formatDate value="${parsedDateTime}" pattern="yy-MM-dd" />
 			</td>
             <td>${board.hit}</td>
-        </tr>
-    </c:forEach>
+       		</tr>
+    	</c:forEach>
         
         
     </table>
+    
     <div class="page">
         <div>이전</div>
         <div>1</div>

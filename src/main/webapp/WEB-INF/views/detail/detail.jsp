@@ -16,9 +16,9 @@
     
     <title>Detail</title>
 </head>
-<body>
+
  <%@ include file="../include/header.jsp" %>
-    <article class="detail">
+<article class="detail">
     
     <h1>캠핑장 상세보기</h1>
     <div class="container">
