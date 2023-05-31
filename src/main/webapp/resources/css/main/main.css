@@ -16,9 +16,17 @@
 	font-family: 'Hahmlet', serif;
 }
 
+.mainpage > .today {
+	font-weight: bold;
+	font-size: 20px;
+	margin-left: 3.5%; 
+	margin-bottom: 10px;
+}
+
 .box {
 	width: 30%;
 	height: 100px;
+	text-align: center;
 	margin-left: 0.5%;
 	margin-right: 0.5%;
 }
@@ -27,24 +35,22 @@
 	width: 100%;
 }
 
-
-.slick-track {
-	height: 200px;
+.box > div{
+	margin-top: 10px;
 }
 
-<<<<<<< HEAD
+
+.slick-track {
+	
+	height: 300px;
+}
+
+
 .mainpage > h1 {
     text-align: center;
     font-weight: bold;
     font-size:large;
-    margin-top: 10%;
-=======
-h1{
-    text-align: center;
-    font-weight: bold;
-    font-size:large;
     margin-top: 5%;
->>>>>>> 1eae4cfb07bfe5a11338befcdd408c46cd828d83
 }
 
 .weather {
