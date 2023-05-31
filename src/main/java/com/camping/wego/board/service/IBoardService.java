@@ -22,4 +22,5 @@ public interface IBoardService {
 	List<BoardVO> list();
 	 
 	
+	
 }

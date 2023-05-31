@@ -43,4 +43,10 @@ public class BoardController {
 		
 	}
 	
+	@PostMapping("")
+	public String modify(BoardVO vo) {
+		service.modify(vo);
+		return "redirect:/board/content/" + vo.getBno();
+	}
+	
 }
