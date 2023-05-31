@@ -14,7 +14,7 @@
         <div class="titleBox">
             <h3>수정하기</h3>
         </div>
-        <form action="">          
+        <form action="${pageContext.request.contextPath}/board/boardModify" method="get">          
             <div class="idBox">
                 <label>작성자</label>
                 <input class="IdM" name="idBox" value="${article.id}" readonly>
@@ -28,8 +28,8 @@
                 <textarea class="contentM" name="content">${article.content}</textarea>
             </div>
 
-            <button type="button" class="listBtn" id="listBtn">목록</button>    
-            <button type="submit" class="modifyBtn" id="modifyBtn">완료</button>
+            <button type="button" class="listBtn" id="listBtn" onclick="location.href='${pageContext.request.contextPath}/board/boardList'">목록</button>    
+            <button type="submit" class="modifyBtn" id="modifyBtn" onclick="location.href='${pageContext.request.contextPath}/board/content/${bno}'">완료</button>
         </form>
     </div>
     

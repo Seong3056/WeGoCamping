@@ -28,6 +28,7 @@ public class BoardController {
 	@GetMapping("/boardWrite")
 	public void write() {}
 	
+
 	@PostMapping("/boardWrite")
 	public String insert(BoardVO vo){
 		service.insert(vo);
@@ -43,10 +44,9 @@ public class BoardController {
 		
 	}
 	
-	@PostMapping("")
-	public String modify(BoardVO vo) {
-		service.modify(vo);
-		return "redirect:/board/content/" + vo.getBno();
+	@PostMappingMapping("/boardModify")
+	public String modify(@ModelAttribute("article") BoardVO vo) {
+		return "board/boardModify";
 	}
 	
 }

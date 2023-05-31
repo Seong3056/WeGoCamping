@@ -36,25 +36,6 @@
 
 <%@ include file="../include/footer.jsp" %>
 
-<<<<<<< HEAD
-
-
-<script>
-
-document.getElementById('submit').addEventListener('click', e=> {
-
-    const $title = document.getElementById('.title');
-    const $content = document.getElementById('.content');
-
-    if($title === '' && $content === '') {
-        alert('내용과 제목은 필수입니다.');
-        return;
-    }
-
-});
-
-
-=======
 <script>
     document.getElementById('regist').onclick = () =>{
         console.log(document.querySelector('.title').textContent);
@@ -64,5 +45,4 @@ document.getElementById('submit').addEventListener('click', e=> {
             return;
         }
     }
->>>>>>> 6cc02e56d657e6f6149a9cf6fc4724343df0ea57
 </script>
