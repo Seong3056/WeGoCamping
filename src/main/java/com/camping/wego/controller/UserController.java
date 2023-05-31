@@ -28,6 +28,8 @@ public class UserController {
 	@Autowired
 	private MailAuthService mailService;
 	
+	@GetMapping("/login")
+	public void loginPage() {}
 	
 	@GetMapping("/join")
 	public void joinPage() {}

@@ -1,20 +1,32 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<<<<<<< HEAD
     
 
     <!-- 웹폰트 적용 -->
             <link rel="preconnect" href="https://fonts.googleapis.com">
+=======
+        <!-- 웹폰트 적용 -->
+            <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+>>>>>>> 6889e57663788fac799e0a99507b8e3710d5255e
 			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-			<link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&display=swap" rel="stylesheet">
+			<link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&display=swap" rel="stylesheet"> -->
     
 
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
 
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main/main.css">       
         <title>main</title>
+=======
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main/main.css">
+
+       
+        <title>WeGoCamping</title>
+>>>>>>> 6889e57663788fac799e0a99507b8e3710d5255e
        <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> 
 
