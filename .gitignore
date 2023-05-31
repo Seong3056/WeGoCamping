@@ -20,7 +20,6 @@ local.properties
 .springBeans
 target/
 */target/*
-email-config.xml
 MANIFEST.MF
 log4j.xml
 
