@@ -1,7 +1,5 @@
 package com.camping.wego.campsite.mapper;
 
-import org.apache.ibatis.annotations.Mapper;
-
 import com.camping.wego.vo.CampsiteVO;
 
 public interface ICampsiteMapper {

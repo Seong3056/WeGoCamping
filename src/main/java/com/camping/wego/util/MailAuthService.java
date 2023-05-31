@@ -7,6 +7,7 @@ import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.MailSender;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -22,6 +23,8 @@ public class MailAuthService {
 	@Autowired
 	private JavaMailSender mail;
 	private int authNum;
+	@Value("${email.account}") // email.properties의 계정명을 불러와서 사용
+	String setFrom; //email-config에 설정한 발신용 이메일 주소 입력.
 	
 	private int randomAuthNum() {
 		Random r = new Random();
@@ -34,7 +37,6 @@ public class MailAuthService {
 		authNum = randomAuthNum();
 		String email=  user.get("userEmail1") + user.get("userEmail2");
 		log.info(email);
-		String setFrom = "aktnf207@naver.com"; //email-config에 설정한 발신용 이메일 주소 입력.
 		String toMail = email; //수신받을 이메일(가입하고자 하는 사람의 이메일)
 		String title = "회원 가입 인증 이메일 입니다."; //이메일 제목
 		String content = "WeGoCamping 회원가입을 환영합니다." +
