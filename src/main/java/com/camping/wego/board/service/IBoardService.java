@@ -25,4 +25,5 @@ public interface IBoardService {
 	void update(BoardVO vo);
 	 
 	
+	
 }

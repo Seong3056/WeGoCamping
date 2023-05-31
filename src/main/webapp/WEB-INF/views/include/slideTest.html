@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+@import url("https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css");
+
+.container{
+  width: 250px;  /* 원하는 값을 입력해주세요 */
+  margin: 0 auto;
+}
+.album{
+  width: 250px;  /* 원하는 값을 입력해주세요 */
+  height: 250px; /* 원하는 값을 입력해주세요 */
+  overflow: hidden;
+  background-size: cover;
+}
+.images{
+  position: relative;
+  display: flex;
+  height: 250px;  /* 원하는 값을 입력해주세요 */
+  width: 250px;
+}
+img{
+  width: 370px;  /* 원하는 값을 입력해주세요 */
+  height: 250px; /* 원하는 값을 입력해주세요 */
+}
+button, button:active, button:focus{
+  width: 80px; /* 원하는 값을 입력해주세요 */
+  height: 25px; /* 원하는 값을 입력해주세요 */
+  background-color: skyblue;  /* 원하는 색상을 입력해주세요 */
+  border: 0;
+}
+button:disabled{  
+  background-color: rgb(193, 220, 231); /* 원하는 색상을 입력해주세요 */
+}
+.previoius{
+  float: left;
+}
+.next{
+  float: right;
+}
+
+    </style>
+
+</head>
+<body>
+    
+    <body>
+        <div class="container">
+          <div class="album">
+            <div class="images">
+              <!--원하는 이미지 주소값을 입력해주세요-->
+              <img src="./co.png">
+              <img src="./coB.png">
+              <img src="./merge.png">
+              <img src="./mqdefault.jpg">
+            </div>
+          </div>
+          <button class="previous">prev</button>  <!--이전 버튼에 들어갈 문구를 작성해주세요-->
+          <button class="next">next</button>    <!--다음 버튼에 들어갈 문구를 작성해주세요-->
+        </div>
+
+</body>
+
+<script>
+
+let imageIndex = 0;
+let postion = 0;
+const IMAGE_WIDTH = 250;  // css에서 설정한 width 값과 동일하게 맞춰주세요
+const btnPrevious = document.querySelector(".previous")
+const btnNext = document.querySelector(".next")
+const images = document.querySelector(".images")
+ 
+function previous(){
+  if(imageIndex > 0){
+    btnNext.removeAttribute("disabled")
+    postion += IMAGE_WIDTH;
+    images.style.transform = `translateX(${postion}px)`;
+    imageIndex = imageIndex - 1;
+  }
+  if(imageIndex == 0){
+    btnPrevious.setAttribute('disabled', 'true')
+  }
+}
+function next(){
+  if(imageIndex < 3){
+    btnPrevious.removeAttribute("disabled")
+    postion -= IMAGE_WIDTH;
+    images.style.transform = `translateX(${postion}px)`;
+    imageIndex = imageIndex + 1;
+  }
+  if(imageIndex == 3){
+    btnNext.setAttribute('disabled', 'true')
+  }
+}
+ 
+function init(){
+  btnPrevious.setAttribute('disabled', 'true')
+  btnPrevious.addEventListener("click", previous)
+  btnNext.addEventListener("click", next)
+}
+ 
+init();
+
+</script>
+</html>
