@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 
 <head>
-    <title>Insert title here</title>
+    <title>회원가입</title>
     <link href="${pageContext.request.contextPath}/css/join.css" rel="stylesheet">
 </head>
 
@@ -196,7 +196,9 @@
 
     /*-------------------------------이메일 인증-------------------------------*/
     document.getElementById('mailSendBtn').onclick = () =>{
-
+        if(document.getElementById('email1').value === '') {
+            return;
+        }
         const reqObj = {
             method: "POST",
             headers: {

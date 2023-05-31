@@ -1,6 +1,7 @@
 package com.camping.wego.user.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.camping.wego.user.mapper.IUserMapper;
@@ -15,8 +16,13 @@ public class UserService implements IUserService {
 	@Autowired
 	private IUserMapper mapper;
 	
+	@Autowired
+	private BCryptPasswordEncoder endcoder;
+	
 	@Override
 	public void join(UserVO vo) {
+		String pwEncry = endcoder.encode(vo.getUserPw());
+		vo.setUserPw(pwEncry);
 		mapper.join(vo);
 		}
 
@@ -42,5 +48,7 @@ public class UserService implements IUserService {
 		if(result == 1) return "duplicated";
 		else return "able";
 	}
+	
+	
 
 }

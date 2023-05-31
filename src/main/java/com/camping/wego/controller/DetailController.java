@@ -8,8 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/detail")
 public class DetailController {
 	
-	@GetMapping("/detail")
-	public void main() {}
+	@GetMapping("")
+	public String main() {
+		return "/detail/detail";
+	}
 
 }
 
