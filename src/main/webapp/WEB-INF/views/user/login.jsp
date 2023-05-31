@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
     <head>
         <meta charset="UTF-8">
-        <title>Insert title here</title>
+        <title>Î°úÍ∑∏Ïù∏</title>
         <link href="${pageContext.request.contextPath}/css/login.css" rel="stylesheet">
     </head>
 	
@@ -16,39 +16,39 @@
             <div class="login">
                 <div class="loginAll">
                     <div class="loginLogo">
-                        <h3>∑Œ±◊¿Œ</h3>
+                        <h3>Î°úÍ∑∏Ïù∏</h3>
                     </div>
                     <div class="inputBox">
                     <div class="loginMain">
                         <div class="input-group">
-                            <input type="text" class="userNameBox" id="userNameBox" placeholder="ID∏¶ ¿‘∑¬«ÿ¡÷ººø‰.">
+                            <input type="text" class="userNameBox" id="userNameBox" placeholder="IDÎ•º ÏûÖÎ†•Ìï¥Ï£ºÏÑ∏Ïöî.">
                         </div>
                         <div class="input-group">
-                            <input type="password" class="userPwBox" id="userPwBox" placeholder="∫Òπ–π¯»£∏¶ ¿‘∑¬«ÿ¡÷ººø‰.">
+                            <input type="password" class="userPwBox" id="userPwBox" placeholder="ÎπÑÎ∞ÄÎ≤àÌò∏Î•º ÏûÖÎ†•Ìï¥Ï£ºÏÑ∏Ïöî.">
                         </div>
                     </div>
                         <div class="idRm">
                             <input type="checkbox" class="idRmBox" id="idRmbox">
-                            <label for="idRm">æ∆¿Ãµ ¿˙¿Â«œ±‚</label>
+                            <label for="idRm">ÏïÑÏù¥Îîî Ï†ÄÏû•ÌïòÍ∏∞</label>
                         </div>
                         <div class="choiceBtn">
                             <div class="JoinBox">
-                                <button type="button" class="joinBtn" id="joinBtn">
-                                    »∏ø¯∞°¿‘
+                                <button onclick="location.href='${pageContext.request.contextPath}/user/join'" type="button" class="joinBtn" id="joinBtn">
+                                    ÌöåÏõêÍ∞ÄÏûÖ
                                 </button>
                             </div>
                             <div class="loginBox">
                                 <button type="button" class="loginBtn" id="loginBtn">
-                                    ∑Œ±◊¿Œ
+                                    Î°úÍ∑∏Ïù∏
                                 </button>
                             </div>
                         </div> 
                         <div class="serchBox">   
                             <div class="searchId">
-                                <a href="#">æ∆¿Ãµ √£±‚</a>
+                                <a href="#">ÏïÑÏù¥Îîî Ï∞æÍ∏∞</a>
                             </div>
                             <div class="searchPw">
-                                <a href="#">∫Òπ–π¯»£ √£±‚</a>
+                                <a href="#">ÎπÑÎ∞ÄÎ≤àÌò∏ Ï∞æÍ∏∞</a>
                             </div>
                         </div>
                     </div>
