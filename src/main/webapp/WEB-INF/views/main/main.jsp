@@ -37,7 +37,6 @@
             <div class="box"><img src="${pageContext.request.contextPath}/img/cam1.jpg" alt="cam7"><div class="name"><h2>캠핑장 이름</h2></div><div class="oneline">가나다라마바사</div></div>
             <div class="box"><img src="${pageContext.request.contextPath}/img/cam1.jpg" alt="cam8"><div class="name"><h2>캠핑장 이름</h2></div><div class="oneline">가나다라마바사</div></div>
             <div class="box"><img src="${pageContext.request.contextPath}/img/cam1.jpg" alt="cam9"><div class="name"><h2>캠핑장 이름</h2></div><div class="oneline">가나다라마바사</div></div>
-
         </div>
         <br><br><br>
 
