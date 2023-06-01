@@ -52,11 +52,14 @@ public class BoardService implements IBoardService {
 
 	}
 	
-	
-	
 	@Override
 	public void update(BoardVO vo) {
 		mapper.update(vo);
 	}
-
+	
+	@Override
+	public int clsLength(String cls) {
+		int clsInt = Integer.parseInt(cls);		
+		return mapper.clsLength(clsInt);
+	}
 }

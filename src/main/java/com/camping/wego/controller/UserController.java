@@ -40,24 +40,10 @@ public class UserController {
 	public void loginPage() {}
 	
 	@PostMapping("/login")
-	public String loginProcess(@Param("userId") String userId, @Param("userPw") String userPw,
-			HttpServletRequest request, HttpServletResponse response) {
+	public void loginProcess(String userId, String userPw, Model model) {
 		log.info("userId: {}",userId);
 		log.info("userPw: {}",userPw);
-		
-		HttpSession session = request.getSession();
-		
-		session.setAttribute("user", service.login(userId, userPw));
-		log.info("컨트롤러내 모델에 담긴 정보"+session.toString());
-		if(session.getAttribute("user") == null) return "redirect:/user/login";
-		
-		else {
-			Cookie c = new Cookie("loginExpired", userId);
-			c.setMaxAge(60);
-			c.setPath("localhost");
-			response.addCookie(c);
-			return "/main/main";
-		}
+		model.addAttribute("user", service.login(userId, userPw));
 	}
 	
 	@GetMapping("/logout")

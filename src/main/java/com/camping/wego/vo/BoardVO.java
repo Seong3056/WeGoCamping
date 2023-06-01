@@ -22,7 +22,7 @@ import lombok.ToString;
 @AllArgsConstructor
 public class BoardVO {
 	private int bno;
-	private String write;
+	private String writer;
 	private String title;
 	private String cls;
 	private LocalDateTime regDate;

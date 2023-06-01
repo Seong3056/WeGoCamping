@@ -22,6 +22,6 @@ public interface IUserService {
 	String idCheck(String userId);
 	
 	//로그인
-	UserVO login(String userId, String userPw);
+	String login(String userId, String userPw);
 	
 }

@@ -13,7 +13,7 @@
     <div class="detailB">
         <h3>## 게시판</h3>
         <article class="board">
-            <div class="id" readonly>${vo.id}</div>
+            <div class="id" readonly>${vo.writer}</div>
             <div class="title" readonly>${vo.title}</div>
             <div class="flexBox">
                 <div class="imageBox">

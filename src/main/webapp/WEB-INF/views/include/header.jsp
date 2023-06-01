@@ -15,7 +15,7 @@
 
             <div class="menu clearfix">
                 <div class="menu-down">
-                    <a href="${pageContext.request.contextPath}/detail" class="in-menu" id="reservation">예약하기</a>
+                    <a href="${pageContext.request.contextPath}/rrsv" class="in-menu" id="reservation">예약하기</a>
                     <div class="dropdown">
                         <a  href="#">지역검색</a>
                         <a  href="#">테마검색</a>
@@ -62,8 +62,8 @@
 <script>
     
        window.onload = () => {
-            console.log("${user.userId}");
-            if("${user.userId}" !== '') {
+            console.log("${login}");
+            if("${login}" !== '') {
                 document.getElementById('login').style.display = 'block';
                 document.getElementById('notLogin').style.display = 'none';
             }

@@ -19,7 +19,7 @@ public interface IUserMapper {
 		int idCheck(String userId);
 		
 		//로그인
-		UserVO login(Map<String,String> user);
+		String login(String userId);
 
 		
 }

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.camping.wego.board.service.IBoardService;
 import com.camping.wego.vo.BoardVO;
@@ -60,6 +61,12 @@ public class BoardController {
 		service.update(vo);
 		return "redirect:/board/content/" + vo.getBno();
 	}
-
-
+	
+	@GetMapping("/cls/{cls}")
+	@ResponseBody
+	public int cls(@PathVariable String cls) {
+		log.info(cls);
+		return service.clsLength(cls); 
+	}
+	
 }

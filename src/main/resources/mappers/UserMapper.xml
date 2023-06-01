@@ -13,16 +13,17 @@
 			 #{addrBasic},#{addrDetail},#{addrZipNum})
 	</insert>
 
-<delete id="delete">
-	DELETE FROM user WHERE user_id = #{userId}
-</delete>
+	<delete id="delete">
+		DELETE FROM user WHERE user_id = #{userId}
+	</delete>
 
-<select id="idCheck" resultType="int">
-	SELECT count(*) FROM users WHERE user_id = #{userId}
-</select>
-<select id="login" resultType="user">
-	SELECT * FROM users WHERE user_id = #{userId} AND user_pw = #{userPw}
-</select>
-
+	<select id="idCheck" resultType="int">
+		SELECT count(*) FROM users WHERE user_id = #{userId}
+	</select>
+	
+	<select id="login" resultType="string">
+		SELECT user_pw FROM users 
+		WHERE user_id = #{userId}
+	</select>
 
 </mapper>
