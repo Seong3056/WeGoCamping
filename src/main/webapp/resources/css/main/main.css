@@ -1,6 +1,5 @@
 @charset "utf-8";
 @import url("https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css");
-@import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&display=swap');
 
 
 
@@ -17,17 +16,10 @@
 	font-family: 'Hahmlet', serif;
 }
 
-.mainpage > .today {
-	font-weight: bold;
-	font-size: 20px;
-	margin-left: 3.5%; 
-	margin-bottom: 10px;
-}
-
 .box {
+	text-align: center;
 	width: 30%;
 	height: 100px;
-	text-align: center;
 	margin-left: 0.5%;
 	margin-right: 0.5%;
 }
@@ -36,22 +28,34 @@
 	width: 100%;
 }
 
-.box > div{
-	margin-top: 10px;
-}
-
 
 .slick-track {
-	
 	height: 300px;
 }
-
 
 .mainpage > h1 {
     text-align: center;
     font-weight: bold;
     font-size:large;
-    margin-top: 5%;
+    margin-top: 2%;
+}
+
+.mainpage > .today {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 10%;
+    margin-left: 4%;
+    margin-bottom: 1%;
+  
+}
+
+.box > div {
+	margin-top: 3%;
+}
+
+.box > .name {
+	font-weight: bold;
+	
 }
 
 .weather {
