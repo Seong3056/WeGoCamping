@@ -11,6 +11,7 @@
 }
 
 .reservation {
+	
     width: 1100px;
 	margin: 0 auto 0;
 	padding-bottom: 150px;
@@ -19,8 +20,9 @@
 
 
 .reservation > h1 {
+		
         font-family: 'Hahmlet', serif;
-        margin: 5% auto 5%;
+        margin: 200px auto 5%;
         text-align: center;
         font-size: 30px;
         font-weight: bold;
@@ -52,12 +54,34 @@
 	
 }
 
+.item > .number {
+    margin-top: 50%;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5%;
+}
+
 input {
 	width: 250px;
 	height: 50px;
 	font-size: 20px;
-	border: 2px solid red;
+	border: none;
 	margin-top: 5%;
 }
 
+.weather {
+    margin-top: 10%;
+    font-size: 18px;
+    font-weight: bold;
+}
 
+.reservationbtn {
+    margin-top : 9%;
+    text-align: center;
+    
+}
+
+
+.reservationbtn > button {
+    font-size: 25px;
+}

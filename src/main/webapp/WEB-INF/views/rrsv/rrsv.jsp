@@ -1,22 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/src/main/webapp/resources/css/reservation/reservation.css">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+ 
+<!-- 웹폰트 적용 -->
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+			<link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&display=swap" rel="stylesheet">
+
+            <title>예약하기</title>
    
-    <!--달력-->
+<!--달력-->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 
-    
-     
-     <!-- 지도 -->
-     <link
-    rel="stylesheet"
+<!-- 지도 -->
+<link rel="stylesheet"
     href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
     crossorigin=""/>
@@ -28,13 +28,14 @@
   crossorigin=""
 ></script>
 
-    <title>예약하기</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="${pageContext.request.contextPath}/css/reservep/reserve.css">
+    
    
+   <%@ include file="../include/header.jsp" %>
   
-  
-
-</head>
-<body>
     <article class="reservation">
     <h1>캠핌장명</h1>
     <div class="container">
@@ -45,11 +46,31 @@
         
         <div class="item"><h2>예약 날짜</h2>
             <input id="demo" type="text" name="daterange" value="01/01/2018 - 01/31/2018" />
+
+
+            <div class="weather">날씨</div>
+
+
+         <div class="number"><h2>예약 인원</h2></div>
+         <select>
+          <option value="0">인원수</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          
+                  
+      </select>
+  
+       
         </div>
-        
+                   
 
     </div>
-</article>
+
+    <div class = "reservationbtn"><button>예약하기</button></div>
+    
+
 
 <script>
     var mymap = L.map("mapid").setView([37, 126], 13);
@@ -59,18 +80,7 @@
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(mymap);
 
-    // L.tileLayer(
-    //   "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
-    //   {
-    //     attribution:
-    //       'Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    //     maxZoom: 18,
-    //     id: "mapbox/streets-v11",
-    //     tileSize: 512,
-    //     zoomOffset: -1,
-    //     accessToken: "your.mapbox.access.token",
-    //   }
-    // ).addTo(mymap);
+    
   </script>
 
 <script>
@@ -119,6 +129,6 @@
 console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
 });
       </script>
+</article>
 
-</body>
-</html>
+<%@ include file="../include/footer.jsp" %>
