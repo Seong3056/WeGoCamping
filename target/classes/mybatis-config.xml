@@ -27,6 +27,7 @@
 		<!-- <typeAlias type="com.camping.wego.~~~.~~~" alias="~~~" /> -->
 		<typeAlias type="com.camping.wego.vo.BoardVO" alias="board"/>
 		<typeAlias type="com.camping.wego.vo.UserVO" alias="user"/>
+		<typeAlias type="com.camping.wego.vo.CampsiteVO" alias="camp"/>
 	</typeAliases>
 	
 	<!-- 
