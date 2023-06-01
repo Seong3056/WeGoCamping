@@ -80,7 +80,7 @@ public class BoardController {
 		
 		return service.clsList(cls); 
 	}
-<<<<<<< HEAD
+
 	
 	@PostMapping("/delete")
 	public String delete(int bno) {
@@ -88,6 +88,5 @@ public class BoardController {
 		return "redirect:/board/boardList";
 	}
 	
-=======
->>>>>>> 9beb6609843ac73b7b5a5a2fd4add4d45f7598c6
+
 }
