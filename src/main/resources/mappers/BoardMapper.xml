@@ -29,4 +29,9 @@
 		SELECT COUNT(*) FROM board WHERE cls = #{clsInt}
 	</select>
 	
+	<delete id="delete">
+		DELETE FROM borad
+		WHERE bno = #{bno}
+	</delete>
+	
 </mapper>
