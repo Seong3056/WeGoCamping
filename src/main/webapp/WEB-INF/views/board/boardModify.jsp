@@ -1,16 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
 
-<head>
-    <meta charset="UTF-8">
+
+
+
     <title>Insert title here</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/boardDetail.css">
-</head>
+
 <%@ include file="../include/header.jsp" %>
 
-<body>
+
 
     <div class="wrap">
         <div class="headBox">
@@ -22,6 +22,7 @@
 
                 <input class="titleM" name="title" value="">
                 <input class="IdM" name="idBox" value="" readonly placeholder="id value 예정">
+                <input class="IdM" name="idBox" value="" readonly >
             </div>
             <div class="contentBox">
 
@@ -36,9 +37,7 @@
         </form>
     </div>
 
-</body>
 
-</html>
 <%@ include file="../include/footer.jsp" %>
 
 <script>

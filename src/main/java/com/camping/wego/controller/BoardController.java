@@ -55,8 +55,9 @@ public class BoardController {
 		
 	}
 	
-	@GetMapping("/boardModify")
-	public String modify(@ModelAttribute("article") BoardVO vo) {
+	@GetMapping("/boardModify/{bno}")
+	public String modify(@PathVariable int bno,Model model) {
+		model.addAttribute("vo",service.detail(bno));
 		return "board/boardModify";
 	}
 	
@@ -83,5 +84,6 @@ public class BoardController {
 		service.delete(bno);
 		return "redirect:/board/boardList";
 	}
-	
+
+
 }
