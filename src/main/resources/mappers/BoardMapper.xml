@@ -25,13 +25,18 @@
 		WHERE bno = #{bno}
 	</update>
 	
-	<select id="clsLength" resultType="int">
-		SELECT COUNT(*) FROM board WHERE cls = #{clsInt}
+	<select id="clsList" resultType="board">
+		SELECT * FROM board WHERE cls = #{cls}
 	</select>
 	
+<<<<<<< HEAD
 	<delete id="delete">
 		DELETE FROM borad
 		WHERE bno = #{bno}
 	</delete>
+=======
+	
+	
+>>>>>>> 9beb6609843ac73b7b5a5a2fd4add4d45f7598c6
 	
 </mapper>

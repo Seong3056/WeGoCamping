@@ -25,7 +25,7 @@ public interface IBoardService {
 	void update(BoardVO vo);
 	
 	//말머리 게시물 갯수
-	int clsLength(String cls);
+	List<BoardVO> clsList(String cls);
 	 
 	
 	
