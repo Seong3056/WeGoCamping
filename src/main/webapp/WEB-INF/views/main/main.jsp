@@ -29,61 +29,36 @@
 </head>
 <%@ include file="../include/header.jsp" %>
 <article class="mainpage">
+  <%-- <c:forEach var="camp" items="${campList}">
+          	<div id="${camp.cno}" class="col-md-4">
+              <div class="thumbnail">
+                <a href="${pageContext.request.contextPath}/detail" class="detail">
+                  <img src="${camp.firstImageUrl}" alt="camp1" style="width:100%;height:217px" onerror="this.src='${pageContext.request.contextPath}/img/onerror.jpg'">
+                   </a>
+                  <div class="caption"> 
+                    <h2>${camp.facltNm}</h2>
+                    <p>-${camp.lineIntro}</p>
+                    <hr>
+                    <button>예약하기</button>
+                    </div>
+                  
+                      </div>
+                    </div>
+                                          
+          </c:forEach> --%>
+ 
+<%--  <c:forEach var="camp" items="${campList}"> --%>
+ 
+ 
     <div class="today">오늘의 캠핑장</div>
     <div class="autoplay">
-        <div class="box"><img src="${pageContext.request.contextPath}/img/cam1.jpg" alt="cam1">
+        <div id="${camp.cno}" class="box"><img src="${camp.firstImageUrl}" alt="cam1">
             <div class="name">
                 <h2>캠핑장 이름</h2>
             </div>
             <div class="oneline">가나다라마바사</div>
         </div>
-        <div class="box"><img src="${pageContext.request.contextPath}/img/cam1.jpg" alt="cam2">
-            <div class="name">
-                <h2>캠핑장 이름</h2>
-            </div>
-            <div class="oneline">가나다라마바사</div>
-        </div>
-        <div class="box"><img src="${pageContext.request.contextPath}/img/cam1.jpg" alt="cam3">
-            <div class="name">
-                <h2>캠핑장 이름</h2>
-            </div>
-            <div class="oneline">가나다라마바사</div>
-        </div>
-        <div class="box"><img src="${pageContext.request.contextPath}/img/cam1.jpg" alt="cam4">
-            <div class="name">
-                <h2>캠핑장 이름</h2>
-            </div>
-            <div class="oneline">가나다라마바사</div>
-        </div>
-        <div class="box"><img src="${pageContext.request.contextPath}/img/cam1.jpg" alt="cam5">
-            <div class="name">
-                <h2>캠핑장 이름</h2>
-            </div>
-            <div class="oneline">가나다라마바사</div>
-        </div>
-        <div class="box"><img src="${pageContext.request.contextPath}/img/cam1.jpg" alt="cam6">
-            <div class="name">
-                <h2>캠핑장 이름</h2>
-            </div>
-            <div class="oneline">가나다라마바사</div>
-        </div>
-        <div class="box"><img src="${pageContext.request.contextPath}/img/cam1.jpg" alt="cam7">
-            <div class="name">
-                <h2>캠핑장 이름</h2>
-            </div>
-            <div class="oneline">가나다라마바사</div>
-        </div>
-        <div class="box"><img src="${pageContext.request.contextPath}/img/cam1.jpg" alt="cam8">
-            <div class="name">
-                <h2>캠핑장 이름</h2>
-            </div>
-            <div class="oneline">가나다라마바사</div>
-        </div>
-        <div class="box"><img src="${pageContext.request.contextPath}/img/cam1.jpg" alt="cam9">
-            <div class="name">
-                <h2>캠핑장 이름</h2>
-            </div>
-            <div class="oneline">가나다라마바사</div>
+        
         </div>
     </div>
     <br><br><br>
