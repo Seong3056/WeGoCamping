@@ -24,6 +24,9 @@ public interface IBoardMapper {
 		//게시물 업데이트
 		void update(BoardVO vo);
 		
+		//말머리 게시물 갯수
+		int clsLength(int cls);
+		
 	
 	
 }

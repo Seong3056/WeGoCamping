@@ -8,6 +8,7 @@
 a{
     text-decoration: none;
     color: black;
+    cursor: pointer;
 }
 .clearfix:before, .clearfix:after {
     display: block;
