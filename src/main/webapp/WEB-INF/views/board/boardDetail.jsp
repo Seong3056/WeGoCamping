@@ -8,7 +8,6 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/boardDetail.css">
 </head>
 <%@ include file="../include/header.jsp" %>
-<body>
 
     <div class="detailB">
       
@@ -31,14 +30,13 @@
           </article>
           <div class="btn-group">
               <button type="button" class="listBtn" id="listBtn" onclick="location.href='${pageContext.request.contextPath}/board/boardList'">목록</button>
-              <button type="button" class="regBtn" id="regBtn" onclick="location.href='${pageContext.request.contextPath}/board/boardModify'">수정</button>
+              <button type="button" class="regBtn" id="regBtn" onclick="location.href='${pageContext.request.contextPath}/board/boardModify/${vo.bno}'">수정</button>
           
           </div>
         </form>
     </div>  
 
 
-</body>
 
 <%@ include file="../include/footer.jsp" %>
 
@@ -88,6 +86,10 @@ function init(){
 init();
 
 // 이미지 스크립트 JS 끝-------------------
+
+
+
+
 
 
 
