@@ -10,5 +10,15 @@
 		VALUES
 		(#{facltNm}, #{lineIntro}, #{intro}, #{firstImageUrl}, #{tel}, #{induty}, #{addr}, #{homepage}, #{mapX}, #{mapY})
 	</insert>
+	
+	<select id="getList" resultType="camp">
+		SELECT * FROM campsite
+		ORDER BY cno ASC
+		LIMIT 0, 10
+	</select>
+	
+	<select id="getTotal" resultType="int">
+		SELECT COUNT(*) FROM campsite
+	</select>
 
 </mapper>

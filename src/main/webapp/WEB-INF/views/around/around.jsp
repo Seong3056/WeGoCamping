@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!-- 웹폰트 적용 -->
             <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,8 +12,8 @@
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <link rel="stylesheet" href="${pageContext.request.contextPath}/css/around/basic.css">
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-            <script src="https://ajax.googlehttps://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.cssapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+            <script src="https://ajax.googlehttps://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.cssapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" defer /></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" defer></script>
             
             
 			
@@ -39,11 +40,27 @@
       <div class="container">
        
         <div class="section">
-      <div class="col-md-4">
+
+          <c:forEach var="camp" items="${campList}">
+          	<div id="${camp.cno}" class="col-md-4">
+              <div class="thumbnail">
+                <a href="${pageContext.request.contextPath}/detail" class="detail">
+                  <img src="${camp.firstImageUrl}" alt="camp1" style="width:100%" onerror="this.src='${pageContext.request.contextPath}/img/onerror.jpg'">
+                  <div class="caption">
+                    <h2>${camp.facltNm}</h2>
+                    <p>${camp.lineIntro}</p>
+                  </div>
+                  </a>
+              </div>
+            </div>
+          </c:forEach>
+
+      <!-- <div class="col-md-4">
         <div class="thumbnail">
           <a href="${pageContext.request.contextPath}/detail" class="detail">
             <img src="${pageContext.request.contextPath}/img/cam1.jpg" alt="camp1" style="width:100%">
             <div class="caption">
+              <h2>캠핑장 이름</h2>
               <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
             </div>
             </a>
@@ -54,24 +71,26 @@
            <a href="${pageContext.request.contextPath}/detail" class="detail">
             <img src="${pageContext.request.contextPath}/img/cam1.jpg" alt="camp2" style="width:100%">
             <div class="caption">
+              <h2>캠핑장 이름</h2>
               <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
             </div>
           </a>
         </div>
       </div>
-      
       <div class="col-md-4">
         <div class="thumbnail">
            <a href="${pageContext.request.contextPath}/detail" class="detail">
             <img src="${pageContext.request.contextPath}/img/cam1.jpg" alt="camp3" style="width:100%">
             <div class="caption">
+              <h2>캠핑장 이름</h2>
               <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
             </div>
           </a>
         </div>
-      </div>
+      </div> -->
       
         </div>
+
       </div>
       
       

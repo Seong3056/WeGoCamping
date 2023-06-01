@@ -53,5 +53,15 @@ public class CampsiteService implements ICampsiteService {
             mapper.insert(vo);
         }
 	}
+	
+	@Override
+	public List<CampsiteVO> getList() {
+		return mapper.getList();
+	}
+	
+	@Override
+	public int getTotal() {
+		return mapper.getTotal();
+	}
 
 }
