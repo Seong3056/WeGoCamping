@@ -1,5 +1,10 @@
 package com.camping.wego.controller;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,6 +31,7 @@ public class BoardController {
 	//게시글 목록 
 	@GetMapping("/boardList")
 	public void main(Model model) {
+		log.info("List호출");
 		model.addAttribute("boardList", service.list());
 	}
 	
@@ -36,6 +42,7 @@ public class BoardController {
 
 	@PostMapping("/boardWrite")
 	public String insert(BoardVO vo){
+		
 		log.info(vo.toString());
 		
 		service.insert(vo);
@@ -64,9 +71,13 @@ public class BoardController {
 	
 	@GetMapping("/cls/{cls}")
 	@ResponseBody
-	public int cls(@PathVariable String cls) {
-		log.info(cls);
-		return service.clsLength(cls); 
+	public List<BoardVO> clsLength(@PathVariable String cls) {
+		log.info("cls 서비스 호출");
+//		Map<String, Integer> map = new HashMap<String, Integer>();
+//		map.put("clsNo", Integer.parseInt(cls));
+//		map.put("clsLength", 3);
+		
+		
+		return service.clsList(cls); 
 	}
-	
 }

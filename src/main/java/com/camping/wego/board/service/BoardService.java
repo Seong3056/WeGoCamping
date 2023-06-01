@@ -58,8 +58,8 @@ public class BoardService implements IBoardService {
 	}
 	
 	@Override
-	public int clsLength(String cls) {
-		int clsInt = Integer.parseInt(cls);		
-		return mapper.clsLength(clsInt);
+	public List<BoardVO> clsList(String cls) {
+		int clsInt = Integer.parseInt(cls);
+		return mapper.clsList(clsInt);
 	}
 }

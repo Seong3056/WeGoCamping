@@ -25,8 +25,11 @@
 		WHERE bno = #{bno}
 	</update>
 	
-	<select id="clsLength" resultType="int">
-		SELECT COUNT(*) FROM board WHERE cls = #{clsInt}
+	<select id="clsList" resultType="board">
+		SELECT * FROM board WHERE cls = #{cls}
 	</select>
+	
+	
+	
 	
 </mapper>
