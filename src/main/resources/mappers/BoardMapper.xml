@@ -5,9 +5,9 @@
 <mapper namespace="com.camping.wego.board.mapper.IBoardMapper">
 	<insert id="insert">
 		INSERT INTO board
-		(id, title, cls, content)
+		(writer, title, cls, content)
 		VALUES
-		(#{userId}, #{title}, #{cls}, #{content})
+		(#{writer}, #{title}, #{cls}, #{content})
 	</insert>
 	
 	<select id="list" resultType="board">
@@ -23,5 +23,9 @@
 		title = #{title}, content= #{content}, hit= #{hit}
 		WHERE bno = #{bno}
 	</update>
+	
+	<select id="clsLength" resultType="int">
+		SELECT COUNT(*) FROM board WHERE cls = #{clsInt}
+	</select>
 	
 </mapper>
