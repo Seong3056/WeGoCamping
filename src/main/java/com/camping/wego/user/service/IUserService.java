@@ -21,4 +21,7 @@ public interface IUserService {
 	//아이디 중복체크
 	String idCheck(String userId);
 	
+	//로그인
+	UserVO login(String userId, String userPw);
+	
 }

@@ -20,6 +20,10 @@ public interface IBoardService {
 
 	//게시물 목록 요청
 	List<BoardVO> list();
+	
+	//게시물 업데이트
+	void update(BoardVO vo);
 	 
+	
 	
 }
