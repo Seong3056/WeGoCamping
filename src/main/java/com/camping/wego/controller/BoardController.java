@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,6 +33,7 @@ public class BoardController {
 	@GetMapping("/boardWrite")
 	public void write() {}
 	
+
 	@PostMapping("/boardWrite")
 	public String insert(BoardVO vo){
 		log.info(vo.toString());
@@ -49,9 +51,14 @@ public class BoardController {
 		
 	}
 	
-	@PostMapping("")
-	public String modify(BoardVO vo) {
-		service.modify(vo);
+	@GetMapping("/boardModify")
+	public String modify(@ModelAttribute("article") BoardVO vo) {
+		return "board/boardModify";
+	}
+	
+	@PostMapping("/update")
+	public String update(BoardVO vo) {
+		service.update(vo);
 		return "redirect:/board/content/" + vo.getBno();
 	}
 	

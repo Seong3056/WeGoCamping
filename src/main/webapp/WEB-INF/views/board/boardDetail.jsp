@@ -30,7 +30,7 @@
         </article>
         <div class="btn-group">
             <button type="button" class="listBtn" id="listBtn" onclick="location.href='${pageContext.request.contextPath}/board/boardList'">목록</button>
-            <button type="button" class="regBtn" id="regBtn">수정</button>
+            <button type="button" class="regBtn" id="regBtn" onclick="location.href='${pageContext.request.contextPath}/board/boardModify'">수정</button>
             <button type="button" class="deltBtn" id="deltBtn">삭제</button>
         </div>
     </div>  
