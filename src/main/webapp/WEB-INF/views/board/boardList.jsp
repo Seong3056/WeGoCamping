@@ -99,7 +99,7 @@
         fetch('${pageContext.request.contextPath}/board/cls/' + cls)
             .then(rs => rs.json())
             .then(data => {
-                console.log(data[0].title);
+                console.log(data[0].regDate);
                 console.log(data);
                 for (var i = 0; i < data.length; i++) {
                     const $frag = document.createDocumentFragment;
@@ -131,8 +131,10 @@
                     $writer.textContent = data[i].writer;
                     const $date = document.createElement('td');
                     
-                    const date = new Date(data.regDate);
-                    $date.textContent = date;
+                    
+                    $date.textContent = data[i].regDate[0]-2000 + '-' + 
+                    (data[i].regDate[1]>10? data[i].regDate[1]:('0'+data[i].regDate[1]))+ '-' + 
+                    (data[i].regDate[2]>10? data[i].regDate[2]:('0'+data[i].regDate[2]));
                     const $hit = document.createElement('td');
                     $hit.textContent = data[i].hit;
 
