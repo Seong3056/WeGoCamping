@@ -20,11 +20,11 @@ public class UserService implements IUserService {
 	private IUserMapper mapper;
 	
 	@Autowired
-	private BCryptPasswordEncoder endcoder;
+	private BCryptPasswordEncoder encoder;
 	
 	@Override
 	public void join(UserVO vo) {
-		String pwEncry = endcoder.encode(vo.getUserPw());
+		String pwEncry = encoder.encode(vo.getUserPw());
 		vo.setUserPw(pwEncry);
 		mapper.join(vo);
 		}
@@ -53,17 +53,20 @@ public class UserService implements IUserService {
 	}
 	
 	@Override
-	public UserVO login(String userId, String userPw) {
+	public String login(String userId, String userPw) {
 		log.info("서비스의 로그인 호출");
-		Map<String, String> user = new HashMap<>();
+		String dbPw = mapper.login(userId);
 		
-		user.put("userId", userId);
-		user.put("userPw", userPw);
-		
-		
-		UserVO vo = mapper.login(user);		
-		return vo;
-				
+		if(dbPw != null) {
+			// 날 것의 비밀번호와 암호화된 비밀번호의 일치 여부를 알려주는 matches() 
+			if(encoder.matches(userPw, dbPw)) {
+				return userId;
+			}
+			
+		}
+
+		return null;
+
 	}
 	
 	

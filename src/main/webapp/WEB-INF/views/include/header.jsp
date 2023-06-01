@@ -62,8 +62,8 @@
 <script>
     
        window.onload = () => {
-            console.log("${user.userId}");
-            if("${user.userId}" !== '') {
+            console.log("${login}");
+            if("${login}" !== '') {
                 document.getElementById('login').style.display = 'block';
                 document.getElementById('notLogin').style.display = 'none';
             }

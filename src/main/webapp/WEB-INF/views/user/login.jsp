@@ -20,7 +20,7 @@
                     </div>
                     
                         
-                    <form action="${pageContext.request.contextPath}/user/login" method="post" >
+                    <form name="loginForm" method="post" >
                         <div class="loginMain">
                             <div class="input-group">
                                 <input name="userId" type="text" id="userId" placeholder="ID를 입력해주세요.">
@@ -40,7 +40,7 @@
                                     </button>
                                 </div>
                                 <div class="loginBox">
-                                    <button type="submit" class="loginBtn" id="loginBtn">
+                                    <button type="button" class="loginBtn" id="loginBtn">
                                         로그인
                                     </button>
                                 </div>
@@ -70,4 +70,25 @@
         window.onload = () => {
             document.getElementById('loginH').style.display = 'none';
         }
+
+        const msg = '${msg}';
+        if(msg === 'joinSuccess') {
+            alert('회원 가입 정상 처리되었습니다.');
+        } else if(msg === 'loginFail') {
+            alert('로그인에 실패했습니다. 아이디와 비밀번호를 확인하세요.');
+        }
+
+        document.getElementById('loginBtn').onclick = () => {
+            if(document.getElementById('userId').value === '') {
+                alert('아이디를 입력해주세요!');
+                return;
+            }
+            if(document.getElementById('userPw').value === '') {
+                alert('비밀번호를 작성하세요!');
+                return;
+            }
+
+            document.loginForm.submit();
+        }
+
      </script>
