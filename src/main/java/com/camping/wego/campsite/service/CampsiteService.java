@@ -63,5 +63,10 @@ public class CampsiteService implements ICampsiteService {
 	public int getTotal() {
 		return mapper.getTotal();
 	}
+	
+@Override
+	public CampsiteVO info(int cno) {		
+		return mapper.info(cno);
+	}
 
 }
