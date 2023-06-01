@@ -1,10 +1,10 @@
 package com.camping.wego.controller;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
-import org.apache.ibatis.annotations.Mapper;
+import java.util.List;
+
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -80,14 +80,12 @@ public class BoardController {
 		
 		return service.clsList(cls); 
 	}
-<<<<<<< HEAD
+
 	
 	@PostMapping("/delete")
 	public String delete(int bno) {
 		service.delete(bno);
 		return "redirect:/board/boardList";
 	}
-	
-=======
->>>>>>> 9beb6609843ac73b7b5a5a2fd4add4d45f7598c6
+
 }
