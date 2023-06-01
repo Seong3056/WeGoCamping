@@ -1,9 +1,6 @@
 package com.camping.wego.controller;
 
-
 import java.util.List;
-
-
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -80,12 +77,11 @@ public class BoardController {
 		
 		return service.clsList(cls); 
 	}
-
 	
 	@PostMapping("/delete")
 	public String delete(int bno) {
 		service.delete(bno);
 		return "redirect:/board/boardList";
 	}
-
+	
 }

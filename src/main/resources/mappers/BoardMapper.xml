@@ -29,11 +29,9 @@
 		SELECT * FROM board WHERE cls = #{cls}
 	</select>
 	
-
 	<delete id="delete">
 		DELETE FROM borad
 		WHERE bno = #{bno}
 	</delete>
-
 	
 </mapper>
