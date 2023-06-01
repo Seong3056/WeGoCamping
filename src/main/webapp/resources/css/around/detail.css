@@ -21,9 +21,6 @@ iframe{
 	font-family: 'Hahmlet', serif;
     width: 1100px;
     margin: 200px auto 0;
-    padding-bottom: 200px;
-    
-    
 
 }
 
@@ -36,10 +33,7 @@ iframe{
     
 }
 
-.container {
-    display: flex;
-    
-}
+
 
 .item {
     width: 50%;
@@ -62,18 +56,58 @@ iframe{
     margin: 7% 0 2%;
 
 }
-
-
-.btn1 {
-    position: absolute;
-    top: 70%;
-    right: 30%;
-    font-size: 17px;
+.detail .container{
+    display: flex;
 }
-
-.btn2 {
-    position: absolute;
-    top: 70%;
-    right:27%;
-    font-size: 17px;
+.detail .container .campImg{
+    width: 500px;
+    height: 450px;
+}
+.detail .container .campImg img {
+    width: 95%;
+    margin: 50px 0;
+}
+.detail .container .item{
+    display: flex;
+    flex-flow: column;
+}
+/* ---------------캠핑장이름-------------------*/
+.detail .container .item .campNm{
+    height: 100px;
+}
+.detail .container .item .campNm h2 a{
+    display: block;
+    font-size: 40px;
+    font-weight: 600;
+    height: 60px;
+    margin-bottom: 3px;
+}
+.detail .container .item .campNm p{
+    font-size: 7px;
+}
+.detail .container .item .detailInfo{
+    width: 550px;
+    margin-bottom: 10px;
+    line-height: 1.5em;
+}
+.detail .container .item .cc{
+    display: flex;
+    width: 500px;
+    height: 55px;
+}
+.detail .container .item .cc .add {
+    width: 230px;
+    height: 50px;
+}
+.detail .container .item .cc .addr{
+    width: 300px;
+    height: 50px;
+}
+.detail .container .item .btnGroup{
+    display: flex;
+    justify-content: end;    
+}
+.detail .container .item .btnGroup{
+    width: 70px;
+    height: 30px;
 }
