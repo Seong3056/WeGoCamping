@@ -11,8 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.camping.wego.board.service.IBoardService;
 import com.camping.wego.vo.BoardVO;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Controller
 @RequestMapping("/board")
+@Slf4j
 public class BoardController {
 	
 	@Autowired
@@ -31,6 +34,8 @@ public class BoardController {
 
 	@PostMapping("/boardWrite")
 	public String insert(BoardVO vo){
+		log.info(vo.toString());
+		
 		service.insert(vo);
 		return "redirect:/board/boardList";
 	}

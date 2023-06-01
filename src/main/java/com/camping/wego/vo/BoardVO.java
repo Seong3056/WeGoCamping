@@ -22,9 +22,9 @@ import lombok.ToString;
 @AllArgsConstructor
 public class BoardVO {
 	private int bno;
-	private String id;
+	private String write;
 	private String title;
-	private int cls;
+	private String cls;
 	private LocalDateTime regDate;
 	private String content;
 	private int hit;

@@ -11,7 +11,7 @@
     <header>
         <div class="section">
             <img class="logo" src="${pageContext.request.contextPath}/img/logo.png" alt="logo">
-            <a href="${pageContext.request.contextPath}/main" class="title" class="clearfix">Camping</a>
+            <a href="${pageContext.request.contextPath}/" class="title" class="clearfix">Camping</a>
 
             <div class="menu clearfix">
                 <div class="menu-down">
@@ -40,11 +40,18 @@
             </div>
             <div class="header-right">
                 <input type="text" class="search clearfix" placeholder="검색어를 입력하세요.">
-                <div class="profile">
+                
+                <div id="login" style="display: none;">
                     <img class="profile-img" src="${pageContext.request.contextPath}/img/profile.png" alt="profile">
-                    <a href="${pageContext.request.contextPath}/user/login" class="user">홍길동님</a>
+                    <a href="${pageContext.request.contextPath}/mypage" class="user">홍길동님</a>
+                    <button id="logout" onclick="location.href='${pageContext.request.contextPath}/user/logout'">로그아웃</button>                    
+                </div>
+                
+                <div id="notLogin" >
+                    <button id="loginH" onclick="location.href='${pageContext.request.contextPath}/user/login'">로그인</button>
                 </div>
             </div>
+            
         </div>
         <div class="section-dropdown">
 
@@ -53,7 +60,18 @@
         </div>
     </header>
 <script>
-    document.querySelector('.header-right').onclick = () =>{
-        
-    }
+    
+       window.onload = () => {
+            console.log("${user.userId}");
+            if("${user.userId}" !== '') {
+                document.getElementById('login').style.display = 'block';
+                document.getElementById('notLogin').style.display = 'none';
+            }
+            else {
+                document.getElementById('login').style.display = 'none';
+                document.getElementById('notLogin').style.display = 'block';
+            }
+       }
+       
+    
 </script>
