@@ -16,7 +16,7 @@ public interface IBoardMapper {
 		void modify(BoardVO vo); 
 		
 		//게시물 삭제
-		void delete(BoardVO vo); 
+		void delete(int bno); 
 		
 		//게시물 목록 요청
 		List<BoardVO> list();

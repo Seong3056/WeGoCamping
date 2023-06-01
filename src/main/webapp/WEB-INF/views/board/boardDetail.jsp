@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <head>
 <meta charset="UTF-8">
@@ -11,28 +11,30 @@
 <body>
 
     <div class="detailB">
-        <h3>## 게시판</h3>
-        <article class="board">
-            <div class="id" readonly>${vo.writer}</div>
-            <div class="title" readonly>${vo.title}</div>
-            <div class="flexBox">
-                <div class="imageBox">
-                <img alt="#" src="${pageContext.request.contextPath}/img/cam3.png">                
-				
-				
-                <div class="bGroup">
-                    <button class="previous"> ◁ </button>
-                    <button class="next"> ▷ </button>
-                </div>
-                </div>
-                <div class="content" readonly>${vo.content}</div>
-            </div>
-        </article>
-        <div class="btn-group">
-            <button type="button" class="listBtn" id="listBtn" onclick="location.href='${pageContext.request.contextPath}/board/boardList'">목록</button>
-            <button type="button" class="regBtn" id="regBtn" onclick="location.href='${pageContext.request.contextPath}/board/boardModify'">수정</button>
-            <button type="button" class="deltBtn" id="deltBtn">삭제</button>
-        </div>
+      
+        <form action="" method="post" name="detilForm">
+          <h3>## 게시판</h3>
+          <article class="board">
+              <div class="id" readonly>${vo.writer}</div>
+              <div class="title" readonly>${vo.title}</div>
+              <div class="flexBox">
+                  <div class="imageBox">
+                  <img alt="#" src="${pageContext.request.contextPath}/img/cam3.png">
+          
+                  <div class="bGroup">
+                      <button class="previous"> ◁ </button>
+                      <button class="next"> ▷ </button>
+                  </div>
+                  </div>
+                  <div class="content" readonly>${vo.content}</div>
+              </div>
+          </article>
+          <div class="btn-group">
+              <button type="button" class="listBtn" id="listBtn" onclick="location.href='${pageContext.request.contextPath}/board/boardList'">목록</button>
+              <button type="button" class="regBtn" id="regBtn" onclick="location.href='${pageContext.request.contextPath}/board/boardModify'">수정</button>
+          
+          </div>
+        </form>
     </div>  
 
 
@@ -87,7 +89,8 @@ init();
 
 // 이미지 스크립트 JS 끝-------------------
 
-document.getElementById('')
+
+
 
 
 </script>
