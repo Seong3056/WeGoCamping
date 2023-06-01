@@ -41,7 +41,7 @@
         <div class="section">
       <div class="col-md-4">
         <div class="thumbnail">
-          <a href="#" target="_blank">
+          <a href="${pageContext.request.contextPath}/detail" class="detail">
             <img src="${pageContext.request.contextPath}/img/cam1.jpg" alt="camp1" style="width:100%">
             <div class="caption">
               <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
@@ -51,7 +51,7 @@
       </div>
       <div class="col-md-4">
         <div class="thumbnail">
-          <a href="#" target="_blank">
+           <a href="${pageContext.request.contextPath}/detail" class="detail">
             <img src="${pageContext.request.contextPath}/img/cam1.jpg" alt="camp2" style="width:100%">
             <div class="caption">
               <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
@@ -62,7 +62,7 @@
       
       <div class="col-md-4">
         <div class="thumbnail">
-          <a href="#" target="_blank">
+           <a href="${pageContext.request.contextPath}/detail" class="detail">
             <img src="${pageContext.request.contextPath}/img/cam1.jpg" alt="camp3" style="width:100%">
             <div class="caption">
               <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
@@ -80,7 +80,7 @@
         <div class="section">
       <div class="col-md-4">
       
-          <a href="#" target="_blank">
+          <a href="${pageContext.request.contextPath}/rrsv" class="rrsv">
       
             <div class="button">
               <p><button>예약하기</button></p>
@@ -89,7 +89,7 @@
       </div>
       <div class="col-md-4">
       
-        <a href="#" target="_blank">
+    	<a href="${pageContext.request.contextPath}/rrsv" class="rrsv">	
       
           <div class="button">
             <p><button>예약하기</button></p>
@@ -98,7 +98,7 @@
       </div>
       <div class="col-md-4">
       
-        <a href="#" target="_blank">
+       <a href="${pageContext.request.contextPath}/rrsv" class="rrsv">
       
           <div class="button">
           <p><button>예약하기</button></p>
