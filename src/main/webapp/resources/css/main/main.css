@@ -17,6 +17,7 @@
 }
 
 .box {
+	text-align: center;
 	width: 30%;
 	height: 100px;
 	margin-left: 0.5%;
@@ -29,14 +30,32 @@
 
 
 .slick-track {
-	height: 200px;
+	height: 300px;
 }
 
 .mainpage > h1 {
     text-align: center;
     font-weight: bold;
     font-size:large;
+    margin-top: 2%;
+}
+
+.mainpage > .today {
+    font-weight: bold;
+    font-size: 20px;
     margin-top: 10%;
+    margin-left: 4%;
+    margin-bottom: 1%;
+  
+}
+
+.box > div {
+	margin-top: 3%;
+}
+
+.box > .name {
+	font-weight: bold;
+	
 }
 
 .weather {
