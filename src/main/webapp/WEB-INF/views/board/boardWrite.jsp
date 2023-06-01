@@ -37,9 +37,6 @@
 
 <%@ include file="../include/footer.jsp" %>
 
-<<<<<<< HEAD
-<script>
-=======
 
 
 <script>
@@ -58,7 +55,6 @@ document.getElementById('submit').addEventListener('click', e=> {
 
 
 
->>>>>>> 57878001a23ad814d3f894fa3ad26501c23f15b3
     document.getElementById('regist').onclick = () =>{
         console.log(document.querySelector('.title').textContent);
         if(document.querySelector('.title').textContent ==='') {

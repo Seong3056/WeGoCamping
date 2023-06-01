@@ -119,6 +119,59 @@
 
 /* -----------밑은 modify css 작성 예정 ------------ */
 
+.wrap {
+    width: 1100px;
+    height: 600px;
+    margin: 0 auto;
+    margin-top: 132px;
+    display: flex;
+    flex-flow: column;
+    position: relative;
+    height: 640px;
+}
 
+.wrap .headBox h3 {
+    font-size: 25px;
+    font-weight: bold;
+    border-bottom: 2px solid darkgray;
+    width: 200px;
+    line-height: 3;
+}
 
+.wrap .titleBox .IdM {
+    width: 180px;
+    height: 40px;
+    border: none;
+    margin-left: 20px;
+}
 
+.wrap .titleBox .titleM {
+    width: 500px;
+    height: 40px;
+    background: rgb(202, 198, 198);
+    margin-top: 45px;
+    margin-bottom: 20px;
+    border: 2px solid black;
+}
+
+.wrap .contentBox  .contentM {
+    width: 500px;
+    height: 400px;
+    
+    margin-bottom: 20px;
+    border: 2px solid black;
+    resize: none;
+}
+
+.wrap .btnBox {
+    width: 1100px;
+    
+    text-align: center;
+}
+
+.wrap button {
+    
+    width: 60px;
+    height: 35px;
+    margin-left: 20px;
+}

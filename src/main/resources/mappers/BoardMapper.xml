@@ -18,11 +18,8 @@
 		SELECT * FROM board WHERE bno = #{bno}
 	</select>
 	
-<<<<<<< HEAD
-	<update id="modify">
-=======
+	
 	<update id="update">
->>>>>>> 57878001a23ad814d3f894fa3ad26501c23f15b3
 		UPDATE board SET
 		title = #{title}, content= #{content}, hit= #{hit}
 		WHERE bno = #{bno}
