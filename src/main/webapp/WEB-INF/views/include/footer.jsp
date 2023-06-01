@@ -11,7 +11,7 @@
 <footer>
         <div class="section">
             <img src="${pageContext.request.contextPath}/img/logo.png" alt="logo">
-            <div class="container">
+            <div class="containerF">
                 <div class="footer-info">
                     개인 정보 처리 방침 | 고객센터 | 이용약관 | 전체서비스 <br>
                     주소: 서울 마포구 백범로23, 신수동 63-14 <br>

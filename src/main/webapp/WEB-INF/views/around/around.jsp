@@ -31,103 +31,70 @@
               <option value="0">지역</option>
               <option value="1">서울</option>
               <option value="2">경기</option>
-              <option value="3">대전</option>
-              <option value="4">대구</option>
-              <option value="5">부산</option>
+              <option value="3">강원</option>
+              <option value="4">충청</option>
+              <option value="5">전라</option>
+              <option value="6">경상</option>
               <option value="6">제주</option>
           </select>
       
-      <div class="container">
-       
-        <div class="section">
-
-          <c:forEach var="camp" items="${campList}">
+      
+        <c:forEach var="camp" items="${campList}">
           	<div id="${camp.cno}" class="col-md-4">
               <div class="thumbnail">
                 <a href="${pageContext.request.contextPath}/detail" class="detail">
-                  <img src="${camp.firstImageUrl}" alt="camp1" style="width:100%" onerror="this.src='${pageContext.request.contextPath}/img/onerror.jpg'">
-                  <div class="caption">
+                  <img src="${camp.firstImageUrl}" alt="camp1" style="width:100%;height:217px" onerror="this.src='${pageContext.request.contextPath}/img/onerror.jpg'">
+                   </a>
+                  <div class="caption"> 
                     <h2>${camp.facltNm}</h2>
-                    <p>${camp.lineIntro}</p>
-                  </div>
-                  </a>
-              </div>
-            </div>
+                    <p>-${camp.lineIntro}</p>
+                    <hr>
+                    <button>예약하기</button>
+                    </div>
+                  
+                      </div>
+                    </div>
+                
+                  
+             
           </c:forEach>
-
-      <!-- <div class="col-md-4">
-        <div class="thumbnail">
-          <a href="${pageContext.request.contextPath}/detail" class="detail">
-            <img src="${pageContext.request.contextPath}/img/cam1.jpg" alt="camp1" style="width:100%">
-            <div class="caption">
-              <h2>캠핑장 이름</h2>
-              <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-            </div>
-            </a>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="thumbnail">
-           <a href="${pageContext.request.contextPath}/detail" class="detail">
-            <img src="${pageContext.request.contextPath}/img/cam1.jpg" alt="camp2" style="width:100%">
-            <div class="caption">
-              <h2>캠핑장 이름</h2>
-              <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="thumbnail">
-           <a href="${pageContext.request.contextPath}/detail" class="detail">
-            <img src="${pageContext.request.contextPath}/img/cam1.jpg" alt="camp3" style="width:100%">
-            <div class="caption">
-              <h2>캠핑장 이름</h2>
-              <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-            </div>
-          </a>
-        </div>
-      </div> -->
-      
-        </div>
-
-      </div>
-      
-      
-      <div class="container">
+ 
+ 
+ 	<%-- 	<div class="container">
        
         <div class="section">
-      <div class="col-md-4">
-      
-          <a href="${pageContext.request.contextPath}/rrsv" class="rrsv">
-      
-            <div class="button">
-              <p><button>예약하기</button></p>
+        
+ 		<c:forEach var="camp" items="${campList}">
+      <div id="${camp.cno}" class="col-md-4">
+        <div class="thumbnail">
+          <a href="${pageContext.request.contextPath}/detail" class="detail">
+            <img class="thumImg" src="${camp.firstImageUrl}" alt="camp1" style="width:100%" onerror="this.src='${pageContext.request.contextPath}/img/onerror.jpg'">
+            <div class="caption">
+              <h2>${camp.facltNm}</h2>
+              <p>${camp.lineIntro}</p>
             </div>
-          </a>
-      </div>
-      <div class="col-md-4">
+            </a>
+            <div class="col-md-4">
       
-    	<a href="${pageContext.request.contextPath}/rrsv" class="rrsv">	
-      
-          <div class="button">
-            <p><button>예약하기</button></p>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-4">
-      
-       <a href="${pageContext.request.contextPath}/rrsv" class="rrsv">
-      
-          <div class="button">
-          <p><button>예약하기</button></p>
-          </div>
-        </a>
-      </div>
+              <a href="${pageContext.request.contextPath}/rrsv" class="rrsv">	
+              
+                  <div class="button">
+                    <p><button>예약하기</button></p>
+                  </div>
+                </a>
+              </div>
         </div>
       </div>
+       </c:forEach>
+      
+        </div>
+
+      </div> --%>
+      
+      
+       
                   
-        <div class="page">
+    <!--     <div class="page">
         <div>이전</div>
         <div>1</div>
         <div>2</div>
@@ -136,7 +103,7 @@
         <div>5</div>
         <div>다음</div>
     </div>
-    
+     -->
     </article>
  
  <%@ include file="../include/footer.jsp" %>
