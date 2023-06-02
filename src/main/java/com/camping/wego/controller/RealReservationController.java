@@ -11,7 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class RealReservationController {
 
-	
+
 	@GetMapping("")
 	public static String main(String[] args) {
 		return "/rrsv/rrsv";

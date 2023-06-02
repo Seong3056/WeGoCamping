@@ -10,7 +10,7 @@ import lombok.ToString;
 @Getter @Setter @ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CampsiteVO {
-	
+
 	private int cno;
 	private String facltNm;
 	private String lineIntro;
