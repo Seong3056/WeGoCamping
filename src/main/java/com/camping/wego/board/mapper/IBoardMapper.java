@@ -6,7 +6,8 @@ import com.camping.wego.vo.BoardVO;
 import com.camping.wego.vo.UserVO;
 
 public interface IBoardMapper {
-	//게시물 등록
+	
+		//게시물 등록
 		void insert(BoardVO vo); 
 		
 		//게시물 보기
@@ -27,6 +28,4 @@ public interface IBoardMapper {
 		//말머리 게시물리스트
 		List<BoardVO> clsList(int cls);
 		
-	
-	
 }
