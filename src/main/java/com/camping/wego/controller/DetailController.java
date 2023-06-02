@@ -9,7 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.camping.wego.campsite.service.ICampsiteService;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6369acd9423035fc26c14a5480ebe3b077066f62
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
@@ -33,8 +36,11 @@ public class DetailController {
 		return "/detail/detail";
 	}
 
+<<<<<<< HEAD
 	
 
 
+=======
+>>>>>>> 6369acd9423035fc26c14a5480ebe3b077066f62
 }
 

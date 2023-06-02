@@ -24,7 +24,7 @@ public class MailAuthService {
 	private JavaMailSender mail;
 	private int authNum;
 	@Value("${email.account}") // email.properties의 계정명을 불러와서 사용
-	String setFrom; //email-config에 설정한 발신용 이메일 주소 입력.
+	private String setFrom; //email-config에 설정한 발신용 이메일 주소 입력.
 	
 	private int randomAuthNum() {
 		Random r = new Random();
@@ -44,7 +44,7 @@ public class MailAuthService {
 				 user.get("userId")+"님의 인증 번호는 <strong>" + authNum + "</strong> 입니다." +
 				 "<br>" +
 				 "해당 인증 번호를 인증번호 확인란에 입력해주세요.";
-		mailSend(setFrom, toMail, title, content); //주석비활성화시 실제로 메일 발송.
+		mailSend(setFrom, toMail, title, content); //주석 비활성화시 실제로 메일 발송.
 		return Integer.toString(authNum);
 	}
 	private void mailSend(String setFrom, String toMail, String title, String content) {

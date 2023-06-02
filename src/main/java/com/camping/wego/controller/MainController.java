@@ -10,16 +10,25 @@ import org.springframework.web.bind.annotation.PathVariable;
 import com.camping.wego.campsite.service.ICampsiteService;
 
 
+import com.camping.wego.campsite.service.ICampsiteService;
+
+import lombok.extern.slf4j.Slf4j;
+
 @Controller
+@Slf4j
 public class MainController {
 	
 	@Autowired
-	private ICampsiteService campService;
+	private ICampsiteService service;
 	
 	@GetMapping("")
-	public String main() {
+	public String main(Model model) {
+		log.info(service.getList().toString());
+		log.info("info");
+		model.addAttribute("campList", service.getList());
 		return "/main/main";
 	}
+	
 	@GetMapping("/mypage")
 	public String mypage() {
 		return "/mypage/info";
@@ -27,7 +36,7 @@ public class MainController {
 	
 	@GetMapping("/rsv/{cno}")
 	public String rsvPage(@PathVariable int cno, Model model) {
-		model.addAttribute("camp",campService.info(cno));
+		model.addAttribute("camp",Service.info(cno));
 		return "/rrsv/rrsv";
 	}
 	@GetMapping("/rrsv/payment")
