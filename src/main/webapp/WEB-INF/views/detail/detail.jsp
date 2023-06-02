@@ -54,7 +54,7 @@
   </div>
   <div class="btnGroup">    
     <button class="btn1">목록</button>
-    <button class="btn2">예약하기</button>
+    <button class="btn2" onclick="location.href='${pageContext.request.contextPath}/rsv/${camp.cno}'">예약하기</button>
   </div>
 </article>
 
