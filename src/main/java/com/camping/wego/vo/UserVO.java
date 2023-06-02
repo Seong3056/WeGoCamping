@@ -15,7 +15,7 @@ CREATE TABLE users(
     user_email1 VARCHAR(50),
     user_email2 VARCHAR(50),
     addr_basic VARCHAR(300),
-    addr_detail VARCHAR(300),	
+    addr_detail VARCHAR(300),
     addr_zip_num VARCHAR(50),
     reg_date DATETIME DEFAULT CURRENT_TIMESTAMP
 );
@@ -23,7 +23,7 @@ CREATE TABLE users(
 
 @Getter @Setter @ToString
 public class UserVO {
-	
+
 	private String userId;
 	private String userPw;
 	private String userName;

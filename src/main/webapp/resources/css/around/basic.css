@@ -41,8 +41,17 @@ iframe{
 }
 
 
+.sel1 {
+	 margin: 10px auto 10px;
+    float: right;
+    position: absolute;
+    right: 20%;
+	top: 200px;
+	
+}
 
-select {
+
+.sel2 {
     margin: 10px auto 10px;
     float: right;
     position: absolute;

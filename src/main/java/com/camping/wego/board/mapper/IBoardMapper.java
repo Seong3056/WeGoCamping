@@ -3,29 +3,28 @@ package com.camping.wego.board.mapper;
 import java.util.List;
 
 import com.camping.wego.vo.BoardVO;
-import com.camping.wego.vo.UserVO;
 
 public interface IBoardMapper {
-	
+
 		//게시물 등록
-		void insert(BoardVO vo); 
-		
+		void insert(BoardVO vo);
+
 		//게시물 보기
 		BoardVO detail(int bno);
-		
+
 		//게시물 수정
-		void modify(BoardVO vo); 
-		
+		void modify(BoardVO vo);
+
 		//게시물 삭제
-		void delete(int bno); 
-		
+		void delete(int bno);
+
 		//게시물 목록 요청
 		List<BoardVO> list();
-		
+
 		//게시물 업데이트
 		void update(BoardVO vo);
-		
+
 		//말머리 게시물리스트
 		List<BoardVO> clsList(int cls);
-		
+
 }
