@@ -14,5 +14,7 @@ public interface ICampsiteMapper {
 	
 	// 캠핑장 개수
 	int getTotal();
+	
+	CampsiteVO info(int cno);
 
 }

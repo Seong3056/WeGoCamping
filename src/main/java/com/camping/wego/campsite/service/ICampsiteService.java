@@ -14,5 +14,8 @@ public interface ICampsiteService {
 	
 	// 캠핑장 개수
 	int getTotal();
+	
+	//캠핑장 정보
+	CampsiteVO info(int cno);
 
 }

@@ -21,4 +21,9 @@
 		SELECT COUNT(*) FROM campsite
 	</select>
 
+	<select id="info" resultType="camp">
+		SELECT * FROM campsite
+		WHERE cno = #{cno}
+	</select>
+
 </mapper>
