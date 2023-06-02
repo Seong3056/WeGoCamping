@@ -45,7 +45,7 @@
   <c:forEach var="camp" items="${campList}">
     <div id="${camp.cno}" class="col-md-4">
       <div class="thumbnail">
-        <a href="${pageContext.request.contextPath}/detail/${camp.cno}/${camp.cno}" class="detail">
+        <a href="${pageContext.request.contextPath}/detail/${camp.cno}" class="detail">
           <img src="${camp.firstImageUrl}" alt="camp1" style="width:217px;"
             onerror="this.src='${pageContext.request.contextPath}/img/onerror.jpg'">
         </a>

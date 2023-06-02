@@ -37,15 +37,17 @@
     margin-top: 5%;
       width:100%;
       height:500px;
+      margin-right: 30px;
+      border-radius: 5px;
  }
  
 
 .item { 
     width: 50%;
-    height: 500px;
     
-    margin-left: 0.5%;
-    margin-right: 0.5%;
+    
+    margin-left: 20px
+    
 }
 
 .item > h2 {
@@ -54,26 +56,36 @@
 	
 }
 
-.item > .number {
-    margin-top: 50%;
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 5%;
-}
 
-input {
+.item .line2{
+    display: flex;
+    margin-top: 45px;
+}
+.item .line2 .date{
+    width: 250px;
+}
+#demo {
 	width: 250px;
 	height: 50px;
 	font-size: 20px;
 	border: none;
-	margin-top: 5%;
+    margin-top: 10px;
+}
+.item .line2 .rsvNum{
+    margin-left: 10px;
+}
+#peopleNum{    
+    margin-top: 15px;
+    width: 70px;
+    height: 40px;
+    border-radius: 5px;
 }
 
-.weather {
-    margin-top: 10%;
+/* .weather {
+    margin-top: 10px;
     font-size: 18px;
     font-weight: bold;
-}
+} */
 
 .reservationbtn {
     margin-top : 9%;
