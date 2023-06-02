@@ -30,7 +30,7 @@
 <article class="around">
 
   <h1>캠핑장 둘러보기</h1>
-  <select>
+  <select class="sel1">
     <option value="0">지역</option>
     <option value="1">서울</option>
     <option value="2">경기</option>
@@ -39,6 +39,14 @@
     <option value="5">전라</option>
     <option value="6">경상</option>
     <option value="6">제주</option>
+  </select>
+  
+  <select class="sel2">
+    <option value="0">테마</option>
+    <option value="1">일반야영장</option>
+    <option value="2">글램핑</option>
+    <option value="3">카라반</option>
+    <option value="4">자동차야영장</option>
   </select>
 
 

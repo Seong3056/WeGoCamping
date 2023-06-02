@@ -30,7 +30,7 @@
 	</select>
 	
 	<delete id="delete">
-		DELETE FROM borad
+		DELETE FROM board
 		WHERE bno = #{bno}
 	</delete>
 	

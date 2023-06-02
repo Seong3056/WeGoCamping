@@ -25,7 +25,7 @@
             </select>
             <input class="title" id="title" type="text" name="title" placeholder="제목을 입력하세요">
         </div>
-        <textarea name="content" id="content" placeholder="내용은 최대 2000자 까지 가능합니다."></textarea>
+        <textarea name="content" class="content" id="content" placeholder="내용은 최대 2000자 까지 가능합니다."></textarea>
         <div class="formBottom">
             <input name="writer" type="text" value="${user.userId}" id="writer" placeholder="임시 id 작성">
             <button class="submit" type="button" id="submitBtn">글 올리기</button>

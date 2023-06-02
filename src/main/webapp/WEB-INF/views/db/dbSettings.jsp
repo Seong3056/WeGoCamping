@@ -57,15 +57,7 @@
 			fetch('${pageContext.request.contextPath}/db/set/' + num, reqObj)
 				.then(res => res.text())
 				.then(data => {
-					if (num === '1') {
-						alert('1번째 JSON 파일 DB 저장 완료!');
-					} else if (num === '2') {
-						alert('2번째 JSON 파일 DB 저장 완료!');
-					} else if (num === '3') {
-						alert('3번째 JSON 파일 DB 저장 완료!');
-					} else if (num === '4') {
-						alert('4번째 JSON 파일 DB 저장 완료!');
-					}
+					alert(num + '번째 JSON 파일 DB 저장 완료!');
 				});
 
 		});

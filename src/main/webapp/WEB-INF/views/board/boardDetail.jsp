@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/boardDetail.css">
 </head>
-<%@ include file="../include/header.jsp" %>
 
+<%@ include file="../include/header.jsp" %>
     <div class="detailB">
       
         <form action="" method="post" name="detilForm">
@@ -30,14 +30,46 @@
           </article>
           <div class="btn-group">
               <button type="button" class="listBtn" id="listBtn" onclick="location.href='${pageContext.request.contextPath}/board/boardList'">목록</button>
-              <button type="button" class="regBtn" id="regBtn" onclick="location.href='${pageContext.request.contextPath}/board/boardModify/${vo.bno}'">수정</button>
+              <button type="button" class="regBtn" id="regBtn" onclick="location.href='${pageContext.request.contextPath}/board/boardModify/${vo.bno}'" >수정</button>
           
           </div>
         </form>
     </div>  
+    <!-- 댓글 부분 -->
+    <div class="reply">
+      <label for="reply">댓글(댓글 수)</label>
+      <form action="">
+      <div class="replyWrite">
+        <textarea name="replyInput" class="replyInput" id="replyInput" placeholder="댓글을 작성해주세요."></textarea>
+        <button type="sumit" class="registBtn" id="registBtn">등록</button>
+      </div>
+      <!-- 댓글 창 -->
+    </form>
+      <div class="replyContent"> 
+        <div class="replyInfo">
+          <div class="replyWriter">이름값</div>&nbsp; &nbsp;
+          <div class="replyDate"> 시간값</div>
+        </div>
+        <div class="replyText">
+          <textarea name="replyCnt" id="replyCnt" class="replyCnt">내용</textarea>
+          <div class="replyFix"><a href="#">수정</a>&nbsp;|&nbsp;<a href="#">삭제</a></div>
+        </div>
+      </div>
+    </div>
 
 
 
+
+
+    
+
+
+
+
+
+
+
+    
 <%@ include file="../include/footer.jsp" %>
 
 

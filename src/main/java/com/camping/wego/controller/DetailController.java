@@ -15,10 +15,10 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("/detail")
 @Slf4j
 public class DetailController {
-	
+
 	@Autowired
 	private ICampsiteService service;
-	
+
 	@GetMapping("")
 	public String main() {
 		return "/detail/detail";
@@ -27,7 +27,6 @@ public class DetailController {
 	@GetMapping("/{cno}")
 	public String detail(@PathVariable int cno, Model model) {
 		log.info(cno+"의 상세보기 페이지 이동");
-		
 		model.addAttribute("camp",service.info(cno));
 		return "/detail/detail";
 	}
