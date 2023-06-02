@@ -59,7 +59,7 @@
         </a>
         <div class="caption">
           <h2>${camp.facltNm}</h2>
-          <p>-${camp.lineIntro}</p>
+          <p>${camp.lineIntro}</p>
           <hr>
           <button>예약하기</button>
         </div>

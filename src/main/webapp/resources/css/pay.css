@@ -1,0 +1,12 @@
+@import url("https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css");
+.fin{
+	width: 1100px;
+    display: flex;
+    flex-flow: column;
+    margin: 0 auto;
+    margin-top: 200px;    
+}
+.line{
+    display: flex;   
+    flex-flow: row;
+}
