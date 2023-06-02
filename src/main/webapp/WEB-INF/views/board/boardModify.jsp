@@ -4,11 +4,11 @@
 
 
 
+<%@ include file="../include/header.jsp" %>
 
     <title>Insert title here</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/boardDetail.css">
 
-<%@ include file="../include/header.jsp" %>
 
 
 
@@ -16,17 +16,18 @@
         <div class="headBox">
             <h3>수정하기</h3>
         </div>
-        <form action="${pageContext.request.contextPath}/board/boardUpdate" method="post" name="updateForm">
+        <form action="${pageContext.request.contextPath}/board/update" method="get" name="updateForm">
 
             <div class="titleBox">
-
-                <input class="titleM" name="title" value="">
-                <input class="IdM" name="idBox" value="" readonly placeholder="id value 예정">
-                <input class="IdM" name="idBox" value="" readonly >
+                
+                <input type="text" name="bno" value="${vo.bno}" hidden >
+                <input class="titleM" name="title" value="${vo.title}">
+                <input class="IdM" name="idBox" value="${vo.writer}" readonly placeholder="id value 예정">
+                
             </div>
             <div class="contentBox">
 
-                <textarea class="contentM" name="content"></textarea>
+                <textarea class="contentM" name="content">${vo.content}</textarea>
             </div>
             <div class="btnBox">
                 <button type="button" class="listBtn" id="listBtn"
