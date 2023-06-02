@@ -8,10 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 
 import com.camping.wego.campsite.service.ICampsiteService;
-
-
-import com.camping.wego.campsite.service.ICampsiteService;
-
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
@@ -36,7 +32,7 @@ public class MainController {
 	
 	@GetMapping("/rsv/{cno}")
 	public String rsvPage(@PathVariable int cno, Model model) {
-		model.addAttribute("camp",Service.info(cno));
+		model.addAttribute("camp",service.info(cno));
 		return "/rrsv/rrsv";
 	}
 	@GetMapping("/rrsv/payment")
