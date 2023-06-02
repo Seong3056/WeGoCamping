@@ -16,7 +16,7 @@
 
             <div class="menu clearfix">
                 <div class="menu-down">
-                    <a href="${pageContext.request.contextPath}/rrsv" class="in-menu" id="reservation">예약하기</a>
+                    <a href="${pageContext.request.contextPath}/around" class="in-menu" id="reservation">예약하기</a>
                     <div class="dropdown">
                         <a  href="#">지역검색</a>
                         <a  href="#">테마검색</a>
@@ -26,18 +26,12 @@
                 <div class="menu-down">
                     <a href="${pageContext.request.contextPath}/board/boardList" class="in-menu" id="board">게시판</a>
                     <div class="dropdown">
-                        <a  href="#">캠핑후기</a>
-                        <a  href="#">꿀팁공유</a>
-                        <a  href="#">메이트찾기</a>
-                        <a  href="#">건의사항</a>
+                        <a  href="${pageContext.request.contextPath}/board/content/1">캠핑후기</a>
+                        <a  href="${pageContext.request.contextPath}/board/content/2">꿀팁공유</a>
+                        <a  href="${pageContext.request.contextPath}/board/content/3">메이트찾기</a>
+                        <a  href="${pageContext.request.contextPath}/board/content/4">건의사항</a>
                     </div>
-                </div>
-                <div class="menu-down">
-                    <a href="${pageContext.request.contextPath}/around" class="in-menu" id="view">둘러보기</a>
-                    <!-- <div class="dropdown">
-                        <a  href="#">둘러보기</a>
-                    </div> -->
-                </div>
+                </div>                
             </div>
             <div class="header-right">
                 <input type="text" class="search clearfix" placeholder="검색어를 입력하세요.">
