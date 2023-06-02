@@ -61,7 +61,7 @@ public class BoardController {
 		return "board/boardModify";
 	}
 	
-	@PostMapping("/update")
+	@GetMapping("/update")
 	public String update(BoardVO vo) {
 		service.update(vo);
 		return "redirect:/board/content/" + vo.getBno();
@@ -79,7 +79,7 @@ public class BoardController {
 		return service.clsList(cls); 
 	}
 	
-	@PostMapping("/delete")
+	@GetMapping("/delete")
 	public String delete(int bno) {
 		service.delete(bno);
 		return "redirect:/board/boardList";
