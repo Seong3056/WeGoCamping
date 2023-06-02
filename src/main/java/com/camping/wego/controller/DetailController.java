@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.camping.wego.campsite.service.ICampsiteService;
+
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
@@ -25,11 +26,11 @@ public class DetailController {
 
 	@GetMapping("/{cno}")
 	public String detail(@PathVariable int cno, Model model) {
-		log.info(cno+"의 상세보기 페이지 이동");		
+		log.info(cno+"의 상세보기 페이지 이동");
+		
 		model.addAttribute("camp",service.info(cno));
 		return "/detail/detail";
 	}
-
 
 }
 
