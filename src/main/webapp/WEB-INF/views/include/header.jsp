@@ -5,7 +5,8 @@
 
 <meta charset="UTF-8">
 <link href="${pageContext.request.contextPath}/css/header-style.css" rel="stylesheet">
-
+<script src="https://kit.fontawesome.com/a2baf29734.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css" type="text/css">
 
 
     <header>
@@ -40,7 +41,7 @@
             </div>
             <div class="header-right">
                 <input type="text" class="search clearfix" placeholder="검색어를 입력하세요.">
-                
+              <a href=#><i class="fa fa-search" aria-hidden="true"></i></a>
                 <div id="login" style="display: none;">
                     <img class="profile-img" src="${pageContext.request.contextPath}/img/profile.png" alt="profile">
                     <a href="${pageContext.request.contextPath}/mypage" class="user">홍길동님</a>

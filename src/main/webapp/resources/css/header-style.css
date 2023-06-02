@@ -127,25 +127,35 @@ header .section .header-right{ /* 검색창 | 로그인정보*/
 header .section .header-right .search{
     width: 150px;
     height: 30px;
-    
     margin: auto 0;
-    margin-right: 20px;
-    
-
+    margin-right: 0px;	
 }
+
 header .section .header-right .profile {
     display: flex;
     flex-flow: column;
 }
+
+
+.fa-magnifying-glass:before, .fa-search:before {
+    content: "\f002";
+    font-size: 23px;
+    margin-left: 2px;
+}
+
 #login img{
     margin-bottom: 5px;
     width: 50px;
     height: 50px;
 }
 
-header .section .header-right .login{
-    display: none;
+header .section .header-right .login {
+	display: none;
 }
+
+#loginH {
+	margin-left: 50px;
+} 
 
 
 
