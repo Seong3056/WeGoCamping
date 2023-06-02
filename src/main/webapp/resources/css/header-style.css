@@ -139,7 +139,7 @@ header .section .header-right .profile {
 
 .fa-magnifying-glass:before, .fa-search:before {
     content: "\f002";
-    font-size: 28px;
+    font-size: 23px;
     margin-left: 2px;
 }
 
