@@ -18,7 +18,7 @@ public class CampsiteService implements ICampsiteService {
 
 	@Autowired
 	private ICampsiteMapper mapper;
-	
+
 	@Override
 	public void readOpenStoresFromJson(int num) {
         List<CampsiteVO> campsiteList = new ArrayList<>();
@@ -36,7 +36,7 @@ public class CampsiteService implements ICampsiteService {
                     campsiteList.add(campsite);
                 }
             }
-            
+
             campsiteList.stream().forEach(vo -> {
             	if(vo.getTel().equals("")) {
             		vo.setTel(null);
@@ -53,19 +53,19 @@ public class CampsiteService implements ICampsiteService {
             mapper.insert(vo);
         }
 	}
-	
+
 	@Override
 	public List<CampsiteVO> getList() {
 		return mapper.getList();
 	}
-	
+
 	@Override
 	public int getTotal() {
 		return mapper.getTotal();
 	}
-	
+
 @Override
-	public CampsiteVO info(int cno) {		
+	public CampsiteVO info(int cno) {
 		return mapper.info(cno);
 	}
 

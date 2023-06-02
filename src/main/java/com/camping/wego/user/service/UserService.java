@@ -1,8 +1,5 @@
 package com.camping.wego.user.service;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -18,10 +15,10 @@ public class UserService implements IUserService {
 
 	@Autowired
 	private IUserMapper mapper;
-	
+
 	@Autowired
 	private BCryptPasswordEncoder encoder;
-	
+
 	@Override
 	public void join(UserVO vo) {
 		String pwEncry = encoder.encode(vo.getUserPw());
@@ -37,38 +34,38 @@ public class UserService implements IUserService {
 
 	@Override
 	public void delete(String userId) {
-		
+
 
 	}
-	
+
 	@Override
 	public String idCheck(String userId) {
 		log.info("service의 idCheck 요청");
-		
+
 		int result = mapper.idCheck(userId);
-		
+
 		log.info("result: {}",result);
 		if(result == 1) return "duplicated";
 		else return "able";
 	}
-	
+
 	@Override
 	public String login(String userId, String userPw) {
 		log.info("서비스의 로그인 호출");
 		String dbPw = mapper.login(userId);
-		
+
 		if(dbPw != null) {
-			// 날 것의 비밀번호와 암호화된 비밀번호의 일치 여부를 알려주는 matches() 
+			// 날 것의 비밀번호와 암호화된 비밀번호의 일치 여부를 알려주는 matches()
 			if(encoder.matches(userPw, dbPw)) {
 				return userId;
 			}
-			
+
 		}
 
 		return null;
 
 	}
-	
-	
+
+
 
 }
