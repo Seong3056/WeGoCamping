@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <link href="${pageContext.request.contextPath}/css/header-style.css" rel="stylesheet">
 <script src="https://kit.fontawesome.com/a2baf29734.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css" type="text/css">
+<%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css" type="text/css"> --%>
 
 
     <header>
@@ -18,7 +18,7 @@
                 <div class="menu-down">
                     <a href="${pageContext.request.contextPath}/around" class="in-menu" id="reservation">예약하기</a>
                     <div class="dropdown">
-                        <a  href="#">지역검색</a>
+                        <a  href="#" class="locationSearch" onClick="javascript:popOpen();">지역검색</a>
                         <a  href="#">테마검색</a>
                         <a  href="#">날짜검색</a>
                     </div>
@@ -68,5 +68,14 @@
             }
        }
        
-    
-</script>
+ </script>  
+ 
+
+
+   
+             
+     
+
+ 
+
+

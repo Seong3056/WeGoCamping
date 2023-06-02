@@ -30,7 +30,7 @@
 <article class="around">
 
   <h1>캠핑장 둘러보기</h1>
-  <select>
+  <select class="sel1">
     <option value="0">지역</option>
     <option value="1">서울</option>
     <option value="2">경기</option>
@@ -40,12 +40,20 @@
     <option value="6">경상</option>
     <option value="6">제주</option>
   </select>
+  
+  <select class="sel2">
+    <option value="0">테마</option>
+    <option value="1">일반야영장</option>
+    <option value="2">글램핑</option>
+    <option value="3">카라반</option>
+    <option value="4">자동차야영장</option>
+  </select>
 
 
   <c:forEach var="camp" items="${campList}">
     <div id="${camp.cno}" class="col-md-4">
       <div class="thumbnail">
-        <a href="${pageContext.request.contextPath}/detail/${camp.cno}/${camp.cno}" class="detail">
+        <a href="${pageContext.request.contextPath}/detail/${camp.cno}" class="detail">
           <img src="${camp.firstImageUrl}" alt="camp${camp.cno}" style="width:217px;"
             onerror="this.src='${pageContext.request.contextPath}/img/onerror.jpg'">
         </a>
