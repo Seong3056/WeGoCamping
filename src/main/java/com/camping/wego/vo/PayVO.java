@@ -21,7 +21,10 @@ public class PayVO {
 	private String partnerUserId;
 	private int amount;
 	private Date payDate;
-	private String cno;
+	private int cno;
 	private int quantity;
 	private String itemName;
+	private String tid;
+	private String tel;
+	private String addr;
 }

@@ -31,9 +31,17 @@ public class DBSettingController {
 
 	@PostMapping("/set/{num}")
 	public String dbset(@PathVariable int num, RedirectAttributes ra) {
+		
+		if(num == 5) {
+			service.inputAmount();
+			log.info("요금 입력");
+			return "redirect:/db/main";
+		}
+		
 		service.readOpenStoresFromJson(num);
 		log.info("{}번째 Json 파일 DB에 입력됨!", num);
 		ra.addFlashAttribute("num", num);
+		
 		return "redirect:/db/main";
 	}
 

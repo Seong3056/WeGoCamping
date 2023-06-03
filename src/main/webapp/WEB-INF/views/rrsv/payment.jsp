@@ -24,9 +24,15 @@
         <h3>캠핑장명: ${info.item_name}</h3>
  
         <div class="campInfo line">
-            <p>주소</p>
-            <p>전화번호</p>
+            <p>tel: ${info.tel}</p>
+            <p>${info.addr}</p>
         </div>
  
      </section>
     <%@ include file="../include/footer.jsp" %>
+
+    <script>
+        window.onload =()=>{
+            console.log("${info}");
+        }
+    </script>
