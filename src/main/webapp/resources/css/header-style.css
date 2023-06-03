@@ -6,9 +6,9 @@
   
 }
 a{
-    text-decoration: none;
+    text-decoration: none; 
     color: black;
-    cursor: pointer;
+    cursor: pointer; 
     font-family: 'Hahmlet', serif;
    
 }
@@ -187,14 +187,14 @@ footer .section img {
 }
 
 <!--모달-->
-   button {
+		  .modal button {
           background-color: #F9B514;
           padding: 5px 10px;
           border-radius: 4px;
           cursor: pointer;
-        }
+        } 
 
-        .modal{
+        .modal {
          text-align: center; 
           position: fixed;
           top: 0;
@@ -226,6 +226,7 @@ footer .section img {
           display: block;
           width: 70px;
           margin: 0 auto;
+          cursor: pointer;
         }
         
         .modalBox h2 {
@@ -238,10 +239,75 @@ footer .section img {
         color: white;
         background: black;
         margin-top: 3%;
+        cursor: pointer;
         }
 
         .hidden {
           display: none;
         }
         <!-- 모달끝 -->
+        
+        <!--모달2 시작 -->
+  		.m2  button {
+          background-color: #F9B514;
+          width: 90px;
+          padding: 5px 10px;
+          border-radius: 4px;
+          cursor: pointer;
+          margin-bottom: 100%; 
+        } 
+
+        .m2 {
+         text-align: center; 
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        
+        
+
+        .m2 > .bg2 {
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .mB2 {
+          position: absolute;
+          background-color: #fff;
+          width: 400px;
+          height: 400px;
+          padding: 15px;
+        }
+
+        .mB2 > button {
+          display: block;
+          width: 100px;
+          margin: 15px auto 15px;
+          cursor: pointer;
+        }
+        
+        .mB2 > h2 {
+        font-weight: bold;
+        font-size: 18px;
+        padding: 5%;
+        }
+        
+        .mB2 > .cB2 {
+        color: white;
+        background: black;
+        margin-top: 3%;
+        cursor: pointer;
+        }
+
+        .h2 {
+          display: none;
+        }
+        <!-- 모달2 끝 -->
+        
 

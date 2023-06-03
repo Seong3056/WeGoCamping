@@ -12,11 +12,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/around/basic.css">
-
 <script
   src="https://ajax.googlehttps://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.cssapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" defer /></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" defer /></script>
+
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/around/basic.css">
+
+
 
 
 
@@ -24,12 +26,13 @@
 
 
 
-
 <%@ include file="../include/header.jsp" %>
 
 <article class="around">
 
-  <h1>캠핑장 둘러보기</h1>
+
+ 
+	<h1>캠핑장 둘러보기</h1>
   <select class="sel1">
     <option value="0">지역</option>
     <option value="1">서울</option>
@@ -48,6 +51,7 @@
     <option value="3">카라반</option>
     <option value="4">자동차야영장</option>
   </select>
+  
 
 
   <c:forEach var="camp" items="${campList}">
@@ -85,6 +89,8 @@
         <div>다음</div>
     </div>
      -->
+     <div class="container">
+     </div>
 </article>
 
 <%@ include file="../include/footer.jsp" %>
