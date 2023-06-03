@@ -70,7 +70,7 @@ header .section .title{
     line-height: 1.2;
     opacity: 1;
 }
-/* 硫붾돱 �쁺�뿭 */
+/* 메뉴 영역 */
 header .section .menu{
     width: 400px;
     margin-left: 10px;
@@ -91,7 +91,7 @@ header .menu .menu-down .in-menu{
     justify-items: center;
     font-weight: bold;
 }
-header .dropdown{ /*�븯�쐞硫붾돱*/
+header .dropdown{ /*하위메뉴*/
     display: none;
     position: absolute;
     top: 50px;
@@ -101,7 +101,7 @@ header .dropdown{ /*�븯�쐞硫붾돱*/
     
 }
 
-header:hover .dropdown { /*�븯�쐞硫붾돱:�샇踰�*/
+header:hover .dropdown { /*하위메뉴:호버*/
     display: flex;
     flex-flow: column;
     transition: all 2s ease-out;
@@ -118,9 +118,9 @@ header .dropdown a{
     text-align: center;
     justify-self: center;
 }
-/* 硫붾돱�쁺�뿭 �걹*/
+/* 메뉴영역 끝*/
 
-header .section .header-right{ /* 寃��깋李� | 濡쒓렇�씤�젙蹂�*/
+header .section .header-right{ /* 검색창 | 로그인정보*/
     width: 300px;
     position: absolute;
     right: 10px;
@@ -161,6 +161,31 @@ header .section .header-right .login {
 	margin-left: 50px;
 } 
 
+
+footer {
+	width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: rgb(252, 242, 227);
+   
+    
+}
+
+footer .section{
+    width: 1100px;
+    font-size: 10px;
+    display: flex;
+    flex-flow: row;
+    margin: 0 auto;
+    padding: 15px;
+    line-height: 15px;
+
+}
+footer .section img {
+    margin-right: 100px;
+    width: 80px;
+}
+
 <!--모달-->
    button {
           background-color: #F9B514;
@@ -169,7 +194,7 @@ header .section .header-right .login {
           cursor: pointer;
         }
 
-        .modal1 {
+        .modal{
          text-align: center; 
           position: fixed;
           top: 0;
@@ -183,7 +208,7 @@ header .section .header-right .login {
         
         
 
-        .modal1 .bg {
+        .modal .bg {
           width: 100%;
           height: 100%;
           background-color: rgba(0, 0, 0, 0.6);
@@ -220,27 +245,3 @@ header .section .header-right .login {
         }
         <!-- 모달끝 -->
 
-
-footer {
-	width: 100%;
-    position: absolute;
-    bottom: 0;
-    background-color: rgb(252, 242, 227);
-   
-    
-}
-
-footer .section{
-    width: 1100px;
-    font-size: 10px;
-    display: flex;
-    flex-flow: row;
-    margin: 0 auto;
-    padding: 15px;
-    line-height: 15px;
-
-}
-footer .section img {
-    margin-right: 100px;
-    width: 80px;
-}

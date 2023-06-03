@@ -21,7 +21,7 @@
                 <div class="menu-down">
                     <a href="${pageContext.request.contextPath}/around" class="in-menu" id="reservation">예약하기</a>
                     <div class="dropdown">
-                      	<a id="locationSearch" href="#" data-toggle="modal1" >지역검색</a>
+                      	<a id="locationSearch" href="#" data-toggle="modal" >지역검색</a>
                       	<a id="themeSearch" href="#"  data-toggle="modal2" >테마검색</a>
                         <a  href="#">날짜검색</a>
                     </div>
@@ -61,7 +61,7 @@
                       	
                       	
 
-<div class="modal1 hidden">
+<div class="modal hidden">
   <div class="bg"></div>
   <div class="modalBox">
     <h2>지역을 선택해주세요</h2>
@@ -78,8 +78,8 @@
 </div>
 
 <div class="modal2 hidden">
-  <div class="bg"></div>
-  <div class="modalBox">
+  <div class="bg2"></div>
+  <div class="modalBox2">
     <p><h2>테마를 선택해주세요</h2>
     <button>일반야영장</button>
     <button>글램핑</button>
@@ -110,12 +110,12 @@
       
     
        const open = () => {
-         document.querySelector(".modal1").classList.remove("hidden");
+         document.querySelector(".modal").classList.remove("hidden");
         
        }
 
        const close = () => {
-         document.querySelector(".modal1").classList.add("hidden");
+         document.querySelector(".modal").classList.add("hidden");
          
        }
 

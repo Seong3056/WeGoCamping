@@ -12,7 +12,7 @@
 .around {
 	font-family: 'Hahmlet', serif;
 	width: 1100px;
-	margin: 200px auto 0;
+	margin: 200px auto 200px;
 	text-align: center;
 
 }
@@ -31,7 +31,7 @@
 
 .col-md-4 {
 	margin-bottom: 3%;
-}
+} 
 
 
 .caption > h2 {
@@ -99,6 +99,5 @@ button {
     
 }
 
-.around {
-	margin-bottom: 500px;
+
 }
