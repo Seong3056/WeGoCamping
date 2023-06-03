@@ -64,11 +64,15 @@
     </c:forEach>  --%>
   
     <c:forEach var="camp" items="${campList}">
+    	<a href="${pageContext.request.contextPath}/detail/${camp.cno}" class="detail">
     	<div class="box">
+    	
     		<img src="${camp.firstImageUrl}" alt="camp${camp.cno}" onerror="this.src='${pageContext.request.contextPath}/img/onerror.jpg'">
     		<h2 class="name">${camp.facltNm}</h2>
     		<p class="oneline">${camp.lineIntro}</p>
+    		
     	</div>
+    	</a>
     </c:forEach>
            
     </div>
