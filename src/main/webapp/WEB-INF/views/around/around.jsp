@@ -14,8 +14,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script
   src="https://ajax.googlehttps://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.cssapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"
-  defer />
-</script>
+  defer /></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" defer></script>
 
 
@@ -54,7 +53,7 @@
     <div id="${camp.cno}" class="col-md-4">
       <div class="thumbnail">
         <a href="${pageContext.request.contextPath}/detail/${camp.cno}" class="detail">
-          <img src="${camp.firstImageUrl}" alt="camp${camp.cno}" style="width:217px;"
+          <img src="${camp.firstImageUrl}" alt="camp${camp.cno}" style="height:217px;"
             onerror="this.src='${pageContext.request.contextPath}/img/onerror.jpg'">
         </a>
         <div class="caption">

@@ -26,7 +26,7 @@ iframe{
 
 .detail h1 {
 	font-family: 'Hahmlet', serif;
-    margin: 5% auto 5%;
+    margin: 3% auto 5%;
     text-align: center;
     font-size: 30px;
     font-weight: bold;
@@ -35,14 +35,23 @@ iframe{
 
 
 
-.item {
+.detail .item {
     width: 50%;
     margin-right: 3%;
+   
 
 }
 
+
+.campimg {
+	margin-top: 4%;
+}
+
+
 .item > img {
     width: 100%;
+    
+    
 }
 
 .item > h2 {
@@ -110,4 +119,17 @@ iframe{
 .detail .container .item .btnGroup{
     width: 70px;
     height: 30px;
+}
+
+.detail .btn1{
+	font-size: 18px;
+	margin-right: 10px;
+}
+
+.detail .btn2{
+	font-size: 18px;
+}
+
+.detail {
+	margin-bottom: 150px;
 }
