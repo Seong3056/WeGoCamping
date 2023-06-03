@@ -18,7 +18,7 @@
 
 .box {
 	text-align: center; 
-	width: 32%;
+	width: 100%;
 	height: 100px;
 	margin-left: 0.5%;
 	margin-right: 0.5%;
@@ -26,6 +26,7 @@
 
 .box > img {
 	width: 100%;
+	height: 237px;
 }
 
 
@@ -44,13 +45,14 @@
     font-weight: bold;
     font-size: 20px;
     margin-top: 10%;
-    margin-left: 4%;
+    margin-left: 1%;
     margin-bottom: 1%;
   
 }
 
 .box > div {
 	margin-top: 3%;
+	
 }
 
 .box > .name {
@@ -85,27 +87,3 @@ span {
     float: right;
 }
 
-<!--모달 -->
-.modal-bg {
-	width:100%;
-	height:100%;
-	position:fixed;
-	top:0;
-	left:0;
-	right:0;
-	background:rgba(0, 0, 0, 0.6);
-	z-index:999;
-}
-
-.modal-wrap {
-	position:absolute;
-	top:50%;
-	left:50%;
-	transform:translate(-50%,-50%);
-	width:500px;
-	height:500px;
-	background:#000;
-	z-index:1000;}
-
-
-	

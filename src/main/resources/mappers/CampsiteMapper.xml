@@ -11,6 +11,10 @@
 		(#{facltNm}, #{lineIntro}, #{intro}, #{firstImageUrl}, #{tel}, #{induty}, #{addr}, #{homepage}, #{mapX}, #{mapY})
 	</insert>
 	
+	<update id="removeJu">
+	update campsite set faclt_nm=substring_index(faclt_nm,'(주)',-1)
+	</update>
+	
 	<select id="getList" resultType="camp">
 		SELECT * FROM campsite
 		ORDER BY cno ASC
@@ -25,5 +29,13 @@
 		SELECT * FROM campsite
 		WHERE cno = #{cno}
 	</select>
+	
+	<select id="getCount" resultType="int">
+	select count(cno) from campsite
+	</select>
+	
+	<update id="inputAmount">
+		UPDATE campsite SET amount = #{amount} WHERE cno = #{cno}
+	</update>
 
 </mapper>

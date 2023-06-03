@@ -8,6 +8,9 @@ public interface ICampsiteService {
 
 	// 캠핑장 데이터 집어넣기
 	void readOpenStoresFromJson(int num);
+	
+	// 캠핑장 요금 입력
+	void inputAmount();
 
 	// 캠핑장 목록 불러오기
 	List<CampsiteVO> getList();
@@ -17,5 +20,8 @@ public interface ICampsiteService {
 
 	//캠핑장 정보
 	CampsiteVO info(int cno);
+
+	
+	
 
 }
