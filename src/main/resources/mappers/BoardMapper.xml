@@ -12,12 +12,14 @@
 	
 	<select id="list" resultType="board">
 		SELECT * FROM board
+		
+		ORDER BY bno DESC
+		LIMIT #{pageStart}, #{cpp}
 	</select>
 	
 	<select id="detail" resultType="board">
 		SELECT * FROM board WHERE bno = #{bno}
 	</select>
-	
 	
 	<update id="update">
 		UPDATE board SET

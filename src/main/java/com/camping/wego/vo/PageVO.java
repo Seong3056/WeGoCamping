@@ -11,6 +11,9 @@ public class PageVO {
 
 	private int pageNum;
 	private int cpp;
+	
+	private String keyword;
+	private String condition;
 
 	public PageVO() {
 		this.pageNum = 1;

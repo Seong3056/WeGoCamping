@@ -21,6 +21,12 @@
         <button onclick="location.href='${pageContext.request.contextPath}/board/boardWrite'" class="write">글쓰기</button>
 
         <div class="search">
+        	<select name="condition" class="form-control search-select">
+        		<option value="title" ${pc.paging.condition == 'title' ? 'selected' : ''}>제목</option>
+		        <option value="content" ${pc.paging.condition == 'content' ? 'selected' : ''}>내용</option>
+		        <option value="writer" ${pc.paging.condition == 'writer' ? 'selected' : ''}>작성자</option>
+		        <option value="titleContent" ${pc.paging.condition == 'titleContent' ? 'selected' : ''}>제목+내용</option>
+			</select>
             <input type="text" placeholder="검색어를 입력해주세요">
             <button type="menu">검색</button>
         </div>
