@@ -20,7 +20,7 @@
                     </div>
                     
                         
-                    <form name="loginForm" method="post" >
+                    <form action="${pageContext.request.contextPath}/user/login" name="loginForm" method="post" >
                         <div class="loginMain">
                             <div class="input-group">
                                 <input name="userId" type="text" id="userId" placeholder="ID를 입력해주세요.">
@@ -35,7 +35,7 @@
                             </div>
                             <div class="choiceBtn">
                                 <div class="JoinBox">
-                                    <button onclick="location.href='${pageContext.request.contextPath}/user/join'" type="button" class="joinBtn" id="joinBtn">
+                                    <button  type="button" class="joinBtn" id="joinBtn">
                                         회원가입
                                     </button>
                                 </div>
@@ -70,6 +70,9 @@
         window.onload = () => {
             document.getElementById('loginH').style.display = 'none';
         }
+        const urlParams = new URL(location.href).searchParams;
+        const cno = urlParams.get('cno');
+        console.log(cno);
 
         const msg = '${msg}';
         if(msg === 'joinSuccess') {

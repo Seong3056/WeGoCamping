@@ -11,6 +11,7 @@ import org.springframework.security.web.authentication.logout.SecurityContextLog
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,6 +35,8 @@ public class UserController {
 
 	@GetMapping("/login")
 	public void loginPage() {}
+	
+	
 
 	@PostMapping("/login")
 	public void loginProcess(String userId, String userPw, Model model) {
@@ -41,6 +44,8 @@ public class UserController {
 		log.info("userPw: {}",userPw);
 		model.addAttribute("user", service.login(userId, userPw));
 	}
+	
+	
 
 	@GetMapping("/logout")
 	public String logout(HttpServletRequest request, HttpServletResponse response) {

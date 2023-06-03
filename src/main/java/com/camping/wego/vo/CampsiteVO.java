@@ -23,5 +23,6 @@ public class CampsiteVO {
 	private String homepage;
 	private String mapX;
 	private String mapY;
+	private int amount;
 
 }
