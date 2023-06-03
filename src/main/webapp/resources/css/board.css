@@ -75,27 +75,27 @@ body{
     padding: 0 10px;
     box-sizing: border-box;
 }
-.board table tr td{
+.board table tr td {
     padding: 0 10px;
     line-height: 16px;
 }
-.board table tr td:nth-child(2){ /* 제목 */
+.board table tr td:nth-child(2) { /* 제목 */
     text-align: left;
     text-indent: 120px;
 }
-.board table tr td:nth-child(2):hover a{
+.board table tr td:nth-child(2):hover a {
 	text-decoration: underline;
 }
-.board table tr td:nth-child(2):hover tr{
+.board table tr td:nth-child(2):hover tr {
     background-color: rgb(252, 242, 227);
 }
-.board .page{
+.board .page {
     display: flex;
     flex-flow: row;
     justify-content: center;
     margin-top: 10px;
 }
-.board .page div{
+.board .page div {
     margin: 3px;
 }
 /* 게시판 영역끝 */

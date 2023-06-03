@@ -12,6 +12,8 @@ public class PageVO {
 	private int pageNum;
 	private int cpp;
 	
+	private int cls;
+	
 	private String keyword;
 	private String condition;
 

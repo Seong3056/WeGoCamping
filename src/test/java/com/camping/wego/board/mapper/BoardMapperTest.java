@@ -27,8 +27,8 @@ public class BoardMapperTest {
 				BoardVO vo = new BoardVO();
 				vo.setCls(i);
 				vo.setWriter("park1234");
-				vo.setTitle(i + "카테고리의 " + j + "번째 글");
-				vo.setContent(i + "카테고리의 " + j + "번째 더미 글입니다.\n 더미더미");
+				vo.setTitle(i + " 카테고리의 " + j + "번째 글");
+				vo.setContent(i + " 카테고리의 " + j + "번째 더미 글입니다.<br> 더미더미");
 				mapper.insert(vo);
 			}
 		}

@@ -7,11 +7,9 @@ import org.springframework.stereotype.Service;
 
 import com.camping.wego.board.mapper.IBoardMapper;
 import com.camping.wego.vo.BoardVO;
-
-import lombok.extern.slf4j.Slf4j;
+import com.camping.wego.vo.PageVO;
 
 @Service
-@Slf4j
 public class BoardService implements IBoardService {
 
 	@Autowired
@@ -20,7 +18,6 @@ public class BoardService implements IBoardService {
 	@Override
 	public void insert(BoardVO vo) {
 		mapper.insert(vo);
-
 	}
 
 	@Override
@@ -35,8 +32,13 @@ public class BoardService implements IBoardService {
 	}
 
 	@Override
-	public List<BoardVO> list(){
-		return mapper.list();
+	public List<BoardVO> list(PageVO vo){
+		return mapper.list(vo);
+	}
+	
+	@Override
+	public int getTotal(PageVO vo) {
+		return mapper.getTotal(vo);
 	}
 
 	@Override

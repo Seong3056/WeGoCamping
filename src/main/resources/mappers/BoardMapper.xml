@@ -3,6 +3,29 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     
 <mapper namespace="com.camping.wego.board.mapper.IBoardMapper">
+
+	<sql id="search">
+		<if test="condition == 'title'">
+	 		WHERE title LIKE CONCAT('%', #{keyword}, '%')
+	 	</if>
+	 	<if test="condition == 'writer'">
+	 		WHERE writer LIKE CONCAT('%', #{keyword}, '%')
+	 	</if>
+	 	<if test="condition == 'content'">
+	 		WHERE content LIKE CONCAT('%', #{keyword}, '%')
+	 	</if>
+	 	<if test="condition == 'titleContent'">
+	 		WHERE title LIKE CONCAT('%', #{keyword}, '%')
+	 		OR content LIKE CONCAT('%', #{keyword}, '%')
+	 	</if>
+	</sql>
+	
+	<sql id="cls">
+		<if test="cls != 0">
+	 		WHERE cls = #{cls}
+	 	</if>
+	</sql>
+
 	<insert id="insert">
 		INSERT INTO board
 		(writer, title, cls, content)
@@ -12,9 +35,17 @@
 	
 	<select id="list" resultType="board">
 		SELECT * FROM board
-		
+		<include refid="search" />
+		<include refid="cls" />
 		ORDER BY bno DESC
 		LIMIT #{pageStart}, #{cpp}
+	</select>
+	
+	<select id="getTotal" resultType="int">
+		SELECT COUNT(*)
+		FROM board
+		<include refid="search" />
+		<include refid="cls" />
 	</select>
 	
 	<select id="detail" resultType="board">

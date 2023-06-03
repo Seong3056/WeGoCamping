@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.camping.wego.board.service.IBoardService;
+import com.camping.wego.util.PageCreator;
 import com.camping.wego.vo.BoardVO;
+import com.camping.wego.vo.PageVO;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -26,15 +28,26 @@ public class BoardController {
 
 	//게시글 목록
 	@GetMapping("/boardList")
-	public void main(Model model) {
+	public void boardList(PageVO vo, Model model) {
+		PageCreator pc = new PageCreator(vo, service.getTotal(vo));
+		
 		log.info("List호출");
-		model.addAttribute("boardList", service.list());
+		model.addAttribute("boardList", service.list(vo));
+		model.addAttribute("pc", pc);
+	}
+	
+	@GetMapping("/{cls}")
+	public String clsList(@PathVariable int cls, PageVO vo, Model model) {
+		PageCreator pc = new PageCreator(vo, service.getTotal(vo));
+		log.info(vo.toString());
+		model.addAttribute("boardList", service.list(vo));
+		model.addAttribute("pc", pc);
+		return "board/boardList";
 	}
 
 	//게시글 등록
 	@GetMapping("/boardWrite")
 	public void write() {}
-
 
 	@PostMapping("/boardWrite")
 	public String insert(BoardVO vo){
@@ -44,14 +57,11 @@ public class BoardController {
 		service.insert(vo);
 		return "redirect:/board/boardList";
 	}
+	
 	@GetMapping("/content/{bno}")
 	public String detail(@PathVariable int bno, Model model) {
 		model.addAttribute("vo",service.detail(bno));
 		return "board/boardDetail";
-	}
-	@GetMapping("/board/{bno}")
-	public void view (@PathVariable int bno) {
-
 	}
 
 	@GetMapping("/boardModify/{bno}")
