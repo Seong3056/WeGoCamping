@@ -12,25 +12,28 @@
 <%@ include file="../include/header.jsp" %>
 <article class="board">
     <div id="board-selector">
-        <a id="1" href="${pageContext.request.contextPath}/board/1">캠핑후기</a>
-        <a id="2" href="${pageContext.request.contextPath}/board/2">꿀팁공유</a>
-        <a id="3" href="${pageContext.request.contextPath}/board/3">메이트찾기</a>
-        <a id="4" href="${pageContext.request.contextPath}/board/4">건의사항</a>
+        <a href="${pageContext.request.contextPath}/board/boardList?cls=1">캠핑후기</a>
+        <a href="${pageContext.request.contextPath}/board/boardList?cls=2">꿀팁공유</a>
+        <a href="${pageContext.request.contextPath}/board/boardList?cls=3">메이트찾기</a>
+        <a href="${pageContext.request.contextPath}/board/boardList?cls=4">건의사항</a>
+        <a href="${pageContext.request.contextPath}/board/boardList">전체 글 보기</a>
     </div>
     <div class="tab">
         <button onclick="location.href='${pageContext.request.contextPath}/board/boardWrite'" class="write">글쓰기</button>
 
-        <form action="<c:url value='/board/boardList' />"></form>
-        <div class="search">
-            <select name="condition" class="form-control search-select">
-                <option value="title" ${pc.paging.condition=='title' ? 'selected' : '' }>제목</option>
-                <option value="content" ${pc.paging.condition=='content' ? 'selected' : '' }>내용</option>
-                <option value="writer" ${pc.paging.condition=='writer' ? 'selected' : '' }>작성자</option>
-                <option value="titleContent" ${pc.paging.condition=='titleContent' ? 'selected' : '' }>제목+내용</option>
-            </select>
-            <input type="text" placeholder="검색어를 입력해주세요">
-            <button type="menu">검색</button>
-        </div>
+        <form action="<c:url value='/board/boardList' />">
+            <div class="search">
+                <select name="condition" class="form-control search-select">
+                    <option value="title" ${pc.paging.condition=='title' ? 'selected' : '' }>제목</option>
+                    <option value="content" ${pc.paging.condition=='content' ? 'selected' : '' }>내용</option>
+                    <option value="writer" ${pc.paging.condition=='writer' ? 'selected' : '' }>작성자</option>
+                    <option value="titleContent" ${pc.paging.condition=='titleContent' ? 'selected' : '' }>제목+내용</option>
+                </select>
+                <input type="text" name="keyword" value="${pc.paging.keyword}" placeholder="검색어를 입력해주세요.">
+                <input type="hidden" name="cls" value="${pc.paging.cls}">
+                <button type="submit">검색</button>
+            </div>
+        </form>
     </div>
     <table id="boardList">
 
@@ -196,9 +199,9 @@
 
             e.preventDefault();
 
-            const value = e.target.dataset.pagenum;
+            const pageNum = e.target.dataset.pagenum;
 
-            document.pageForm.pageNum.value = value;
+            document.pageForm.pageNum.value = pageNum;
             document.pageForm.submit();
 
         });
