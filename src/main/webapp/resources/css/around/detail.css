@@ -20,7 +20,7 @@ iframe{
 .detail {
 	font-family: 'Hahmlet', serif;
     width: 1100px;
-    margin: 200px auto 0;
+    margin: 200px auto 200px;
 
 }
 
@@ -128,8 +128,4 @@ iframe{
 
 .detail .btn2{
 	font-size: 18px;
-}
-
-.detail {
-	margin-bottom: 150px;
 }

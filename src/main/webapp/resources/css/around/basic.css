@@ -12,7 +12,7 @@
 .around {
 	font-family: 'Hahmlet', serif;
 	width: 1100px;
-	margin: 200px auto 0;
+	margin: 200px auto 100px;
 	text-align: center;
 
 }
@@ -31,7 +31,7 @@
 
 .col-md-4 {
 	margin-bottom: 3%;
-}
+} 
 
 
 .caption > h2 {
@@ -68,11 +68,11 @@ iframe{
 }
  
 
-p {
+.caption > p {
 	height: 30px;
 }
 
-button {
+.caption > button {
  		margin-top: 30px;
  		
 		color:black;
@@ -99,6 +99,5 @@ button {
     
 }
 
-.around {
-	margin-bottom: 500px;
+
 }

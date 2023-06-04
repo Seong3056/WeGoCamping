@@ -11,8 +11,7 @@
 
 .mainpage {
 	width: 1100px;
-	margin: 200px auto 0;
-	padding-bottom: 150px;
+	margin: 200px auto 200px;
 	font-family: 'Hahmlet', serif;
 }
 
@@ -25,13 +24,13 @@
 }
 
 .box > img {
-	width: 100%;
+	width: 97%;
 	height: 237px;
 }
 
 
 .slick-track {
-	height: 300px;
+	height: 320px;
 }
 
 .mainpage > h1 {
@@ -46,7 +45,7 @@
     font-size: 20px;
     margin-top: 10%;
     margin-left: 1%;
-    margin-bottom: 1%;
+    margin-bottom: 3%;
   
 }
 
@@ -57,8 +56,15 @@
 
 .box > .name {
 	font-weight: bold;
+	margin-top: 5%;
 	
 }
+
+.box > .oneline {
+	margin-top: 2%;
+}
+
+
 
 .weather {
 	float: left;

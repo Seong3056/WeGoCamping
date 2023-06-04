@@ -8,7 +8,7 @@
 			<link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&display=swap" rel="stylesheet">
     
 
-    <head>
+   
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main/main.css">
 
 
-</head>
+
 <%@ include file="../include/header.jsp" %>
 <article class="mainpage">
   <%-- <c:forEach var="camp" items="${campList}">

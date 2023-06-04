@@ -21,8 +21,8 @@
                 <div class="menu-down">
                     <a href="${pageContext.request.contextPath}/around" class="in-menu" id="reservation">예약하기</a>
                     <div class="dropdown">
-                      	<a id="locationSearch" href="#" data-toggle="modal1" >지역검색</a>
-                      	<a id="themeSearch" href="#"  data-toggle="modal2" >테마검색</a>
+                      	<a id="locationSearch" href="#" data-toggle="modal" >지역검색</a>
+                      	<a id="themeSearch" href="#" data-toggle="m2" >테마검색</a>
                         <a  href="#">날짜검색</a>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
                       	
                       	
 
-<div class="modal1 hidden">
+<div class="modal hidden">
   <div class="bg"></div>
   <div class="modalBox">
     <h2>지역을 선택해주세요</h2>
@@ -77,15 +77,15 @@
   </div>
 </div>
 
-<div class="modal2 hidden">
-  <div class="bg"></div>
-  <div class="modalBox">
+<div class="m2 h2">
+  <div class="bg2"></div>
+  <div class="mB2">
     <p><h2>테마를 선택해주세요</h2>
-    <button>일반야영장</button>
-    <button>글램핑</button>
-    <button>카라반</button>
-    <button>자동차야영장</button>
-    <button class="closeBtn">✖</button>
+    <button>일반 야영장</button><br>
+    <button>글램핑</button><br>
+    <button>카라반</button><br>
+    <button>자동차 야영장</button><br>
+    <button class="cB2">✖</button>
   </div>
 </div>
 
@@ -105,17 +105,19 @@
             }
        }
        
+      
+       
        <!--모달-->
        
       
     
        const open = () => {
-         document.querySelector(".modal1").classList.remove("hidden");
+         document.querySelector(".modal").classList.remove("hidden");
         
        }
 
        const close = () => {
-         document.querySelector(".modal1").classList.add("hidden");
+         document.querySelector(".modal").classList.add("hidden");
          
        }
 
@@ -123,16 +125,27 @@
        document.querySelector(".closeBtn").addEventListener("click", close);
        document.querySelector(".bg").addEventListener("click", close);
 
+      
+       <!--모달2 -->
+       
+      
+       
+       const op2 = () => {
+         document.querySelector(".m2").classList.remove("h2");
+        
+       }
+
+       const cl2 = () => {
+         document.querySelector(".m2").classList.add("h2");
+         
+       }
+
+       document.getElementById("themeSearch").addEventListener("click", op2);
+       document.querySelector(".cB2").addEventListener("click", cl2);
+       document.querySelector(".bg2").addEventListener("click", cl2);
+
      </script>
-       
-       
-   
- 
-
-
-   
-             
-     
+            
 
  
 
