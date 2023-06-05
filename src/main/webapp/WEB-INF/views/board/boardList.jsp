@@ -28,15 +28,15 @@
 <article class="board">
     <!-- 부트스트랩 -->
     <div id="board-selector" class="btn-group" role="group" aria-label="Basic example">
-        <button onclick="location.href='{pageContext.request.contextPath}/board/boardList?cls=1'"
+        <button onclick="location.href='${pageContext.request.contextPath}/board/boardList?cls=1'"
             class="btn btn-secondary">캠핑후기</button>
-        <button onclick="location.href='{pageContext.request.contextPath}/board/boardList?cls=2'"
+        <button onclick="location.href='${pageContext.request.contextPath}/board/boardList?cls=2'"
             class="btn btn-secondary">꿀팁공유</button>
-        <button onclick="location.href='{pageContext.request.contextPath}/board/boardList?cls=3'"
+        <button onclick="location.href='${pageㅋContext.request.contextPath}/board/boardList?cls=3'"
             class="btn btn-secondary">메이트찾기</button>
-        <button onclick="location.href='{pageContext.request.contextPath}/board/boardList?cls=4'"
+        <button onclick="location.href='${pageContext.request.contextPath}/board/boardList?cls=4'"
             class="btn btn-secondary">건의사항</button>
-        <button onclick="location.href='{pageContext.request.contextPath}/board/boardList'" class="btn btn-secondary">전체
+        <button onclick="location.href='${pageContext.request.contextPath}/board/boardList'" class="btn btn-secondary">전체
             글 보기</button>
     </div>
     <!-- 부트스트랩끝 -->
