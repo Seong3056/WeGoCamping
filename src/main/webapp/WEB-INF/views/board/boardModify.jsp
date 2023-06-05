@@ -44,11 +44,11 @@
             <div class="btnBox">
                 <button type="button" class="listBtn" id="listBtn"
                     onclick="location.href='${pageContext.request.contextPath}/board/boardList'">목록</button>
-                <button type="submit" class="deltBtn" id="delBtn">삭제</button>
+                <button type="button" class="deltBtn" id="delBtn" onclick="location.href='${pageContext.request.contextPath}/board/delete?bno=${vo.bno}'">삭제</button>
                 <button type="submit" class="modifyBtn" id="modifyBtn">완료</button>
             </div>
-            
-            <select  class="rating" style="display: none;">
+
+            <select name="rating" class="rating" style="display: none;">
                 <option value="none" selected hidden>별점을 주세요!</option>
                 <option value="1">⭐</option>
                 <option value="2">⭐⭐</option>
