@@ -66,11 +66,25 @@
 	margin-top:40px;
 	
 }
-.container .form-right .line3{
+.container .form-right .line4{
     display: flex;
-    flex-flow: column;
-    width: 250px;
+    /* width: 250px; */
     align-items: baseline;
+}
+.container .form-right .line4 h2{
+    font-size: 30px;
+    width: 70px;
+}
+.container .form-right .line4 input{
+    font-size: 30px;
+    width: 130px;
+    border: 0;
+    line-height: 30px;
+    margin-left: 15px;
+}
+.container .form-right .line4 img{
+    max-width: 100px;
+    margin: auto 0;
 }
 /* 
 

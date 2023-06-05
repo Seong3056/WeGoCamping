@@ -24,7 +24,11 @@ public interface ICampsiteMapper {
 	//캠핑장 정보
 	CampsiteVO info(int cno);
 
+	//캠핑장 주소(도)리스트
+	CampsiteVO addrList(Map<String, String> map);
 	
+	//캠핑장 위치 코드(날씨)
+	String addrCode(String addrName);
 
 	
 

@@ -29,10 +29,10 @@
                 <div class="menu-down">
                     <a href="${pageContext.request.contextPath}/board/boardList" class="in-menu" id="board">게시판</a>
                     <div class="dropdown">
-                        <a  href="${pageContext.request.contextPath}/board/content/1">캠핑후기</a>
-                        <a  href="${pageContext.request.contextPath}/board/content/2">꿀팁공유</a>
-                        <a  href="${pageContext.request.contextPath}/board/content/3">메이트찾기</a>
-                        <a  href="${pageContext.request.contextPath}/board/content/4">건의사항</a>
+                        <a  href="${pageContext.request.contextPath}/board/1">캠핑후기</a>
+                        <a  href="${pageContext.request.contextPath}/board/2">꿀팁공유</a>
+                        <a  href="${pageContext.request.contextPath}/board/3">메이트찾기</a>
+                        <a  href="${pageContext.request.contextPath}/board/4">건의사항</a>
                     </div>
                 </div>                
             </div>
@@ -107,7 +107,7 @@
        
       
        
-       <!--모달-->
+     
        
       
     

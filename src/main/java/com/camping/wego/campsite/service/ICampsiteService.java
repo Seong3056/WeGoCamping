@@ -20,6 +20,16 @@ public interface ICampsiteService {
 
 	//캠핑장 정보
 	CampsiteVO info(int cno);
+	
+	//캠핑장 주소 지역 따오기
+	String addr(int cno);
+	
+	//캠핑장 주소(도) 리스트
+	CampsiteVO addrList(String addr);
+
+	//캠핑장 주소 코드
+	String addrCode(String addrName);
+	
 
 	
 	

@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -36,7 +37,8 @@ private static final String HOST = "https://kapi.kakao.com";
     @Autowired
     private IPaymentService payService;
     
-    
+    @Value("${kakao.adminkey}")
+    private String adminkey;
     
     public String kakaoPayReady(PayVO vo) {
  
@@ -44,7 +46,8 @@ private static final String HOST = "https://kapi.kakao.com";
  
         // 서버로 요청할 Header
         HttpHeaders headers = new HttpHeaders();
-        headers.add("Authorization", "KakaoAK " + "dc7121fdbed5b6bbddca9a35aad8fd13");
+        log.info("adminkey"+adminkey);
+        headers.add("Authorization", "KakaoAK " + adminkey);
 //        headers.add("Accept", MediaType.APPLICATION_JSON_UTF8_VALUE);
         headers.add("Content-Type", MediaType.APPLICATION_FORM_URLENCODED_VALUE + ";charset=UTF-8");
         
@@ -118,7 +121,8 @@ private static final String HOST = "https://kapi.kakao.com";
  
         // 서버로 요청할 Header
         HttpHeaders headers = new HttpHeaders();
-        headers.add("Authorization", "KakaoAK " + "dc7121fdbed5b6bbddca9a35aad8fd13");
+        
+        headers.add("Authorization", "KakaoAK " + adminkey);
 //        headers.add("Accept", MediaType.APPLICATION_JSON_UTF8_VALUE);
         headers.add("Content-Type", MediaType.APPLICATION_FORM_URLENCODED_VALUE + ";charset=UTF-8");
  
