@@ -34,6 +34,7 @@ public class DBSettingController {
 		
 		if(num == 5) {
 			service.inputAmount();
+			
 			log.info("요금 입력");
 			return "redirect:/db/main";
 		}

@@ -13,9 +13,9 @@
         <div class="wrap">
              <div class="menuBox">   
                 <div class="infoKind">
-                     <a href="#" class="privacy">⦁ 개인 정보 수정</a> <br>
-                     <a href="#" class="reserInfo">⦁ 예약 정보</a> <br>
-                     <a href="#" class="myText">⦁ 내 게시글</a> <br>
+                    <a href="${pageContext.request.contextPath}/user/info" class="privacy">⦁ 개인 정보 수정</a> <br>
+                     <a href="${pageContext.request.contextPath}/user/reservation" class="reserInfo">⦁ 예약 정보</a> <br>
+                     <a href="${pageContext.request.contextPath}/user/myBoard" class="myText">⦁ 내 게시글</a> <br>
                 </div>  
             </div>
 

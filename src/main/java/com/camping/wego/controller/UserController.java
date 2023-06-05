@@ -84,4 +84,12 @@ public class UserController {
 		return mailService.authMail(user);
 
 	}
+	@GetMapping("/myBoard")
+	public void myboard() {}
+	
+	@GetMapping("/reservation")
+	public void resv() {}
+	
+	@GetMapping("/info")
+	public void info() {}
 }
