@@ -62,7 +62,8 @@
                 <div>
                     <input type="text" name="keyword" value="${pc.paging.keyword}" placeholder="검색어를 입력해주세요.">
                     <input type="hidden" name="cls" value="${pc.paging.cls}">
-                    <button class="btn btn-secondary my-2 my-sm-0" type="submit"><i class="fa fa-search"
+                    </div>
+                    <div><button class="btn btn-secondary my-2 my-sm-0" type="submit"><i class="fa fa-search"
                             aria-hidden="true"></i></button>
                 </div>
             </form>

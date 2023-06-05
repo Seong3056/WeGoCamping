@@ -77,7 +77,7 @@ queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent(
 queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('XML'); /**/
 queryParams += '&' + encodeURIComponent('regId') + '=' + '11D20501'; /**/
 queryParams += '&' + encodeURIComponent('tmFc') + '=' + encodeURIComponent('202306030600'); /**/
-var q ='http://apis.data.go.kr/1360000/MidFcstInfoService/getMidTa?serviceKey=JS7jeuof%2BpwfeEbRwoql%2BWry6jw2GgIJlD3GWpVjjxNvEQSSGIc6HaD90Rg3u48tnw6LVidKVigCK2YAxGc4Hw%3D%3D&numOfRows=10&pageNo=1&regId=11D20501&tmFc=202306020600';
+var q ='http://apis.data.go.kr/1360000/MidFcstInfoService/getMidTa?serviceKey=JS7jeuof%2BpwfeEbRwoql%2BWry6jw2GgIJlD3GWpVjjxNvEQSSGIc6HaD90Rg3u48tnw6LVidKVigCK2YAxGc4Hw%3D%3D&numOfRows=10&pageNo=1&regId=11H10705&tmFc=202306050600';
 xhr.open('GET', q);
 xhr.onreadystatechange = function () {
     if (this.readyState == 4) {
@@ -90,6 +90,7 @@ xhr.onreadystatechange = function () {
         var XmlNode = new DOMParser().parseFromString(this.responseText, 'text/xml');
         var data = xmlToJson(XmlNode);
         console.log(data.response.body.items.item.regId);
+        console.log(data);
         // response: 
         //     body: 
         //         items: 
