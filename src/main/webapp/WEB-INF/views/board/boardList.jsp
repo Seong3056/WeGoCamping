@@ -51,7 +51,7 @@
         <div class="search-container">
             <form class="item d-flex" action="<c:url value='/board/boardList' />">
                 <div class="item form-group">
-                    <select class="form-select" id="exampleSelect1">
+                    <select name="condition" class="form-select" id="exampleSelect1">
                         <option value="title" ${pc.paging.condition=='title' ? 'selected' : '' }>제목</option>
                         <option value="content" ${pc.paging.condition=='content' ? 'selected' : '' }>내용</option>
                         <option value="writer" ${pc.paging.condition=='writer' ? 'selected' : '' }>작성자</option>
