@@ -18,7 +18,6 @@ public class MainController {
 
 	@GetMapping("")
 	public String main(Model model) {
-		log.info(service.getList().toString());
 		log.info("info");
 		model.addAttribute("campList", service.getList());
 		return "/main/main";

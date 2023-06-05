@@ -29,6 +29,7 @@
 		<typeAlias type="com.camping.wego.vo.UserVO" alias="user"/>
 		<typeAlias type="com.camping.wego.vo.CampsiteVO" alias="camp"/>
 		<typeAlias type="com.camping.wego.vo.PayVO" alias="pay"/>
+		<typeAlias type="com.camping.wego.vo.ReplyVO" alias="reply"/>
 	</typeAliases>
 	
 	<!-- 

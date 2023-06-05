@@ -51,7 +51,7 @@ public class BoardController {
 	
 	@GetMapping("/content/{bno}")
 	public String detail(@PathVariable int bno, Model model) {
-		model.addAttribute("vo",service.detail(bno));
+		model.addAttribute("vo", service.detail(bno));
 		return "board/boardDetail";
 	}
 
