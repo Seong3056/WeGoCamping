@@ -3,26 +3,73 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
-<head>
+
     <meta charset="UTF-8">
     <title>Insert title here</title>
-    <link href="${pageContext.request.contextPath}/css/board.css" rel="stylesheet">
-</head>
+    
+    <!-- 웹폰트 적용 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&display=swap" rel="stylesheet">
+  
+    
+    <!-- 부트스트랩 -->
+<script src="https://kit.fontawesome.com/a2baf29734.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/lumen/bootstrap.min.css" integrity="sha384-GzaBcW6yPIfhF+6VpKMjxbTx6tvR/yRd/yJub90CqoIn2Tz4rRXlSpTFYMKHCifX" crossorigin="anonymous">
+<!-- 부트스트랩 끝 -->
+ <link href="${pageContext.request.contextPath}/css/board.css" rel="stylesheet">
+
+
 
 <%@ include file="../include/header.jsp" %>
+
 <article class="board">
-    <div id="board-selector">
-        <a id="1" href="${pageContext.request.contextPath}/board/1">캠핑후기</a>
+   <!--  <div id="board-selector"> -->
+    <!-- 부트스트랩 -->
+    <div class="btn-group" role="group" aria-label="Basic example">
+  <button onclick="location.href='${pageContext.request.contextPath}/board/1'" class="btn btn-secondary">캠핑후기</button>
+  <button onclick="location.href='${pageContext.request.contextPath}/board/2'" class="btn btn-secondary">꿀팁공유</button>
+  <button onclick="location.href='${pageContext.request.contextPath}/board/3'" class="btn btn-secondary">메이트찾기</button>
+  <button onclick="location.href='${pageContext.request.contextPath}/board/4'" class="btn btn-secondary">건의사항</button>
+</div>
+    <!-- 부트스트랩끝 -->
+       <!--  <a id="1" href="${pageContext.request.contextPath}/board/1">캠핑후기</a>
         <a id="2" href="${pageContext.request.contextPath}/board/2">꿀팁공유</a>
         <a id="3" href="${pageContext.request.contextPath}/board/3">메이트찾기</a>
-        <a id="4" href="${pageContext.request.contextPath}/board/4">건의사항</a>
-    </div>
+        <a id="4" href="${pageContext.request.contextPath}/board/4">건의사항</a> 
+    </div> -->
     <div class="tab">
-        <button onclick="location.href='${pageContext.request.contextPath}/board/boardWrite'" class="write">글쓰기</button>
-
-        <form action="<c:url value='/board/boardList' />"></form>
-        <div class="search">
-            <select name="condition" class="form-control search-select">
+    
+    <!-- 부트스트랩 글쓰기 버튼 -->
+        <button onclick="location.href='${pageContext.request.contextPath}/board/boardWrite'" class="btn btn-secondary">글쓰기</button>
+	<!-- 부트스트랩 끝 -->
+	
+      <form action="<c:url value='/board/boardList' />"></form>
+       
+        
+      <!--  부트스트랩 검색창 시작 -->
+     <div class="search-container">
+      <div class="item form-group"> 
+      <select class="form-select" id="exampleSelect1">
+        <option value="title" ${pc.paging.condition=='title' ? 'selected' : '' }>제목</option>
+        <option value="content" ${pc.paging.condition=='content' ? 'selected' : '' }>내용</option>
+        <option value="writer" ${pc.paging.condition=='writer' ? 'selected' : '' }>작성자</option>
+        <option value="titleContent" ${pc.paging.condition=='titleContent' ? 'selected' : '' }>제목+내용</option>
+      </select>
+      </div>
+      <div>
+        <form class="item d-flex">
+        <input class="form-control me-sm-2" type="search" placeholder="검색어를 입력해주세요">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+      </form>
+      </div>
+      
+    </div>
+       </div>
+        
+    <!-- 부트스트랩 끝 -->
+         <%-- <select name="condition" class="form-control search-select">
                 <option value="title" ${pc.paging.condition=='title' ? 'selected' : '' }>제목</option>
                 <option value="content" ${pc.paging.condition=='content' ? 'selected' : '' }>내용</option>
                 <option value="writer" ${pc.paging.condition=='writer' ? 'selected' : '' }>작성자</option>
@@ -30,8 +77,9 @@
             </select>
             <input type="text" placeholder="검색어를 입력해주세요">
             <button type="menu">검색</button>
+       </div>
         </div>
-    </div>
+  --%>
     <table id="boardList">
 
         <th class="head">카테고리</th>
@@ -39,15 +87,14 @@
         <th class="writer">작성자</th>
         <th class="regDate">작성일</th>
         <th class="hit">조회</th>
-
         <!-- <tr>
             <td>후기</td>
             <td>너무 좋아요</td>
             <td>캠핑초보</td>
             <td>23-05-24</td>
             <td>23</td>
-        </tr> -->
-
+        </tr>
+ -->
         <c:forEach var="board" items="${boardList}">
             <tr>
                 <td>
@@ -82,7 +129,8 @@
         <div>5</div>
         <div>다음</div>
     </div> -->
-    <form action="${pageContext.request.contextPath}/board/boardList" name="pageForm">
+    
+    <%-- <form action="${pageContext.request.contextPath}/board/boardList" name="pageForm">
         <div class="page">
             <hr>
             <ul id="pagination" class="pagination pagination-sm">
@@ -110,7 +158,41 @@
         <input type="hidden" name="keyword" value="${pc.paging.keyword}">
         <input type="hidden" name="condition" value="${pc.paging.condition}">
 
-    </form>
+    </form> --%>
+    
+    <!-- 부트스트랩 페이지네이션 -->
+    <form action="${pageContext.request.contextPath}/board/boardList" name="pageForm">
+     <div class="page">
+  <ul id="pagination" class="pagination pagination-sm">
+     <c:if test="${pc.prev}">
+    <li class="page-item" >
+      <a class="page-link" href="#" data-pagenum="${pc.beginPage-1}">&laquo;</a>
+    </li>
+     </c:if>
+       <c:forEach var="num" begin="${pc.beginPage}" end="${pc.endPage}">
+                    <li class="${pc.paging.pageNum == num ? 'page-item active' : ''}">
+                        <a class="page-link" href="#" data-pagenum="${num}">${num}</a>
+                    </li>
+                </c:forEach>
+     </li>  
+     <c:if test="${pc.next}">  
+    <li class="page-item">
+     <a class="page-link" href="#" data-pagenum="${pc.endPage+1}">&raquo;</a>
+    </li>
+     </c:if>
+  </ul>
+</div>
+
+
+<input type="hidden" name="cls" value="${pc.paging.cls}">
+        <input type="hidden" name="pageNum" value="${pc.paging.pageNum}">
+        <input type="hidden" name="cpp" value="${pc.paging.cpp}">
+        <input type="hidden" name="keyword" value="${pc.paging.keyword}">
+        <input type="hidden" name="condition" value="${pc.paging.condition}">
+        
+  </form>
+    
+    <!-- 부트스트랩 끝 -->
 
 </article>
 
