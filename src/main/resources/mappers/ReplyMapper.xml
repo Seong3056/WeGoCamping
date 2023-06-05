@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.camping.wego.reply.mapper.IReplyMapper">
+
+	<insert id="replyRegist">
+		INSERT INTO reply
+		(bno, user_id, reply)
+		VALUES
+		(#{bno}, #{userId}, #{reply})
+	</insert>
+	
+	<select id="getList" resultType="reply">
+		SELECT * FROM reply
+		WHERE bno = #{bno}
+		ORDER BY rno DESC
+		LIMIT #{paging.pageStart}, #{paging.cpp}
+	</select>
+	
+	<select id="getTotal" resultType="int">
+		SELECT COUNT(*)
+		FROM reply
+		WHERE bno = #{bno}
+	</select>
+	
+	<update id="update">
+		UPDATE reply
+		SET reply = #{reply}, update_date = current_timestamp
+		WHERE rno = #{rno}
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM reply
+		WHERE rno = #{rno}
+	</delete>
+
+</mapper>
