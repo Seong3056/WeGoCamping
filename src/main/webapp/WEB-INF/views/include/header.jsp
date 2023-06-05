@@ -8,6 +8,12 @@
 <script src="https://kit.fontawesome.com/a2baf29734.js" crossorigin="anonymous"></script>
 
 
+<!-- 부트스트랩 -->
+<script src="https://kit.fontawesome.com/a2baf29734.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/lumen/bootstrap.min.css"
+    integrity="sha384-GzaBcW6yPIfhF+6VpKMjxbTx6tvR/yRd/yJub90CqoIn2Tz4rRXlSpTFYMKHCifX" crossorigin="anonymous">
+<!-- 부트스트랩 끝 -->
 
 <link href="${pageContext.request.contextPath}/css/header-style.css" rel="stylesheet">
 
@@ -46,7 +52,7 @@
                 </div>
                 
                 <div id="notLogin" >
-                    <button id="loginH" onclick="location.href='${pageContext.request.contextPath}/user/login'">로그인</button>
+                    <button id="loginH" class="btn btn-secondary" onclick="location.href='${pageContext.request.contextPath}/user/login'">로그인</button>
                 </div>
             </div>
             
@@ -65,15 +71,15 @@
   <div class="bg"></div>
   <div class="modalBox">
     <h2>지역을 선택해주세요</h2>
-    <button>서울</button><br>
-                <button>경기</button><br>
-                <button>강원</button><br>
-                <button>충청</button><br>
-                <button>전라</button><br>
-                <button>경상</button><br>
-                <button>제주</button><br>
+    <button class="btn btn-secondary">서울</button><br>
+                <button class="btn btn-secondary">경기</button><br>
+                <button class="btn btn-secondary">강원</button><br>
+                <button class="btn btn-secondary">충청</button><br>
+                <button class="btn btn-secondary">전라</button><br>
+                <button class="btn btn-secondary">경상</button><br>
+                <button class="btn btn-secondary">제주</button><br>
                 
-    <button class="closeBtn">✖</button>
+    <button class="closeBtn btn btn-secondary">✖</button>
   </div>
 </div>
 
@@ -81,11 +87,11 @@
   <div class="bg2"></div>
   <div class="mB2">
     <p><h2>테마를 선택해주세요</h2>
-    <button>일반 야영장</button><br>
-    <button>글램핑</button><br>
-    <button>카라반</button><br>
-    <button>자동차 야영장</button><br>
-    <button class="cB2">✖</button>
+    <button class="btn btn-secondary">일반 야영장</button><br>
+    <button class="btn btn-secondary">글램핑</button><br>
+    <button class="btn btn-secondary">카라반</button><br>
+    <button class="btn btn-secondary">자동차 야영장</button><br>
+    <button class="cB2 btn btn-secondary">✖</button>
   </div>
 </div>
 
