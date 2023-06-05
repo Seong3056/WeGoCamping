@@ -12,20 +12,29 @@
     <div class="detailB">
       
         <form action="" method="post" name="detilForm">
-          <h3>## 게시판</h3>
+          <h3>게시판</h3>
           <article class="board">
-              <div class="id" readonly>${vo.writer}</div>
-              <div class="title" readonly>${vo.title}</div>
+            
+            <div class="topBox">
+              <select name="cls">
+                  <option value="none" selected hidden>말머리</option>
+                  <option value=1>캠핑후기</option>
+                  <option value=2>꿀팁공유</option>
+                  <option value=3>메이트찾기</option>
+                  <option value=4>건의사항</option>
+                </select>
+                <div class="title" readonly>${vo.title}</div>
+                <div class="id" readonly>${vo.writer}</div>               
+            </div>
               <div class="flexBox">
-                  <div class="imageBox">
-                  <img alt="#" src="${pageContext.request.contextPath}/img/cam3.png">
-          
-                  <div class="bGroup">
-                      <button class="previous"> ◁ </button>
-                      <button class="next"> ▷ </button>
+                  <div class="imageBox" id="imageBox">
+                    <img alt="#" src="${pageContext.request.contextPath}/img/cam3.png">          
+                    <div class="bGroup">
+                        <button class="previous"> ◁ </button>
+                        <button class="next"> ▷ </button>
+                    </div>
                   </div>
-                  </div>
-                  <div class="content" readonly>${vo.content}</div>
+                  <div class="content" id="content" readonly>${vo.content}</div>
               </div>
           </article>
           <div class="btn-group">
@@ -119,6 +128,24 @@ init();
 
 // 이미지 스크립트 JS 끝-------------------
 
+document.querySelector('select').onclick = () => {
+  const imageBox = document.getElementById('imageBox');
+  const content = document.getElementById('content');
+
+  console.log('select 클릭됨');
+  
+  if(document.querySelector('select').value == 1) {
+	imageBox.style.display = 'block';
+    content.style.display = 'block';
+    console.log('value 1 들어옴');
+  } else {
+	imageBox.style.display = 'none';
+    content.style.display = 'block';
+    content.style.width = '800px';
+    console.log('else 로 빠짐 ^^7');
+  }
+
+}
 
 
 
