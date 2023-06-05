@@ -18,7 +18,7 @@
               <div class="title" readonly>${vo.title}</div>
               <div class="flexBox">
                   <div class="imageBox">
-                  <img alt="#" src="${pageContext.request.contextPath}/img/cam3.png">
+                  <img alt="#" src="${pageContext.request.contextPath}/img/cam3.jpeg" onerror="this.src='${pageContext.request.contextPath}/img/campsiteOnerror.jpg'">
           
                   <div class="bGroup">
                       <button class="previous"> ◁ </button>
