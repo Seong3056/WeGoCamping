@@ -80,7 +80,7 @@
 <div class="m2 h2">
   <div class="bg2"></div>
   <div class="mB2">
-    <p><h2>테마를 선택해주세요</h2>
+    <h2>테마를 선택해주세요</h2>
     <button>일반 야영장</button><br>
     <button>글램핑</button><br>
     <button>카라반</button><br>
