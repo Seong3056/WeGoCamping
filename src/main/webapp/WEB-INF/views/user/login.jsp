@@ -9,18 +9,7 @@
         <meta charset="UTF-8">
         <title>로그인</title>
         
-        <!-- 웹폰트 적용 -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&display=swap" rel="stylesheet">
-
-
-<!-- 부트스트랩 -->
-<script src="https://kit.fontawesome.com/a2baf29734.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css" type="text/css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/lumen/bootstrap.min.css"
-    integrity="sha384-GzaBcW6yPIfhF+6VpKMjxbTx6tvR/yRd/yJub90CqoIn2Tz4rRXlSpTFYMKHCifX" crossorigin="anonymous">
-<!-- 부트스트랩 끝 -->
+       
         
         <link href="${pageContext.request.contextPath}/css/login.css" rel="stylesheet">
     </head>
