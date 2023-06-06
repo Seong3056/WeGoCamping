@@ -3,25 +3,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
-
-<meta charset="UTF-8">
-<title>Insert title here</title>
-
-<!-- 웹폰트 적용 -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&display=swap" rel="stylesheet">
-
-
-<!-- 부트스트랩 -->
-<script src="https://kit.fontawesome.com/a2baf29734.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css" type="text/css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/lumen/bootstrap.min.css"
-    integrity="sha384-GzaBcW6yPIfhF+6VpKMjxbTx6tvR/yRd/yJub90CqoIn2Tz4rRXlSpTFYMKHCifX" crossorigin="anonymous">
-<!-- 부트스트랩 끝 -->
+<title>게시판</title>
 <link href="${pageContext.request.contextPath}/css/board.css" rel="stylesheet">
-
-
 
 <%@ include file="../include/header.jsp" %>
 
@@ -36,7 +19,8 @@
             class="btn btn-secondary">메이트찾기</button>
         <button onclick="location.href='${pageContext.request.contextPath}/board/boardList?cls=4'"
             class="btn btn-secondary">건의사항</button>
-        <button onclick="location.href='${pageContext.request.contextPath}/board/boardList'" class="btn btn-secondary">전체
+        <button onclick="location.href='${pageContext.request.contextPath}/board/boardList'"
+            class="btn btn-secondary">전체
             글 보기</button>
     </div>
     <!-- 부트스트랩끝 -->
@@ -62,8 +46,8 @@
                 <div>
                     <input type="text" name="keyword" value="${pc.paging.keyword}" placeholder="검색어를 입력해주세요.">
                     <input type="hidden" name="cls" value="${pc.paging.cls}">
-                    </div>
-                    <div><button class="btn btn-secondary my-2 my-sm-0" type="submit"><i class="fa fa-search"
+                </div>
+                <div><button class="btn btn-secondary my-2 my-sm-0" type="submit"><i class="fa fa-search"
                             aria-hidden="true"></i></button>
                 </div>
             </form>

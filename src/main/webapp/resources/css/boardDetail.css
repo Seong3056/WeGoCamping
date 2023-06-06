@@ -1,6 +1,12 @@
 @import url("https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css");
 
-.detailB{
+.detail {
+    font-family: 'Hahmlet', serif;
+    width: 1100px;
+    margin: 200px auto 200px;
+}
+
+.detailB {
     width: 1100px;
     height: 600px;
     margin: 0 auto;
@@ -16,7 +22,6 @@
     height: 40px;
     border: none;
     padding-top: 10px;
-    
 }
 
 .detailB .board .flexBox {
@@ -42,7 +47,6 @@
 .detailB .board .content {
     width: 500px;
     height: 400px;
-    
     margin-bottom: 20px;
     border: 2px solid black;
 }
@@ -50,7 +54,6 @@
 .detailB .board .imageBox {
     width: 500px;
     height: 400px;
-    
     margin-bottom: 20px;
     border: 2px solid black;
 }
@@ -62,15 +65,14 @@
 }
 
 .detailB button {
-    
     width: 60px;
     height: 37px;
     font-size: 16px;
-    
     letter-spacing: 3px;
     margin-right: 2px;
 }
-.detailB .board .flexBox{
+
+.detailB .board .flexBox {
     position: relative;
 }
 
@@ -87,7 +89,7 @@
 }
 
 
-.bGroup{
+.bGroup {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -95,15 +97,16 @@
     top: 50%;
     transform: translateY(-50%);
 }
-.detailB .board .flexBox .imageBox button
- {
+
+.detailB .board .flexBox .imageBox button {
     width: 30px;
     height: 25px;
     opacity: 0;
     border: 0;
     cursor: pointer;
 }
-.detailB .board .flexBox .imageBox:hover button{
+
+.detailB .board .flexBox .imageBox:hover button {
     opacity: 1;
     transition: 1s;
 }
@@ -128,7 +131,6 @@
 }
 
 /* -----------밑은 modify css 작성 예정 ------------ */
-
 .wrap {
     width: 1100px;
     height: 600px;
@@ -167,7 +169,6 @@
 .wrap .contentBox  .contentM {
     width: 800px;
     height: 400px;
-    
     margin-bottom: 20px;
     border: 2px solid black;
     resize: none;
@@ -175,12 +176,10 @@
 
 .wrap .btnBox {
     width: 1100px;
-    
     text-align: center;
 }
 
 .wrap button {
-    
     width: 60px;
     height: 35px;
     margin-left: 20px;
@@ -233,9 +232,7 @@
 
 
 
-
 /* ------------ 댓글 창 ---------------- */
-
 .reply {
     width: 1100px;
     height: auto;
@@ -252,7 +249,6 @@
 }
 
 .reply .replyWrite {
-    
     display: flex;
 }
 
@@ -264,7 +260,6 @@
     font-size: 16px;
     resize: none;
     outline: none;
-    
 }
 
 .reply .replyWrite .registBtn {
@@ -277,32 +272,27 @@
 }
 
 /* 댓글 내용 부분 */
-
 .reply .replyContent {
     width: 1100px;
     height: auto;
     margin: 0 auto;
     margin-top: 40px;
-   
     line-height: 3;
 }
 
 .reply .replyContent .replyInfo {
     display: flex;
-    
-     line-height: 3;
-     
+    line-height: 3;
 }
 
 .reply .replyContent .replyInfo .replyWriter {
     font-size: 16px;
     font-weight: bold;
-    
 }
 
 .reply .replyContent .replyInfo .replyDate {
     font-size: 16px;
-    font-weight: 600;    
+    font-weight: 600;
 }
 
 .reply .replyContent .replyText .replyFix {
@@ -321,9 +311,4 @@
     font-size: 16px;
     resize: none;
     outline: none;
-
 }
-
-
-
-
