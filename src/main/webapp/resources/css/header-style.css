@@ -43,10 +43,11 @@ header {
 
 header:hover {
     background-color: rgb(252, 242, 227);
-    height: 180px;
+    height: 200px;
     transition: all 0.5s ease-out;
     animation-fill-mode: both;
     opacity: 1;
+    
 }
 
 header .section {
@@ -219,7 +220,7 @@ footer .section img {
     position: absolute;
     background-color: #fff;
     width: 400px;
-    height: 400px;
+    height: 500px;
     padding: 15px;
 }
 
@@ -234,12 +235,13 @@ footer .section img {
     font-weight: bold;
     font-size: 18px;
     padding: 5%;
+    margin-bottom: 10px;
 }
 
 .modalBox .closeBtn {
     color: white;
     background: black;
-    margin-top: 3%;
+   
     cursor: pointer;
 }
 
@@ -250,8 +252,8 @@ footer .section img {
 
 /* <!--모달2 시작 --> */
 .m2 button {
-    background-color: #F9B514;
-    width: 90px;
+    
+    width: 100px;
     padding: 5px 10px;
     border-radius: 4px;
     cursor: pointer;
@@ -280,14 +282,14 @@ footer .section img {
     position: absolute;
     background-color: #fff;
     width: 400px;
-    height: 400px;
+    height: 350px;
     padding: 15px;
 }
 
 .mB2>button {
     display: block;
     width: 100px;
-    margin: 15px auto 15px;
+    margin: 0px auto 0px;
     cursor: pointer;
 }
 
@@ -295,12 +297,13 @@ footer .section img {
     font-weight: bold;
     font-size: 18px;
     padding: 5%;
+    margin-bottom: 10px;
 }
 
 .mB2>.cB2 {
     color: white;
     background: black;
-    margin-top: 3%;
+   /*  margin-top: 3%; */
     cursor: pointer;
 }
 
@@ -308,3 +311,14 @@ footer .section img {
     display: none;
 }
 /* <!-- 모달2 끝 --> */
+
+<!--부트스트랩 적용 취소-->
+a, .btn:active, .btn:focus {
+outline:none !important;
+box-shadow:none !important;
+}
+a:hover, a:active { 
+	outline:none !important;
+	text-decoration:none !important;
+	color: black !important;
+	}

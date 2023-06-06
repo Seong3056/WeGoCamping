@@ -3,6 +3,7 @@
 *{
     padding: 0;
     margin: 0;
+    font-family: 'Hahmlet', serif;
 }
 a{
     text-decoration: none;
@@ -102,25 +103,26 @@ header .section .header-right .profile img{
 /* -------------------------------- */
 
 .wrap {
-    /* background: teal; */
+    
+    /* background: red;  */
     /* text-align: center; */
-    background-image: url(../../resources/img/campingImg.jpg);
+  	background-image: url('../img/bg1.jpg');
     background-size: cover;
 }
 
 .wrap .login {
-    /* background: red; */
-    width: 1200px;
+    /* background: black; */
+    width: 1100px;
     height: 800px;
     margin: 5% auto;
     position: relative;
 }
 
 .wrap .login .loginAll {
-    width: 50%;
-    height: 50%;
+    width: 350px;
+    height: 350px;
     /* background: green; */
-    margin: 0 auto;
+    margin: 0 20%;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -129,6 +131,7 @@ header .section .header-right .profile img{
 }
 
 .wrap .login .loginAll .loginLogo {
+    font-family: 'Hahmlet', serif;
     font-size: 20px;
     font-weight: bold;
     color: whitesmoke;
@@ -136,7 +139,7 @@ header .section .header-right .profile img{
 }
 
 .wrap .login .loginAll .inputBox {
-    margin-top: 20px;
+	margin-top: 20px;
     
 }
 
@@ -152,7 +155,12 @@ header .section .header-right .profile img{
     
 }
 
+.wrap .login .loginAll input {
+	font-family: 'Hahmlet', serif;
+}
+
 .wrap .login .loginAll .idRm label {
+	font-family: 'Hahmlet', serif;
     color: whitesmoke;
 }
 
@@ -162,19 +170,21 @@ header .section .header-right .profile img{
 }
 
 .wrap .login .loginAll .joinBtn {
+	font-family: 'Hahmlet', serif;
     margin-left: 50px;
     margin-right: 50px;
     width: 100px;
     height: 40px;
-    background: darkgray;
-    border-radius: 10px;
+   /*  background: darkgray; */
+   /*  border-radius: 10px; */
 }
 
 .wrap .login .loginAll .loginBtn {
+	font-family: 'Hahmlet', serif;
     width: 100px;
     height: 40px;
-    background: darkgray;
-    border-radius: 10px;
+   /*  background: darkgray; */
+  /*   border-radius: 10px; */
 }
 
 .wrap .login .loginAll .serchBox {
@@ -197,6 +207,8 @@ header .section .header-right .profile img{
     text-decoration: underline;
     color: rgb(243, 216, 216)
 }
+
+
 
 
 
