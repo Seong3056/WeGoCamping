@@ -58,8 +58,7 @@ public class ReplyController {
 
 	// 댓글 삭제 요청
 	@DeleteMapping("/{rno}")
-	public String delete(@PathVariable int rno, @RequestBody ReplyVO vo) {
-		vo.setRno(rno);
+	public String delete(@PathVariable int rno) {
 		service.delete(rno);
 		return "deleteSuccess";
 	}

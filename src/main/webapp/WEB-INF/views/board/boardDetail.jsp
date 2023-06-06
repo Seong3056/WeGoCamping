@@ -183,34 +183,33 @@
     // 댓글 수정 or 삭제 이벤트
     document.getElementById('replyList').addEventListener('click', e => {
       e.preventDefault(); // 태그의 고유 기능을 중지.
+      
 
       // 이벤트가 발생한 target이 a태그가 아니라면 이벤트 종료.
       if (!e.target.matches('a')) {
         return;
       }
 
+      const writer = e.target.parentNode.parentNode.previousElementSibling.firstElementChild.textContent;
+
       // 현재 로그인한 사용자가 댓글 작성자가 아니라면 종료.
-      if ('${login}' !== document.querySelector('.replyWriter').value) return;
+      if ('${login}' !== writer) return;
 
       // 댓글이 여러 개 -> 수정, 삭제가 발생하는 댓글이 몇 번인지 확인.
       const rno = e.target.getAttribute('href');
       console.log('댓글 번호 : ' + rno);
-      // 모달 내부에 숨겨진 input 태그에 댓글 번호를 담아주자.
-      // document.getElementById('modalRno').value = rno;
-
-      // 기존 댓글과 댓글 내용을 저장.
-      const content = e.target.parentNode.previousElementSibling.textContent;
-      console.log('수정 전 댓글 내용 : ' + content);
 
       //  수정 버튼인지 삭제 버튼인지를 확인하는 조건문.
       if (e.target.classList.contains('replyModify')) {
         // 처음 수정 버튼 클릭 시 내용 입력을 받기 위해 readonly 해제 후 종료.
-        if (document.getElementById('replyCnt').readOnly) {
-          document.getElementById('replyCnt').readOnly = false;
+        if (e.target.parentNode.previousElementSibling.readOnly) {
+          e.target.parentNode.previousElementSibling.readOnly = false;
           return;
         }
         // 다시 수정 버튼을 클릭하면 댓글 수정 요청.
         else {
+          let content = e.target.parentNode.previousElementSibling.value;
+          console.log(content);
           if (content === '') {
             alert('수정할 내용을 입력하세요!');
             return;
@@ -229,9 +228,13 @@
               .then(res => res.text())
               .then(data => {
                 console.log(data);
-                console.log('댓글 수정 완료! : ' + data);
-                // 댓글 수정 완료 후 댓글 목록 재표현.
-                getList(1, true);
+                if(data === 'updateSuccess') {
+                  console.log('댓글 수정 완료! : ' + data);
+                  // 댓글 수정 완료 후 댓글 목록 재표현.
+                  getList(1, true);
+                } else {
+                  console.log('댓글 수정 실패.');
+                }
               });
           }
         }
@@ -243,8 +246,12 @@
             .then(res => res.text())
             .then(data => {
               console.log(data);
-              alert('댓글 삭제가 완료되었습니다.');
-              getList(1, true);
+              if(data === 'deleteSuccess') {
+                alert('댓글 삭제가 완료되었습니다.');
+                getList(1, true);
+              } else {
+                console.log('댓글 삭제 실패.');
+              }
             });
         }
       }
@@ -260,9 +267,9 @@
         [year, month, day, hour, minute, second] = regDateTime;
       }
       const regTime = new Date(year, month - 1, day, hour, minute, second);
-      console.log(regTime);
+      // console.log(regTime);
       const date = new Date();
-      console.log(date);
+      // console.log(date);
       const gap = date.getTime() - regTime.getTime();
 
       let time;
