@@ -7,37 +7,8 @@
 
 <%@ include file="../include/header.jsp" %>
 <article class="mainpage">
-  <%-- <c:forEach var="camp" items="${campList}">
-          	<div id="${camp.cno}" class="col-md-4">
-              <div class="thumbnail">
-                <a href="${pageContext.request.contextPath}/detail" class="detail">
-                  <img src="${camp.firstImageUrl}" alt="camp1" style="width:100%;height:217px" onerror="this.src='${pageContext.request.contextPath}/img/onerror.jpg'">
-                   </a>
-                  <div class="caption"> 
-                    <h2>${camp.facltNm}</h2>
-                    <p>-${camp.lineIntro}</p>
-                    <hr>
-                    <button>예약하기</button>
-                    </div>
-                  
-                      </div>
-                    </div>
-                                          
-          </c:forEach> --%>
-
-
-
-
   <div class="today">오늘의 캠핑장</div>
   <div class="autoplay">
-    <%-- <c:forEach var="camp" items="${campList}">
-    <div class="box">
-    <img src="${camp.firstImageUrl}" alt="cam1" onerror="this.src='${pageContext.request.contextPath}/img/onerror.jpg'">
-    <h2 class="name">${camp.facltNm}</h2>
-    <p class="oneline">${camp.lineIntro}</p>
-    </div>
-    </c:forEach>  --%>
-
     <c:forEach var="camp" items="${campList}">
       <a href="${pageContext.request.contextPath}/detail/${camp.cno}" class="detail">
         <div class="box">
@@ -46,11 +17,9 @@
             onerror="this.src='${pageContext.request.contextPath}/img/campsiteOnerror.jpg'">
           <h2 class="name">${camp.facltNm}</h2>
           <p class="oneline">${camp.lineIntro}</p>
-
         </div>
       </a>
     </c:forEach>
-
   </div>
 
   <br><br><br>
