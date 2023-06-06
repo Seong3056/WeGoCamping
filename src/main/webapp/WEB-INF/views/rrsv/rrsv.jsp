@@ -1,12 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-
-<!-- 웹폰트 적용 -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&display=swap" rel="stylesheet">
-
 <title>예약하기</title>
 
 <!--달력-->
@@ -25,11 +19,7 @@
   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
   crossorigin=""></script>
 
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/reservep/reserve.css">
-
 
 <%@ include file="../include/header.jsp" %>
 
@@ -114,6 +104,7 @@
           <input type="text" name="amount" value="${camp.amount}" readonly>
           <img id="payBtn" src="${pageContext.request.contextPath}/img/kakao/payment_icon_yellow_small.png" alt="카카오페이">
         </div>
+
       </div>
 
 
@@ -121,14 +112,9 @@
 
 
     </div>
-
   </form>
-
-
-
-
-
 </article>
+
 <%@ include file="../include/footer.jsp" %>
 <!-- jQuery -->
 

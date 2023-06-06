@@ -30,19 +30,10 @@ public class BoardController {
 	@GetMapping("/boardList")
 	public void boardList(PageVO vo, Model model) {
 		PageCreator pc = new PageCreator(vo, service.getTotal(vo));
-		
-		log.info("List호출");
-		model.addAttribute("boardList", service.list(vo));
-		model.addAttribute("pc", pc);
-	}
-	
-	@GetMapping("/{cls}")
-	public String clsList(@PathVariable int cls, PageVO vo, Model model) {
-		PageCreator pc = new PageCreator(vo, service.getTotal(vo));
+		log.info("List 호출");
 		log.info(vo.toString());
 		model.addAttribute("boardList", service.list(vo));
 		model.addAttribute("pc", pc);
-		return "board/boardList";
 	}
 
 	//게시글 등록
@@ -60,7 +51,7 @@ public class BoardController {
 	
 	@GetMapping("/content/{bno}")
 	public String detail(@PathVariable int bno, Model model) {
-		model.addAttribute("vo",service.detail(bno));
+		model.addAttribute("vo", service.detail(bno));
 		return "board/boardDetail";
 	}
 
@@ -76,17 +67,17 @@ public class BoardController {
 		return "redirect:/board/content/" + vo.getBno();
 	}
 
-	@GetMapping("/cls/{cls}")
-	@ResponseBody
-	public List<BoardVO> clsLength(@PathVariable String cls) {
-		log.info("cls 서비스 호출");
+//	@GetMapping("/cls/{cls}")
+//	@ResponseBody
+//	public List<BoardVO> clsLength(@PathVariable String cls) {
+//		log.info("cls 서비스 호출");
 //		Map<String, Integer> map = new HashMap<String, Integer>();
 //		map.put("clsNo", Integer.parseInt(cls));
 //		map.put("clsLength", 3);
-
-
-		return service.clsList(cls);
-	}
+//
+//
+//		return service.clsList(cls);
+//	}
 
 	@PostMapping("/delete")
 	public String delete(int bno) {

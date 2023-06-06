@@ -2,11 +2,6 @@
     pageEncoding="UTF-8"%>
 
 
-<!-- 웹폰트 적용 -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&display=swap" rel="stylesheet">
-
 <!--달력-->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
@@ -58,8 +53,8 @@
     </div>
   </div>
   <div class="btnGroup">    
-    <button class="btn1">목록</button>
-    <button class="btn2" onclick="location.href='${pageContext.request.contextPath}/rsv/${camp.cno}'">예약하기</button>
+    <button class="btn btn-secondary">목록</button>
+    <button class="btn btn-secondary" onclick="location.href='${pageContext.request.contextPath}/rsv/${camp.cno}'">예약하기</button>
   </div>
 </article>
 
