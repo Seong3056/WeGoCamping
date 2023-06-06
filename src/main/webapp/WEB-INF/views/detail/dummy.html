@@ -100,6 +100,6 @@ xhr.onreadystatechange = function () {
 
 xhr.send('');
 const date = new Date();
-const d = new Date(date.getFullYear(),date.getMonth(),date.getDate());
+const d = new Date(date.getFullYear(),date.getMonth()+1,date.getDate());
 console.log("123"+d);
 </script>

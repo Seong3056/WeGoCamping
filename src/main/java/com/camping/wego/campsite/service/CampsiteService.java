@@ -96,12 +96,11 @@ public class CampsiteService implements ICampsiteService {
 	}
 
 	@Override
-	public String addr(int cno) {
-		CampsiteVO vo =  mapper.info(cno);
-		String addr = vo.getAddr();
-		String ar[] = addr.split(" ");
-		
-		return null;
+	public String[] addr(int cno) {
+
+		String addr = mapper.info(cno).getAddr();		
+		String ar[] = addr.split(" ");		
+		return ar;
 	}
 	
 	@Override 
