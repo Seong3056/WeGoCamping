@@ -6,8 +6,8 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/boardDetail.css">
 
 <%@ include file="../include/header.jsp" %>
-<article class="detail">
 
+<article class="detail">
   <div class="detailB">
     <form action="" method="post" name="detilForm">
       <h3>게시판</h3>
@@ -191,7 +191,6 @@
     document.getElementById('replyList').addEventListener('click', e => {
       e.preventDefault(); // 태그의 고유 기능을 중지.
 
-
       // 이벤트가 발생한 target이 a태그가 아니라면 이벤트 종료.
       if (!e.target.matches('a')) {
         return;
@@ -337,7 +336,6 @@
   if (imageIndex == 3) {
     btnNext.setAttribute('disabled', 'true')
   }
-
 
   function init() {
     btnPrevious.style.opacity = '0';
