@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <title>캠핑장 둘러보기</title>
+
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/around/basic.css">
 
 <%@ include file="../include/header.jsp" %>
@@ -42,11 +43,20 @@
           <h2>${camp.facltNm}</h2>
           <p>${camp.lineIntro}</p>
           <hr>
-          <button>예약하기</button>
+    
+  
+    <div class="button_base b03_skewed_slide_in">
+        <div>예약하기</div>
+        <div></div>
+        <div>예약하기</div>
+    </div>
+
+
         </div>
       </div>
     </div>
   </c:forEach>
+  <div class="container"></div>
   <!-- <div class="page">
     <div>이전</div>
     <div>1</div>
