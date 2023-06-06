@@ -44,12 +44,12 @@ public class WeatherController {
     public  List<Map<String,Object>> restRequest() {
         
         try {
-             String serviceKey = URLEncoder.encode("p4SaDox6EHmd8yPfl/wCZt5xmeQ+Oz/jTAP1dwLKLHM548RPfvEDl+u98Tj6yGYUZX1oKey7QEZ0Ou5CPcmZEA==", "UTF-8");
+             String serviceKey = URLEncoder.encode("JS7jeuof+pwfeEbRwoql+Wry6jw2GgIJlD3GWpVjjxNvEQSSGIc6HaD90Rg3u48tnw6LVidKVigCK2YAxGc4Hw==", "UTF-8");
                 String pageNo = "1";
                 String numOfRows = "1000000";
                 String dataType = "JSON";
                 String regId = "11D10201";
-                String tmFc = "202306050600";
+                String tmFc = "202306060600";
 
                 StringBuilder urlBuilder = new StringBuilder("http://apis.data.go.kr/1360000/MidFcstInfoService/getMidTa"); 
                 urlBuilder.append("?" + URLEncoder.encode("ServiceKey","UTF-8") + "=" + serviceKey); 
