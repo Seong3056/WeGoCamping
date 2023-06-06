@@ -1,6 +1,6 @@
 @import url("https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css");
-
 /* @import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&display=swap'); */
+
 * {
     padding: 0;
     margin: 0;
@@ -32,10 +32,8 @@ header {
     font-family: 'Hahmlet', serif;
     width: 100%;
     height: 80px;
-
     z-index: 9999;
     background-color: #fff;
-
     box-sizing: border-box;
     position: relative;
     position: fixed;
@@ -58,6 +56,7 @@ header .section {
     display: flex;
     flex-flow: row;
     align-items: center;
+
 }
 
 header .section .logo {
@@ -97,7 +96,7 @@ header .menu .menu-down .in-menu {
 }
 
 header .dropdown {
-    /* 하위메뉴 */
+    /*하위메뉴*/
     display: none;
     position: absolute;
     top: 50px;
@@ -106,11 +105,12 @@ header .dropdown {
 }
 
 header:hover .dropdown {
-    /* 하위메뉴:호버 */
+    /*하위메뉴:호버*/
     display: flex;
     flex-flow: column;
     transition: all 2s ease-out;
     margin-top: 10px;
+
 }
 
 header:hover a:hover {
@@ -124,10 +124,10 @@ header .dropdown a {
     text-align: center;
     justify-self: center;
 }
-/* 메뉴영역 끝 */
+/* 메뉴영역 끝*/
 
 header .section .header-right {
-    /* 검색창 | 로그인정보 */
+    /* 검색창 | 로그인정보*/
     width: 300px;
     position: absolute;
     right: 10px;
@@ -135,15 +135,13 @@ header .section .header-right {
     justify-content: end;
 }
 
-/* 
-header .section .header-right .search{
+/* header .section .header-right .search{
     width: 150px;
     height: 30px;
     margin: auto 0;
     margin-right: 0px;	
 }
  */
-
 header .section .header-right .profile {
     display: flex;
     flex-flow: column;
@@ -156,7 +154,6 @@ header .section .header-right .profile {
     margin-left: 2px;
 }
  */
-
 #login img {
     margin-bottom: 5px;
     width: 50px;
@@ -174,7 +171,6 @@ header .section .header-right .login {
 footer {
     width: 100%;
     position: absolute;
-    margin-top: 100px;
     bottom: 0;
     background-color: rgb(252, 242, 227);
 }
@@ -196,7 +192,6 @@ footer .section img {
 
 /* <!--모달--> */
 .modal button {
-    background-color: #F9B514;
     padding: 5px 10px;
     border-radius: 4px;
     cursor: pointer;
