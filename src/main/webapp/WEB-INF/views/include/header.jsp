@@ -62,7 +62,7 @@
       <div id="login" style="display: none;">
         <img class="profile-img" src="${pageContext.request.contextPath}/img/profile.png" alt="profile">
         <a href="${pageContext.request.contextPath}/user/info" class="user">홍길동님</a>
-        <button id="logout" onclick="location.href='${pageContext.request.contextPath}/user/logout'">로그아웃</button>
+        <button class="btn btn-secondary" id="logout" onclick="location.href='${pageContext.request.contextPath}/user/logout'">로그아웃</button>
       </div>
 
       <div id="notLogin">
