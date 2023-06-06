@@ -88,7 +88,7 @@
                                     <button type="button" id="goMainBtn" class="goMainBtn">메인으로</button>
                                 </div>
                                 <div class="form-group">
-									<button type="button" id=withdrawal class="Withdrawal">탈퇴</button>                                
+									<button type="button" id=withdrawal class="Withdrawal btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">탈퇴</button>                                
                                 </div>
                             </div>
 
@@ -101,24 +101,17 @@
     <%@ include file="../include/footer.jsp" %>
     
     <!-- 모달  -->
-    <div class="modal-dialog modal-dialog-centered">
-    <div class="modal" tabindex="-1">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">비밀번호를 입력해주세요.</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <input type="password" class="modalInput" id="modalInput">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
-        <button type="button" class="btn btn-primary">완료</button>
-      </div>
-    </div>
-  </div>
-</div>
+    <div class="modal hidden">
+        <div class="reText">
+            <p>탈퇴를 원하시면 비밀번호를 입력해주세요.</p>
+        </div>
+        <div class="pwBox">
+            <input type="password" class="inputPw" id="inputPw">
+        </div>
+        <div class="btnBox">
+            <button type="button" class="cancle" id="cancle">취소</button>
+            <button type="button" class="cplBtn" id="cplBtn">완료</button>
+        </div>
     </div>
     
     <script>
@@ -126,7 +119,7 @@
         document.getElementById('withdrawal').onclick = () => {
             console.log('회원탈퇴 버튼이 클릭됐습니다!');
             let id = "${login}";
-           const chPw = prompt('비밀번호를 입력해주세요.');
+          /*  const chPw = prompt('비밀번호를 입력해주세요.'); */
            const withObj = {
             method: 'post',
             headers: {

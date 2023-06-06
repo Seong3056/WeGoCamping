@@ -32,7 +32,7 @@
             class="btn btn-secondary">캠핑후기</button>
         <button onclick="location.href='${pageContext.request.contextPath}/board/boardList?cls=2'"
             class="btn btn-secondary">꿀팁공유</button>
-        <button onclick="location.href='${pageㅋContext.request.contextPath}/board/boardList?cls=3'"
+        <button onclick="location.href='${pageContext.request.contextPath}/board/boardList?cls=3'"
             class="btn btn-secondary">메이트찾기</button>
         <button onclick="location.href='${pageContext.request.contextPath}/board/boardList?cls=4'"
             class="btn btn-secondary">건의사항</button>
