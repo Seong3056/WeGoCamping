@@ -293,7 +293,6 @@
     const endDate = new Date(parseInt(end.substr(0, 4)),
       parseInt(end.substr(6, 2)) - 1,
       parseInt(end.substr(9, 2)));
-
     const d = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 
 
