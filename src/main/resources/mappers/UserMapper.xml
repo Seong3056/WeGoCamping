@@ -13,8 +13,8 @@
 			 #{addrBasic},#{addrDetail},#{addrZipNum})
 	</insert>
 
-	<delete id="delete">
-		DELETE FROM user WHERE user_id = #{userId}
+	<delete id="withdrawal">
+		DELETE FROM users WHERE user_id = #{userId}
 	</delete>
 
 	<select id="idCheck" resultType="int">

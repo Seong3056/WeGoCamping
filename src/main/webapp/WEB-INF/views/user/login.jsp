@@ -88,7 +88,11 @@
         if (cno !== '') {
             document.loginForm.setAttribute('action', '${pageContext.request.contextPath}/user/login?cno=' + cno);
             document.loginForm.submit();
-        } else
-            document.loginForm.submit();
+        }
+
+        document.getElementById('joinBtn').onclick = () => {
+            console.log('회원가입버튼 클ㄹ');
+            location.href = '${pageContext.request.contextPath}/user/join';
+        }
     }
 </script>

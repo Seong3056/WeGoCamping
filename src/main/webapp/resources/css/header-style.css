@@ -124,7 +124,6 @@ header .dropdown a {
     text-align: center;
     justify-self: center;
 }
-
 /* 메뉴영역 끝 */
 
 header .section .header-right {
@@ -252,7 +251,6 @@ footer .section img {
 .hidden {
     display: none;
 }
-
 /* <!-- 모달끝 --> */
 
 /* <!--모달2 시작 --> */
@@ -314,5 +312,4 @@ footer .section img {
 .h2 {
     display: none;
 }
-
 /* <!-- 모달2 끝 --> */
