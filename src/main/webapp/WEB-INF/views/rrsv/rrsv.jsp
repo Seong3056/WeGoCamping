@@ -1,12 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-
-<!-- 웹폰트 적용 -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&display=swap" rel="stylesheet">
-
 <title>예약하기</title>
 
 <!--달력-->
@@ -25,11 +19,7 @@
   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
   crossorigin=""></script>
 
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/reservep/reserve.css">
-
 
 <%@ include file="../include/header.jsp" %>
 
@@ -45,7 +35,7 @@
         <div id="mapid"></div>
 
       </div>
-      
+
       <div class="form-right">
 
         <div class="line2">
@@ -55,7 +45,7 @@
           </div>
 
           <div class="rsvNum">
-            
+
             <select name="quantity" id="quantity">
               <option value="0" selected hidden>인원수</option>
               <option value="1">1</option>
@@ -69,15 +59,21 @@
           <div>
             <div class="day1">
               <h3>2023-06-05</h3>
-              <p>최고기온</p> <p id="day1Max"></p> <br>
-              <p>최저기온</p> <p id="day1Min"></p> <br>
-              <p>날씨</p> <p></p>
+              <p>최고기온</p>
+              <p id="day1Max"></p> <br>
+              <p>최저기온</p>
+              <p id="day1Min"></p> <br>
+              <p>날씨</p>
+              <p></p>
             </div>
             <div class="day2">
               <h3>2023-06-05</h3>
-              <p>최고기온</p> <p id="day2Max"></p> <br>
-              <p>최저기온</p> <p id="day2Min"></p> <br>
-              <p>날씨</p> <p></p>
+              <p>최고기온</p>
+              <p id="day2Max"></p> <br>
+              <p>최저기온</p>
+              <p id="day2Min"></p> <br>
+              <p>날씨</p>
+              <p></p>
             </div>
 
           </div>
@@ -86,24 +82,16 @@
         </div>
         <div class="line4">
           <h2>금액: </h2>
-          <input type="text" name="amount" value="${camp.amount}" readonly>          
+          <input type="text" name="amount" value="${camp.amount}" readonly>
           <img id="payBtn" src="${pageContext.request.contextPath}/img/kakao/payment_icon_yellow_small.png" alt="카카오페이">
         </div>
+
       </div>
-      
-
-
-
 
     </div>
-
   </form>
-
-
-
-
-
 </article>
+
 <%@ include file="../include/footer.jsp" %>
 <!-- jQuery -->
 
@@ -192,30 +180,33 @@
     } else document.payForm.submit();
   };
 
-  document.getElementById('demo').onchange = () =>{
-    
+  document.getElementById('demo').onchange = () => {
+
     let addr = "${camp.addr}";
     console.log(addr);
-    addr = addr.substring(0,addr.indexOf('원')+1);
+    addr = addr.substring(0, addr.indexOf('원') + 1);
     console.log(addr);
 
     var xhr = new XMLHttpRequest();
-var url = 'http://apis.data.go.kr/1360000/MidFcstInfoService/getMidFcst'; /*URL*/
-var queryParams = '?' + encodeURIComponent('serviceKey') + '='+'JS7jeuof%2BpwfeEbRwoql%2BWry6jw2GgIJlD3GWpVjjxNvEQSSGIc6HaD90Rg3u48tnw6LVidKVigCK2YAxGc4Hw%3D%3D'; /*Service Key*/
-queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /**/
-queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('10'); /**/
-queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('XML'); /**/
-queryParams += '&' + encodeURIComponent('regId') + '=' + '11D20501'; /**/
-queryParams += '&' + encodeURIComponent('tmFc') + '=' + encodeURIComponent('202306030600'); /**/
-var q ='http://apis.data.go.kr/1360000/MidFcstInfoService/getMidTa?serviceKey=JS7jeuof%2BpwfeEbRwoql%2BWry6jw2GgIJlD3GWpVjjxNvEQSSGIc6HaD90Rg3u48tnw6LVidKVigCK2YAxGc4Hw%3D%3D&numOfRows=10&pageNo=1&regId=11D20501&tmFc=202306020600';
-xhr.open('GET', q);
-xhr.onreadystatechange = function () {
-    if (this.readyState == 4) {
-        console.log('Status: '+this.status);
-        console.log('nHeaders: '+JSON.stringify(this.getAllResponseHeaders()));        
-        console.log('nBody: text '+this.responseText);
-        console.log('nBody: json '+this.responseXML);
-        alert('Status: '+this.status+'nHeaders: '+JSON.stringify(this.getAllResponseHeaders())+'nBody: '+this.responseText);
+    var url = 'http://apis.data.go.kr/1360000/MidFcstInfoService/getMidFcst'; /*URL*/
+    var queryParams = '?' + encodeURIComponent('serviceKey') + '=' +
+      'JS7jeuof%2BpwfeEbRwoql%2BWry6jw2GgIJlD3GWpVjjxNvEQSSGIc6HaD90Rg3u48tnw6LVidKVigCK2YAxGc4Hw%3D%3D'; /*Service Key*/
+    queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /**/
+    queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('10'); /**/
+    queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('XML'); /**/
+    queryParams += '&' + encodeURIComponent('regId') + '=' + '11D20501'; /**/
+    queryParams += '&' + encodeURIComponent('tmFc') + '=' + encodeURIComponent('202306030600'); /**/
+    var q =
+      'http://apis.data.go.kr/1360000/MidFcstInfoService/getMidTa?serviceKey=JS7jeuof%2BpwfeEbRwoql%2BWry6jw2GgIJlD3GWpVjjxNvEQSSGIc6HaD90Rg3u48tnw6LVidKVigCK2YAxGc4Hw%3D%3D&numOfRows=10&pageNo=1&regId=11D20501&tmFc=202306020600';
+    xhr.open('GET', q);
+    xhr.onreadystatechange = function () {
+      if (this.readyState == 4) {
+        console.log('Status: ' + this.status);
+        console.log('nHeaders: ' + JSON.stringify(this.getAllResponseHeaders()));
+        console.log('nBody: text ' + this.responseText);
+        console.log('nBody: json ' + this.responseXML);
+        alert('Status: ' + this.status + 'nHeaders: ' + JSON.stringify(this.getAllResponseHeaders()) + 'nBody: ' +
+          this.responseText);
         document.getElementById('weather').textContent = this.responseText;
         var XmlNode = new DOMParser().parseFromString(this.responseText, 'text/xml');
         var data = xmlToJson(XmlNode);
@@ -224,8 +215,8 @@ xhr.onreadystatechange = function () {
         //     body: 
         //         items: 
         //             item: regId
-    }
-};
+      }
+    };
   }
 
 
@@ -271,40 +262,40 @@ xhr.onreadystatechange = function () {
   //   });
   // }
 
-    document.getElementById('demo').onchange = () => {
-      const now = new Date();
-      const date = document.getElementById('demo').value;
-      const start = date.substring(0,10);
-      const startDate = new Date(
-        parseInt(start.substr(0,4)),
-        parseInt(start.substr(6,2)),
-        parseInt(start.substr(9,2)));
-      
-        const end = date.substring(13,23);
-      const endDate = new Date(parseInt(end.substr(0,4)),
-        parseInt(end.substr(6,2)),
-        parseInt(end.substr(9,2)));
+  document.getElementById('demo').onchange = () => {
+    const now = new Date();
+    const date = document.getElementById('demo').value;
+    const start = date.substring(0, 10);
+    const startDate = new Date(
+      parseInt(start.substr(0, 4)),
+      parseInt(start.substr(6, 2)),
+      parseInt(start.substr(9, 2)));
 
-      const getDateDiff = (d1, d2) => {
-  const date1 = new Date(d1);
-  const date2 = new Date(d2);
-  
-  const diffDate = date1.getTime() - date2.getTime();
-  
-  return Math.abs(diffDate / (1000 * 60 * 60 * 24)); // 밀리세컨 * 초 * 분 * 시 = 일
-}
+    const end = date.substring(13, 23);
+    const endDate = new Date(parseInt(end.substr(0, 4)),
+      parseInt(end.substr(6, 2)),
+      parseInt(end.substr(9, 2)));
 
-getDateDiff("2021-09-01", "2021-10-01");
+    const getDateDiff = (d1, d2) => {
+      const date1 = new Date(d1);
+      const date2 = new Date(d2);
 
-      
-      console.log("출발"+startDate+"도착"+endDate);
-      fetch('${pageContext.request.contextPath}/weather/${camp.cno}')
-      .then(rs =>rs.json())
-      .then(data =>{
-        
+      const diffDate = date1.getTime() - date2.getTime();
+
+      return Math.abs(diffDate / (1000 * 60 * 60 * 24)); // 밀리세컨 * 초 * 분 * 시 = 일
+    }
+
+    getDateDiff("2021-09-01", "2021-10-01");
+
+
+    console.log("출발" + startDate + "도착" + endDate);
+    fetch('${pageContext.request.contextPath}/weather/${camp.cno}')
+      .then(rs => rs.json())
+      .then(data => {
+
         console.log(data[0].taMin3);
-        let s = getDateDiff(startDate,new Date());
-        let e = getDateDiff(endDate,new Date());
+        let s = getDateDiff(startDate, new Date());
+        let e = getDateDiff(endDate, new Date());
         console.log(s);
         document.getElementById('day1Max').textContent = data[0].taMax3;
         document.getElementById('day1Min').textContent = data[0].taMin3;
@@ -312,5 +303,5 @@ getDateDiff("2021-09-01", "2021-10-01");
         document.getElementById('day2Min').textContent = data[0].taMin4;
 
       })
-    }
+  }
 </script>

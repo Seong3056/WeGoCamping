@@ -1,101 +1,81 @@
 @charset "utf-8";
 @import url("https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css");
 
-*{
+* {
     padding: 0;
     margin: 0;
-	box-sizing: border-box;
-	
+    box-sizing: border-box;
 }
-
 
 .around {
-	font-family: 'Hahmlet', serif;
-	width: 1100px;
-	margin: 200px auto 100px;
-	text-align: center;
-
+    font-family: 'Hahmlet', serif;
+    width: 1100px;
+    margin: 200px auto 100px;
+    text-align: center;
 }
 
-.around > h1{
-	
+.around>h1 {
     text-align: center;
-    font-size:30px;
+    font-size: 30px;
     font-weight: bold;
     margin-top: 5%;
     margin-bottom: 5%;
-  
- 
-		
 }
 
 .col-md-4 {
-	margin-bottom: 3%;
-} 
-
-
-.caption > h2 {
-	font-weight: bold;
+    margin-bottom: 3%;
 }
 
-iframe{
+.caption>h2 {
+    font-weight: bold;
+}
+
+iframe {
     width: 100%;
 }
 
-
 .sel1 {
-	 margin: 10px auto 10px;
+    margin: 10px auto 10px;
     float: right;
     position: absolute;
     right: 20%;
-	top: 200px;
-	
+    top: 200px;
 }
-
 
 .sel2 {
     margin: 10px auto 10px;
     float: right;
     position: absolute;
     right: 15%;
-	top: 200px;
+    top: 200px;
 }
 
-
-
-.box > img {
-	width: 100%;
-}
- 
-
-.caption > p {
-	height: 30px;
+.box>img {
+    width: 100%;
 }
 
-.caption > button {
- 		margin-top: 30px;
- 		
-		color:black;
-		font-size: 17px;
+.caption>p {
+    height: 30px;
 }
 
+.caption>button {
+    margin-top: 30px;
+    color: black;
+    font-size: 17px;
+}
 
-
-.around .page{
+.around .page {
     display: flex;
     flex-flow: row;
     justify-content: center;
     margin-top: 5%;
-    
 }
-.around .page div{
+
+.around .page div {
     margin: 3px;
 }
 
-.around .thumImg{
-   
+.around .thumImg {
     width: 100%;
     height: 217px;
-    
 }
-

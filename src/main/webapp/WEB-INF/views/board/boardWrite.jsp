@@ -1,18 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
+<title>게시글 작성</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/boardWrite.css">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Insert title here</title>
-    
-    <!-- 부트스트랩 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/lumen/bootstrap.min.css" integrity="sha384-GzaBcW6yPIfhF+6VpKMjxbTx6tvR/yRd/yJub90CqoIn2Tz4rRXlSpTFYMKHCifX" crossorigin="anonymous">
-       
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/boardWrite.css">
-    
-    
-</head>
 <%@ include file="../include/header.jsp" %>
 
 <body>
@@ -22,13 +13,13 @@
 
         <h3>글쓰기</h3>
         <div class="BPBox">
-        <select name="cls">
+            <select name="cls">
                 <option value="none" selected hidden>말머리</option>
                 <option value=1>캠핑후기</option>
                 <option value=2>꿀팁공유</option>
                 <option value=3>메이트찾기</option>
                 <option value=4>건의사항</option>
-            </select> 
+            </select>
             <input class="title" id="title" type="text" name="title" placeholder="제목을 입력하세요">
         </div>
         <textarea name="content" class="content" id="content" placeholder="내용은 최대 2000자 까지 가능합니다."></textarea>
@@ -77,7 +68,7 @@
 
 
         console.log('제목 말머리 내용 모두 있음');
-        console.log(document.boardForm);   
+        console.log(document.boardForm);
         document.boardForm.submit();
 
 
