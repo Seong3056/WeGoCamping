@@ -16,7 +16,7 @@
         <div class="headBox">
             <h3>수정하기</h3>
         </div>
-        <form action="${pageContext.request.contextPath}/board/update" method="get" name="updateForm">
+        <form action="${pageContext.request.contextPath}/board/update" method="post" name="updateForm">
 
             <div class="titleBox">
                 
