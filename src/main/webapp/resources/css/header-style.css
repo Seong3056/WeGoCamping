@@ -312,3 +312,12 @@ footer .section img {
 }
 /* <!-- 모달2 끝 --> */
 
+<!--부트스트랩 적용 취소-->
+a, .btn:active, .btn:focus {
+outline:none !important;
+box-shadow:none !important;
+}
+a:hover { 
+	text-decoration:none !important;
+	color: black !important;
+	}
