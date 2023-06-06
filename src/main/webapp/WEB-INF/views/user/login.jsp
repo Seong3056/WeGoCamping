@@ -42,12 +42,12 @@
                             </div>
                             <div class="choiceBtn">
                                 <div class="JoinBox">
-                                    <button  type="button" class="joinBtn btn btn-secondary"" id="joinBtn">
+                                    <button  type="button" class="joinBtn btn btn-secondary" id="joinBtn">
                                         회원가입
                                     </button>
                                 </div>
                                 <div class="loginBox">
-                                    <button type="button" class="loginBtn btn btn-secondary"" id="loginBtn">
+                                    <button type="button" class="loginBtn btn btn-secondary" id="loginBtn">
                                         로그인
                                     </button>
                                 </div>
@@ -100,10 +100,13 @@
             document.loginForm.setAttribute('action', '${pageContext.request.contextPath}/user/login?cno=' + cno);
             document.loginForm.submit();
         }
+    }
 
         document.getElementById('joinBtn').onclick = () => {
             console.log('회원가입버튼 클ㄹ');
-            location.href = '${pageContext.request.contextPath}/user/join';
+            location.href='${pageContext.request.contextPath}/user/join';
         }
-    }
+
+    
+    
 </script>
