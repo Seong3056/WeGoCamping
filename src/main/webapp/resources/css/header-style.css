@@ -317,7 +317,8 @@ a, .btn:active, .btn:focus {
 outline:none !important;
 box-shadow:none !important;
 }
-a:hover { 
+a:hover, a:active { 
+	outline:none !important;
 	text-decoration:none !important;
 	color: black !important;
 	}
