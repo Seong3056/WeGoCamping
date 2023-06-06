@@ -245,9 +245,9 @@ footer .section img {
         .hidden {
           display: none;
         }
-        <!-- 모달끝 -->
+        /* <!-- 모달끝 --> */
         
-        <!--모달2 시작 -->
+        /* <!--모달2 시작 --> */
   		.m2  button {
           background-color: #F9B514;
           width: 90px;
@@ -308,6 +308,6 @@ footer .section img {
         .h2 {
           display: none;
         }
-        <!-- 모달2 끝 -->
+        /* <!-- 모달2 끝 --> */
         
 

@@ -97,4 +97,10 @@
             document.loginForm.submit();
         }
 
+        document.getElementById('joinBtn').onclick = () => {
+            console.log('회원가입버튼 클ㄹ');
+            location.href='${pageContext.request.contextPath}/user/join';
+        }
+
+
      </script>

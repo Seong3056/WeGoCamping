@@ -9,21 +9,39 @@
 </head>
 
 <%@ include file="../include/header.jsp" %>
-<div class="detailB">
-
-  <form action="" method="post" name="detailForm">
-    <h3>## 게시판</h3>
-    <article class="board">
-      <div class="id" readonly>${vo.writer}</div>
-      <div class="title" readonly>${vo.title}</div>
-      <div class="flexBox">
-        <div class="imageBox">
-          <img alt="#" src="${pageContext.request.contextPath}/img/cam3.jpeg"
-            onerror="this.src='${pageContext.request.contextPath}/img/campsiteOnerror.jpg'">
-
-          <div class="bGroup">
-            <button class="previous"> ◁ </button>
-            <button class="next"> ▷ </button>
+    <div class="detailB">
+      
+        <form action="" method="post" name="detilForm">
+          <h3>게시판</h3>
+          <article class="board">
+            
+            <div class="topBox">
+              <select name="cls">
+                  <option value="none" selected hidden>말머리</option>
+                  <option value=1>캠핑후기</option>
+                  <option value=2>꿀팁공유</option>
+                  <option value=3>메이트찾기</option>
+                  <option value=4>건의사항</option>
+                </select>
+                <div class="title" readonly>${vo.title}</div>
+                <div class="id" readonly>${vo.writer}</div>               
+            </div>
+              <div class="flexBox">
+                  <div class="imageBox">
+                  <img alt="#" src="${pageContext.request.contextPath}/img/cam3.jpeg" onerror="this.src='${pageContext.request.contextPath}/img/campsiteOnerror.jpg'">
+          
+                  <div class="bGroup">
+                      <button class="previous"> ◁ </button>
+                      <button class="next"> ▷ </button>
+                  </div>
+                  </div>
+                  <div class="content" id="content" readonly>${vo.content}</div>
+              </div>
+          </article>
+          <div class="btn-group">
+              <button type="button" class="listBtn" id="listBtn" onclick="location.href='${pageContext.request.contextPath}/board/boardList'">목록</button>
+              <button type="button" class="regBtn" id="regBtn" onclick="location.href='${pageContext.request.contextPath}/board/boardModify/${vo.bno}'" >수정</button>
+          
           </div>
         </div>
         <div class="content" readonly>${vo.content}</div>
@@ -320,7 +338,38 @@
     btnPrevious.addEventListener("click", previous)
     btnNext.addEventListener("click", next)
   }
+  if(imageIndex == 3){
+    btnNext.setAttribute('disabled', 'true')
+  }
 
-  init();
-  // 이미지 스크립트 JS 끝-------------------
+ 
+function init(){
+  btnPrevious.style.opacity = '0';
+  btnPrevious.addEventListener("click", previous)
+  btnNext.addEventListener("click", next)
+}
+ 
+init();
+
+// 이미지 스크립트 JS 끝-------------------
+
+document.querySelector('select').onclick = () => {
+  const imageBox = document.getElementById('imageBox');
+  const content = document.getElementById('content');
+
+  console.log('select 클릭됨');
+  
+  if(document.querySelector('select').value == 1) {
+	imageBox.style.display = 'block';
+    content.style.display = 'block';
+    console.log('value 1 들어옴');
+  } else {
+	imageBox.style.display = 'none';
+    content.style.display = 'block';
+    content.style.width = '800px';
+    console.log('else 로 빠짐 ^^7');
+  }
+
+}
+
 </script>
