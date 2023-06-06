@@ -126,24 +126,20 @@
 <%@ include file="../include/footer.jsp" %>
 
 <script>
-    window.onload = function () {
+    // 페이징 버튼 함수
+    document.getElementById('pagination').addEventListener('click', e => {
+        if (!e.target.matches('a')) {
+            return;
+        }
 
-        // 페이징 버튼 함수
-        document.getElementById('pagination').addEventListener('click', e => {
-            if (!e.target.matches('a')) {
-                return;
-            }
+        e.preventDefault();
 
-            e.preventDefault();
+        const pageNum = e.target.dataset.pagenum;
 
-            const pageNum = e.target.dataset.pagenum;
+        document.pageForm.pageNum.value = pageNum;
+        document.pageForm.submit();
 
-            document.pageForm.pageNum.value = pageNum;
-            document.pageForm.submit();
-
-        });
-
-    }
+    });
 
     // 댓글 날짜 변환 함수
     function parseTime(regDateTime) {

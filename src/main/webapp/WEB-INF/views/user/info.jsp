@@ -131,9 +131,7 @@
             body: JSON.stringify({
                 'userId': "${login}",
                 'userPw': chPw
-
             })
-
         };
         fetch('${pageContext.request.contextPath}/user/withdrawal', withObj)
             .then(rs => rs.text())
@@ -145,8 +143,6 @@
                 } else {
                     alert('회원 탈퇴가 정상 처리 되지 않았습니다. 다시 시도해주세요.');
                 }
-
             });
-
     }
 </script>

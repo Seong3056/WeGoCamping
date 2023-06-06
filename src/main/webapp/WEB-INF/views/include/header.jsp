@@ -15,9 +15,12 @@
 
   <!-- 부트스트랩 -->
   <script src="https://kit.fontawesome.com/a2baf29734.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/lumen/bootstrap.min.css" integrity="sha384-GzaBcW6yPIfhF+6VpKMjxbTx6tvR/yRd/yJub90CqoIn2Tz4rRXlSpTFYMKHCifX" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/lumen/bootstrap.min.css"
+    integrity="sha384-GzaBcW6yPIfhF+6VpKMjxbTx6tvR/yRd/yJub90CqoIn2Tz4rRXlSpTFYMKHCifX" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googlehttps://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.cssapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script
+    src="https://ajax.googlehttps://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.cssapis.com/ajax/libs/jquery/3.6.4/jquery.min.js">
+  </script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
@@ -105,15 +108,13 @@
 </header>
 
 <script>
-  window.onload = () => {
-    console.log("${login}");
-    if ("${login}" !== '') {
-      document.getElementById('login').style.display = 'block';
-      document.getElementById('notLogin').style.display = 'none';
-    } else {
-      document.getElementById('login').style.display = 'none';
-      document.getElementById('notLogin').style.display = 'block';
-    }
+  console.log("${login}");
+  if ("${login}" !== '') {
+    document.getElementById('login').style.display = 'block';
+    document.getElementById('notLogin').style.display = 'none';
+  } else {
+    document.getElementById('login').style.display = 'none';
+    document.getElementById('notLogin').style.display = 'block';
   }
 
   const open = () => {
