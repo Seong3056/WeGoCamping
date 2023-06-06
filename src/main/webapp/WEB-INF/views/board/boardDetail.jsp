@@ -2,64 +2,62 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<head>
-  <meta charset="UTF-8">
-  <title>Insert title here</title>
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/boardDetail.css">
-</head>
+<title>게시글 상세보기</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/boardDetail.css">
 
 <%@ include file="../include/header.jsp" %>
-<div class="detailB">
+<article class="detail">
+  <div class="detailB">
+    <form action="" method="post" name="detailForm">
+      <h3>## 게시판</h3>
+      <article class="board">
+        <div class="id" readonly>${vo.writer}</div>
+        <div class="title" readonly>${vo.title}</div>
+        <div class="flexBox">
+          <div class="imageBox">
+            <img alt="#" src="${pageContext.request.contextPath}/img/cam3.jpeg"
+              onerror="this.src='${pageContext.request.contextPath}/img/campsiteOnerror.jpg'">
 
-  <form action="" method="post" name="detailForm">
-    <h3>## 게시판</h3>
-    <article class="board">
-      <div class="id" readonly>${vo.writer}</div>
-      <div class="title" readonly>${vo.title}</div>
-      <div class="flexBox">
-        <div class="imageBox">
-          <img alt="#" src="${pageContext.request.contextPath}/img/cam3.jpeg"
-            onerror="this.src='${pageContext.request.contextPath}/img/campsiteOnerror.jpg'">
-
-          <div class="bGroup">
-            <button class="previous"> ◁ </button>
-            <button class="next"> ▷ </button>
+            <div class="bGroup">
+              <button class="previous"> ◁ </button>
+              <button class="next"> ▷ </button>
+            </div>
           </div>
+          <div class="content" readonly>${vo.content}</div>
         </div>
-        <div class="content" readonly>${vo.content}</div>
-      </div>
-    </article>
-    <div class="btn-group">
-      <button type="button" class="listBtn" id="listBtn"
-        onclick="location.href='${pageContext.request.contextPath}/board/boardList'">목록</button>
-      <button type="button" class="regBtn" id="regBtn"
-        onclick="location.href='${pageContext.request.contextPath}/board/boardModify/${vo.bno}'">수정</button>
+      </article>
+      <div class="btn-group">
+        <button type="button" class="listBtn" id="listBtn"
+          onclick="location.href='${pageContext.request.contextPath}/board/boardList'">목록</button>
+        <button type="button" class="regBtn" id="regBtn"
+          onclick="location.href='${pageContext.request.contextPath}/board/boardModify/${vo.bno}'">수정</button>
 
-    </div>
-  </form>
-</div>
-<!-- 댓글 부분 -->
-<div class="reply">
-  <label for="reply">댓글(댓글 수)</label>
-  <!-- <form action=""> -->
-  <div class="replyWrite">
-    <textarea name="reply" class="replyInput" id="replyInput" placeholder="댓글을 작성해주세요."></textarea>
-    <button type="button" class="registBtn" id="registBtn">등록</button>
+      </div>
+    </form>
   </div>
-  <!-- </form> -->
-  <!-- 댓글 창 -->
-  <div id=replyList class="replyContent">
-    <div class="replyInfo">
-      <div class="replyWriter">이름값</div>&nbsp; &nbsp;
-      <div class="replyDate"> 시간값</div>
+  <!-- 댓글 부분 -->
+  <div class="reply">
+    <label for="reply">댓글(댓글 수)</label>
+    <!-- <form action=""> -->
+    <div class="replyWrite">
+      <textarea name="reply" class="replyInput" id="replyInput" placeholder="댓글을 작성해주세요."></textarea>
+      <button type="button" class="registBtn" id="registBtn">등록</button>
     </div>
-    <div class="replyText">
-      <textarea name="replyCnt" id="replyCnt" class="replyCnt" readonly>내용</textarea>
-      <div class="replyFix"><a href="#">수정</a>&nbsp;|&nbsp;<a href="#">삭제</a></div>
+    <!-- </form> -->
+    <!-- 댓글 창 -->
+    <div id=replyList class="replyContent">
+      <div class="replyInfo">
+        <div class="replyWriter">이름값</div>&nbsp; &nbsp;
+        <div class="replyDate"> 시간값</div>
+      </div>
+      <div class="replyText">
+        <textarea name="replyCnt" id="replyCnt" class="replyCnt" readonly>내용</textarea>
+        <div class="replyFix"><a href="#">수정</a>&nbsp;|&nbsp;<a href="#">삭제</a></div>
+      </div>
     </div>
+    <button type="button" class="form-control" id="moreList" style="display: none;">댓글 더보기</button>
   </div>
-  <button type="button" class="form-control" id="moreList" style="display: none;">댓글 더보기</button>
-</div>
+</article>
 
 <%@ include file="../include/footer.jsp" %>
 
@@ -183,7 +181,7 @@
     // 댓글 수정 or 삭제 이벤트
     document.getElementById('replyList').addEventListener('click', e => {
       e.preventDefault(); // 태그의 고유 기능을 중지.
-      
+
 
       // 이벤트가 발생한 target이 a태그가 아니라면 이벤트 종료.
       if (!e.target.matches('a')) {
@@ -228,7 +226,7 @@
               .then(res => res.text())
               .then(data => {
                 console.log(data);
-                if(data === 'updateSuccess') {
+                if (data === 'updateSuccess') {
                   console.log('댓글 수정 완료! : ' + data);
                   // 댓글 수정 완료 후 댓글 목록 재표현.
                   getList(1, true);
@@ -246,7 +244,7 @@
             .then(res => res.text())
             .then(data => {
               console.log(data);
-              if(data === 'deleteSuccess') {
+              if (data === 'deleteSuccess') {
                 alert('댓글 삭제가 완료되었습니다.');
                 getList(1, true);
               } else {
