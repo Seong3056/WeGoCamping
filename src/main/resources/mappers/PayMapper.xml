@@ -5,7 +5,7 @@
 <mapper namespace="com.camping.wego.pay.mapper.IPaymentMapper">
 	<insert id="insert">
 		INSERT INTO payment
-		(pay_num, partnerUserId, amount, cno, quantity, item_name,tid)
+		(pay_num, partner_user_id, amount, cno, quantity, item_name,tid)
 		VALUES
 		(#{payNum},#{partnerUserId},#{amount},#{cno},#{quantity},#{itemName},#{tid})
 	</insert>
@@ -16,15 +16,18 @@
 	
 	<select id="loadTid" resultType="pay">
 		<!-- SELECT * FROM payment WHERE tid = #{tid} -->
-		SELECT pay_num, partnerUserId, p.amount, pay_date,  quantity, item_name, tid, p.cno, c.tel, c.addr
- FROM payment p
-LEFT JOIN campsite c
-ON p.cno = c.cno
-WHERE tid = #{tid};
+		SELECT pay_num, partner_user_id, p.amount, pay_date,  quantity, item_name, tid, p.cno, c.tel, c.addr
+ 		FROM payment p
+		LEFT JOIN campsite c
+		ON p.cno = c.cno
+		WHERE tid = #{tid};
 	</select>
 	
 	<select id="inPayNum" resultType="int">
 		SELECT COUNT(*) FROM payment WHERE pay_num = #{payNum}
 	</select>
-
+	
+	<select id="getList">
+		SELECT * FROM payment WHERE pay_num = #{payNum}
+	</select>
 </mapper>

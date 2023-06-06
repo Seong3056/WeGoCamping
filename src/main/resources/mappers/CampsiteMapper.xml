@@ -35,7 +35,15 @@
 	</select>
 	
 	<update id="inputAmount">
-		UPDATE campsite SET amount = #{amount} WHERE cno = #{cno}
+		UPDATE campsite SET amount = #{amount}, faclt_nm = substring_index(faclt_nm , '(주)',-1),  faclt_nm = substring_index(faclt_nm , '㈜',-1)WHERE cno = #{cno}		
 	</update>
+	
+	<select id="addrList" resultType="camp">
+		SELECT * FROM campsite (addr LIKE  '#{addr1}%' AND addr like '%#{addr2}%')
+	</select>
+	
+	<select id="addrCode" resultType="string">
+		SELECT code FROM forecast WHERE addr_name = #{addrName}
+	</select>
 
 </mapper>

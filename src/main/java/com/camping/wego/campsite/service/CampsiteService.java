@@ -90,9 +90,31 @@ public class CampsiteService implements ICampsiteService {
 		return mapper.getTotal();
 	}
 
-@Override
+	@Override
 	public CampsiteVO info(int cno) {
 		return mapper.info(cno);
+	}
+
+	@Override
+	public String addr(int cno) {
+		CampsiteVO vo =  mapper.info(cno);
+		String addr = vo.getAddr();
+		String ar[] = addr.split(" ");
+		
+		return null;
+	}
+	
+	@Override 
+	public CampsiteVO addrList(String addr) {
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("addr1", addr.substring(0,1));
+		map.put("addr2", addr.substring(1,2));		
+		return mapper.addrList(map);
+	}
+	
+	@Override
+	public String addrCode(String addrName) {
+		return mapper.addrCode(addrName);
 	}
 
 }

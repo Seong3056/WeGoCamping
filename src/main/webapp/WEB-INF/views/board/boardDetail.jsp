@@ -5,6 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/boardDetail.css">
 </head>
 
@@ -27,12 +29,13 @@
                 <div class="id" readonly>${vo.writer}</div>               
             </div>
               <div class="flexBox">
-                  <div class="imageBox" id="imageBox">
-                    <img alt="#" src="${pageContext.request.contextPath}/img/cam3.png">          
-                    <div class="bGroup">
-                        <button class="previous"> ◁ </button>
-                        <button class="next"> ▷ </button>
-                    </div>
+                  <div class="imageBox">
+                  <img alt="#" src="${pageContext.request.contextPath}/img/cam3.jpeg" onerror="this.src='${pageContext.request.contextPath}/img/campsiteOnerror.jpg'">
+          
+                  <div class="bGroup">
+                      <button class="previous"> ◁ </button>
+                      <button class="next"> ▷ </button>
+                  </div>
                   </div>
                   <div class="content" id="content" readonly>${vo.content}</div>
               </div>

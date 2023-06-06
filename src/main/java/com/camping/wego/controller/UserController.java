@@ -87,14 +87,12 @@ public class UserController {
 		return mailService.authMail(user);
 
 	}
+	@GetMapping("/myBoard")
+	public void myboard() {}
 	
-	@PostMapping("/withdrawal")
-	@ResponseBody
-	public String withdrawal(@RequestBody UserVO vo) {
-		log.info("삭제 요청이 왔습니다.");
-		log.info(vo.getUserId());
-		log.info(vo.getUserPw());
-		
-		return service.withdrawal(vo);
-	}
+	@GetMapping("/reservation")
+	public void resv() {}
+	
+	@GetMapping("/info")
+	public void info() {}
 }

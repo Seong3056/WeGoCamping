@@ -58,8 +58,7 @@
     <div id="${camp.cno}" class="col-md-4">
       <div class="thumbnail">
         <a href="${pageContext.request.contextPath}/detail/${camp.cno}" class="detail">
-          <img src="${camp.firstImageUrl}" alt="camp${camp.cno}" style="height:217px;"
-            onerror="this.src='${pageContext.request.contextPath}/img/onerror.jpg'">
+          <img src="${camp.firstImageUrl}" alt="camp${camp.cno}" style="height:217px;" onerror="this.src='${pageContext.request.contextPath}/img/campsiteOnerror.jpg'">
         </a>
         <div class="caption">
           <h2>${camp.facltNm}</h2>

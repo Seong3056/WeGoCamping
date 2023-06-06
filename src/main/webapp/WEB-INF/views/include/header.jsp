@@ -29,10 +29,10 @@
                 <div class="menu-down">
                     <a href="${pageContext.request.contextPath}/board/boardList" class="in-menu" id="board">게시판</a>
                     <div class="dropdown">
-                        <a  href="${pageContext.request.contextPath}/board/content/1">캠핑후기</a>
-                        <a  href="${pageContext.request.contextPath}/board/content/2">꿀팁공유</a>
-                        <a  href="${pageContext.request.contextPath}/board/content/3">메이트찾기</a>
-                        <a  href="${pageContext.request.contextPath}/board/content/4">건의사항</a>
+                        <a  href="${pageContext.request.contextPath}/board/1">캠핑후기</a>
+                        <a  href="${pageContext.request.contextPath}/board/2">꿀팁공유</a>
+                        <a  href="${pageContext.request.contextPath}/board/3">메이트찾기</a>
+                        <a  href="${pageContext.request.contextPath}/board/4">건의사항</a>
                     </div>
                 </div>                
             </div>
@@ -80,7 +80,7 @@
 <div class="m2 h2">
   <div class="bg2"></div>
   <div class="mB2">
-    <p><h2>테마를 선택해주세요</h2>
+    <h2>테마를 선택해주세요</h2>
     <button>일반 야영장</button><br>
     <button>글램핑</button><br>
     <button>카라반</button><br>
@@ -107,7 +107,7 @@
        
       
        
-       <!--모달-->
+     
        
       
     

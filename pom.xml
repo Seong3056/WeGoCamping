@@ -239,7 +239,19 @@
 		    <version>2.6</version>
 		</dependency>
 		
-
+		<!-- xml읽어오는 라이브러리 -->
+		<dependency>
+		    <groupId>org.jdom</groupId>
+		    <artifactId>jdom2</artifactId>
+		    <version>2.0.6</version>
+		</dependency>
+		
+		<dependency>
+    		<groupId>org.json</groupId>
+		    <artifactId>json</artifactId>
+		    <version>20211205</version>
+		</dependency>
+			
 
 
 
