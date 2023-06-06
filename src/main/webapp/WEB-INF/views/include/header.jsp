@@ -29,11 +29,12 @@
                 <div class="menu-down">
                     <a href="${pageContext.request.contextPath}/board/boardList" class="in-menu" id="board">게시판</a>
                     <div class="dropdown">
-                        <a  href="${pageContext.request.contextPath}/board/1">캠핑후기</a>
-                        <a  href="${pageContext.request.contextPath}/board/2">꿀팁공유</a>
-                        <a  href="${pageContext.request.contextPath}/board/3">메이트찾기</a>
-                        <a  href="${pageContext.request.contextPath}/board/4">건의사항</a>
-                    </div>
+                        <a href="${pageContext.request.contextPath}/board/boardList?cls=1">캠핑후기</a>
+                        <a href="${pageContext.request.contextPath}/board/boardList?cls=2">꿀팁공유</a>
+                        <a href="${pageContext.request.contextPath}/board/boardList?cls=3">메이트찾기</a>
+                        <a href="${pageContext.request.contextPath}/board/boardList?cls=4">건의사항</a>
+                        <a href="${pageContext.request.contextPath}/board/boardList">전체 글 보기</a>
+                      </div>
                 </div>                
             </div>
             <div class="header-right">
