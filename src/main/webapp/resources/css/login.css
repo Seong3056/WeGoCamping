@@ -106,7 +106,7 @@ header .section .header-right .profile img{
     
     /* background: red;  */
     /* text-align: center; */
-  	background-image: url('..//img/bg1.jpg');
+  	background-image: url('../img/bg1.jpg');
     background-size: cover;
 }
 
@@ -122,7 +122,7 @@ header .section .header-right .profile img{
     width: 350px;
     height: 350px;
     /* background: green; */
-    margin: 0 auto;
+    margin: 0 20%;
     position: absolute;
     top: 50%;
     left: 50%;
