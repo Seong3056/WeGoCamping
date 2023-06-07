@@ -35,7 +35,7 @@ public class UserService implements IUserService {
 	}
 
 	@Override
-	public String withdrawal(UserVO vo) {
+	public boolean withdrawal(UserVO vo) {
 		
 		String dbPw = mapper.login(vo.getUserId());
 		
@@ -46,9 +46,9 @@ public class UserService implements IUserService {
 		if(encoder.matches(vo.getUserPw(),dbPw)) {
 			mapper.withdrawal(vo.getUserId());
 			log.info("비밀번호가 일치한당계");
-			return "true";
+			return true;
 		}
-		else return "false";
+		else return false;
 		
 	
 	}
