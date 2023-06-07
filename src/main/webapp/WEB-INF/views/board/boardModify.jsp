@@ -37,11 +37,11 @@
         </div>
 
         <div class="btnBox">
-            <button type="button" class="listBtn" id="listBtn"
+            <button type="button" class="listBtn btn btn-secondary" id="listBtn"
                 onclick="location.href='${pageContext.request.contextPath}/board/boardList'">목록</button>
-            <button type="button" class="deltBtn" id="delBtn"
+            <button type="button" class="deltBtn btn btn-secondary" id="delBtn"
                 onclick="location.href='${pageContext.request.contextPath}/board/delete?bno=${vo.bno}'">삭제</button>
-            <button type="submit" class="modifyBtn" id="modifyBtn">완료</button>
+            <button type="submit" class="modifyBtn btn btn-secondary" id="modifyBtn">완료</button>
         </div>
 
         <select name="rating" class="rating" style="display: none;">
