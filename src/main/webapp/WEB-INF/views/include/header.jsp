@@ -40,7 +40,7 @@
     <a href="${pageContext.request.contextPath}/" class="title" class="clearfix">Camping</a>
     <div class="menu clearfix">
       <div class="menu-down">
-        <a href="${pageContext.request.contextPath}/around" class="in-menu" id="reservation">예약하기</a>
+        <a href="${pageContext.request.contextPath}/around?location=&theme=" class="in-menu" id="reservation">예약하기</a>
         <div class="dropdown">
           <a id="locationSearch" href="#" data-toggle="modal">지역검색</a>
           <a id="themeSearch" href="#" data-toggle="m2">테마검색</a>
@@ -77,17 +77,17 @@
   </div>
 
   <!-- 모달창 -->
-  <div class="modal hidden">
+  <div id="location" class="modal hidden">
     <div class="bg"></div>
     <div class="modalBox">
       <h2>지역을 선택해주세요</h2>
-      <button class="btn btn-secondary">서울</button><br>
-      <button class="btn btn-secondary">경기</button><br>
-      <button class="btn btn-secondary">강원</button><br>
-      <button class="btn btn-secondary">충청</button><br>
-      <button class="btn btn-secondary">전라</button><br>
-      <button class="btn btn-secondary">경상</button><br>
-      <button class="btn btn-secondary">제주</button><br>
+      <button onclick='location.href="${pageContext.request.contextPath}/around?location=서울&theme=${theme}"' class="btn btn-secondary">서울</button><br>
+      <button onclick='location.href="${pageContext.request.contextPath}/around?location=경기&theme=${theme}"' class="btn btn-secondary">경기</button><br>
+      <button onclick='location.href="${pageContext.request.contextPath}/around?location=강원&theme=${theme}"' class="btn btn-secondary">강원</button><br>
+      <button onclick='location.href="${pageContext.request.contextPath}/around?location=충청&theme=${theme}"' class="btn btn-secondary">충청</button><br>
+      <button onclick='location.href="${pageContext.request.contextPath}/around?location=전라&theme=${theme}"' class="btn btn-secondary">전라</button><br>
+      <button onclick='location.href="${pageContext.request.contextPath}/around?location=경상&theme=${theme}"' class="btn btn-secondary">경상</button><br>
+      <button onclick='location.href="${pageContext.request.contextPath}/around?location=제주&theme=${theme}"' class="btn btn-secondary">제주</button><br>
       <button class="closeBtn btn btn-secondary">✖</button>
     </div>
   </div>
@@ -96,10 +96,10 @@
     <div class="bg2"></div>
     <div class="mB2">
       <h2>테마를 선택해주세요</h2>
-      <button class="btn btn-secondary">일반 야영장</button><br>
-      <button class="btn btn-secondary">글램핑</button><br>
-      <button class="btn btn-secondary">카라반</button><br>
-      <button class="btn btn-secondary">자동차 야영장</button><br>
+      <button onclick="location.href='${pageContext.request.contextPath}/around?location=${location}&theme=일반야영장'" class="btn btn-secondary">일반 야영장</button><br>
+      <button onclick="location.href='${pageContext.request.contextPath}/around?location=${location}&theme=글램핑'" class="btn btn-secondary">글램핑</button><br>
+      <button onclick="location.href='${pageContext.request.contextPath}/around?location=${location}&theme=카라반'" class="btn btn-secondary">카라반</button><br>
+      <button onclick="location.href='${pageContext.request.contextPath}/around?location=${location}&theme=자동차야영장'" class="btn btn-secondary">자동차 야영장</button><br>
       <button class="cB2 btn btn-secondary">✖</button>
     </div>
   </div>
@@ -139,4 +139,9 @@
   document.getElementById("themeSearch").addEventListener("click", op2);
   document.querySelector(".cB2").addEventListener("click", cl2);
   document.querySelector(".bg2").addEventListener("click", cl2);
+
+  document.getElementById('location').onclick = (e) =>{
+    if(!e.target.matches('button')) return;
+
+  }
 </script>
