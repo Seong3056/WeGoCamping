@@ -192,41 +192,6 @@
     } else document.payForm.submit();
   };
 
-  document.getElementById('demo').onchange = () =>{
-    
-    let addr = "${camp.addr}";
-    console.log(addr);
-    addr = addr.substring(0,addr.indexOf('원')+1);
-    console.log(addr);
-
-    var xhr = new XMLHttpRequest();
-var url = 'http://apis.data.go.kr/1360000/MidFcstInfoService/getMidFcst'; /*URL*/
-var queryParams = '?' + encodeURIComponent('serviceKey') + '='+'JS7jeuof%2BpwfeEbRwoql%2BWry6jw2GgIJlD3GWpVjjxNvEQSSGIc6HaD90Rg3u48tnw6LVidKVigCK2YAxGc4Hw%3D%3D'; /*Service Key*/
-queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /**/
-queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('10'); /**/
-queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('XML'); /**/
-queryParams += '&' + encodeURIComponent('regId') + '=' + '11D20501'; /**/
-queryParams += '&' + encodeURIComponent('tmFc') + '=' + encodeURIComponent('202306030600'); /**/
-var q ='http://apis.data.go.kr/1360000/MidFcstInfoService/getMidTa?serviceKey=JS7jeuof%2BpwfeEbRwoql%2BWry6jw2GgIJlD3GWpVjjxNvEQSSGIc6HaD90Rg3u48tnw6LVidKVigCK2YAxGc4Hw%3D%3D&numOfRows=10&pageNo=1&regId=11D20501&tmFc=202306020600';
-xhr.open('GET', q);
-xhr.onreadystatechange = function () {
-    if (this.readyState == 4) {
-        console.log('Status: '+this.status);
-        console.log('nHeaders: '+JSON.stringify(this.getAllResponseHeaders()));        
-        console.log('nBody: text '+this.responseText);
-        console.log('nBody: json '+this.responseXML);
-        alert('Status: '+this.status+'nHeaders: '+JSON.stringify(this.getAllResponseHeaders())+'nBody: '+this.responseText);
-        document.getElementById('weather').textContent = this.responseText;
-        var XmlNode = new DOMParser().parseFromString(this.responseText, 'text/xml');
-        var data = xmlToJson(XmlNode);
-        console.log(data.response.body.items.item.regId);
-        // response: 
-        //     body: 
-        //         items: 
-        //             item: regId
-    }
-};
-  }
 
 
   /*-----------------------------------카카오 페이---------------------------------------------*/
