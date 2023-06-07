@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import com.camping.wego.campsite.mapper.ICampsiteMapper;
 import com.camping.wego.vo.CampsiteVO;
+import com.camping.wego.vo.PageVO;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -107,11 +108,29 @@ public class CampsiteService implements ICampsiteService {
 	@Override 
 	public List<CampsiteVO> getList(Map<String, String> map) {
 		
-		map.put("addr1", map.get("location").substring(0,1));
-		map.put("addr2", map.get("location").substring(1,2));	
-		log.info("--------------------------------------------"+map.get("location").substring(0,1)+map.get("location").substring(1,2));
+		map.put("addr1", ((String) map.get("location")).substring(0,1));
+		map.put("addr2", ((String) map.get("location")).substring(1,2));	
+		log.info("--------------------------------------------"+((String) map.get("location")).substring(0,1)+((String) map.get("location")).substring(1,2));
 		log.info(map.toString());
 		return mapper.selectSearch(map);
+	}
+	
+	@Override 
+	public List<CampsiteVO> getList(Map<String, String> map, PageVO vo) {
+		String addr1,addr2;
+		if(map.get("location").equals("")) {
+			addr1 = "";
+			addr2 = "";
+		}else {
+		addr1 = map.get("location").substring(0,1);
+		addr2 = map.get("location").substring(1,2);
+		}
+		String theme = map.get("theme");
+		log.info(addr1+"       "+addr2);
+		log.info(map.toString());
+		int pageStart = vo.getPageStart();
+		int cpp = vo.getCpp();
+		return mapper.selectSearchPage(addr1,addr2,theme,pageStart,cpp);
 	}
 	
 	@Override

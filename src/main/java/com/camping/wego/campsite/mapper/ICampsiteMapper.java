@@ -3,6 +3,8 @@ package com.camping.wego.campsite.mapper;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.camping.wego.vo.CampsiteVO;
 
 public interface ICampsiteMapper {
@@ -31,6 +33,9 @@ public interface ICampsiteMapper {
 	String addrCode(String addrName);
 
 	List<CampsiteVO> selectSearch(Map<String, String> map);
+
+	List<CampsiteVO> selectSearchPage(@Param("addr1") String addr1,@Param("addr2") String addr2, 
+			@Param("theme") String theme,@Param("pageStart") int pageStart,@Param("cpp") int cpp);
 
 	
 

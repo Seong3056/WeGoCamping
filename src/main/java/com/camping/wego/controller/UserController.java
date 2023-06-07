@@ -44,7 +44,6 @@ public class UserController {
 		log.info("userPw: {}", userPw);
 		model.addAttribute("user", service.login(userId, userPw));
 	}
-
 	@GetMapping("/logout")
 	public String logout(HttpServletRequest request, HttpServletResponse response) {
 		new SecurityContextLogoutHandler().logout(request, response,
