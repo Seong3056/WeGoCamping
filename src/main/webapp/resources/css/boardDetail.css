@@ -175,6 +175,7 @@
     margin-bottom: 20px;
     border: 2px solid black;
     resize: none;
+    font-size: 18px;
 }
 
 .wrap .btnBox {

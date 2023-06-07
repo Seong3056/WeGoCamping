@@ -28,7 +28,7 @@
         </div>
         <div class="contentBox">
 
-            <textarea class="contentM" name="content">${vo.content}</textarea>
+            <textarea class="contentM form-control" name="content" id="exampleTextarea">${vo.content}</textarea>
         </div>
 
         <div class="filebox">
