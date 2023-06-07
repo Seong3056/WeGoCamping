@@ -42,21 +42,19 @@
       <div class="menu-down">
         <a href="${pageContext.request.contextPath}/around?location=&theme=" class="in-menu" id="reservation">예약하기</a>
         <div class="dropdown">
-          <a id="locationSearch" href="#" data-toggle="modal">지역검색</a>
-          <a id="themeSearch" href="#" data-toggle="m2">테마검색</a>
-          <a href="#">날짜검색</a>
+        <a id="locationSearch" href="#" data-toggle="modal">지역검색</a>
+        <a id="themeSearch" href="#" data-toggle="m2">테마검색</a>
         </div>
-      </div>
+       </div>
       <div class="menu-down">
-        <a href="${pageContext.request.contextPath}/board/boardList" class="in-menu" id="board">게시판</a>
+		<a href="${pageContext.request.contextPath}/board/boardList" class="in-menu" id="board">게시판</a>
         <div class="dropdown">
           <a href="${pageContext.request.contextPath}/board/boardList?cls=1">캠핑후기</a>
           <a href="${pageContext.request.contextPath}/board/boardList?cls=2">꿀팁공유</a>
           <a href="${pageContext.request.contextPath}/board/boardList?cls=3">메이트찾기</a>
           <a href="${pageContext.request.contextPath}/board/boardList?cls=4">건의사항</a>
-        <%--   <a href="${pageContext.request.contextPath}/board/boardList">전체 글 보기</a> --%>
         </div>
-      </div>
+       </div>
     </div>
     <div class="header-right">
       <!--  <input type="text" class="search clearfix" placeholder="검색어를 입력하세요.">

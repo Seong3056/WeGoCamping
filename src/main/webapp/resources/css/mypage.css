@@ -103,17 +103,38 @@ header .section .header-right .profile img{
 /* ------------------------------------- */
 /* 개인정보 수정 */
 
+.privacyFix>.fixBox {
+	font-family: 'Hahmlet', serif;
+	/* background: red; */
+	margin: 0 auto 200px;
+	#userPw: {
+	font-size: 10px;
+	}
+}
+
+input::placeholder {
+  font-size: 15px;
+}
+
+#email2 {
+	font-size: 15px;
+}
+
+#addrBasic {
+	font-size: 15px;
+}
+
 /* ------------------------ */
 /* 좌측 선택창 시작 */
 .wrap {
     /* background: yellowgreen; */
     width: 1200px;
-    margin: 0 auto;
+    margin: 150px auto 150px;
     height: 100%;
     /* overflow: auto; */
     color: black;
-    border-right: 1px solid black;
-    border-left: 1px solid black;
+    /* border-right: 1px solid black; */
+    /* border-left: 1px solid black; */
 }
 
 .wrap .menuBox .infoKind {
@@ -193,8 +214,9 @@ header .section .header-right .profile img{
     /* color: red; */
     width: 80px;
     height: 35px;
-    background: skyblue;
-    border: 1px solid gray;
+    margin-left: 10px;
+    /* background: skyblue; */
+    /* border: 1px solid gray; */
     
 
 }
@@ -221,6 +243,7 @@ header .section .header-right .profile img{
 /* ----------------------------- */
 /* 예약 정보 시작 */
 .wrap .reservationInfo {
+	font-family: 'Hahmlet', serif;
     /* color: red; */
     float: right;
     width: 60%;
@@ -264,8 +287,8 @@ header .section .header-right .profile img{
 .wrap .reservationInfo .go-main-btn button {
     width: 80px;
     height: 35px;
-    background: skyblue;
-    border: 1px solid gray;
+   /*  background: skyblue; */
+    /* border: 1px solid gray; */
     margin-left: 65%;
     margin-top: 5%;
 }

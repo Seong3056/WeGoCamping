@@ -10,10 +10,13 @@
 <section>
     <div class="wrap">
         <div class="menuBox">
-            <div class="infoKind">
-                <a href="${pageContext.request.contextPath}/user/info" class="privacy">⦁ 개인 정보 수정</a> <br>
-                <a href="${pageContext.request.contextPath}/user/reservation" class="reserInfo">⦁ 예약 정보</a> <br>
-                <a href="${pageContext.request.contextPath}/user/myBoard" class="myText">⦁ 내 게시글</a> <br>
+            <div id="clsBox" class="infoKind">
+                <form name="clsForm" method="post">
+                    <input type="text" name="userId" value="${login}" readonly hidden>
+                    <a href="info" class="privacy">⦁ 개인 정보 수정</a> <br>
+                    <a href="reservation" class="rsvInfo">⦁ 예약 정보</a> <br>
+                    <a href="myBoard" class="myText">⦁ 내 게시글</a> <br>
+                </form>
             </div>
         </div>
         <div class="privacyFix">
@@ -57,7 +60,7 @@
                         <input type="text" class="mail-check-input" placeholder="인증번호 6자리를 입력하세요." maxlength="6"
                             disabled="disabled">
 
-                        <button type="button" id="mail-check-btn" class="checkBoxE">이메일 인증</button>
+                        <button type="button" id="mail-check-btn" class="checkBoxE btn btn-secondary">이메일 인증</button>
 
                     </div>
 
@@ -66,7 +69,7 @@
                         <div class="input-group">
                             <input type="text" name="address" id="address" placeholder="우편번호" readonly>
 
-                            <button type="button" class="CheckBoxA" onclick="searchAddress()">주소찾기</button>
+                            <button type="button" class="CheckBoxA btn btn-secondary" onclick="searchAddress()">주소찾기</button>
 
                         </div>
                     </div>
@@ -79,13 +82,13 @@
 
                     <div class="bottomBtn">
                         <div class="form-group">
-                            <button type="button" id="fixBtn" class="fixBtn">수정완료</button>
+                            <button type="button" id="fixBtn" class="fixBtn btn btn-secondary">수정완료</button>
                         </div>
                         <div class="form-group">
-                            <button type="button" id="goMainBtn" class="goMainBtn">메인으로</button>
+                            <button type="button" id="goMainBtn" class="goMainBtn btn btn-secondary">메인으로</button>
                         </div>
                         <div class="form-group">
-                            <button type="button" id=withdrawal class="Withdrawal">탈퇴</button>
+                            <button type="button" id=withdrawal class="Withdrawal btn btn-secondary">탈퇴</button>
                         </div>
                     </div>
 
@@ -94,8 +97,6 @@
         </div>
     </div>
 </section>
-
-<%@ include file="../include/footer.jsp" %>
 
 <!-- 모달  -->
 <div class="infoModal" id="infoModal">
@@ -110,7 +111,32 @@
         <button type="button" class="cplBtn" id="cplBtn">완료</button>
     </div>
 </div>
+
+<%@ include file="../include/footer.jsp" %>
+
 <script>
+
+// 카테고리 a 태그 처리 폼
+$clsForm = document.clsForm;
+
+document.getElementById('clsBox').addEventListener('click', (e) => {
+    e.preventDefault();
+
+    if (!e.target.matches('a')) {
+        return;
+    }
+
+    const targetLink = e.target.getAttribute('href');
+
+    if(e.target.classList.contains('privacy')) {
+        location.href('${pageContext.request.contextPath}/user/info');
+    } else {
+        $clsForm.action = '${pageContext.request.contextPath}/user/' + targetLink;
+        $clsForm.submit();
+    }
+
+});
+
 /* 회원 탈퇴 진행 */
 document.getElementById('withdrawal').onclick = () => {
         const infoModal = document.getElementById('infoModal');
@@ -148,7 +174,5 @@ document.getElementById('withdrawal').onclick = () => {
                 }
             });
     });
-
-
 /* 회원탈퇴 끝 */
 </script>

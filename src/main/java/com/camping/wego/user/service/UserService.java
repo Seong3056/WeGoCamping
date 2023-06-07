@@ -1,12 +1,14 @@
 package com.camping.wego.user.service;
 
-import java.util.Map;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.camping.wego.user.mapper.IUserMapper;
+import com.camping.wego.vo.BoardVO;
+import com.camping.wego.vo.PageVO;
 import com.camping.wego.vo.UserVO;
 
 import lombok.extern.slf4j.Slf4j;
@@ -81,6 +83,9 @@ public class UserService implements IUserService {
 
 	}
 
-
+	@Override
+	public List<BoardVO> myContentList(String userId, PageVO vo) {
+		return mapper.myContentList(userId, vo);
+	}
 
 }

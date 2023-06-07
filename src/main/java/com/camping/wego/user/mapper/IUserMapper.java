@@ -1,5 +1,9 @@
 package com.camping.wego.user.mapper;
 
+import java.util.List;
+
+import com.camping.wego.vo.BoardVO;
+import com.camping.wego.vo.PageVO;
 import com.camping.wego.vo.UserVO;
 
 public interface IUserMapper {
@@ -22,5 +26,7 @@ public interface IUserMapper {
 		//유저정보 가져오기
 		UserVO info(String userId);
 
+		//내 게시글 목록
+		List<BoardVO> myContentList(String userId, PageVO vo);
 		
 }
