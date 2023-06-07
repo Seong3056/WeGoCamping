@@ -36,7 +36,7 @@
                     </div>
 
                     <div class="go-main-btn">
-                        <button type="button" name="goMainBtn" class="goMainBtn">메인으로</button>
+                        <button type="button" name="goMainBtn" class="goMainBtn btn btn-secondary">메인으로</button>
                     </div>
                 </div>
             </form>

@@ -129,7 +129,7 @@ input::placeholder {
 .wrap {
     /* background: yellowgreen; */
     width: 1200px;
-    margin: 150px auto 200px;
+    margin: 150px auto 150px;
     height: 100%;
     /* overflow: auto; */
     color: black;
@@ -243,6 +243,7 @@ input::placeholder {
 /* ----------------------------- */
 /* 예약 정보 시작 */
 .wrap .reservationInfo {
+	font-family: 'Hahmlet', serif;
     /* color: red; */
     float: right;
     width: 60%;
@@ -286,8 +287,8 @@ input::placeholder {
 .wrap .reservationInfo .go-main-btn button {
     width: 80px;
     height: 35px;
-    background: skyblue;
-    border: 1px solid gray;
+   /*  background: skyblue; */
+    /* border: 1px solid gray; */
     margin-left: 65%;
     margin-top: 5%;
 }
