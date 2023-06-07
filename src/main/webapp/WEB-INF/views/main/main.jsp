@@ -22,9 +22,9 @@
     </c:forEach>
   </div>
 
-  <br><br><br>
+ <!--   <br><br><br>
 
-  <h1>날씨</h1>
+ <h1>날씨</h1>
 
   <div class="weather"><a href="#">오늘 날씨</a></div>
   <div class="weather"><a href="#">이번주 날씨</a></div>
@@ -32,7 +32,7 @@
   <div class="clearfix"></div>
   <div class="weatherInfo">날씨정보</div>
   <span><a href="#">더보기</a></span>
-  <div class="clearfix"></div>
+  <div class="clearfix"></div> -->
 </article>
 
 <%@ include file="../include/footer.jsp" %>

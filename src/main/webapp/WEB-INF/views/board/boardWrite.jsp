@@ -13,7 +13,7 @@
 
         <h3>글쓰기</h3>
         <div class="BPBox">
-            <select name="cls">
+            <select name="cls" class="form-select" id="exampleSelect1">
                 <option value="none" selected hidden>말머리</option>
                 <option value=1>캠핑후기</option>
                 <option value=2>꿀팁공유</option>
