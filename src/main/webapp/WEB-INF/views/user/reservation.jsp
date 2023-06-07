@@ -9,8 +9,8 @@
 <section>
     <div class="wrap">
         <div class="menuBox">
-            <div id="clsBox" class="infoKind">
-                <form name="clsForm" method="post">
+            <div id="subMenuBox" class="infoKind">
+                <form name="menuForm" method="post">
                     <input type="text" name="userId" value="${login}" readonly hidden>
                     <a href="info" class="privacy">⦁ 개인 정보 수정</a> <br>
                     <a href="reservation" class="rsvInfo">⦁ 예약 정보</a> <br>
@@ -19,27 +19,24 @@
             </div>
         </div>
         <div class="reservationInfo">
+            <div class="reservationBox">
+                <h3>예약 정보</h3>
+                <img src="../img/co.png" alt="예약한 캠핑장 사진" class="campImg"> <br>
 
-            <form action="#">
-                <div class="reservationBox">
-                    <h3>예약 정보</h3>
-                    <img src="../img/co.png" alt="예약한 캠핑장 사진" class="campImg"> <br>
-
-                    <div class="campName">
-                        <h2>(캠핑장이름받아오기)</h2>
-                    </div>
-                    <div class="campInfo">
-                        <div class="resDate">예약날짜: </div>
-                        <div class="resPlace">장소: </div>
-                        <div class="resName">예약자: </div>
-                        <div class="resStatus">상태: </div>
-                    </div>
-
-                    <div class="go-main-btn">
-                        <button type="button" name="goMainBtn" class="goMainBtn btn btn-secondary">메인으로</button>
-                    </div>
+                <div class="campName">
+                    <h2>(캠핑장이름받아오기)</h2>
                 </div>
-            </form>
+                <div class="campInfo">
+                    <div class="resDate">예약날짜: </div>
+                    <div class="resPlace">장소: </div>
+                    <div class="resName">예약자: </div>
+                    <div class="resStatus">상태: </div>
+                </div>
+
+                <div class="go-main-btn">
+                    <button type="button" name="goMainBtn" class="goMainBtn btn btn-secondary">메인으로</button>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -47,26 +44,24 @@
 <%@ include file="../include/footer.jsp" %>
 
 <script>
+    // 마이페이지 메뉴 a 태그 처리
+    $menuForm = document.menuForm;
 
-// 카테고리 a 태그 처리 폼
-$clsForm = document.clsForm;
+    document.getElementById('subMenuBox').addEventListener('click', (e) => {
+        e.preventDefault();
 
-document.getElementById('clsBox').addEventListener('click', (e) => {
-    e.preventDefault();
+        if (!e.target.matches('a')) {
+            return;
+        }
 
-    if (!e.target.matches('a')) {
-        return;
-    }
+        const targetLink = e.target.getAttribute('href');
 
-    const targetLink = e.target.getAttribute('href');
-
-    if(e.target.classList.contains('privacy')) {
-        location.href('${pageContext.request.contextPath}/user/info');
-    } else {
-        $clsForm.action = '${pageContext.request.contextPath}/user/' + targetLink;
-        $clsForm.submit();
-    }
-
-});
-
+        if (e.target.classList.contains('privacy')) {
+            location.href = '${pageContext.request.contextPath}/user/info';
+        } else {
+            $menuForm.action = '${pageContext.request.contextPath}/user/' + targetLink;
+            $menuForm.submit();
+        }
+    });
+    // 메뉴 처리 끝.
 </script>

@@ -70,10 +70,6 @@
 		WHERE bno = #{bno}
 	</update>
 	
-	<select id="clsList" resultType="board">
-		SELECT * FROM board WHERE cls = #{cls}
-	</select>
-	
 	<delete id="delete">
 		DELETE FROM board
 		WHERE bno = #{bno}

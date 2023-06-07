@@ -10,8 +10,8 @@
 <section>
     <div class="wrap">
         <div class="menuBox">
-            <div id="clsBox" class="infoKind">
-                <form name="clsForm" method="post">
+            <div id="subMenuBox" class="infoKind">
+                <form name="menuForm" method="post">
                     <input type="text" name="userId" value="${login}" readonly hidden>
                     <a href="info" class="privacy">⦁ 개인 정보 수정</a> <br>
                     <a href="reservation" class="rsvInfo">⦁ 예약 정보</a> <br>
@@ -19,6 +19,7 @@
                 </form>
             </div>
         </div>
+
         <div class="privacyFix">
             <div class="fixBox">
                 <h3> 개인 정보 수정(메뉴 값 받아오기)</h3>
@@ -34,12 +35,10 @@
                     <div class="form-group">
                         <label for="pw" class="lPw">변경 비밀번호</label> <br>
                         <input type="password" name="userPw" id="userPw" placeholder="(영 대/소문자, 숫자 조합 8~16자 이상)">
-
                     </div>
                     <div class="form-group">
                         <label for="pwCheck" class="lPCheck">비밀번호 확인</label><br>
                         <input type="password" name="pwCheck" id="pwCheck" placeholder="변경할 비밀번호를 입력해주세요">
-
                     </div>
                     <div class="form-group">
                         <label for="phoneNum" class="lPhone">휴대폰 번호</label> <br>
@@ -54,23 +53,18 @@
                             <option>@gmail.com</option>
                             <option>@nate.com</option>
                         </select>
-
                     </div>
                     <div class="mailCheckBox">
                         <input type="text" class="mail-check-input" placeholder="인증번호 6자리를 입력하세요." maxlength="6"
                             disabled="disabled">
-
                         <button type="button" id="mail-check-btn" class="checkBoxE btn btn-secondary">이메일 인증</button>
-
                     </div>
-
                     <div class="form-group">
                         <label for="address" class="lAddr">주소</label>
                         <div class="input-group">
                             <input type="text" name="address" id="address" placeholder="우편번호" readonly>
-
-                            <button type="button" class="CheckBoxA btn btn-secondary" onclick="searchAddress()">주소찾기</button>
-
+                            <button type="button" class="CheckBoxA btn btn-secondary"
+                                onclick="searchAddress()">주소찾기</button>
                         </div>
                     </div>
                     <div class="form-group">
@@ -79,7 +73,6 @@
                     <div class="form-group">
                         <input type="text" name="addrBasic" id="addrDetail" class="addrDetail" placeholder="상세주소">
                     </div>
-
                     <div class="bottomBtn">
                         <div class="form-group">
                             <button type="button" id="fixBtn" class="fixBtn btn btn-secondary">수정완료</button>
@@ -91,7 +84,6 @@
                             <button type="button" id=withdrawal class="Withdrawal btn btn-secondary">탈퇴</button>
                         </div>
                     </div>
-
                 </form>
             </div>
         </div>
@@ -115,30 +107,29 @@
 <%@ include file="../include/footer.jsp" %>
 
 <script>
+    // 마이페이지 메뉴 a 태그 처리
+    $menuForm = document.menuForm;
 
-// 카테고리 a 태그 처리 폼
-$clsForm = document.clsForm;
+    document.getElementById('subMenuBox').addEventListener('click', (e) => {
+        e.preventDefault();
 
-document.getElementById('clsBox').addEventListener('click', (e) => {
-    e.preventDefault();
+        if (!e.target.matches('a')) {
+            return;
+        }
 
-    if (!e.target.matches('a')) {
-        return;
-    }
+        const targetLink = e.target.getAttribute('href');
 
-    const targetLink = e.target.getAttribute('href');
+        if (e.target.classList.contains('privacy')) {
+            location.href = '${pageContext.request.contextPath}/user/info';
+        } else {
+            $menuForm.action = '${pageContext.request.contextPath}/user/' + targetLink;
+            $menuForm.submit();
+        }
+    });
+    // 메뉴 처리 끝.
 
-    if(e.target.classList.contains('privacy')) {
-        location.href('${pageContext.request.contextPath}/user/info');
-    } else {
-        $clsForm.action = '${pageContext.request.contextPath}/user/' + targetLink;
-        $clsForm.submit();
-    }
-
-});
-
-/* 회원 탈퇴 진행 */
-document.getElementById('withdrawal').onclick = () => {
+    /* 회원 탈퇴 진행 */
+    document.getElementById('withdrawal').onclick = () => {
         const infoModal = document.getElementById('infoModal');
         const cancle = document.getElementById('cancle');
         const cplBtn = document.getElementById('cplBtn');
@@ -161,7 +152,7 @@ document.getElementById('withdrawal').onclick = () => {
         fetch('${pageContext.request.contextPath}/user/withdrawal', withObj)
             .then(rs => rs.text())
             .then(data => {
-                
+
                 if (data === 'true') {
                     alert('회원 탈퇴가 완료되었습니다. 그동안 감사했습니다.');
                     console.log("탈퇴했는데?");
@@ -174,5 +165,5 @@ document.getElementById('withdrawal').onclick = () => {
                 }
             });
     });
-/* 회원탈퇴 끝 */
+    /* 회원탈퇴 끝 */
 </script>
