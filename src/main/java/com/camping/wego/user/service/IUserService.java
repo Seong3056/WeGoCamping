@@ -18,7 +18,7 @@ public interface IUserService {
 	void update(UserVO vo);
 
 	//회원탈퇴
-	String withdrawal(UserVO vo);
+	boolean withdrawal(UserVO vo);
 
 	//아이디 중복체크
 	String idCheck(String userId);

@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -90,12 +91,16 @@ public class UserController {
 	
 	@PostMapping("/withdrawal")
 	@ResponseBody
-	public String withdrawal(@RequestBody UserVO vo) {
-		log.info("삭제 요청이 왔습니다.");
-		log.info(vo.getUserId());
-		log.info(vo.getUserPw());
-
-		return service.withdrawal(vo);
+	public String withdrawal(@RequestBody UserVO vo, HttpSession session, HttpServletRequest request, HttpServletResponse response) {
+		log.info("삭제 요청");
+		if(service.withdrawal(vo)) {
+			new SecurityContextLogoutHandler().logout(request, response, SecurityContextHolder.getContext().getAuthentication());
+	        return "true";
+		} else {
+			log.info("탈퇴 실패");
+			return "false";
+		}
+		
 	}
 	
 	@GetMapping("/myBoard")
