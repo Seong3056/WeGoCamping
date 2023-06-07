@@ -18,14 +18,15 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/lumen/bootstrap.min.css"
     integrity="sha384-GzaBcW6yPIfhF+6VpKMjxbTx6tvR/yRd/yJub90CqoIn2Tz4rRXlSpTFYMKHCifX" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+  <!-- 제이쿼리 -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
   <script src="${pageContext.request.contextPath}/js/slide.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/lumen/bootstrap.min.css" integrity="sha384-GzaBcW6yPIfhF+6VpKMjxbTx6tvR/yRd/yJub90CqoIn2Tz4rRXlSpTFYMKHCifX" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/lumen/bootstrap.min.css"
+    integrity="sha384-GzaBcW6yPIfhF+6VpKMjxbTx6tvR/yRd/yJub90CqoIn2Tz4rRXlSpTFYMKHCifX" crossorigin="anonymous">
   <!-- 부트스트랩 끝 -->
 
   <link href="${pageContext.request.contextPath}/css/header-style.css" rel="stylesheet">
@@ -35,7 +36,6 @@
   <div class="section">
     <img class="logo" src="${pageContext.request.contextPath}/img/logo.png" alt="logo">
     <a href="${pageContext.request.contextPath}/" class="title" class="clearfix">Camping</a>
-
     <div class="menu clearfix">
       <div class="menu-down">
         <a href="${pageContext.request.contextPath}/around" class="in-menu" id="reservation">예약하기</a>
@@ -62,17 +62,16 @@
       <div id="login" style="display: none;">
         <img class="profile-img" src="${pageContext.request.contextPath}/img/profile.png" alt="profile">
         <a href="${pageContext.request.contextPath}/user/info" class="user">홍길동님</a>
-        <button class="btn btn-secondary" id="logout" onclick="location.href='${pageContext.request.contextPath}/user/logout'">로그아웃</button>
+        <button class="btn btn-secondary" id="logout"
+          onclick="location.href='${pageContext.request.contextPath}/user/logout'">로그아웃</button>
       </div>
-
       <div id="notLogin">
-        <button class="btn btn-secondary" id="loginH" onclick="location.href='${pageContext.request.contextPath}/user/login'">로그인</button>
+        <button class="btn btn-secondary" id="loginH"
+          onclick="location.href='${pageContext.request.contextPath}/user/login'">로그인</button>
       </div>
     </div>
-
   </div>
   <div class="section-dropdown">
-
   </div>
 
   <!-- 모달창 -->
@@ -87,7 +86,6 @@
       <button class="btn btn-secondary">전라</button><br>
       <button class="btn btn-secondary">경상</button><br>
       <button class="btn btn-secondary">제주</button><br>
-
       <button class="closeBtn btn btn-secondary">✖</button>
     </div>
   </div>
@@ -100,45 +98,41 @@
       <button class="btn btn-secondary">글램핑</button><br>
       <button class="btn btn-secondary">카라반</button><br>
       <button class="btn btn-secondary">자동차 야영장</button><br>
-      <button class="cB2 btn btn-secondary"">✖</button>
+      <button class="cB2 btn btn-secondary">✖</button>
     </div>
   </div>
-
 </header>
 
 <script>
-  console.log("${login}");
+  console.log(" ${login}");
   if ("${login}" !== '') {
     document.getElementById('login').style.display = 'block';
     document.getElementById('notLogin').style.display = 'none';
   } else {
     document.getElementById('login').style.display = 'none';
     document.getElementById('notLogin').style.display = 'block';
-  }
+  };
 
   const open = () => {
     document.querySelector(".modal").classList.remove("hidden");
-
-  }
+  };
 
   const close = () => {
     document.querySelector(".modal").classList.add("hidden");
-
-  }
+  };
 
   document.getElementById("locationSearch").addEventListener("click", open);
   document.querySelector(".closeBtn").addEventListener("click", close);
   document.querySelector(".bg").addEventListener("click", close);
 
-  //  <!-- 모달2 -->
-
+  // <!-- 모달2 -->
   const op2 = () => {
     document.querySelector(".m2").classList.remove("h2");
-  }
+  };
 
   const cl2 = () => {
     document.querySelector(".m2").classList.add("h2");
-  }
+  };
 
   document.getElementById("themeSearch").addEventListener("click", op2);
   document.querySelector(".cB2").addEventListener("click", cl2);
