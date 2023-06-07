@@ -1,5 +1,6 @@
 @import url("https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css");
 .board{
+	/* background: yellow; */
     width: 1100px;
     margin: 0 auto;
     margin-top: 200px;
@@ -15,7 +16,7 @@
 }
 .board .title {
     width: 909px;
-    height: 50px;
+    height: 40px;
     padding: 10px;
     margin: 10px;
     border: 1px solid #000;
@@ -27,7 +28,7 @@
 .board h3 {
 	width: 100px;
    
-    font-size: 50px;
+    font-size: 45px;
     font-weight: bold;
     width: 410px;
     border-bottom: 2px solid darkgray;
@@ -35,6 +36,7 @@
 }
 
 .board #content {
+	/* background: blue; */
     height: 500px;
     padding: 10px;
     margin: 10px;
@@ -49,7 +51,7 @@
     bottom: 0;
     right: 470px;
     top: 20px;
-    background: skyblue;
+    /* background: skyblue; */
 }
 
 .board .BPBox {
@@ -69,15 +71,15 @@
 
 .board .BPBox select {
     width: 156px;
-    height: 51px;
+    height: 40px;
     font-size: 17px;
-}
+} 
 
 .board .formBottom{
 	display: flex;
     flex-flow: row;
 	justify-content: space-between;
-	background: skyblue;
+	/* background: skyblue; */
 }
 .board .formBottom .userId {
     width: 100px;
@@ -110,17 +112,31 @@
 }
 
 .board .rating option {
-    color: yellow;
+    /* color: yellow; */
     font-weight: 700;
     font-size: 15px;
 }
 
+#writer {
+	margin-left: 10px;
+}
+
+.board>.filebox>label {
+	margin: 10px 0 10px 10px;
+	font-weight: bold;
+	
+}
+#file {
+	margin-left: 10px;
+	margin-bottom: 10px;
+}
 
 
-
-
-
-
+.rating {
+	margin-left: 10px;
+	margin-top: 10px;
+	
+}
 
 
 
