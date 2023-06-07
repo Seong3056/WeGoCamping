@@ -32,5 +32,10 @@
 		ORDER BY bno DESC
 		LIMIT #{pageStart}, #{cpp}
 	</select>
+	
+	<select id="info" resultType="user">
+		SELECT * FROM users
+		WHERE user_id = #{userId}
+	</select>
 
 </mapper>

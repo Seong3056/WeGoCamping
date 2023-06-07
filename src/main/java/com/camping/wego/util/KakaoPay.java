@@ -5,6 +5,8 @@ import java.sql.PseudoColumnUsage;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,10 +20,14 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
+import com.camping.wego.campsite.mapper.ICampsiteMapper;
 import com.camping.wego.pay.service.IPaymentService;
+import com.camping.wego.user.mapper.IUserMapper;
+import com.camping.wego.vo.CampsiteVO;
 import com.camping.wego.vo.KakaoPayApprovalVO;
 import com.camping.wego.vo.KakaoPayReadyVO;
 import com.camping.wego.vo.PayVO;
+import com.camping.wego.vo.UserVO;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -36,6 +42,12 @@ private static final String HOST = "https://kapi.kakao.com";
     
     @Autowired
     private IPaymentService payService;
+    
+    @Autowired
+    private ICampsiteMapper mapper;
+    
+    @Autowired
+    private IUserMapper userMapper;
     
     @Value("${kakao.adminkey}")
     private String adminkey;
@@ -55,6 +67,7 @@ private static final String HOST = "https://kapi.kakao.com";
         MultiValueMap<String, String> params = new LinkedMultiValueMap<String, String>();
         
         log.info(String.valueOf(vo.getAmount()*vo.getQuantity()));
+        log.info(vo.toString());
         String payNum="";
         while (true) {
         	LocalDate date = LocalDate.now();
@@ -98,7 +111,7 @@ private static final String HOST = "https://kapi.kakao.com";
             paySuccess.setQuantity(vo.getQuantity());
             paySuccess.setPayNum(payNum);
             paySuccess.setTid(kakaoPayReadyVO.getTid());
-            
+            paySuccess.setDaterange(vo.getDaterange());
             payService.insert(paySuccess);
             
             return kakaoPayReadyVO.getNext_redirect_pc_url();
@@ -112,7 +125,7 @@ private static final String HOST = "https://kapi.kakao.com";
         
     }
     
-    public KakaoPayApprovalVO kakaoPayInfo(String pg_token) {
+    public Map<String, String> kakaoPayInfo(String pg_token) {
  
         log.info("KakaoPayInfoVO............................................");
         log.info("-----------------------------");
@@ -157,8 +170,27 @@ private static final String HOST = "https://kapi.kakao.com";
         
         try {
             kakaoPayApprovalVO = restTemplate.postForObject(new URI(HOST + "/v1/payment/approve"), body, KakaoPayApprovalVO.class);
-         
-            return kakaoPayApprovalVO;
+            kakaoPayApprovalVO.setAddr(vo.getAddr());
+            kakaoPayApprovalVO.setTel(vo.getTel());
+            Map<String, String> pay = new HashMap<String, String>();
+            
+            CampsiteVO camp = mapper.info(vo.getCno());
+            UserVO user = userMapper.info(vo.getPartnerUserId());
+            
+            log.info(vo.toString());
+            pay.put("name", user.getUserName());
+            pay.put("date", vo.getDaterange());
+            pay.put("quantity", String.valueOf(vo.getQuantity()));
+            pay.put("payNum", vo.getPayNum());
+            pay.put("tel", camp.getTel());
+            pay.put("addr", camp.getAddr());
+            pay.put("itemName", camp.getFacltNm());
+            pay.put("amount", String.valueOf(vo.getAmount()));
+            pay.put("img", camp.getFirstImageUrl());
+            pay.put("mapY", camp.getMapY());
+            pay.put("mapX", camp.getMapX());
+            log.info(pay.toString());
+            return pay;
         
         } catch (Exception e) {
             // TODO Auto-generated catch block
