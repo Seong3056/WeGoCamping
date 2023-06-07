@@ -1,28 +1,27 @@
 package com.camping.wego.controller;
 
-import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.camping.wego.board.service.IBoardService;
 import com.camping.wego.user.service.IUserService;
 import com.camping.wego.util.MailAuthService;
+import com.camping.wego.util.PageCreator;
+import com.camping.wego.vo.PageVO;
 import com.camping.wego.vo.UserVO;
 
 import lombok.extern.slf4j.Slf4j;
@@ -35,12 +34,12 @@ public class UserController {
 	@Autowired
 	private IUserService service;
 	@Autowired
+	private IBoardService boardService;
+	@Autowired
 	private MailAuthService mailService;
 
 	@GetMapping("/login")
 	public void loginPage() {}
-	
-	
 
 	@PostMapping("/login")
 	public void loginProcess(String userId, String userPw, Model model) {
@@ -48,8 +47,6 @@ public class UserController {
 		log.info("userPw: {}",userPw);
 		model.addAttribute("user", service.login(userId, userPw));
 	}
-	
-	
 
 	@GetMapping("/logout")
 	public String logout(HttpServletRequest request, HttpServletResponse response) {
@@ -63,14 +60,11 @@ public class UserController {
 	@ResponseBody
 	@PostMapping("/idCheck")
 	public String idCheck(@RequestBody String userId) {
-
 		log.info("userController의 idCheck 요청");
 		log.info("페이지에서 넘어온 값:{}",userId);
 		String result = service.idCheck(userId); //중복이면 duplicated 중복이아니면 able
 		log.info(result);
 		return result;
-
-
 	}
 
 	@PostMapping("/join")
@@ -86,7 +80,6 @@ public class UserController {
 	public String authMail(@RequestBody Map<String, String> user) {
 		log.info("메일 인증요청");
 		return mailService.authMail(user);
-
 	}
 	
 	@PostMapping("/withdrawal")
@@ -100,15 +93,21 @@ public class UserController {
 			log.info("탈퇴 실패");
 			return "false";
 		}
-		
 	}
 	
-	@GetMapping("/myBoard")
-	public void myboard() {}
+	@PostMapping("/myBoard")
+	public void myboard(String userId, PageVO vo, Model model) {
+		PageCreator pc = new PageCreator(vo, boardService.getTotal(vo));
+		log.info("myBoard 호출");
+		log.info(vo.toString());
+		log.info(service.myContentList(userId, vo).toString());
+		model.addAttribute("list", service.myContentList(userId, vo));
+	}
 	
-	@GetMapping("/reservation")
-	public void resv() {}
+	@PostMapping("/reservation")
+	public void resv(String userId, Model model) {}
 	
 	@GetMapping("/info")
 	public void info() {}
+	
 }

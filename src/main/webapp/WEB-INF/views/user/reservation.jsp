@@ -9,10 +9,13 @@
 <section>
     <div class="wrap">
         <div class="menuBox">
-            <div class="infoKind">
-                <a href="${pageContext.request.contextPath}/user/info" class="privacy">⦁ 개인 정보 수정</a> <br>
-                <a href="${pageContext.request.contextPath}/user/reservation" class="reserInfo">⦁ 예약 정보</a> <br>
-                <a href="${pageContext.request.contextPath}/user/myBoard" class="myText">⦁ 내 게시글</a> <br>
+            <div id="clsBox" class="infoKind">
+                <form name="clsForm" method="post">
+                    <input type="text" name="userId" value="${login}" readonly hidden>
+                    <a href="info" class="privacy">⦁ 개인 정보 수정</a> <br>
+                    <a href="reservation" class="rsvInfo">⦁ 예약 정보</a> <br>
+                    <a href="myBoard" class="myText">⦁ 내 게시글</a> <br>
+                </form>
             </div>
         </div>
         <div class="reservationInfo">
@@ -42,3 +45,28 @@
 </section>
 
 <%@ include file="../include/footer.jsp" %>
+
+<script>
+
+// 카테고리 a 태그 처리 폼
+$clsForm = document.clsForm;
+
+document.getElementById('clsBox').addEventListener('click', (e) => {
+    e.preventDefault();
+
+    if (!e.target.matches('a')) {
+        return;
+    }
+
+    const targetLink = e.target.getAttribute('href');
+
+    if(e.target.classList.contains('privacy')) {
+        location.href('${pageContext.request.contextPath}/user/info');
+    } else {
+        $clsForm.action = '${pageContext.request.contextPath}/user/' + targetLink;
+        $clsForm.submit();
+    }
+
+});
+
+</script>

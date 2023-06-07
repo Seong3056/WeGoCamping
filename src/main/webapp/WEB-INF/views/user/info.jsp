@@ -10,10 +10,13 @@
 <section>
     <div class="wrap">
         <div class="menuBox">
-            <div class="infoKind">
-                <a href="${pageContext.request.contextPath}/user/info" class="privacy">⦁ 개인 정보 수정</a> <br>
-                <a href="${pageContext.request.contextPath}/user/reservation" class="reserInfo">⦁ 예약 정보</a> <br>
-                <a href="${pageContext.request.contextPath}/user/myBoard" class="myText">⦁ 내 게시글</a> <br>
+            <div id="clsBox" class="infoKind">
+                <form name="clsForm" method="post">
+                    <input type="text" name="userId" value="${login}" readonly hidden>
+                    <a href="info" class="privacy">⦁ 개인 정보 수정</a> <br>
+                    <a href="reservation" class="rsvInfo">⦁ 예약 정보</a> <br>
+                    <a href="myBoard" class="myText">⦁ 내 게시글</a> <br>
+                </form>
             </div>
         </div>
         <div class="privacyFix">
@@ -95,8 +98,6 @@
     </div>
 </section>
 
-<%@ include file="../include/footer.jsp" %>
-
 <!-- 모달  -->
 <div class="infoModal" id="infoModal">
     <div class="reText">
@@ -110,7 +111,32 @@
         <button type="button" class="cplBtn" id="cplBtn">완료</button>
     </div>
 </div>
+
+<%@ include file="../include/footer.jsp" %>
+
 <script>
+
+// 카테고리 a 태그 처리 폼
+$clsForm = document.clsForm;
+
+document.getElementById('clsBox').addEventListener('click', (e) => {
+    e.preventDefault();
+
+    if (!e.target.matches('a')) {
+        return;
+    }
+
+    const targetLink = e.target.getAttribute('href');
+
+    if(e.target.classList.contains('privacy')) {
+        location.href('${pageContext.request.contextPath}/user/info');
+    } else {
+        $clsForm.action = '${pageContext.request.contextPath}/user/' + targetLink;
+        $clsForm.submit();
+    }
+
+});
+
 /* 회원 탈퇴 진행 */
 document.getElementById('withdrawal').onclick = () => {
         const infoModal = document.getElementById('infoModal');
@@ -148,7 +174,5 @@ document.getElementById('withdrawal').onclick = () => {
                 }
             });
     });
-
-
 /* 회원탈퇴 끝 */
 </script>
