@@ -51,7 +51,7 @@ public class WeatherController {
 		String stringDate = String.valueOf(date.getYear()) +
 							(date.getMonthValue()<10?"0"+String.valueOf(date.getMonthValue()):String.valueOf(date.getMonthValue())) +
 							(date.getDayOfMonth()<10?"0"+String.valueOf(date.getDayOfMonth()):String.valueOf(date.getDayOfMonth())) +
-							(date.getHour()<6?"0600":"1800");
+							(date.getHour()>6?"0600":"1800");
 		log.info(stringDate);
 		
         try {
@@ -60,7 +60,7 @@ public class WeatherController {
                 String numOfRows = "1000000";
                 String dataType = "JSON";
                 String regId = service.addrCode(detail);
-                String tmFc = "202306060600";
+                String tmFc = stringDate;
 
                 StringBuilder urlBuilder = new StringBuilder("http://apis.data.go.kr/1360000/MidFcstInfoService/getMidTa"); 
                 urlBuilder.append("?" + URLEncoder.encode("ServiceKey","UTF-8") + "=" + serviceKey); 
