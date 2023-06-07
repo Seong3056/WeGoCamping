@@ -60,7 +60,7 @@
                         <input type="text" class="mail-check-input" placeholder="인증번호 6자리를 입력하세요." maxlength="6"
                             disabled="disabled">
 
-                        <button type="button" id="mail-check-btn" class="checkBoxE">이메일 인증</button>
+                        <button type="button" id="mail-check-btn" class="checkBoxE btn btn-secondary">이메일 인증</button>
 
                     </div>
 
@@ -69,7 +69,7 @@
                         <div class="input-group">
                             <input type="text" name="address" id="address" placeholder="우편번호" readonly>
 
-                            <button type="button" class="CheckBoxA" onclick="searchAddress()">주소찾기</button>
+                            <button type="button" class="CheckBoxA btn btn-secondary" onclick="searchAddress()">주소찾기</button>
 
                         </div>
                     </div>
@@ -82,13 +82,13 @@
 
                     <div class="bottomBtn">
                         <div class="form-group">
-                            <button type="button" id="fixBtn" class="fixBtn">수정완료</button>
+                            <button type="button" id="fixBtn" class="fixBtn btn btn-secondary">수정완료</button>
                         </div>
                         <div class="form-group">
-                            <button type="button" id="goMainBtn" class="goMainBtn">메인으로</button>
+                            <button type="button" id="goMainBtn" class="goMainBtn btn btn-secondary">메인으로</button>
                         </div>
                         <div class="form-group">
-                            <button type="button" id=withdrawal class="Withdrawal">탈퇴</button>
+                            <button type="button" id=withdrawal class="Withdrawal btn btn-secondary">탈퇴</button>
                         </div>
                     </div>
 
