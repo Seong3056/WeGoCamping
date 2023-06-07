@@ -159,8 +159,8 @@
     },
     "linkedCalendars": false,
     "alwaysShowCalendars": true,
-    "startDate": "2023/05/31",
-    "endDate": "2023/06/30",
+    "startDate": date,
+    "endDate": nextDate,
     "opens": "right"
   }, function (start, end, label) {
     console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') +
