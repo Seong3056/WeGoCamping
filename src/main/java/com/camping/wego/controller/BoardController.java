@@ -1,7 +1,5 @@
 package com.camping.wego.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.camping.wego.board.service.IBoardService;
 import com.camping.wego.util.PageCreator;
@@ -36,54 +33,44 @@ public class BoardController {
 		model.addAttribute("pc", pc);
 	}
 
-	//게시글 등록
+	//게시글 등록 페이지로 이동
 	@GetMapping("/boardWrite")
 	public void write() {}
 
+	//게시글 등록 요청
 	@PostMapping("/boardWrite")
 	public String insert(BoardVO vo){
-
 		log.info(vo.toString());
-
 		service.insert(vo);
 		return "redirect:/board/boardList";
 	}
 	
+	//게시글 상세보기
 	@GetMapping("/content/{bno}")
 	public String detail(@PathVariable int bno, Model model) {
 		model.addAttribute("vo", service.detail(bno));
 		return "board/boardDetail";
 	}
 
+	//게시글 수정 페이지 이동
 	@GetMapping("/boardModify/{bno}")
 	public String modify(@PathVariable int bno,Model model) {
 		model.addAttribute("vo",service.detail(bno));
 		return "board/boardModify";
 	}
 
+	//게시글 수정 요청
 	@PostMapping("/update")
 	public String update(BoardVO vo) {
 		service.update(vo);
 		return "redirect:/board/content/" + vo.getBno();
 	}
 
-//	@GetMapping("/cls/{cls}")
-//	@ResponseBody
-//	public List<BoardVO> clsLength(@PathVariable String cls) {
-//		log.info("cls 서비스 호출");
-//		Map<String, Integer> map = new HashMap<String, Integer>();
-//		map.put("clsNo", Integer.parseInt(cls));
-//		map.put("clsLength", 3);
-//
-//
-//		return service.clsList(cls);
-//	}
-
+	//게시글 삭제
 	@PostMapping("/delete")
 	public String delete(int bno) {
 		service.delete(bno);
 		return "redirect:/board/boardList";
 	}
-
 
 }

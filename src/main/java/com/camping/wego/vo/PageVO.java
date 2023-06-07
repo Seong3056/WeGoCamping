@@ -20,6 +20,7 @@ public class PageVO {
 	public PageVO() {
 		this.pageNum = 1;
 		this.cpp = 10;
+		this.cls = 0;
 	}
 
 	public int getPageStart() {
