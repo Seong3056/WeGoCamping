@@ -98,31 +98,30 @@
 <%@ include file="../include/footer.jsp" %>
 
 <!-- 모달  -->
-<div class="modal-dialog modal-dialog-centered">
-    <div class="modal" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">비밀번호를 입력해주세요.</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <input type="password" class="modalInput" id="modalInput">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
-                    <button type="button" class="btn btn-primary">완료</button>
-                </div>
-            </div>
-        </div>
+<div class="infoModal" id="infoModal">
+    <div class="reText">
+        <p>탈퇴를 원하시면 비밀번호를 입력해주세요.</p>
+    </div>
+    <div class="pwBox">
+        <input type="password" class="inputPw" id="inputPw">
+    </div>
+    <div class="btnBox">
+        <button type="button" class="cancle" id="cancle">취소</button>
+        <button type="button" class="cplBtn" id="cplBtn">완료</button>
     </div>
 </div>
-
 <script>
-    document.getElementById('withdrawal').onclick = () => {
+/* 회원 탈퇴 진행 */
+document.getElementById('withdrawal').onclick = () => {
+        const infoModal = document.getElementById('infoModal');
+        const cancle = document.getElementById('cancle');
+        const cplBtn = document.getElementById('cplBtn');
         console.log('회원탈퇴 버튼이 클릭됐습니다!');
         let id = "${login}";
-        const chPw = prompt('비밀번호를 입력해주세요.');
+        infoModal.style.display = 'block';
+    }
+    cplBtn.addEventListener('click', function () {
+        const chPw = document.getElementById('inputPw').value;
         const withObj = {
             method: 'post',
             headers: {
@@ -136,13 +135,20 @@
         fetch('${pageContext.request.contextPath}/user/withdrawal', withObj)
             .then(rs => rs.text())
             .then(data => {
-                console.log(data);
+                
                 if (data === 'true') {
                     alert('회원 탈퇴가 완료되었습니다. 그동안 감사했습니다.');
                     console.log("탈퇴했는데?");
+                    infoModal.style.display = 'none';
+                    window.location.href = '${pageContext.request.contextPath}/';
                 } else {
                     alert('회원 탈퇴가 정상 처리 되지 않았습니다. 다시 시도해주세요.');
+                    infoModal.style.display = 'none';
+                    console.log(chPw);
                 }
             });
-    }
+    });
+
+
+/* 회원탈퇴 끝 */
 </script>
