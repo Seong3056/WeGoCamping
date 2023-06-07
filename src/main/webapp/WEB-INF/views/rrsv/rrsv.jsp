@@ -4,7 +4,6 @@
 <title>예약하기</title>
 
 <!--달력-->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
@@ -33,11 +32,9 @@
       <div class="form-left">
         <h2>오시는 길</h2>
         <div id="mapid"></div>
-
       </div>
 
       <div class="form-right">
-
         <div class="line2">
           <div class="date">
             <h2>예약 날짜</h2>
@@ -45,7 +42,6 @@
           </div>
 
           <div class="rsvNum">
-
             <select name="quantity" id="quantity">
               <option value="0" selected hidden>인원수</option>
               <option value="1">1</option>
@@ -55,41 +51,32 @@
             </select>
           </div>
         </div>
+
         <div class="line3">
-
           <div class="day1 day">
-
             <h3 id="day1Date">날짜</h3>
             <div class="ta">
               <p>최고기온 </p>
               <p id="day1Max" class="taMax"></p>
             </div>
-
             <div class="ta">
               <p>최저기온 </p>
               <p id="day1Min" class="taMin"></p>
             </div>
-
             <p>날씨</p>
             <p></p>
           </div>
-
           <div class="day3 day">
             <h3 id="day3Date">날짜</h3>
             <div class="ta">
               <p>최고기온 </p>
               <p id="day3Max" class="taMax"></p>
             </div>
-
             <div class="ta">
               <p>최저기온 </p>
               <p id="day3Min" class="taMin"></p>
             </div>
-            
           </div>
-
-
-
         </div>
 
         <div class="line35">
@@ -104,13 +91,7 @@
           <input type="text" name="amount" value="${camp.amount}" readonly>
           <img id="payBtn" src="${pageContext.request.contextPath}/img/kakao/payment_icon_yellow_small.png" alt="카카오페이">
         </div>
-
       </div>
-
-
-
-
-
     </div>
   </form>
 </article>
@@ -179,13 +160,14 @@
     },
     "linkedCalendars": false,
     "alwaysShowCalendars": true,
-    "startDate": date,
-    "endDate": nextDate,
+    "startDate": "2023/05/31",
+    "endDate": "2023/06/30",
     "opens": "right"
   }, function (start, end, label) {
     console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') +
       ' (predefined range: ' + label + ')');
   });
+
   document.getElementById('payBtn').onclick = () => {
     console.log('결제버튼이 눌림');
     const $qtt = document.getElementById('quantity').value;
@@ -204,7 +186,6 @@
   };
 
   // document.getElementById('demo').onchange = () => {
-
   //   let addr = "${camp.addr}";
   //   console.log(addr);
   //   addr = addr.substring(0, addr.indexOf('원') + 1);
@@ -241,7 +222,6 @@
   //     }
   //   };
   // }
-
 
   /*-----------------------------------카카오 페이---------------------------------------------*/
   // document.getElementById('pay').onclick =()=>{
@@ -318,12 +298,10 @@
       return Math.abs(diffDate / (1000 * 60 * 60 * 24)); // 밀리세컨 * 초 * 분 * 시 = 일
     }
 
-
     console.log("출발: " + startDate + "도착: " + endDate);
     fetch('${pageContext.request.contextPath}/weather/${camp.cno}')
       .then(rs => rs.json())
       .then(data => {
-
         const taMin = [
           data[0].taMin3,
           data[0].taMin4,
@@ -344,17 +322,9 @@
           data[0].taMax9,
           data[0].taMax10
         ];
-
-        
-         
-
-
-
         const putTa = (d1, d2, day) => {
-          
           const d = parseInt(getDateDiff(d1, d2));
           console.log("날짜차이:" + d);
-          
           if (d - 3 < 0 || d > 10) return;
           console.log("최고기온 " + taMax[d - 3]);
           if (day === 'day1') {
@@ -366,92 +336,78 @@
             document.getElementById('day3Max').textContent = taMax[d - 3] + '℃';
             document.getElementById('day3Min').textContent = taMin[d - 3] + '℃';
           }
-
-        }
+        };
         putTa(startDate, new Date(), 'day1');
         putTa(endDate, new Date(), 'day3');
-         /*---------------------------------------------------------------------------*/
-          //그래프 영역
-          
-          
-          const DATA_COUNT = getDateDiff(startDate,endDate);
-          const DATA_CALC = getDateDiff(new Date(),startDate);
-          if(DATA_CALC > 10) return;
-          // console.log(DATA_COUNT - 3 < 0 || DATA_COUNT > 10);
-          // console.log(getDateDiff(startDate,endDate));
-          const labels = [];
-          document.getElementById('')
-          for (let i = 0; i < DATA_COUNT; ++i) {
-        	  let fromTOdate = new Date(startDate.setDate(startDate.getDate()+1))
-              console.log("from "+fromTOdate);
-              let StringDate = (fromTOdate.getMonth()+1) + '/' + fromTOdate.getDate()
-              console.log("String "+StringDate);
-              labels.push(StringDate);
+        /*---------------------------------------------------------------------------*/
+
+        //그래프 영역
+        const DATA_COUNT = getDateDiff(startDate, endDate);
+        const DATA_CALC = getDateDiff(new Date(), startDate);
+        if (DATA_CALC > 10) return;
+        // console.log(DATA_COUNT - 3 < 0 || DATA_COUNT > 10);
+        // console.log(getDateDiff(startDate,endDate));
+        const labels = [];
+        document.getElementById('')
+        for (let i = 0; i < DATA_COUNT; ++i) {
+          let fromTOdate = new Date(startDate.setDate(startDate.getDate() + 1))
+          console.log("from " + fromTOdate);
+          let StringDate = (fromTOdate.getMonth() + 1) + '/' + fromTOdate.getDate()
+          console.log("String " + StringDate);
+          labels.push(StringDate);
+        }
+        const dataMax = [];
+        const dataMin = [];
+        for (let i = 0; i < DATA_COUNT; i++) {
+          if (DATA_CALC + i < 2) {
+            dataMax.push(NaN);
+            dataMin.push(NaN);
+          } else {
+            dataMax.push(taMax[i]);
+            dataMin.push(taMin[i]);
           }
-          
-          const dataMax = [];
-          const dataMin = [];
-          for (let i = 0; i < DATA_COUNT; i++) {
-            if(DATA_CALC+i<2){
-              dataMax.push(NaN);
-              dataMin.push(NaN);
-            }else{
-              dataMax.push(taMax[i]);
-              dataMin.push(taMin[i]);
-            }
-            
-          }
-          console.log("최고기온 배열값:" + taMax);
-          const datad = {
-            labels: labels,
-            datasets: [{
-              label: '최고기온',
-              data: dataMax,
-              borderColor: 'rgb(224, 92, 92)',
-              fill: false
-              
-            }, {
-              label: '최저기온',
-              data: dataMin,
-              borderColor: 'rgb(135, 135, 240)',
-              fill: false
-              
-            }]
-          };
-          const config = {
-            type: 'line',
-            data: datad,
-            options: {
-              responsive: true,
-              plugins: {
-                title: {
-                  display: true,
-                  text: 'Chart.js Line Chart - Cubic interpolation mode'
-                },
+        }
+        console.log("최고기온 배열값:" + taMax);
+        const datad = {
+          labels: labels,
+          datasets: [{
+            label: '최고기온',
+            data: dataMax,
+            borderColor: 'rgb(224, 92, 92)',
+            fill: false
+          }, {
+            label: '최저기온',
+            data: dataMin,
+            borderColor: 'rgb(135, 135, 240)',
+            fill: false
+          }]
+        };
+        const config = {
+          type: 'line',
+          data: datad,
+          options: {
+            responsive: true,
+            plugins: {
+              title: {
+                display: true,
+                text: 'Chart.js Line Chart - Cubic interpolation mode'
               },
-              interaction: {
-                intersect: false,
-              },
-              scales: {
-                'y': {
-                  type: 'linear',
-                  display: true,
-                  position: 'left'
-                }
-                
-              
-              }
             },
-          };
-          var context = document.getElementById('myChart').getContext('2d');
-          var myChart = new Chart(context, config);
-          /*---------------------------------------------------------------------------*/
-
-
-
-
-
-
+            interaction: {
+              intersect: false,
+            },
+            scales: {
+              'y': {
+                type: 'linear',
+                display: true,
+                position: 'left'
+              }
+            }
+          },
+        };
+        var context = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(context, config);
+        /*---------------------------------------------------------------------------*/
       });
-  }
+  };
 </script>
