@@ -2,6 +2,9 @@
     pageEncoding="UTF-8"%>
 
 <title>예약하기</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/reservep/reserve.css">
+
+<%@ include file="../include/header.jsp" %>
 
 <!--달력-->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
@@ -17,10 +20,6 @@
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
   crossorigin=""></script>
-
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/reservep/reserve.css">
-
-<%@ include file="../include/header.jsp" %>
 
 <article class="reservation">
   <form name="payForm" action="${pageContext.request.contextPath}/kakaoPay" class="item" method="post">
