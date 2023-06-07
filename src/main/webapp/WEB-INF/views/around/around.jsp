@@ -12,22 +12,22 @@
 
   <h1>캠핑장 둘러보기</h1>
   <select class="sel1">
-    <option value="0">지역</option>
-    <option value="1">서울</option>
-    <option value="2">경기</option>
-    <option value="3">강원</option>
-    <option value="4">충청</option>
-    <option value="5">전라</option>
-    <option value="6">경상</option>
-    <option value="6">제주</option>
+    <option value="0" hidden selected>지역</option>
+    <option value="서울">서울</option>
+    <option value="경기">경기</option>
+    <option value="강원">강원</option>
+    <option value="충청">충청</option>
+    <option value="전라">전라</option>
+    <option value="경상">경상</option>
+    <option value="제주">제주</option>
   </select>
 
   <select class="sel2">
-    <option value="0">테마</option>
-    <option value="1">일반야영장</option>
-    <option value="2">글램핑</option>
-    <option value="3">카라반</option>
-    <option value="4">자동차야영장</option>
+    <option value="테마" hidden selected>테마</option>
+    <option value="일반야영장">일반야영장</option>
+    <option value="글램핑">글램핑</option>
+    <option value="카라반">카라반</option>
+    <option value="자동차야영장">자동차야영장</option>
   </select>
 
 
@@ -69,3 +69,48 @@
 </article>
 
 <%@ include file="../include/footer.jsp" %>
+
+<script>
+  const $sel1 = document.querySelector('.sel1');
+  const $sel2 = document.querySelector('.sel2');
+  window.onload =()=>{  
+
+    
+
+    if("${location}" !== ''){
+      const arr1 = $sel1.children;
+      console.log(arr1);
+      console.log(arr1[1].textContent);
+      [...arr1].forEach(element => {
+        if(element.textContent === "${location}") {
+          element.selected = true;
+          return;
+        }
+      });
+      
+    }
+    if("${theme}" !== ''){
+      const arr2 = $sel2.children;
+      console.log(arr2);
+      console.log(arr2[1].textContent);
+      [...arr2].forEach(element => {
+        if(element.textContent === "${theme}") {
+          element.selected = true;
+          return;
+        }
+      });
+      
+    }
+
+  }
+  $sel1.onchange = () => {
+	console.log('셀렉트가 변경됨');
+    window.location.href = '${pageContext.request.contextPath}/around?location='+$sel1.value+'&theme=${theme}';    
+  }
+  $sel2.onchange = () => {
+	console.log('셀렉트가 변경됨');
+    window.location.href = '${pageContext.request.contextPath}/around?location=${location}&theme='+$sel2.value;    
+  }
+  
+  
+</script>

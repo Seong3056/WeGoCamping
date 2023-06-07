@@ -180,7 +180,7 @@
       return;
     } else if ("${login}" === '') {
       alert('결제를 위해 로그인화면으로 이동합니다.');
-      location.href = "${pageContext.request.contextPath}/user/login?cno=${camp.cno}";
+      location.href = "${pageContext.request.contextPath}/user/login/?cno=${camp.cno}";
     } else document.payForm.submit();
   };
 

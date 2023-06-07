@@ -203,9 +203,9 @@ header .section .header-right .profile img{
     
 }
 
-.wrap .login .loginAll .serchBox a:hover {
-    text-decoration: underline;
-    color: rgb(243, 216, 216)
+.wrap .login .loginAll .serchBox a:hover  {
+    text-decoration: underline !important;
+    color: #fa886d !important;
 }
 
 
