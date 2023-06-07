@@ -4,8 +4,10 @@ package com.camping.wego.user.service;
 
 
 
-import java.util.Map;
+import java.util.List;
 
+import com.camping.wego.vo.BoardVO;
+import com.camping.wego.vo.PageVO;
 import com.camping.wego.vo.UserVO;
 
 
@@ -25,5 +27,8 @@ public interface IUserService {
 
 	//로그인
 	String login(String userId, String userPw);
+	
+	//내 게시글 목록
+	List<BoardVO> myContentList(String userId, PageVO vo);
 
 }
