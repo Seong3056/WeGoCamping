@@ -107,10 +107,14 @@ public class CampsiteService implements ICampsiteService {
 	
 	@Override 
 	public List<CampsiteVO> getList(Map<String, String> map) {
+		if(map.get("location").equals("")) {
+			map.put("addr1", "");
+			map.put("addr2", "");
+		}else {
+		map.put("addr1", map.get("location").substring(0,1));
+		map.put("addr2", map.get("location").substring(1,2));
+		}
 		
-		map.put("addr1", ((String) map.get("location")).substring(0,1));
-		map.put("addr2", ((String) map.get("location")).substring(1,2));	
-		log.info("--------------------------------------------"+((String) map.get("location")).substring(0,1)+((String) map.get("location")).substring(1,2));
 		log.info(map.toString());
 		return mapper.selectSearch(map);
 	}

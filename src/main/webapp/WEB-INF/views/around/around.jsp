@@ -11,53 +11,57 @@
 
 <article class="around">
 
-  <h1>캠핑장 둘러보기</h1>
-  <select class="sel1">
-    <option value="" hidden selected>지역</option>
-    <option value="서울">서울</option>
-    <option value="경기">경기</option>
-    <option value="강원">강원</option>
-    <option value="충청">충청</option>
-    <option value="전라">전라</option>
-    <option value="경상">경상</option>
-    <option value="제주">제주</option>
-  </select>
-
-  <select class="sel2">
-    <option value="" hidden selected>테마</option>
-    <option value="일반야영장">일반야영장</option>
-    <option value="글램핑">글램핑</option>
-    <option value="카라반">카라반</option>
-    <option value="자동차야영장">자동차야영장</option>
-  </select>
-
-
-
-  <c:forEach var="camp" items="${campList}">
-    <div id="${camp.cno}" class="col-md-4">
-      <div class="thumbnail">
-        <a href="${pageContext.request.contextPath}/detail/${camp.cno}" class="detail">
-          <img src="${camp.firstImageUrl}" alt="camp${camp.cno}" style="height:217px;"
-            onerror="this.src='${pageContext.request.contextPath}/img/campsiteOnerror.jpg'">
-        </a>
-        <div class="caption">
-          <h2>${camp.facltNm}</h2>
-          <p>${camp.lineIntro}</p>
-          <hr>
-    
-  
-    <div class="button_base b03_skewed_slide_in">
-        <div>예약하기</div>
-        <div></div>
-        <div>예약하기</div>
+  <div class="header">
+    <h1>캠핑장 둘러보기</h1>
+    <div class="sel">
+      <select class="sel1">
+        <option value="" hidden selected>지역</option>
+        <option value="서울">서울</option>
+        <option value="경기">경기</option>
+        <option value="강원">강원</option>
+        <option value="충청">충청</option>
+        <option value="전라">전라</option>
+        <option value="경상">경상</option>
+        <option value="제주">제주</option>
+      </select>
+      <select class="sel2">
+        <option value="" hidden selected>테마</option>
+        <option value="일반야영장">일반야영장</option>
+        <option value="글램핑">글램핑</option>
+        <option value="카라반">카라반</option>
+        <option value="자동차야영장">자동차야영장</option>
+      </select>
     </div>
-    
+  </div>
 
+
+  <div class="container">
+    
+    <c:forEach var="camp" items="${campList}">
+      <div id="${camp.cno}" class="col-md-4">
+        <div class="thumbnail">
+          <a href="${pageContext.request.contextPath}/detail/${camp.cno}" class="detail">
+            <img src="${camp.firstImageUrl}" alt="camp${camp.cno}" style="height:217px;"
+              onerror="this.src='${pageContext.request.contextPath}/img/campsiteOnerror.jpg'">
+          </a>
+          <div class="caption">
+            <h2>${camp.facltNm}</h2>
+            <p>${camp.lineIntro}</p>
+            <hr>
+    
+    
+      <div class="button_base b03_skewed_slide_in">
+          <div>예약하기</div>
+          <div></div>
+          <div>예약하기</div>
+      </div>
+    
+          </div>
         </div>
       </div>
-    </div>
-  </c:forEach>
-  <div class="container"></div>
+    </c:forEach>
+  </div>
+  
 </article>
 
 <%@ include file="../include/footer.jsp" %>
@@ -160,7 +164,7 @@
 					}
 
 				
-						document.querySelector('.around').insertAdjacentHTML('beforeend', str);
+						document.querySelector('.container').insertAdjacentHTML('beforeend', str);
          
 
 					isLoading = false;

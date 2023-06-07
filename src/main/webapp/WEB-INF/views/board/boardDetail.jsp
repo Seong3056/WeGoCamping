@@ -6,68 +6,76 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/boardDetail.css">
 
 <%@ include file="../include/header.jsp" %>
+<body>
+  
 
 <article class="detail">
   <div class="detailB">
     <form action="" method="post" name="detilForm">
+      <span>
+        <c:if test="${vo.cls==1}">캠핑후기</c:if>
+        <c:if test="${vo.cls==2}">꿀팁공유</c:if>
+        <c:if test="${vo.cls==3}">메이트찾기</c:if>
+        <c:if test="${vo.cls==4}">건의사항</c:if>
+      </span>
       <h3>게시판</h3>
       <article class="board">
         <div class="topBox">
-          <select name="cls">
-            <option value="none" selected hidden>말머리</option>
-            <option value=1>캠핑후기</option>
-            <option value=2>꿀팁공유</option>
-            <option value=3>메이트찾기</option>
-            <option value=4>건의사항</option>
-          </select>
+
           <div class="title" readonly>${vo.title}</div>
-          <div class="id" readonly>${vo.writer}</div>
+          <div class="id" readonly>작성자: ${vo.writer}</div>
         </div>
         <div class="flexBox">
+
           <div class="imageBox">
             <img alt="#" src="${pageContext.request.contextPath}/img/cam3.jpeg"
               onerror="this.src='${pageContext.request.contextPath}/img/campsiteOnerror.jpg'">
 
             <div class="bGroup">
-              <button class="previous"> ◁ </button>
-              <button class="next"> ▷ </button>
+              <div class="previous"> ◁ </div>
+              <div class="next"> ▷ </div>
             </div>
           </div>
+
           <div class="content" id="content" readonly>${vo.content}</div>
         </div>
-      </article>
-      <div class="btn-group">
-        <button type="button" class="listBtn" id="listBtn"
-          onclick="location.href='${pageContext.request.contextPath}/board/boardList'">목록</button>
-        <button type="button" class="regBtn" id="regBtn"
-          onclick="location.href='${pageContext.request.contextPath}/board/boardModify/${vo.bno}'">수정</button>
-      </div>
-    </form>
+        
+  
+  <div class="btn-group">
+    <button type="button" class="listBtn" id="listBtn"
+      onclick="location.href='${pageContext.request.contextPath}/board/boardList'">목록</button>
+    <button type="button" class="regBtn" id="regBtn"
+      onclick="location.href='${pageContext.request.contextPath}/board/boardModify/${vo.bno}'">수정</button>
   </div>
-  <!-- 댓글 부분 -->
-  <div class="reply">
-    <label for="reply">댓글(댓글 수)</label>
-    <!-- <form action=""> -->
-    <div class="replyWrite">
-      <textarea name="reply" class="replyInput" id="replyInput" placeholder="댓글을 작성해주세요."></textarea>
-      <button type="button" class="registBtn" id="registBtn">등록</button>
-    </div>
-    <!-- </form> -->
-    <!-- 댓글 창 -->
-    <div id=replyList class="replyContent">
-      <div class="replyInfo">
-        <div class="replyWriter">이름값</div>&nbsp; &nbsp;
-        <div class="replyDate"> 시간값</div>
-      </div>
-      <div class="replyText">
-        <textarea name="replyCnt" id="replyCnt" class="replyCnt" readonly>내용</textarea>
-        <div class="replyFix"><a href="#">수정</a>&nbsp;|&nbsp;<a href="#">삭제</a></div>
-      </div>
-    </div>
-    <button type="button" class="form-control" id="moreList" style="display: none;">댓글 더보기</button>
-  </div>
-</article>
+</div>
 
+
+</form>
+</div>
+<!-- 댓글 부분 -->
+<div class="reply">
+  <label for="reply">댓글(댓글 수)</label>
+  <!-- <form action=""> -->
+  <div class="replyWrite">
+    <textarea name="reply" class="replyInput" id="replyInput" placeholder="댓글을 작성해주세요."></textarea>
+    <button type="button" class="registBtn" id="registBtn">등록</button>
+  </div>
+  <!-- </form> -->
+  <!-- 댓글 창 -->
+  <div id=replyList class="replyContent">
+    <div class="replyInfo">
+      <div class="replyWriter">이름값</div>&nbsp; &nbsp;
+      <div class="replyDate"> 시간값</div>
+    </div>
+    <div class="replyText">
+      <textarea name="replyCnt" id="replyCnt" class="replyCnt" readonly>내용</textarea>
+      <div class="replyFix"><a href="#">수정</a>&nbsp;|&nbsp;<a href="#">삭제</a></div>
+    </div>
+  </div>
+  <button type="button" class="form-control" id="moreList" style="display: none;">댓글 더보기</button>
+</div>
+</article>
+</body>
 <%@ include file="../include/footer.jsp" %>
 
 <script>
