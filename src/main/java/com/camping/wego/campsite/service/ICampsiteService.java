@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.camping.wego.vo.CampsiteVO;
+import com.camping.wego.vo.PageVO;
 
 public interface ICampsiteService {
 
@@ -30,6 +31,10 @@ public interface ICampsiteService {
 
 	//캠핑장 주소 코드
 	String addrCode(String addrName);
+
+	
+
+	List<CampsiteVO> getList(Map<String, String> map, PageVO vo);
 
 	
 	

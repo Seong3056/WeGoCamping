@@ -23,7 +23,7 @@
 
 <article class="reservation">
   <form name="payForm" action="${pageContext.request.contextPath}/kakaoPay" class="item" method="post">
-    <input type="text" name="itemName" id="" value="${camp.facltNm}">
+    <input type="text" name="itemName" id="facltNm" value="${camp.facltNm}" readonly>
     <input type="hidden" name="cno" value="${camp.cno}">
     <input name="partnerUserId" type="hidden" value="${login}">
     <div class="container">
@@ -35,8 +35,7 @@
 
       <div class="form-right">
         <div class="line2">
-          <div class="date">
-            <h2>예약 날짜</h2>
+          <div class="date">            
             <input id="demo" type="text" name="daterange" value="01/01/2018 - 01/31/2018" />
           </div>
 
@@ -62,9 +61,9 @@
               <p>최저기온 </p>
               <p id="day1Min" class="taMin"></p>
             </div>
-            <p>날씨</p>
-            <p></p>
+           
           </div>
+
           <div class="day3 day">
             <h3 id="day3Date">날짜</h3>
             <div class="ta">
@@ -343,6 +342,7 @@
         //그래프 영역
         const DATA_COUNT = getDateDiff(startDate, endDate);
         const DATA_CALC = getDateDiff(new Date(), startDate);
+        const DATA_END = getDateDiff(new Date(), endDate);
         if (DATA_CALC > 10) return;
         // console.log(DATA_COUNT - 3 < 0 || DATA_COUNT > 10);
         // console.log(getDateDiff(startDate,endDate));
@@ -356,12 +356,13 @@
           labels.push(StringDate);
         }
         const dataMax = [];
-        const dataMin = [];
+        const dataMin = [];   
         for (let i = 0; i < DATA_COUNT; i++) {
           if (DATA_CALC + i < 2) {
             dataMax.push(NaN);
             dataMin.push(NaN);
-          } else {
+          }      
+          else if(DATA_END-DATA_COUNT+i<10) {
             dataMax.push(taMax[i]);
             dataMin.push(taMin[i]);
           }

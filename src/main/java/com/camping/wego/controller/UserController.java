@@ -38,18 +38,15 @@ public class UserController {
 	@Autowired
 	private MailAuthService mailService;
 
-	@GetMapping("/login")
-	
-	
-	
+	@GetMapping("/login") 
+	public void login() {}	
 
 	@PostMapping("/login")
 	public void loginProcess(String userId, String userPw, Model model) {
 		log.info("userId: {}",userId);
 		log.info("userPw: {}",userPw);
-		model.addAttribute("user", service.login(userId, userPw));		
+		model.addAttribute("user", service.login(userId, userPw));
 	}
-
 	@GetMapping("/logout")
 	public String logout(HttpServletRequest request, HttpServletResponse response) {
 		new SecurityContextLogoutHandler().logout(request, response, SecurityContextHolder.getContext().getAuthentication());

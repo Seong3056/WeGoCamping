@@ -9,7 +9,14 @@
 		SELECT * FROM campsite
 		WHERE  (addr LIKE  CONCAT(#{addr1},'%') AND addr like CONCAT('%',#{addr2},'%'))
 		AND  induty LIKE CONCAT('%',#{theme},'%')
-		LIMIT 0, 10;
+		LIMIT 0, 12;
+	</select>
+	
+	<select id="selectSearchPage" resultType="camp">
+		SELECT * FROM campsite
+		WHERE  (addr LIKE  CONCAT(#{addr1},'%') AND addr like CONCAT('%',#{addr2},'%'))
+		AND  induty LIKE CONCAT('%',#{theme},'%')
+		LIMIT #{pageStart}, #{cpp};
 	</select>
 	
 	<insert id="insert">
@@ -26,7 +33,7 @@
 	<select id="getList" resultType="camp">
 		SELECT * FROM campsite
 		ORDER BY cno ASC
-		LIMIT 0, 10
+		LIMIT 0, 12
 	</select>
 	
 

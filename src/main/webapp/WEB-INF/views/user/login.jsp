@@ -96,10 +96,11 @@
             alert('비밀번호를 작성하세요!');
             return;
         }
-        if (cno !== '') {
-            document.loginForm.setAttribute('action', '${pageContext.request.contextPath}/user/login?cno=' + cno);
-            document.loginForm.submit();
-        }document.loginForm.submit();
+        // if (cno !== '') {
+        //     document.loginForm.setAttribute('action', '${pageContext.request.contextPath}/user/login?cno=' + cno);
+        //     document.loginForm.submit();
+        // }
+        document.loginForm.submit();
     }
 
         document.getElementById('joinBtn').onclick = () => {
