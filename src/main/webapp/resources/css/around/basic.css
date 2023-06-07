@@ -15,12 +15,12 @@
     text-align: center;
 }
 
-.around>h1 {
+.around h1 {
     text-align: center;
     font-size: 30px;
     font-weight: bold;
     margin-top: 5%;
-    margin-bottom: 5%;
+    margin-bottom: 1%;
 }
 
 .col-md-4 {
@@ -29,30 +29,31 @@
 
 .caption>h2 {
     font-weight: bold;
+    font-size: 15px;
 }
-
+.caption>p{
+    font-size: 15px;
+}
 iframe {
     width: 100%;
 }
-
+.sel{
+    display: flex;
+    justify-content: flex-end;
+}
 .sel1 {
-    margin: 10px auto 10px;
-    float: right;
-    position: absolute;
-    right: 20%;
-    top: 200px;
+    margin: 10px 0;
+    margin-right: 10px;
 }
 
 .sel2 {
-    margin: 10px auto 10px;
-    float: right;
-    position: absolute;
-    right: 15%;
-    top: 200px;
+    margin: 10px 0;
+   
 }
 
 .box>img {
     width: 100%;
+    border-radius: 10px;
 }
 
 .caption>p {
