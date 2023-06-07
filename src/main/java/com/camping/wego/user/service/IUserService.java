@@ -4,6 +4,8 @@ package com.camping.wego.user.service;
 
 
 
+import java.util.Map;
+
 import com.camping.wego.vo.UserVO;
 
 
@@ -16,7 +18,7 @@ public interface IUserService {
 	void update(UserVO vo);
 
 	//회원탈퇴
-	void delete(String userId);
+	String withdrawal(UserVO vo);
 
 	//아이디 중복체크
 	String idCheck(String userId);

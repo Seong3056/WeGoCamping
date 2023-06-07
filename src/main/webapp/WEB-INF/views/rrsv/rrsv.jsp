@@ -1,12 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-
-<!-- 웹폰트 적용 -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&display=swap" rel="stylesheet">
-
 <title>예약하기</title>
 
 <!--달력-->
@@ -25,11 +19,7 @@
   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
   crossorigin=""></script>
 
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/reservep/reserve.css">
-
 
 <%@ include file="../include/header.jsp" %>
 
@@ -45,7 +35,7 @@
         <div id="mapid"></div>
 
       </div>
-      
+
       <div class="form-right">
 
         <div class="line2">
@@ -55,7 +45,7 @@
           </div>
 
           <div class="rsvNum">
-            
+
             <select name="quantity" id="quantity">
               <option value="0" selected hidden>인원수</option>
               <option value="1">1</option>
@@ -66,44 +56,65 @@
           </div>
         </div>
         <div class="line3">
-          <div>
-            <div class="day1">
-              <h3>2023-06-05</h3>
-              <p>최고기온</p> <p id="day1Max"></p> <br>
-              <p>최저기온</p> <p id="day1Min"></p> <br>
-              <p>날씨</p> <p></p>
-            </div>
-            <div class="day2">
-              <h3>2023-06-05</h3>
-              <p>최고기온</p> <p id="day2Max"></p> <br>
-              <p>최저기온</p> <p id="day2Min"></p> <br>
-              <p>날씨</p> <p></p>
+
+          <div class="day1 day">
+
+            <h3 id="day1Date">날짜</h3>
+            <div class="ta">
+              <p>최고기온 </p>
+              <p id="day1Max" class="taMax"></p>
             </div>
 
+            <div class="ta">
+              <p>최저기온 </p>
+              <p id="day1Min" class="taMin"></p>
+            </div>
+
+            <p>날씨</p>
+            <p></p>
           </div>
-          <div></div>
-          <div></div>
+
+          <div class="day3 day">
+            <h3 id="day3Date">날짜</h3>
+            <div class="ta">
+              <p>최고기온 </p>
+              <p id="day3Max" class="taMax"></p>
+            </div>
+
+            <div class="ta">
+              <p>최저기온 </p>
+              <p id="day3Min" class="taMin"></p>
+            </div>
+            
+          </div>
+
+
+
         </div>
+
+        <div class="line35">
+          <div style="width: 500px; height: 230px;">
+            <!--차트가 그려질 부분-->
+            <canvas id="myChart"></canvas>
+          </div>
+        </div>
+
         <div class="line4">
           <h2>금액: </h2>
-          <input type="text" name="amount" value="${camp.amount}" readonly>          
+          <input type="text" name="amount" value="${camp.amount}" readonly>
           <img id="payBtn" src="${pageContext.request.contextPath}/img/kakao/payment_icon_yellow_small.png" alt="카카오페이">
         </div>
+
       </div>
-      
+
 
 
 
 
     </div>
-
   </form>
-
-
-
-
-
 </article>
+
 <%@ include file="../include/footer.jsp" %>
 <!-- jQuery -->
 
@@ -113,7 +124,7 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="https://service.iamport.kr/js/iamport.payment-1.1.5.js"></script> -->
 
-<script>
+<script type="text/javascript">
   var mymap = L.map("mapid").setView(["${camp.mapY}", "${camp.mapX}"], 16);
   var maker = L.marker(["${camp.mapY}", "${camp.mapX}"]).addTo(mymap);
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -192,6 +203,47 @@
     } else document.payForm.submit();
   };
 
+<<<<<<< HEAD
+=======
+  // document.getElementById('demo').onchange = () => {
+
+  //   let addr = "${camp.addr}";
+  //   console.log(addr);
+  //   addr = addr.substring(0, addr.indexOf('원') + 1);
+  //   console.log(addr);
+
+  //   var xhr = new XMLHttpRequest();
+  //   var url = 'http://apis.data.go.kr/1360000/MidFcstInfoService/getMidFcst'; /*URL*/
+  //   var queryParams = '?' + encodeURIComponent('serviceKey') + '=' +
+  //     'JS7jeuof%2BpwfeEbRwoql%2BWry6jw2GgIJlD3GWpVjjxNvEQSSGIc6HaD90Rg3u48tnw6LVidKVigCK2YAxGc4Hw%3D%3D'; /*Service Key*/
+  //   queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /**/
+  //   queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('10'); /**/
+  //   queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('XML'); /**/
+  //   queryParams += '&' + encodeURIComponent('regId') + '=' + '11D20501'; /**/
+  //   queryParams += '&' + encodeURIComponent('tmFc') + '=' + encodeURIComponent('202306030600'); /**/
+  //   var q =
+  //     'http://apis.data.go.kr/1360000/MidFcstInfoService/getMidTa?serviceKey=JS7jeuof%2BpwfeEbRwoql%2BWry6jw2GgIJlD3GWpVjjxNvEQSSGIc6HaD90Rg3u48tnw6LVidKVigCK2YAxGc4Hw%3D%3D&numOfRows=10&pageNo=1&regId=11D20501&tmFc=202306020600';
+  //   xhr.open('GET', q);
+  //   xhr.onreadystatechange = function () {
+  //     if (this.readyState == 4) {
+  //       console.log('Status: ' + this.status);
+  //       console.log('nHeaders: ' + JSON.stringify(this.getAllResponseHeaders()));
+  //       console.log('nBody: text ' + this.responseText);
+  //       console.log('nBody: json ' + this.responseXML);
+  //       alert('Status: ' + this.status + 'nHeaders: ' + JSON.stringify(this.getAllResponseHeaders()) + 'nBody: ' +
+  //         this.responseText);
+  //       document.getElementById('weather').textContent = this.responseText;
+  //       var XmlNode = new DOMParser().parseFromString(this.responseText, 'text/xml');
+  //       var data = xmlToJson(XmlNode);
+  //       console.log(data.response.body.items.item.regId);
+  //       // response: 
+  //       //     body: 
+  //       //         items: 
+  //       //             item: regId
+  //     }
+  //   };
+  // }
+>>>>>>> 3a4d86a8ac8a97ffcd5b21687f954d0a1839d0ea
 
 
   /*-----------------------------------카카오 페이---------------------------------------------*/
@@ -235,47 +287,174 @@
   //     alert(msg);
   //   });
   // }
+</script>
 
-    document.getElementById('demo').onchange = () => {
-      const now = new Date();
-      const date = document.getElementById('demo').value;
-      const start = date.substring(0,10);
-      const startDate = new Date(
-        parseInt(start.substr(0,4)),
-        parseInt(start.substr(6,2)),
-        parseInt(start.substr(9,2)));
-      
-        const end = date.substring(13,23);
-      const endDate = new Date(parseInt(end.substr(0,4)),
-        parseInt(end.substr(6,2)),
-        parseInt(end.substr(9,2)));
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script type="text/javascript">
+  document.getElementById('demo').onchange = () => {
+    const now = new Date();
+    const date = document.getElementById('demo').value;
+    const start = date.substring(0, 10);
+    console.log("날짜분해" + parseInt(start.substring(0, 5)),
+      parseInt(start.substring(6, 9)) - 1,
+      parseInt(start.substring(8)));
+    const startDate = new Date(
+      parseInt(start.substring(0, 5)),
+      parseInt(start.substring(6, 9)) - 1,
+      parseInt(start.substring(8)));
 
-      const getDateDiff = (d1, d2) => {
-  const date1 = new Date(d1);
-  const date2 = new Date(d2);
-  
-  const diffDate = date1.getTime() - date2.getTime();
-  
-  return Math.abs(diffDate / (1000 * 60 * 60 * 24)); // 밀리세컨 * 초 * 분 * 시 = 일
-}
+    const end = date.substring(13, 23);
+    const endDate = new Date(
+      parseInt(end.substring(0, 5)),
+      parseInt(end.substring(6, 9)) - 1,
+      parseInt(end.substring(8)));
+    const d = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    console.log("몇년몇월몇일: " + start);
+    console.log(end);
 
-getDateDiff("2021-09-01", "2021-10-01");
+    const getDateDiff = (d1, d2) => {
+      const date1 = new Date(d1);
+      const date2 = new Date(d2);
 
-      
-      console.log("출발"+startDate+"도착"+endDate);
-      fetch('${pageContext.request.contextPath}/weather/${camp.cno}')
-      .then(rs =>rs.json())
-      .then(data =>{
-        
-        console.log(data[0].taMin3);
-        let s = getDateDiff(startDate,new Date());
-        let e = getDateDiff(endDate,new Date());
-        console.log(s);
-        document.getElementById('day1Max').textContent = data[0].taMax3;
-        document.getElementById('day1Min').textContent = data[0].taMin3;
-        document.getElementById('day2Max').textContent = data[0].taMax4;
-        document.getElementById('day2Min').textContent = data[0].taMin4;
+      const diffDate = date1.getTime() - date2.getTime();
 
-      })
+      return Math.abs(diffDate / (1000 * 60 * 60 * 24)); // 밀리세컨 * 초 * 분 * 시 = 일
     }
+
+
+    console.log("출발: " + startDate + "도착: " + endDate);
+    fetch('${pageContext.request.contextPath}/weather/${camp.cno}')
+      .then(rs => rs.json())
+      .then(data => {
+
+        const taMin = [
+          data[0].taMin3,
+          data[0].taMin4,
+          data[0].taMin5,
+          data[0].taMin6,
+          data[0].taMin7,
+          data[0].taMin8,
+          data[0].taMin9,
+          data[0].taMin10
+        ];
+        const taMax = [
+          data[0].taMax3,
+          data[0].taMax4,
+          data[0].taMax5,
+          data[0].taMax6,
+          data[0].taMax7,
+          data[0].taMax8,
+          data[0].taMax9,
+          data[0].taMax10
+        ];
+
+        
+         
+
+
+
+        const putTa = (d1, d2, day) => {
+          
+          const d = parseInt(getDateDiff(d1, d2));
+          console.log("날짜차이:" + d);
+          
+          if (d - 3 < 0 || d > 10) return;
+          console.log("최고기온 " + taMax[d - 3]);
+          if (day === 'day1') {
+            document.getElementById('day1Date').textContent = start.substring(5);
+            document.getElementById('day1Max').textContent = taMax[d - 3] + '℃';
+            document.getElementById('day1Min').textContent = taMin[d - 3] + '℃';
+          } else if (day === 'day3') {
+            document.getElementById('day3Date').textContent = end.substring(5);
+            document.getElementById('day3Max').textContent = taMax[d - 3] + '℃';
+            document.getElementById('day3Min').textContent = taMin[d - 3] + '℃';
+          }
+
+        }
+        putTa(startDate, new Date(), 'day1');
+        putTa(endDate, new Date(), 'day3');
+         /*---------------------------------------------------------------------------*/
+          //그래프 영역
+          
+          
+          const DATA_COUNT = getDateDiff(startDate,endDate);
+          const DATA_CALC = getDateDiff(new Date(),startDate);
+          if(DATA_CALC > 10) return;
+          // console.log(DATA_COUNT - 3 < 0 || DATA_COUNT > 10);
+          // console.log(getDateDiff(startDate,endDate));
+          const labels = [];
+          document.getElementById('')
+          for (let i = 0; i < DATA_COUNT; ++i) {
+        	  let fromTOdate = new Date(startDate.setDate(startDate.getDate()+1))
+              console.log("from "+fromTOdate);
+              let StringDate = (fromTOdate.getMonth()+1) + '/' + fromTOdate.getDate()
+              console.log("String "+StringDate);
+              labels.push(StringDate);
+          }
+          
+          const dataMax = [];
+          const dataMin = [];
+          for (let i = 0; i < DATA_COUNT; i++) {
+            if(DATA_CALC+i<2){
+              dataMax.push(NaN);
+              dataMin.push(NaN);
+            }else{
+              dataMax.push(taMax[i]);
+              dataMin.push(taMin[i]);
+            }
+            
+          }
+          console.log("최고기온 배열값:" + taMax);
+          const datad = {
+            labels: labels,
+            datasets: [{
+              label: '최고기온',
+              data: dataMax,
+              borderColor: 'rgb(224, 92, 92)',
+              fill: false
+              
+            }, {
+              label: '최저기온',
+              data: dataMin,
+              borderColor: 'rgb(135, 135, 240)',
+              fill: false
+              
+            }]
+          };
+          const config = {
+            type: 'line',
+            data: datad,
+            options: {
+              responsive: true,
+              plugins: {
+                title: {
+                  display: true,
+                  text: 'Chart.js Line Chart - Cubic interpolation mode'
+                },
+              },
+              interaction: {
+                intersect: false,
+              },
+              scales: {
+                'y': {
+                  type: 'linear',
+                  display: true,
+                  position: 'left'
+                }
+                
+              
+              }
+            },
+          };
+          var context = document.getElementById('myChart').getContext('2d');
+          var myChart = new Chart(context, config);
+          /*---------------------------------------------------------------------------*/
+
+
+
+
+
+
+      });
+  }
 </script>

@@ -1,163 +1,158 @@
 @import url("https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css");
+
 /* @import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&display=swap'); */
-*{
+* {
     padding: 0;
-    margin: 0;   
-  
+    margin: 0;
 }
-a{
-    text-decoration: none; 
+
+a {
+    text-decoration: none;
     color: black;
-    cursor: pointer; 
+    cursor: pointer;
     font-family: 'Hahmlet', serif;
-   
-}
-
-
-body{
-    position: relative;   
-     height: 700px;
 }
 
 /* 게시판 영역 */
-.board{
-    
+.board {
     margin: 0 auto;
     margin-top: 150px;
-    
-    
 }
-.board .board-selector { /* 게시판 선택 */
+
+.board .board-selector {
+    /* 게시판 선택 */
     margin-bottom: 70px;
     display: flex;
     flex-flow: row;
     justify-content: center;
 }
-.board .board-selector a{
+
+.board .board-selector a {
     width: 250px;
     height: 50px;
     line-height: 50px;
     border: 1px solid hwb(0 0% 100% / 0.01);
     margin: 0 10px;
 }
+
 .board .tab {
-	width: 100%;
+    width: 100%;
     height: 30px;
     display: flex;
     flex-flow: row;
     justify-content: space-between;
     margin-bottom: 10px;
-    
 }
-.board .tab .write{
+
+.board .tab .write {
     width: 100px;
-    
+
 }
-.board .tab .search{
-    width: 250px;    
+
+.board .tab .search {
+    width: 250px;
 }
-.board .tab .search input{
+
+.board .tab .search input {
     height: 100%;
     border: 1px solid #000;
 }
-.board .tab .search button{
+
+.board .tab .search button {
     width: 35px;
     height: 100%;
-    
-   
-    
-    
 }
-.board table{
-    width: 100%;  
-    border-top: 1px solid #777;  
+
+.board table {
+    width: 100%;
+    border-top: 1px solid #777;
     border-bottom: 1px solid #777;
-    
-    
 }
-.board table th{
+
+.board table th {
     width: 10%;
     font-weight: bold;
     padding: 10px;
     box-sizing: border-box;
 }
+
 .board table .title {
     width: 60%;
-    
 }
-
 
 .board table tr {
     /* border: 1px solid #000; */
     height: 30px;
-    
     padding: 0 10px;
     box-sizing: border-box;
 }
+
 .board table tr td {
     padding: 0 10px;
     line-height: 16px;
 }
-.board table tr td:nth-child(2) { /* 제목 */
+
+.board table tr td:nth-child(2) {
+    /* 제목 */
     text-align: left;
     text-indent: 120px;
 }
+
 .board table tr td:nth-child(2):hover a {
-	text-decoration: underline;
+    text-decoration: underline;
 }
+
 .board table tr td:nth-child(2):hover tr {
     background-color: rgb(252, 242, 227);
 }
+
 .board .page {
     display: flex;
     flex-flow: row;
     justify-content: center;
     margin-top: 10px;
 }
+
 .board .page div {
     margin: 3px;
 }
 
 /* 게시판 영역끝 */
 
-<!-- 부트스트랩 -->
+/* <!-- 부트스트랩 --> */
+button {
+    background-color: #fff;
+    cursor: default;
+    outline: none;
+}
 
+button:focus {
+    outline: none;
+}
 
-.button { 
-	color: #fff; background-color: #fff; cursor: default; 
-	}
-.button:focus { 
-	border: none; 
-	box-shadow: none; 
-	out-line: none; 
-	}
-	
-
- .search-container {
- display: flex;
-    }
+.search-container {
+    display: flex;
+}
 
 .board {
-	margin: 200px auto 200px;
-	font-family: 'Hahmlet', serif;
-	width: 1100px;
-	text-align: center;
+    margin: 250px auto 200px;
+    font-family: 'Hahmlet', serif;
+    width: 1100px;
+    text-align: center;
 }
 
-.board .tab > .search-container {
+.board .tab>.search-container {
     display: flex;
-    }
-    
-.board .tab > .search-container .item {
-	margin-right: 2%;
-	}
-	
-.board .tab > .search-container .item > .btn {
-	margin-left: 2%;
-}
-    
-.board .tab > .search-container > .item d-flex .btn btn-secondary my-2 my-sm-0 {
-	margin-left: 10px;
 }
 
+.board .tab>.search-container .item {
+    margin-right: 2%;
+}
 
+.board .tab>.search-container .item>.btn {
+    margin-left: 2%;
+}
+
+.board .tab>.search-container>.item d-flex {
+    margin-left: 10px;
+}

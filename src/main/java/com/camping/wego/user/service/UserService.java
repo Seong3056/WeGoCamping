@@ -1,5 +1,7 @@
 package com.camping.wego.user.service;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -33,9 +35,22 @@ public class UserService implements IUserService {
 	}
 
 	@Override
-	public void delete(String userId) {
-
-
+	public String withdrawal(UserVO vo) {
+		
+		String dbPw = mapper.login(vo.getUserId());
+		
+		log.info(dbPw);
+		
+//		log.info(encoder.matches(dbPw, vo.getUserPw())?"true":"false");
+		log.info(vo.getUserPw());
+		if(encoder.matches(vo.getUserPw(),dbPw)) {
+			mapper.withdrawal(vo.getUserId());
+			log.info("비밀번호가 일치한당계");
+			return "true";
+		}
+		else return "false";
+		
+	
 	}
 
 	@Override

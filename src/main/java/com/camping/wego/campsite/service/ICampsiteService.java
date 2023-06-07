@@ -22,7 +22,7 @@ public interface ICampsiteService {
 	CampsiteVO info(int cno);
 	
 	//캠핑장 주소 지역 따오기
-	String addr(int cno);
+	String[] addr(int cno);
 	
 	//캠핑장 주소(도) 리스트
 	CampsiteVO addrList(String addr);

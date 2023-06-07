@@ -31,7 +31,7 @@ public class CampsiteService implements ICampsiteService {
 
         try {
             ObjectMapper objectMapper = new ObjectMapper();
-            JsonNode rootNode = objectMapper.readTree(new File("C:/around/campsite info_" + num + "_1000.json"));
+            JsonNode rootNode = objectMapper.readTree(new File("C:/work/campsite info_" + num + "_1000.json"));
             JsonNode responseNode = rootNode.get("response");
             JsonNode bodyNode = responseNode.get("body");
             JsonNode itemNode = bodyNode.get("items").get("item");
@@ -96,12 +96,11 @@ public class CampsiteService implements ICampsiteService {
 	}
 
 	@Override
-	public String addr(int cno) {
-		CampsiteVO vo =  mapper.info(cno);
-		String addr = vo.getAddr();
-		String ar[] = addr.split(" ");
-		
-		return null;
+	public String[] addr(int cno) {
+
+		String addr = mapper.info(cno).getAddr();		
+		String ar[] = addr.split(" ");		
+		return ar;
 	}
 	
 	@Override 
