@@ -57,9 +57,4 @@ public class BoardService implements IBoardService {
 		mapper.update(vo);
 	}
 
-	@Override
-	public List<BoardVO> clsList(String cls) {
-		int clsInt = Integer.parseInt(cls);
-		return mapper.clsList(clsInt);
-	}
 }

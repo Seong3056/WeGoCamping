@@ -77,8 +77,7 @@
                 </td>
                 <td>${board.writer}</td>
                 <td>
-                    <fmt:parseDate value="${board.regDate}" pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateTime"
-                        type="both" />
+                    <fmt:parseDate value="${board.regDate}" pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateTime" type="both" />
                     <fmt:formatDate value="${parsedDateTime}" pattern="yy-MM-dd" />
                 </td>
                 <td>${board.hit}</td>
@@ -111,15 +110,13 @@
             </ul>
         </div>
 
-
         <input type="hidden" name="cls" value="${pc.paging.cls}">
         <input type="hidden" name="pageNum" value="${pc.paging.pageNum}">
         <input type="hidden" name="cpp" value="${pc.paging.cpp}">
         <input type="hidden" name="keyword" value="${pc.paging.keyword}">
         <input type="hidden" name="condition" value="${pc.paging.condition}">
-
     </form>
-    <!-- 부트스트랩 끝 -->
+    <!-- 페이지 부트스트랩 끝 -->
 
 </article>
 
@@ -138,36 +135,5 @@
 
         document.pageForm.pageNum.value = pageNum;
         document.pageForm.submit();
-
     });
-
-    // 댓글 날짜 변환 함수
-    function parseTime(regDateTime) {
-        let year, month, day, hour, minute, second;
-
-        if (regDateTime.length === 5) {
-            [year, month, day, hour, minute] = regDateTime;
-            econd = 0;
-        } else {
-            [year, month, day, hour, minute, second] = regDateTime;
-        }
-        // 원하는 날짜로 객체를 생성
-        const regTime = new Date(year, month - 1, day, hour, minute, second);
-        const date = new Date();
-        const gap = date.getTime() - regTime.getTime();
-
-        let time;
-        if (gap < 60 * 60 * 24 * 1000) { // 1000은 밀리초라 넣어줌
-            if (gap < 60 * 60 * 1000) {
-                time = '방금 전';
-            } else {
-                time = parseInt(gap / (1000 * 60 * 60)) + '시간 전';
-            }
-        } else if (gap < 60 * 60 * 24 * 30 * 1000) {
-            time = parseInt(gap / (1000 * 60 * 60 * 24)) + '일 전';
-        } else {
-            time = `${regTime.getFullYear()}년 ${regTime.getMonth()}월 ${regTime.getDate()}일`;
-        }
-        return time;
-    }
 </script>

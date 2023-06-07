@@ -1,28 +1,46 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <title>WeGoCamping</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/main/main.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/main/main.css">
 
-<%@ include file="../include/header.jsp" %>
+<%@ include file="../include/header.jsp"%>
 <article class="mainpage">
-  <div class="today">오늘의 캠핑장</div>
-  <div class="autoplay">
-    <c:forEach var="camp" items="${campList}">
-      <a href="${pageContext.request.contextPath}/detail/${camp.cno}" class="detail">
-        <div class="box">
+	<div class="today">오늘의 캠핑장</div>
+	<div class="autoplay">
+		<c:forEach var="camp" items="${campList}">
+			<a href="${pageContext.request.contextPath}/detail/${camp.cno}"
+				class="detail">
+				<div class="box">
+					<img src="${camp.firstImageUrl}" alt="camp${camp.cno}"
+						onerror="this.src='${pageContext.request.contextPath}/img/campsiteOnerror.jpg'">
+					<h2 class="name">${camp.facltNm}</h2>
+					<p class="oneline">${camp.lineIntro}</p>
+				</div>
+			</a>
+		</c:forEach>
+	</div>
 
-          <img src="${camp.firstImageUrl}" alt="camp${camp.cno}"
-            onerror="this.src='${pageContext.request.contextPath}/img/campsiteOnerror.jpg'">
-          <h2 class="name">${camp.facltNm}</h2>
-          <p class="oneline">${camp.lineIntro}</p>
-        </div>
-      </a>
-    </c:forEach>
-  </div>
 
- <!--   <br><br><br>
+	<div class="today">테마로 즐기는 캠핑</div>
+	<div class="autoplay">
+		<c:forEach var="camp" items="${campList}">
+				<a href="${pageContext.request.contextPath}/detail/${camp.cno}"
+					class="detail">
+					<div class="box">
+						<img src="${camp.firstImageUrl}" alt="camp${camp.cno}"
+							onerror="this.src='${pageContext.request.contextPath}/img/campsiteOnerror.jpg'">
+						<h2 class="name">${camp.facltNm}</h2>
+						<p class="oneline">${camp.lineIntro}</p>
+					</div>
+				</a>
+		</c:forEach>
+	</div>
+
+
+	<!--   <br><br><br>
 
  <h1>날씨</h1>
 
@@ -35,4 +53,4 @@
   <div class="clearfix"></div> -->
 </article>
 
-<%@ include file="../include/footer.jsp" %>
+<%@ include file="../include/footer.jsp"%>

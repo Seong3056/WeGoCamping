@@ -4,6 +4,12 @@
     
 <mapper namespace="com.camping.wego.user.mapper.IUserMapper">
 
+	<sql id="cls">
+		<if test="paging.cls gt 0 and paging.cls lt 5">
+			AND cls = #{paging.cls}
+		</if>
+	</sql>
+
 	<insert id="join">
 		INSERT INTO users
 			(user_id, user_pw, user_name, user_phone, user_email1, user_email2,
@@ -29,8 +35,16 @@
 	<select id="myContentList" resultType="board">
 		SELECT * FROM board
 		WHERE writer = #{userId}
+		<include refid="cls" />
 		ORDER BY bno DESC
-		LIMIT #{pageStart}, #{cpp}
+		LIMIT #{paging.pageStart}, #{paging.cpp}
+	</select>
+	
+	<select id="getMyTotal" resultType="int">
+		SELECT COUNT(*)
+		FROM board
+		WHERE writer = #{userId}
+		<include refid="cls" />
 	</select>
 	
 	<select id="info" resultType="user">

@@ -28,7 +28,7 @@ public class UserService implements IUserService {
 		String pwEncry = encoder.encode(vo.getUserPw());
 		vo.setUserPw(pwEncry);
 		mapper.join(vo);
-		}
+	}
 
 	@Override
 	public void update(UserVO vo) {
@@ -38,21 +38,20 @@ public class UserService implements IUserService {
 
 	@Override
 	public boolean withdrawal(UserVO vo) {
-		
+
 		String dbPw = mapper.login(vo.getUserId());
-		
+
 		log.info(dbPw);
-		
+
 //		log.info(encoder.matches(dbPw, vo.getUserPw())?"true":"false");
 		log.info(vo.getUserPw());
-		if(encoder.matches(vo.getUserPw(),dbPw)) {
+		if (encoder.matches(vo.getUserPw(), dbPw)) {
 			mapper.withdrawal(vo.getUserId());
 			log.info("비밀번호가 일치한당계");
 			return true;
-		}
-		else return false;
-		
-	
+		} else
+			return false;
+
 	}
 
 	@Override
@@ -61,9 +60,11 @@ public class UserService implements IUserService {
 
 		int result = mapper.idCheck(userId);
 
-		log.info("result: {}",result);
-		if(result == 1) return "duplicated";
-		else return "able";
+		log.info("result: {}", result);
+		if (result == 1)
+			return "duplicated";
+		else
+			return "able";
 	}
 
 	@Override
@@ -71,21 +72,23 @@ public class UserService implements IUserService {
 		log.info("서비스의 로그인 호출");
 		String dbPw = mapper.login(userId);
 
-		if(dbPw != null) {
+		if (dbPw != null) {
 			// 날 것의 비밀번호와 암호화된 비밀번호의 일치 여부를 알려주는 matches()
-			if(encoder.matches(userPw, dbPw)) {
+			if (encoder.matches(userPw, dbPw)) {
 				return userId;
 			}
-
 		}
-
 		return null;
-
 	}
 
 	@Override
 	public List<BoardVO> myContentList(String userId, PageVO vo) {
 		return mapper.myContentList(userId, vo);
+	}
+
+	@Override
+	public int getMyTotal(String userId, PageVO vo) {
+		return mapper.getMyTotal(userId, vo);
 	}
 
 }
