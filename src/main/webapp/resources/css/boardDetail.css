@@ -183,6 +183,10 @@
     
 }
 
+.filebox>input {
+	margin-top: 10px;
+}
+
 .wrap button {
     width: 60px;
     height: 35px;
@@ -208,7 +212,7 @@
     margin-bottom: 25px;
 }
 
-.wrap .rating {
+.wrap>.rating {
     width: 200px;
     padding: .8em .5em; 
     border: 1px solid #999;
