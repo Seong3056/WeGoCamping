@@ -39,6 +39,7 @@ public class UserController {
 	private MailAuthService mailService;
 
 	@GetMapping("/login")
+	public void login () {}
 	
 	
 	
