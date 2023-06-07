@@ -56,14 +56,14 @@
                                         <option>@gmail.com</option>
                                         <option>@nate.com</option>
                                     </select>
-                                    <button type="button" id="mailSendBtn">인증번호 전송</button>
+                                    <button class="btn btn-secondary" type="button" id="mailSendBtn">인증번호 전송</button>
                                 </div>
 
                                 <div class="mailCheckBox">
                                     <input type="text" id="mailCheckInput" placeholder="인증번호 6자리를 입력하세요." maxlength="6"
                                         disabled="disabled">
                                     <br>
-                                    <button type="button" id="mailCheckBtn" class="checkBoxE">이메일 인증</button>
+                                    <button type="button" id="mailCheckBtn" class="checkBoxE btn btn-secondary">이메일 인증</button>
                                 </div>
                             </div>
 
@@ -75,7 +75,7 @@
                                 <div class="input-group">
                                     <input type="text" name="addrZipNum" id="addrZipNum" placeholder="우편번호" readonly>
                                     <br>
-                                    <button type="button" class="CheckBoxA" onclick="findAddr()">주소찾기</button>
+                                    <button type="button" class="CheckBoxA btn btn-secondary" onclick="findAddr()">주소찾기</button>
                                 </div>
                                 <input type="text" name="addrBasic" id="addrBasic" placeholder="기본주소">
                                 <input type="text" name="addrDetail" id="addrDetail" class="addrDetail"
@@ -91,7 +91,7 @@
 
                         <div class="bottomBtn">
                             <div class="form-group">
-                                <button type="submit" id="joinBtn" class="fixBtn">회원가입</button>
+                                <button type="submit" id="joinBtn" class="fixBtn btn btn-secondary">회원가입</button>
                             </div>
                         </div>
                     </div>
