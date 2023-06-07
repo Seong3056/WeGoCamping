@@ -39,13 +39,15 @@ public class UserController {
 	private MailAuthService mailService;
 
 	@GetMapping("/login")
-	public void loginPage() {}
+	
+	
+	
 
 	@PostMapping("/login")
 	public void loginProcess(String userId, String userPw, Model model) {
 		log.info("userId: {}",userId);
 		log.info("userPw: {}",userPw);
-		model.addAttribute("user", service.login(userId, userPw));
+		model.addAttribute("user", service.login(userId, userPw));		
 	}
 
 	@GetMapping("/logout")

@@ -84,6 +84,7 @@ public class CampsiteService implements ICampsiteService {
 	public List<CampsiteVO> getList() {
 		return mapper.getList();
 	}
+	
 
 	@Override
 	public int getTotal() {
@@ -104,11 +105,13 @@ public class CampsiteService implements ICampsiteService {
 	}
 	
 	@Override 
-	public CampsiteVO addrList(String addr) {
-		Map<String, String> map = new HashMap<String, String>();
-		map.put("addr1", addr.substring(0,1));
-		map.put("addr2", addr.substring(1,2));		
-		return mapper.addrList(map);
+	public List<CampsiteVO> getList(Map<String, String> map) {
+		
+		map.put("addr1", map.get("location").substring(0,1));
+		map.put("addr2", map.get("location").substring(1,2));	
+		log.info("--------------------------------------------"+map.get("location").substring(0,1)+map.get("location").substring(1,2));
+		log.info(map.toString());
+		return mapper.selectSearch(map);
 	}
 	
 	@Override

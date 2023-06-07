@@ -25,10 +25,14 @@ public interface ICampsiteMapper {
 	CampsiteVO info(int cno);
 
 	//캠핑장 주소(도)리스트
-	CampsiteVO addrList(Map<String, String> map);
+	List<CampsiteVO> addrList(Map<String, String> map);
 	
 	//캠핑장 위치 코드(날씨)
 	String addrCode(String addrName);
+
+	List<CampsiteVO> selectSearch(Map<String, String> map);
+
+	
 
 	
 
