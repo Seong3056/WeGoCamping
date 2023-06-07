@@ -344,16 +344,21 @@ input::placeholder {
 }
 .wrap .myBoard .myBoardBtn {
     display: flex;
-    margin-top: 60px;
-    margin-left: 500px;
+    margin-top: 20px;
+    margin-left: 550px;
     
 }
 
+.page {
+	
+	margin-left: 40%;
+}
+
 .wrap .myBoard .myBoardBtn button {
-    width: 80px;
+   /*  width: 80px;
     height: 35px;
     background: skyblue;
-    border: 1px solid gray;
+    border: 1px solid gray; */
 }
 
 .wrap .myBoard .myBoardBtn .boardBtn {
