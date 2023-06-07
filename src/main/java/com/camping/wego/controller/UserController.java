@@ -36,9 +36,8 @@ public class UserController {
 	private MailAuthService mailService;
 
 	@GetMapping("/login")
-	public void loginPage() {
-	}
-
+	public void login () {}
+	
 	@PostMapping("/login")
 	public void loginProcess(String userId, String userPw, Model model) {
 		log.info("userId: {}", userId);
@@ -54,8 +53,7 @@ public class UserController {
 	}
 
 	@GetMapping("/join")
-	public void joinPage() {
-	}
+	public void joinPage() {}
 
 	@ResponseBody
 	@PostMapping("/idCheck")
@@ -107,11 +105,9 @@ public class UserController {
 	}
 
 	@PostMapping("/reservation")
-	public void resv(String userId, Model model) {
-	}
+	public void resv(String userId, Model model) {}
 
 	@GetMapping("/info")
-	public void info() {
-	}
+	public void info() {}
 
 }
