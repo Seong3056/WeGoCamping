@@ -54,7 +54,7 @@
           <a href="${pageContext.request.contextPath}/board/boardList?cls=2">꿀팁공유</a>
           <a href="${pageContext.request.contextPath}/board/boardList?cls=3">메이트찾기</a>
           <a href="${pageContext.request.contextPath}/board/boardList?cls=4">건의사항</a>
-          <a href="${pageContext.request.contextPath}/board/boardList">전체 글 보기</a>
+        <%--   <a href="${pageContext.request.contextPath}/board/boardList">전체 글 보기</a> --%>
         </div>
       </div>
     </div>
