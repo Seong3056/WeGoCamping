@@ -112,8 +112,13 @@
 
         //id 중복 검사
         idCheck();
+        console.log(idCheck());
         //pw, 이메일 유효성 검사
-        if(!pwChk || 
+        if(idCheck() == 'impossible') {
+            alert('유효하지않는 아이디입니다.');
+            return;
+        }
+        else if(!pwChk ||
         document.getElementById('userPw').value === '' || 
         document.getElementById('pwCheck').value === '') {
             alert('비밀번호를 다시 한번 확인해주세요!');
@@ -121,18 +126,39 @@
         } else if(!emailChk) {
             alert('이메일을 인증을 진행해 주세요!');
             return;
-        } else {
+        } else if(document.getElementById('phoneNm').value == ''){
+            alert('휴대폰번호를 입력해주세요!');
+            return;
+        }
+        else {
             $joinForm.submit();
         }
     };
 
     /* ----------------------------아이디 유효성검사---------------------------*/
-    document.getElementById('userId').onkeyup = function () {
+    const idCheck = document.getElementById('userId').onkeyup = () => {
         // console.log(document.getElementById('userId').value.length);
         const regEx = /^[A-Za-z0-9]{6,12}$/;
-        if (regEx.test(document.getElementById('userId').value)) {
+        let status='able';
+        if (!regEx.test(document.getElementById('userId').value)) {
+           
+            /* ----아이디 유효성검사----*/
+            if (document.getElementById('userId').value.length < 6){
+                document.getElementById('msgId').textContent = '아이디가 너무 짧습니다.';
+                status = 'impossible';
+            }
+                
+            else if (document.getElementById('userId').value.length > 12){
+                document.getElementById('msgId').textContent = '아이디가 너무 깁니다.';
+                status = 'impossible';
+            }
+                
+            document.getElementById('userId').style.border = '1px solid #ff000030';
+            document.getElementById('userId').style.boxShadow = '1px 1px 5px #ff000030';
+            /* ====아이디 유효성검사====*/
+        } else {
+            
 
-            /* ----아이디 중복체크----*/
             const reqObj = {
                 method: 'post',
                 headers: {
@@ -149,23 +175,20 @@
                         document.getElementById('msgId').textContent = '중복된 아이디 입니다.';
                         document.getElementById('userId').style.borderColor = '#ff000030';
                         document.getElementById('userId').style.boxShadow = '1px 1px 5px #ff000030';
+                        status = 'impossible';
+                        
                     } else {
                         console.log('사용가능한 아이디');
                         document.getElementById('msgId').textContent = '사용가능한 아이디 입니다.';
                         document.getElementById('userId').style.borderColor = '#0080008a';
                         document.getElementById('userId').style.boxShadow = '1px 1px 5px #0080008a';
+                        status = 'able';
                     }
+                    
                 })
-            /* ====아이디 중복체크====*/
-        } else {
-            if (document.getElementById('userId').value.length < 6)
-                document.getElementById('msgId').textContent = '아이디가 너무 짧습니다.';
-            else if (document.getElementById('userId').value.length > 12)
-                document.getElementById('msgId').textContent = '아이디가 너무 깁니다.';
-            document.getElementById('userId').style.border = '1px solid #ff000030';
-            document.getElementById('userId').style.boxShadow = '1px 1px 5px #ff000030';
         }
-
+        console.log(status);
+        return status;
 
     }
     /*=============================아이디 유효성검사============================*/
@@ -177,11 +200,13 @@
             document.getElementById('msgPw').textContent = '사용가능한 비밀번호 입니다.';
             document.getElementById('userPw').style.borderColor = '#0080008a';
             document.getElementById('userPw').style.boxShadow = '1px 1px 5px #0080008a';
+            pwChk = true;
 
         } else {
             document.getElementById('msgPw').textContent = '올바르지 않은 비밀번호입니다.';
             document.getElementById('userPw').style.border = '1px solid #ff000030';
             document.getElementById('userPw').style.boxShadow = '1px 1px 5px #ff000030';
+            pwChk = false;
         }
     }
     /* --------------------------비밀번호 유효성검사---------------------------*/

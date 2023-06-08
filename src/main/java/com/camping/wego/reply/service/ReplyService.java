@@ -32,7 +32,8 @@ public class ReplyService implements IReplyService {
 		Map<String, Object> data = new HashMap<>();
 		data.put("paging", vo);
 		data.put("bno", bno);
-		
+		data.put("pageStart", vo.getPageStart());
+		data.put("cpp",vo.getCpp());
 		return mapper.getList(data);
 	}
 

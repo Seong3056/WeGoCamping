@@ -38,6 +38,7 @@
     <label for="reply">댓글<small id="replyCount"></small></label>
     <div class="replyWrite">
       <textarea name="reply" class="replyInput" id="replyInput" placeholder="댓글을 작성해주세요."></textarea>
+      
       <button type="button" class="registBtn btn btn-secondary" id="registBtn">등록</button>
     </div>
     <!-- 댓글 창 -->

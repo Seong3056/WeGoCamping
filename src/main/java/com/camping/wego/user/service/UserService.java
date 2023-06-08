@@ -27,6 +27,7 @@ public class UserService implements IUserService {
 	public void join(UserVO vo) {
 		String pwEncry = encoder.encode(vo.getUserPw());
 		vo.setUserPw(pwEncry);
+		log.info(vo.getUserPhone().getClass().getName());
 		mapper.join(vo);
 	}
 
