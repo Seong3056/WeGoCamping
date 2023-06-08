@@ -50,7 +50,7 @@
             <hr>
     
     
-      <div class="button_base b03_skewed_slide_in">
+      <div class="button_base b03_skewed_slide_in rsv">
           <div>예약하기</div>
           <div></div>
           <div>예약하기</div>
@@ -192,6 +192,15 @@
 
 		}, 1500);
     window.addEventListener('scroll', handleScroll);
-    
+    const $caption = document.querySelector('.thumbnail')
+    $caption.onclick = (e) =>{
+        
+      console.log("rsv 클릭됨");
+      if(!e.target.matches('.rsv')) return;
+        // window.location.href = $caption.childNodes
+        console.log($caption.childNodes);
+
+
+    }
   
 </script>
