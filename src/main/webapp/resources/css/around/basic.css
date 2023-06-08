@@ -165,5 +165,9 @@ iframe {
     -webkit-transition: left 0.30000000000000004s ease;
     -moz-transition: left 0.30000000000000004s ease;
 }
+.container .col-md-4 .thumbnail{
+	backdrop-filter: blur(20px);
+    background-color: none !important;
+}
 
 

@@ -90,6 +90,7 @@ iframe {
     width: 550px;
     margin-bottom: 10px;
     line-height: 1.5em;
+    backdrop-filter: blur(8px);
 }
 
 .detail .container .item .cc {

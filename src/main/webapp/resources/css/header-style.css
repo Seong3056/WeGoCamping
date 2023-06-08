@@ -370,9 +370,7 @@ a:hover, a:active {
     z-index: 999;
 }
 #logout {
-	height: 33px;
-    position: absolute;
-    bottom: 50%;
-    left: 167px;
-    transform: translateY(50%);  
+	    height: 33px;
+  
+    transform: translateY(50%);
 }
