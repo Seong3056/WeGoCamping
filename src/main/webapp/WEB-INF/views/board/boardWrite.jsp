@@ -33,14 +33,14 @@
             <input type="file" name="file" id="file" style="display: none;">
         </div>
         
-        <select name="rating" class="rating" style="display: none;">
+        <!-- <select name="rating" class="rating" style="display: none;">
             <option value="none" selected hidden>별점을 주세요!</option>
             <option value="1">⭐</option>
             <option value="2">⭐⭐</option>
             <option value="3">⭐⭐⭐</option>
             <option value="4">⭐⭐⭐⭐</option>
             <option value="5">⭐⭐⭐⭐⭐</option>
-          </select>
+          </select> -->
     
     </form>
 
