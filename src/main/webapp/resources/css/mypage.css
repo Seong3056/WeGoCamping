@@ -368,11 +368,12 @@ input::placeholder {
 
 /* 모달 수정 합니다. */
 .infoModal {
-   position: absolute;
+	font-family: 'Hahmlet', serif;
+    position: absolute;
     top: 50%;
     left: 50%;
     width: 400;
-    height: 200;
+    height: 400px;
     padding: 40px;
     text-align: center;
     background-color: #ffffff;
@@ -389,10 +390,12 @@ input::placeholder {
   }
 
 
+
 .infoModal .reText p{
-	line-height: 4;
-    border-bottom: 2px solid gray;
+	line-height: 2; 
+    /* border-bottom: 2px solid gray; */
     margin-bottom: 20px;
+    margin-top: 32px;
     font-size: 20px;
     font-weight: bold;
 }
