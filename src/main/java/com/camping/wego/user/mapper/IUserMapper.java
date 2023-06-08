@@ -24,6 +24,9 @@ public interface IUserMapper {
 
 	// 로그인
 	String login(String userId);
+	
+	// 이름
+	String getName(String userId);
 
 	// 유저정보 가져오기
 	UserVO info(String userId);

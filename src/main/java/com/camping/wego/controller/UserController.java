@@ -43,6 +43,7 @@ public class UserController {
 		log.info("userId: {}", userId);
 		log.info("userPw: {}", userPw);
 		model.addAttribute("user", service.login(userId, userPw));
+		model.addAttribute("name", service.getName(userId));
 	}
 	@GetMapping("/logout")
 	public String logout(HttpServletRequest request, HttpServletResponse response) {

@@ -51,5 +51,10 @@
 		SELECT * FROM users
 		WHERE user_id = #{userId}
 	</select>
+	
+	<select id="getName" resultType="String">
+		SELECT user_name FROM users
+		WHERE user_id = #{userId}
+	</select>
 
 </mapper>
