@@ -53,16 +53,18 @@ a {
     width: 250px;
 }
 
-.board .tab .search input {
+.board .tab  input {
     height: 100%;
     border: 1px solid #000;
+    padding: 10px;
+    margin-right: 5px;
 }
 
-.board .tab .search button {
+ .board .tab .search button {
     width: 35px;
     height: 100%;
 }
-
+ 
 .board table {
     width: 100%;
     border-top: 1px solid #777;
