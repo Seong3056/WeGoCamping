@@ -291,6 +291,7 @@ input::placeholder {
 .wrap .reservationInfo .payList td{
     padding: 5px;
     box-sizing: border-box;
+    
 }
 .wrap .reservationInfo .payList .pay-num{
     flex: 1;
