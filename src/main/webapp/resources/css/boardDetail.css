@@ -50,6 +50,7 @@ body{
     text-indent: 50px;
     font-weight: 500;
     font-size: 1.2em;
+    background-color: #fff;
 }
 
 .detailB .board .content {
@@ -57,8 +58,8 @@ body{
     width: 500px;
     height: 400px;
     margin: 20px 0;
-    padding: 10px;
-    
+    padding: 22px;
+    background-color: #fff;
 }
 
 .detailB .board .imageBox {
@@ -197,7 +198,7 @@ body{
 .wrap .btnBox {
     width: 800px;
     text-align: center;
-    
+     
 }
 
 .filebox>input {
@@ -205,7 +206,7 @@ body{
 }
 
 .wrap button {
-    width: 60px;
+   	width: 60px;
     height: 35px;
     margin-left: 20px;
 } 
@@ -286,14 +287,13 @@ body{
     resize: none;
     outline: none;
 }
-
 .reply .replyWrite .registBtn {
-    width: 100px;
+    width: 60px;
     margin-left: 30px;
-    background: skyblue;
-    border: none;
-    font-size: 16px;
-    font-weight: 600;
+    /* background: skyblue; */
+   /*  border: none; */
+   /*  font-size: 16px;
+    font-weight: 600;  */
 }
 
 /* 댓글 내용 부분 */

@@ -103,6 +103,7 @@
 
 <!-- 모달  -->
 <div class="infoModal" id="infoModal">
+ <div class="bg"></div>
     <div class="reText">
         <p>탈퇴를 원하시면 비밀번호를 입력해주세요.</p>
     </div>
@@ -110,8 +111,8 @@
         <input type="password" class="inputPw" id="inputPw">
     </div>
     <div class="btnBox">
-        <button type="button" class="cancle" id="cancle">취소</button>
-        <button type="button" class="cplBtn" id="cplBtn">완료</button>
+        <button type="button" class="cancle btn btn-secondary" id="cancle">취소</button>
+        <button type="button" class="cplBtn btn btn-secondary" id="cplBtn">완료</button>
     </div>
 </div>
 

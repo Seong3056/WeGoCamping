@@ -12,7 +12,7 @@
 <article class="detail">
   <div class="detailB">
     <form action="" method="post" name="detilForm">
-      <span>
+      <span id="cls">
         <c:if test="${vo.cls==1}">캠핑후기</c:if>
         <c:if test="${vo.cls==2}">꿀팁공유</c:if>
         <c:if test="${vo.cls==3}">메이트찾기</c:if>
@@ -27,7 +27,7 @@
         </div>
         <div class="flexBox">
 
-          <div class="imageBox">
+          <div class="imageBox" id="imageBox">
             <img alt="#" src="${pageContext.request.contextPath}/img/cam3.jpeg"
               onerror="this.src='${pageContext.request.contextPath}/img/campsiteOnerror.jpg'">
 
@@ -42,9 +42,9 @@
         
   
   <div class="btn-group">
-    <button type="button" class="listBtn" id="listBtn"
+    <button type="button" class="listBtn btn btn-secondary" id="listBtn"
       onclick="location.href='${pageContext.request.contextPath}/board/boardList'">목록</button>
-    <button type="button" class="regBtn" id="regBtn"
+    <button type="button" class="regBtn btn btn-secondary" id="regBtn"
       onclick="location.href='${pageContext.request.contextPath}/board/boardModify/${vo.bno}'">수정</button>
   </div>
 </div>
@@ -58,7 +58,7 @@
   <!-- <form action=""> -->
   <div class="replyWrite">
     <textarea name="reply" class="replyInput" id="replyInput" placeholder="댓글을 작성해주세요."></textarea>
-    <button type="button" class="registBtn" id="registBtn">등록</button>
+    <button type="button" class="registBtn btn btn-secondary" id="registBtn">등록</button>
   </div>
   <!-- </form> -->
   <!-- 댓글 창 -->
@@ -79,7 +79,25 @@
 <%@ include file="../include/footer.jsp" %>
 
 <script>
+
+
+
+
   window.onload = function () {
+    if(document.getElementById('cls').textContent.trim() != '꿀팁공유'){
+    const imageBox = document.getElementById('imageBox');
+    const content = document.getElementById('content');
+      console.log(document.getElementById('cls').textContent.trim());
+
+    
+    
+      imageBox.style.display = 'none';
+      content.style.display = 'block';
+      content.style.width = '1000px';
+      console.log('else 로 빠짐 ^^7');
+    
+
+  }
 
     // 댓글 등록
     document.getElementById('registBtn').onclick = () => {
@@ -356,22 +374,5 @@
 
   // 이미지 스크립트 JS 끝-------------------
 
-  document.querySelector('select').onclick = () => {
-    const imageBox = document.getElementById('imageBox');
-    const content = document.getElementById('content');
-
-    console.log('select 클릭됨');
-
-    if (document.querySelector('select').value == 1) {
-      imageBox.style.display = 'block';
-      content.style.display = 'block';
-      console.log('value 1 들어옴');
-    } else {
-      imageBox.style.display = 'none';
-      content.style.display = 'block';
-      content.style.width = '800px';
-      console.log('else 로 빠짐 ^^7');
-    }
-
-  }
+  
 </script>
