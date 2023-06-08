@@ -1,5 +1,7 @@
 package com.camping.wego.pay.mapper;
 
+import java.util.List;
+
 import com.camping.wego.vo.PayVO;
 
 public interface IPaymentMapper {
@@ -16,4 +18,6 @@ public interface IPaymentMapper {
 
 		//결제코드 조회(tid)
 		PayVO loadTid(String tid);
+
+		List<PayVO> getList(String userId);
 }
