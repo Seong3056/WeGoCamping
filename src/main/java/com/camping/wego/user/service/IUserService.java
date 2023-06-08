@@ -22,6 +22,12 @@ public interface IUserService {
 
 	// 로그인
 	String login(String userId, String userPw);
+	
+	// 이름
+	String getName(String userId);
+	
+	// 유저정보 가져오기
+	UserVO info(String userId);
 
 	// 내 게시글 목록
 	List<BoardVO> myContentList(String userId, PageVO vo);

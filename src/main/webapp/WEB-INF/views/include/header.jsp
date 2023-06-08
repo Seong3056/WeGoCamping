@@ -61,7 +61,7 @@
               <a href=#><i class="fa fa-search" aria-hidden="true"></i></a> -->
       <div id="login" style="display: none;">
         <img class="profile-img" src="${pageContext.request.contextPath}/img/profile.png" alt="profile">
-        <a href="${pageContext.request.contextPath}/user/info" class="user">홍길동님</a>
+        <a href="${pageContext.request.contextPath}/user/info" class="user">${name} (${login})님</a>
         <button class="btn btn-secondary" id="logout"
           onclick="location.href='${pageContext.request.contextPath}/user/logout'">로그아웃</button>
       </div>

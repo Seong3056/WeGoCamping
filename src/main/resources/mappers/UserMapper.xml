@@ -48,7 +48,14 @@
 	</select>
 	
 	<select id="info" resultType="user">
-		SELECT * FROM users
+		SELECT
+		user_id, user_name, user_phone, user_email1, user_email2, addr_basic, addr_detail, addr_zip_num, reg_date
+		FROM users
+		WHERE user_id = #{userId}
+	</select>
+	
+	<select id="getName" resultType="String">
+		SELECT user_name FROM users
 		WHERE user_id = #{userId}
 	</select>
 
