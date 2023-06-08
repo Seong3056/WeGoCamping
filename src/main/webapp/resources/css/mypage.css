@@ -250,6 +250,10 @@ input::placeholder {
     margin-top: 5%;
 }
 
+#msgPw, #msgPwCheck {
+	font-size: 15px;
+}
+
 .warp .privacyFix .fixBox .bottomBtn .withdrawa {
     margin-left: 20px;
 }

@@ -161,6 +161,11 @@ input:focus {
     font-family: row;
 }
 
+
+.wrap .join .joinBox .joinMain .input-group> input {
+	padding: 10px;
+}
+
 .wrap .join .joinBox .joinMain .bottomBtn {
     position: absolute;
     right: 0;
@@ -168,9 +173,18 @@ input:focus {
 
 }
 
+.wrap .form-group  input {
+	padding: 15px;
+	font-size: 15px;
+}
+
 #addrZipNum {
 	margin-bottom: 5px;
 	margin-right: 10px;
+}
+
+.checkboxa {
+	height: 33px;
 }
 
 #addrBasic {
@@ -183,8 +197,13 @@ input:focus {
 	font-size: 15px;
 }
 
+#userPw::placeholder {
+
+  font-size: 13px;
+}
 
 #joinBtn {
+	height: 35px;
 	font-size: 18px;
 }
 
