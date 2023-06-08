@@ -6,12 +6,10 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/boardDetail.css">
 
 <%@ include file="../include/header.jsp" %>
-<body>
-  
 
 <article class="detail">
   <div class="detailB">
-    <form action="" method="post" name="detilForm">
+    <form action="" method="post" name="detailForm">
       <span id="cls">
         <c:if test="${vo.cls==1}">캠핑후기</c:if>
         <c:if test="${vo.cls==2}">꿀팁공유</c:if>
@@ -26,78 +24,58 @@
           <div class="id" readonly>작성자: ${vo.writer}</div>
         </div>
         <div class="flexBox">
-
-          <div class="imageBox" id="imageBox">
-            <img alt="#" src="${pageContext.request.contextPath}/img/cam3.jpeg"
-              onerror="this.src='${pageContext.request.contextPath}/img/campsiteOnerror.jpg'">
-
-            <div class="bGroup">
-              <div class="previous"> ◁ </div>
-              <div class="next"> ▷ </div>
-            </div>
-          </div>
-
           <div class="content" id="content" readonly>${vo.content}</div>
         </div>
-        
-  
-  <div class="btn-group">
-    <button type="button" class="listBtn btn btn-secondary" id="listBtn"
-      onclick="location.href='${pageContext.request.contextPath}/board/boardList'">목록</button>
-    <button type="button" class="regBtn btn btn-secondary" id="regBtn"
-      onclick="location.href='${pageContext.request.contextPath}/board/boardModify/${vo.bno}'">수정</button>
+        <div class="btn-group">
+          <button type="button" class="listBtn btn btn-secondary" id="listBtn" onclick="history.back()">목록</button>
+          <button type="button" class="regBtn btn btn-secondary" id="regBtn"
+            onclick="location.href='${pageContext.request.contextPath}/board/boardModify/${vo.bno}'">수정</button>
+        </div>
+      </article>
+    </form>
   </div>
-</div>
-
-
-</form>
-</div>
-<!-- 댓글 부분 -->
-<div class="reply">
-  <label for="reply">댓글(댓글 수)</label>
-  <!-- <form action=""> -->
-  <div class="replyWrite">
-    <textarea name="reply" class="replyInput" id="replyInput" placeholder="댓글을 작성해주세요."></textarea>
-    <button type="button" class="registBtn btn btn-secondary" id="registBtn">등록</button>
-  </div>
-  <!-- </form> -->
-  <!-- 댓글 창 -->
-  <div id=replyList class="replyContent">
-    <div class="replyInfo">
+  <!-- 댓글 부분 -->
+  <div class="reply">
+    <label for="reply">댓글<small id="replyCount"></small></label>
+    <!-- <form action=""> -->
+    <div class="replyWrite">
+      <textarea name="reply" class="replyInput" id="replyInput" placeholder="댓글을 작성해주세요."></textarea>
+      <button type="button" class="registBtn btn btn-secondary" id="registBtn">등록</button>
+    </div>
+    <!-- </form> -->
+    <!-- 댓글 창 -->
+    <div id=replyList class="replyContent">
+      <!-- <div class="replyInfo">
       <div class="replyWriter">이름값</div>&nbsp; &nbsp;
       <div class="replyDate"> 시간값</div>
     </div>
     <div class="replyText">
       <textarea name="replyCnt" id="replyCnt" class="replyCnt" readonly>내용</textarea>
       <div class="replyFix"><a href="#">수정</a>&nbsp;|&nbsp;<a href="#">삭제</a></div>
+    </div> -->
     </div>
+    <button type="button" class="form-control" id="moreList" style="display: none;">댓글 더보기</button>
   </div>
-  <button type="button" class="form-control" id="moreList" style="display: none;">댓글 더보기</button>
-</div>
 </article>
-</body>
+
 <%@ include file="../include/footer.jsp" %>
 
 <script>
-
-
-
-
   window.onload = function () {
-    if(document.getElementById('cls').textContent.trim() != '꿀팁공유'){
-    const imageBox = document.getElementById('imageBox');
-    const content = document.getElementById('content');
+    if (document.getElementById('cls').textContent.trim() != '꿀팁공유') {
+      const imageBox = document.getElementById('imageBox');
+      const content = document.getElementById('content');
       console.log(document.getElementById('cls').textContent.trim());
 
-    
-    
+
+
       imageBox.style.display = 'none';
       content.style.display = 'block';
       content.style.width = '1000px';
       console.log('else 로 빠짐 ^^7');
-    
 
-  }
+
+    }
 
     // 댓글 등록
     document.getElementById('registBtn').onclick = () => {
@@ -145,6 +123,7 @@
     let page = 1; // 전역 의미로 사용할 페이지 번호
     let strAdd = ''; // 화면에 그려넣을 태그를 문자열의 형태로 추가할 변수
     const $replyList = document.getElementById('replyList');
+    const $replyCount = document.getElementById('replyCount');
 
     // 처음 진입 시 댓글 리스트 불러오기.
     getList(1, true);
@@ -163,6 +142,9 @@
 
           let total = data.total; // 총 댓글 수
           let replyList = data.list; // 댓글 리스트
+
+          // 목록을 가져오면서 댓글 수도 최신화.
+          $replyCount.textContent = '(' + total + '개)';
 
           // insert, update, delete 후에는 화면 리셋.
           if (reset) {
@@ -323,56 +305,4 @@
 
   } // window.onload
 
-  // 이미지 슬라이드 JS 시작-------------
-  let imageIndex = 0;
-  let postion = 0;
-  const IMAGE_WIDTH = 250; // css에서 설정한 width 값과 동일하게 맞춰주세요
-  const btnPrevious = document.querySelector(".previous")
-  const btnNext = document.querySelector(".next")
-  const images = document.querySelector(".images")
-
-  function previous() {
-    if (imageIndex > 0) {
-      btnNext.removeAttribute("disabled")
-      postion += IMAGE_WIDTH;
-      images.style.transform = `translateX(${postion}px)`;
-      imageIndex = imageIndex - 1;
-    }
-    if (imageIndex == 0) {
-      btnPrevious.setAttribute('disabled', 'true')
-    }
-  }
-
-  function next() {
-    if (imageIndex < 3) {
-      btnPrevious.removeAttribute("disabled")
-      postion -= IMAGE_WIDTH;
-      images.style.transform = `translateX(${postion}px)`;
-      imageIndex = imageIndex + 1;
-    }
-    if (imageIndex == 3) {
-      btnNext.setAttribute('disabled', 'true')
-    }
-  }
-
-  function init() {
-    btnPrevious.style.opacity = '0';
-    btnPrevious.addEventListener("click", previous)
-    btnNext.addEventListener("click", next)
-  }
-  if (imageIndex == 3) {
-    btnNext.setAttribute('disabled', 'true')
-  }
-
-  function init() {
-    btnPrevious.style.opacity = '0';
-    btnPrevious.addEventListener("click", previous)
-    btnNext.addEventListener("click", next)
-  }
-
-  init();
-
-  // 이미지 스크립트 JS 끝-------------------
-
-  
 </script>
