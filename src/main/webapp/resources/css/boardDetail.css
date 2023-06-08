@@ -7,7 +7,6 @@
 }
 
 .detailB {
-	/* background: yellow; */
     width: 1100px;
     height: 600px;
     margin: 0 auto;
@@ -23,11 +22,6 @@
     height: 40px;
     border: none;
     padding-top: 10px;
-}
-
-.detailB .board .flexBox {
-    display: flex;
-    justify-content: space-around;
 }
 
 .detailB h3 {
@@ -47,16 +41,15 @@
     text-indent: 50px;
     font-weight: 500;
     font-size: 1.2em;
-    background-color: #fff;
+    background-color: transparent;
 }
 
 .detailB .board .content {
-	/* background: red; */
     width: 500px;
     height: 400px;
     margin: 20px 0;
     padding: 22px;
-    background-color: #fff;
+    background-color: transparent;
 }
 
 .detailB .board .imageBox {
@@ -84,6 +77,10 @@
 .detailB .board .flexBox {
     position: relative;
     border-bottom: 2px solid darkgray;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 .detailB .board .flexBox .imageBox {
@@ -91,7 +88,6 @@
     display: flex;
     width: 500px;
     height: 400px;
-    
 }
 
 .detailB .board .flexBox .imageBox img {
@@ -120,7 +116,6 @@
 .detailB .board .flexBox .imageBox:hover div {
     opacity: 1;
     transition: 1s;
-    
 }
 
 .detailB .board select {
@@ -196,10 +191,6 @@
     width: 800px;
     text-align: center;
      
-}
-
-.filebox>input {
-	margin-top: 10px;
 }
 
 .wrap button {
@@ -288,6 +279,8 @@
     font-size: 16px;
     resize: none;
     outline: none;
+    background-color: transparent;
+    text-shadow: 1px 1px 2px gray;
 }
 .reply .replyWrite .registBtn {
     width: 60px;
@@ -338,9 +331,13 @@
     font-size: 16px;
     resize: none;
     outline: none;
+    background-color: transparent;
+    text-shadow: 1px 1px 2px gray;
 }
 
 /* 더보기 버튼 */
 .reply #moreList {
     margin-top: 10px;
+    color: black;
+    text-shadow: 1px 1px 2px gray;
 }
