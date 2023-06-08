@@ -89,7 +89,8 @@
                             <button type="button" id="fixBtn" class="fixBtn btn btn-secondary">수정완료</button>
                         </div>
                         <div class="form-group">
-                            <button type="button" id="goMainBtn" class="goMainBtn btn btn-secondary">메인으로</button>
+                            <button type="button" id="goMainBtn" class="goMainBtn btn btn-secondary"
+                            onclick="location.href='${pageContext.request.contextPath}/'">메인으로</button>
                         </div>
                         <div class="form-group">
                             <button type="button" id=withdrawal class="Withdrawal btn btn-secondary">탈퇴</button>

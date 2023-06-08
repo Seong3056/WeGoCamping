@@ -97,10 +97,12 @@
             <!-- 페이지 부트스트랩 끝 -->
             <div class="myBoardBtn">
                 <div class="button-group">
-                    <button type="button" id="boardBtn" class="boardBtn a btn btn-secondary">게시판</button>
+                    <button type="button" id="boardBtn" class="boardBtn a btn btn-secondary"
+                    onclick="location.href='${pageContext.request.contextPath}/board/boardList'">게시판</button>
                 </div>
                 <div class="button-group">
-                    <button type="button" id="goMainBtn" class="goMainBtn a btn btn-secondary">메인</button>
+                    <button type="button" id="goMainBtn" class="goMainBtn a btn btn-secondary"
+                    onclick="location.href='${pageContext.request.contextPath}/'">메인</button>
                 </div>
             </div>
         </div>
