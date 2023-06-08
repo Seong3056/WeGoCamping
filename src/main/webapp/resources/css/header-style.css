@@ -345,7 +345,7 @@ a:hover, a:active {
 #background-right{
     position: fixed;
     right: -264px;
-    top: 64%;
+    top: 74%;
     transform: translateX(-50%);
     width: 575px;
     opacity: 0.2;

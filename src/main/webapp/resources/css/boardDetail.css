@@ -50,16 +50,16 @@ body{
     text-indent: 50px;
     font-weight: 500;
     font-size: 1.2em;
-    background-color: #fff;
+    backdrop-filter: blur(8px);
 }
 
 .detailB .board .content {
 	/* background: red; */
-    width: 500px;
+    width: 850px;
     height: 400px;
     margin: 20px 0;
     padding: 22px;
-    background-color: #fff;
+    backdrop-filter: blur(8px);
 }
 
 .detailB .board .imageBox {

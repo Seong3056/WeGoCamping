@@ -24,7 +24,7 @@
           <div class="id" readonly>작성자: ${vo.writer}</div>
         </div>
         <div class="flexBox">
-          <div class="content" id="content" readonly>${vo.content}</div>
+          <pre><div class="content" id="content" readonly>${vo.content}</div></pre> 
         </div>
         <div class="btn-group">
           <button type="button" class="listBtn btn btn-secondary" id="listBtn" onclick="history.back()">목록</button>

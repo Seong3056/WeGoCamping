@@ -151,7 +151,7 @@
                             <div class="button_base b03_skewed_slide_in">
                       <div>예약하기</div>
                       <div></div>
-                      <div>예약하기</div>
+                      <div  class="rsv">예약하기</div>
                 </div>
 
 
@@ -171,7 +171,7 @@
 				}); //end fetch
 
 		} //end getList()
-
+    let $container = document.querySelector('.container')
   const handleScroll = _.throttle(() => {
 			console.log('throttle activate!');
 			const scrollPosition = window.pageYOffset;
@@ -187,17 +187,20 @@
         console.log('scrollPosition%windowHeight'+scrollPosition%windowHeight);
         console.log('${pageContext.request.contextPath}/around/' + page+'?location='+$sel1.value + '&theme='+$sel2.value);
 				getList(++page, false);
+        $container = document.querySelector('.container')  
 			}
 			}
 
 		}, 1500);
     window.addEventListener('scroll', handleScroll);
-    const $container = document.querySelector('.container')
+     
     $container.onclick = (e) =>{
-          
+      
+      console.log($container);
       console.log("rsv 클릭됨");
       if(!e.target.matches('.rsv')) return;
         const $caption = e.target.parentNode.parentNode.parentNode;
+        console.log( $caption.querySelector('a').getAttribute('href'));
         window.location.href = $caption.querySelector('a').getAttribute('href');
         console.log($caption.querySelector('a').getAttribute('href'));
 

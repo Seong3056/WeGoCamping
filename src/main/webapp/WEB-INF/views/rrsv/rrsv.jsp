@@ -36,7 +36,7 @@
       <div class="form-right">
         <div class="line2">
           <div class="date">            
-            <input id="demo" type="text" name="daterange" value="01/01/2018 - 01/31/2018" />
+            <input style="background-color: transparent;" id="demo" type="text" name="daterange" value="01/01/2018 - 01/31/2018" />
           </div>
 
           <div class="rsvNum">
@@ -50,43 +50,43 @@
           </div>
         </div>
 
-        <div class="line3">
-          <div class="day1 day">
-            <h3 id="day1Date">날짜</h3>
-            <div class="ta">
-              <p>최고기온 </p>
-              <p id="day1Max" class="taMax"></p>
+        <div id="line-body">
+          <div class="line3">
+            <div class="day1 day">
+              <h3 id="day1Date">날짜</h3>
+              <div class="ta">
+                <p>최고기온 </p>
+                <p id="day1Max" class="taMax"></p>
+              </div>
+              <div class="ta">
+                <p>최저기온 </p>
+                <p id="day1Min" class="taMin"></p>
+              </div>
+          
             </div>
-            <div class="ta">
-              <p>최저기온 </p>
-              <p id="day1Min" class="taMin"></p>
+            <div class="day3 day">
+              <h3 id="day3Date">날짜</h3>
+              <div class="ta">
+                <p>최고기온 </p>
+                <p id="day3Max" class="taMax"></p>
+              </div>
+              <div class="ta">
+                <p>최저기온 </p>
+                <p id="day3Min" class="taMin"></p>
+              </div>
             </div>
-           
           </div>
-
-          <div class="day3 day">
-            <h3 id="day3Date">날짜</h3>
-            <div class="ta">
-              <p>최고기온 </p>
-              <p id="day3Max" class="taMax"></p>
+          <div class="line35">
+            <div style="width: 500px; height: 230px;">
+              <!--차트가 그려질 부분-->
+              <canvas id="myChart"></canvas>
             </div>
-            <div class="ta">
-              <p>최저기온 </p>
-              <p id="day3Min" class="taMin"></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="line35">
-          <div style="width: 500px; height: 230px;">
-            <!--차트가 그려질 부분-->
-            <canvas id="myChart"></canvas>
           </div>
         </div>
 
         <div class="line4">
           <h2>금액: </h2>
-          <input type="text" name="amount" value="${camp.amount}" readonly>
+          <input style="background-color: transparent; backdrop-filter: blur(8px);" type="text" name="amount" value="${camp.amount}" readonly>
           <img id="payBtn" src="${pageContext.request.contextPath}/img/kakao/payment_icon_yellow_small.png" alt="카카오페이">
         </div>
       </div>
@@ -267,6 +267,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 <script type="text/javascript">
   document.getElementById('demo').onchange = () => {
+    document.querySelector('.line3').style.display = 'flex';
+    document.querySelector('.line35').style.display = 'block';
     const now = new Date();
     const date = document.getElementById('demo').value;
     const start = date.substring(0, 10);

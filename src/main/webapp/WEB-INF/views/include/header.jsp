@@ -148,6 +148,26 @@
 
   }
   document.getElementById('moon').onclick = () =>{
-    document.getElementById('moon').setAttribute('src','${pageContext.request.contextPath}/img/moon.png')
+    document.getElementById('moon').setAttribute('src','${pageContext.request.contextPath}/img/moon.png');
+    document.getElementById('background-left').setAttribute('src','${pageContext.request.contextPath}/img/campilluNC.png');
+  }
+  window.location.reload = () =>{
+    document.getElementById('background-right').style.top = '74%';
+  }
+  window.onscroll = () =>{
+      const scrollPosition = window.pageYOffset;
+			const height = document.documentElement.offsetHeight ;
+			const windowHeight = window.innerHeight;
+      const scrollbarWidth = height - scrollPosition; 
+      if(scrollbarWidth < 1050) document.getElementById('background-right').style.top = (74-(1-Math.abs(938-scrollbarWidth)/112)*10)+'%';
+      else document.getElementById('background-right').style.top = '74%';
+
+      // console.log('스크롤포지션: (스크롤의 실시간위치)'+scrollPosition);
+      // console.log('높이: (현재페이지의 총 높이)'+height);
+      // console.log('윈도우 높이: (윈도우창의 높이)'+windowHeight);
+
+      // console.log(height);
+      // console.log(window.innerHeight);
+      // console.log('스크롤바의 길이: '+scrollbarWidth);
   }
 </script>
