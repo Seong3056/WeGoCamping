@@ -149,11 +149,12 @@
                       <h2>`+vo.facltNm+`</h2>
                         <p>`+vo.lineIntro+`</p>
                             <hr>
+                            <a href="${pageContext.request.contextPath}/rsv/`+vo.cno+`" class="rsv">
                             <div class="button_base b03_skewed_slide_in">
                       <div>예약하기</div>
                       <div></div>
                       <div>예약하기</div>
-                </div>
+                </div></a>
 
 
               </div>
