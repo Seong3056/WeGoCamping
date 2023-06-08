@@ -50,10 +50,10 @@
             <hr>
     
     
-      <div class="button_base b03_skewed_slide_in rsv">
+      <div class="button_base b03_skewed_slide_in">
           <div>예약하기</div>
           <div></div>
-          <div>예약하기</div>
+          <div class="rsv">예약하기</div>
       </div>
     
           </div>
@@ -197,8 +197,9 @@
         
       console.log("rsv 클릭됨");
       if(!e.target.matches('.rsv')) return;
-        // window.location.href = $caption.childNodes
-        console.log($caption.childNodes);
+        window.location.href = $caption.querySelector('a').getAttribute('href');
+        console.log($caption.querySelector('a').getAttribute('href'));
+
 
 
     }
