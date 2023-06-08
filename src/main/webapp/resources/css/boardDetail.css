@@ -1,7 +1,4 @@
 @import url("https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css");
-body{
-    overflow: scroll;
-}
 .detail {
     font-family: 'Hahmlet', serif;
     width: 1100px;
@@ -267,8 +264,7 @@ body{
 /* ------------ 댓글 창 ---------------- */
 .reply {
     width: 1100px;
-    height: 400px;
-    margin: 0 auto;
+    margin: 0 auto 200px;
     margin-top: 50px;
 }
 
@@ -342,4 +338,9 @@ body{
     font-size: 16px;
     resize: none;
     outline: none;
+}
+
+/* 더보기 버튼 */
+.reply #moreList {
+    margin-top: 10px;
 }

@@ -98,11 +98,11 @@
             <div class="myBoardBtn">
                 <div class="button-group">
                     <button type="button" id="boardBtn" class="boardBtn a btn btn-secondary"
-                    onclick="location.href='${pageContext.request.contextPath}/board/boardList'">게시판</button>
+                        onclick="location.href='${pageContext.request.contextPath}/board/boardList'">게시판으로</button>
                 </div>
                 <div class="button-group">
                     <button type="button" id="goMainBtn" class="goMainBtn a btn btn-secondary"
-                    onclick="location.href='${pageContext.request.contextPath}/'">메인</button>
+                        onclick="location.href='${pageContext.request.contextPath}/'">메인으로</button>
                 </div>
             </div>
         </div>

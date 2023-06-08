@@ -17,42 +17,32 @@
         <c:if test="${vo.cls==4}">건의사항</c:if>
       </span>
       <h3>게시판</h3>
-      <article class="board">
+      <div class="board">
         <div class="topBox">
-
           <div class="title" readonly>${vo.title}</div>
           <div class="id" readonly>작성자: ${vo.writer}</div>
         </div>
         <div class="flexBox">
-          <div class="content" id="content" readonly>${vo.content}</div>
+          <pre><div class="content" id="content" readonly>${vo.content}</div></pre>
         </div>
         <div class="btn-group">
           <button type="button" class="listBtn btn btn-secondary" id="listBtn" onclick="history.back()">목록</button>
           <button type="button" class="regBtn btn btn-secondary" id="regBtn"
             onclick="location.href='${pageContext.request.contextPath}/board/boardModify/${vo.bno}'">수정</button>
         </div>
-      </article>
+      </div>
     </form>
   </div>
   <!-- 댓글 부분 -->
   <div class="reply">
     <label for="reply">댓글<small id="replyCount"></small></label>
-    <!-- <form action=""> -->
     <div class="replyWrite">
       <textarea name="reply" class="replyInput" id="replyInput" placeholder="댓글을 작성해주세요."></textarea>
       <button type="button" class="registBtn btn btn-secondary" id="registBtn">등록</button>
     </div>
-    <!-- </form> -->
     <!-- 댓글 창 -->
     <div id=replyList class="replyContent">
-      <!-- <div class="replyInfo">
-      <div class="replyWriter">이름값</div>&nbsp; &nbsp;
-      <div class="replyDate"> 시간값</div>
-    </div>
-    <div class="replyText">
-      <textarea name="replyCnt" id="replyCnt" class="replyCnt" readonly>내용</textarea>
-      <div class="replyFix"><a href="#">수정</a>&nbsp;|&nbsp;<a href="#">삭제</a></div>
-    </div> -->
+      <!-- 댓글이 들어갈 자리 -->
     </div>
     <button type="button" class="form-control" id="moreList" style="display: none;">댓글 더보기</button>
   </div>
@@ -63,18 +53,12 @@
 <script>
   window.onload = function () {
     if (document.getElementById('cls').textContent.trim() != '꿀팁공유') {
-      const imageBox = document.getElementById('imageBox');
       const content = document.getElementById('content');
       console.log(document.getElementById('cls').textContent.trim());
 
-
-
-      imageBox.style.display = 'none';
       content.style.display = 'block';
       content.style.width = '1000px';
       console.log('else 로 빠짐 ^^7');
-
-
     }
 
     // 댓글 등록
@@ -304,5 +288,4 @@
     }
 
   } // window.onload
-
 </script>

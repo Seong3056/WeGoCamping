@@ -12,28 +12,21 @@
         <h3>수정하기</h3>
     </div>
     <form action="${pageContext.request.contextPath}/board/update" method="post" name="updateForm">
-
         <div class="titleBox">
-            <select name="cls">
-                <option value="none" selected hidden>말머리</option>
-                <option value=1>캠핑후기</option>
-                <option value=2>꿀팁공유</option>
-                <option value=3>메이트찾기</option>
-                <option value=4>건의사항</option>
+            <select name="cls" id="cls">
+                <option value="none" hidden>말머리</option>
+                <option value=1 ${vo.cls==1 ? 'selected' : '' }>캠핑후기</option>
+                <option value=2 ${vo.cls==2 ? 'selected' : '' }>꿀팁공유</option>
+                <option value=3 ${vo.cls==3 ? 'selected' : '' }>메이트찾기</option>
+                <option value=4 ${vo.cls==4 ? 'selected' : '' }>건의사항</option>
             </select>
-            <input type="text" name="bno" value="${vo.bno}" hidden>
-            <input class="titleM" name="title" value="${vo.title}">
-            <input class="IdM" name="idBox" value="${vo.writer}" readonly placeholder="id value 예정">
-
+            <input type="hidden" name="bno" value="${vo.bno}" readonly>
+            <input type="text" class="titleM" name="title" value="${vo.title}">
+            <input type="hidden" class="IdM" name="idBox" value="${vo.writer}" readonly>
         </div>
+
         <div class="contentBox">
-
             <textarea class="contentM form-control" name="content" id="exampleTextarea">${vo.content}</textarea>
-        </div>
-
-        <div class="filebox">
-            <label for="file" id="inputFile" style="display: none;">파일첨부</label>
-            <input type="file" name="file" id="file" style="display: none;">
         </div>
 
         <div class="btnBox">
@@ -43,15 +36,6 @@
                 onclick="location.href='${pageContext.request.contextPath}/board/delete?bno=${vo.bno}'">삭제</button>
             <button type="submit" class="modifyBtn btn btn-secondary" id="modifyBtn">완료</button>
         </div>
-
-        <select name="rating" class="rating" style="display: none;">
-            <option value="none" selected hidden>별점을 주세요!</option>
-            <option value="1">⭐</option>
-            <option value="2">⭐⭐</option>
-            <option value="3">⭐⭐⭐</option>
-            <option value="4">⭐⭐⭐⭐</option>
-            <option value="5">⭐⭐⭐⭐⭐</option>
-        </select>
     </form>
 </div>
 
@@ -59,6 +43,11 @@
 
 <script>
     const $form = document.updateForm;
+
+    // 말머리 잠그기.
+    const $cls = document.getElementById('cls');
+    $cls.setAttribute('onFocus', 'this.initialSelect = this.selectedIndex');
+    $cls.setAttribute('onChange', 'this.selectedIndex = this.initialSelect');
 
     document.getElementById('modifyBtn').onclick = function () {
         if ($form.title.value === '') {
@@ -74,28 +63,10 @@
         }
     }
 
-
     document.getElementById('delBtn').onclick = function () {
         if (confirm('삭제 하시겠습니까?')) {
             $form.setAttribute('action', '${pageContext.request.contextPath}/board/delete');
             $form.submit();
-        }
-    }
-
-    document.querySelector('select').onclick = () => {
-        const inputFile = document.getElementById('inputFile');
-        const file = document.getElementById('file');
-
-        if (document.querySelector('select').value == 1) {
-
-            inputFile.style.display = 'block';
-            file.style.display = 'block';
-            rating.style.display = 'block';
-        } else {
-
-            inputFile.style.display = 'none';
-            file.style.display = 'none';
-            rating.style.display = 'none';
         }
     }
 </script>

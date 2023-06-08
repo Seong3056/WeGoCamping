@@ -67,8 +67,8 @@
                     <c:forEach var="board" items="${boardList}">
                         <tr>
                             <td>
-                                <c:if test="${board.cls==1}">후기</c:if>
-                                <c:if test="${board.cls==2}">꿀팁</c:if>
+                                <c:if test="${board.cls==1}">캠핑후기</c:if>
+                                <c:if test="${board.cls==2}">꿀팁공유</c:if>
                                 <c:if test="${board.cls==3}">메이트찾기</c:if>
                                 <c:if test="${board.cls==4}">건의사항</c:if>
                             </td>
