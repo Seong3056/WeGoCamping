@@ -286,14 +286,13 @@ body{
     resize: none;
     outline: none;
 }
-
 .reply .replyWrite .registBtn {
-    width: 100px;
+    width: 60px;
     margin-left: 30px;
-    background: skyblue;
-    border: none;
+    /* background: skyblue; */
+   /*  border: none; */
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 600; 
 }
 
 /* 댓글 내용 부분 */

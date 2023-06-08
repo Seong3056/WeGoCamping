@@ -80,6 +80,16 @@ public class UserService implements IUserService {
 		}
 		return null;
 	}
+	
+	@Override
+	public String getName(String userId) {
+		return mapper.getName(userId);
+	}
+	
+	@Override
+	public UserVO info(String userId) {
+		return mapper.info(userId);
+	}
 
 	@Override
 	public List<BoardVO> myContentList(String userId, PageVO vo) {

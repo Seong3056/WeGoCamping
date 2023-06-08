@@ -63,10 +63,10 @@
                                     <input type="text" id="mailCheckInput" placeholder="인증번호 6자리를 입력하세요." maxlength="6"
                                         disabled="disabled">
                                     <br>
-                                    <button type="button" id="mailCheckBtn" class="checkBoxE btn btn-secondary">이메일 인증</button>
+                                    <button type="button" id="mailCheckBtn" class="checkBoxE btn btn-secondary">이메일
+                                        인증</button>
                                 </div>
                             </div>
-
                         </div>
 
                         <div class="form-group">
@@ -75,20 +75,15 @@
                                 <div class="input-group">
                                     <input type="text" name="addrZipNum" id="addrZipNum" placeholder="우편번호" readonly>
                                     <br>
-                                    <button type="button" class="CheckBoxA btn btn-secondary" onclick="findAddr()">주소찾기</button>
+                                    <button type="button" class="CheckBoxA btn btn-secondary"
+                                        onclick="findAddr()">주소찾기</button>
                                 </div>
                                 <input type="text" name="addrBasic" id="addrBasic" placeholder="기본주소">
                                 <input type="text" name="addrDetail" id="addrDetail" class="addrDetail"
-                                    placeholder="상세주소">
+                                    placeholder="상세주소를 입력해주세요.">
                             </div>
                         </div>
-                        <!-- <div class="form-group">
-                            
-                        </div>
-                        <div class="form-group">
-                            
-                        </div> -->
-
+                        
                         <div class="bottomBtn">
                             <div class="form-group">
                                 <button type="submit" id="joinBtn" class="fixBtn btn btn-secondary">회원가입</button>
@@ -219,7 +214,9 @@
                         document.getElementById('mailCheckInput').disabled = true;
                         document.getElementById('mailCheckBtn').disabled = true;
                         document.getElementById('email1').readOnly = true;
-                        document.getElementById('email2').readOnly = true;
+                        const $email2 = document.getElementById('email2');
+                        email2.setAttribute('onFocus', 'this.initialSelect = this.selectedIndex');
+                        email2.setAttribute('onChange', 'this.selectedIndex = this.initialSelect');
                     } else {
                         alert('인증번호가 다릅니다.');
                     }
@@ -248,6 +245,8 @@
                 // 우편번호와 주소 정보를 해당 필드에 넣는다.
                 document.getElementById('addrZipNum').value = data.zonecode;
                 document.getElementById('addrBasic').value = addr;
+                // api를 통해 주소 정보를 입력받았다면 상세주소를 새로 입력받기 위해 값을 비워줌.
+                document.getElementById('addrDetail').value = '';
                 // 커서를 상세주소 필드로 이동한다.
                 document.getElementById('addrDetail').focus();
             }

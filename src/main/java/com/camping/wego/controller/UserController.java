@@ -47,6 +47,7 @@ public class UserController {
 		log.info("userId: {}", userId);
 		log.info("userPw: {}", userPw);
 		model.addAttribute("user", service.login(userId, userPw));
+		model.addAttribute("name", service.getName(userId));
 	}
 	@GetMapping("/logout")
 	public String logout(HttpServletRequest request, HttpServletResponse response) {
@@ -117,6 +118,9 @@ public class UserController {
 	}
 
 	@GetMapping("/info")
-	public void info() {}
+	public void info(HttpSession session, Model model) {
+		log.info(service.info((String) session.getAttribute("login")).toString());
+		model.addAttribute("info", service.info((String) session.getAttribute("login")));
+	}
 
 }
