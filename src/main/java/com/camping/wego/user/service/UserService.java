@@ -32,8 +32,9 @@ public class UserService implements IUserService {
 
 	@Override
 	public void update(UserVO vo) {
-		// TODO Auto-generated method stub
-
+		String pwEncry = encoder.encode(vo.getUserPw());
+		vo.setUserPw(pwEncry);
+		mapper.update(vo);
 	}
 
 	@Override

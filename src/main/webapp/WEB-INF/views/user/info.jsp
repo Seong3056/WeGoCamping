@@ -25,7 +25,7 @@
             <div class="fixBox">
                 <h3> 개인 정보 수정</h3>
                 <p class="tip">* 이름과 아이디는 변경 불가능합니다.</p>
-                <form action="${pageContext.request.contextPath}/user/upadte" method="post">
+                <form name="updateForm" action="${pageContext.request.contextPath}/user/update" method="post">
                     <div class="form-group">
                         <label for="name" class="lName">이름</label> <br>
                         <input type="text" name="userName" id="userName" value="${info.userName}" readonly>
@@ -37,19 +37,21 @@
                     <div class="form-group">
                         <label for="pw" class="lPw">변경 비밀번호</label> <br>
                         <input type="password" name="userPw" id="userPw" placeholder="(영 대/소문자, 숫자 조합 8~16자 이상)">
+                        <p class="msg" id="msgPw"></p>
                     </div>
                     <div class="form-group">
                         <label for="pwCheck" class="lPCheck">비밀번호 확인</label><br>
-                        <input type="password" name="pwCheck" id="pwCheck" placeholder="변경할 비밀번호를 입력해주세요">
+                        <input type="password" name="pwCheck" id="pwCheck" placeholder="변경할 비밀번호를 한 번 더 입력해주세요.">
+                        <p class="msg" id="msgPwCheck"></p>
                     </div>
                     <div class="form-group">
                         <label for="phoneNum" class="lPhone">휴대폰 번호</label> <br>
-                        <input type="text" name="phoneNum" id="phoneNum" value="${info.userPhone}">
+                        <input type="text" name="userPhone" id="phoneNum" value="${info.userPhone}">
                     </div>
                     <div class="form-group">
                         <label for="email" class="lEmail">이메일</label> <br>
-                        <input type="text" name="email1" id="email1" class="emailBtn" value="${info.userEmail1}">
-                        <select name="email2" id="email2">
+                        <input type="text" name="userEmail1" id="email1" class="emailBtn" value="${info.userEmail1}">
+                        <select name="userEmail2" id="email2">
                             <option value="@naver.com" ${info.userEmail2=='@naver.com' ? 'selected' : '' }>@naver.com
                             </option>
                             <option value="@hanmail.net" ${info.userEmail2=='@hanmail.net' ? 'selected' : '' }>
@@ -60,8 +62,12 @@
                             </option>
                         </select>
                     </div>
+                    <div class="mailMsgBox" style="display: none;">
+                        <p class="msg" id="msgMail">변경된 메일로 인증을 다시 진행해 주세요!</p>
+                    </div>
                     <div class="mailCheckBox">
-                        <input type="text" id="mailCheckInput" class="mail-check-input" placeholder="인증번호 6자리를 입력하세요." maxlength="6" disabled="disabled">
+                        <input type="text" id="mailCheckInput" class="mail-check-input" placeholder="인증번호 6자리를 입력하세요."
+                            maxlength="6" disabled="disabled">
                         <button type="button" id="mailCheckBtn" class="checkBoxE btn btn-secondary">이메일 인증</button>
                     </div>
                     <div class="form-group">
@@ -75,7 +81,7 @@
                         <input type="text" name="addrBasic" id="addrBasic" value="${info.addrBasic}" readonly>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="addrBasic" id="addrDetail" class="addrDetail"
+                        <input type="text" name="addrDetail" id="addrDetail" class="addrDetail"
                             value="${info.addrDetail}" placeholder="상세주소를 입력해주세요.">
                     </div>
                     <div class="bottomBtn">
@@ -113,6 +119,20 @@
 
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
+    $updateForm = document.updateForm;
+
+    // 비밀번호 일치 여부 확인용 변수
+    let pwChk = false;
+    // 이메일 체크 변수
+    let emailChk = true;
+    // 기존 이메일 값 변수에 저장
+    const email1 = '${info.userEmail1}';
+
+    // 정보 수정 완료 후 진입 시 알림 처리
+    if ('${msg}' === 'updateSuccess') {
+        alert('회원 정보 수정이 완료되었습니다!');
+    }
+
     // 마이페이지 메뉴 a 태그 처리
     $menuForm = document.menuForm;
 
@@ -133,6 +153,71 @@
         }
     });
     // 메뉴 처리 끝.
+
+    // 회원 정보 수정 입력값 검증.
+    document.getElementById('fixBtn').addEventListener('click', (e) => {
+        if(!pwChk || 
+        document.getElementById('userPw').value === '' || 
+        document.getElementById('pwCheck').value === '') {
+            alert('비밀번호를 다시 한번 확인해주세요!');
+            return;
+        } else if(document.getElementById('email1').value === '' || document.getElementById('email2').value === '') {
+            emailChk = false;
+            alert('이메일을 확인해 주세요!');
+            return;
+        } else if(!emailChk) {
+            alert('이메일 인증을 다시 진행해 주세요 !');
+            return;
+        } else {
+            $updateForm.submit();
+        }
+    });
+
+    document.getElementById('email1').addEventListener('input', (e) => {
+        console.log(e.target.value);
+        if(e.target.value === email1) {
+            emailChk = true;
+            document.querySelector('.mailMsgBox').style.display = 'none';
+        } else {
+            emailChk = false;
+            document.querySelector('.mailMsgBox').style.display = 'block';
+        }
+    })
+
+    /* --------------------------비밀번호 유효성검사---------------------------*/
+    document.getElementById('userPw').onkeyup = function () {
+        const regEx = /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,16}$/;
+        if (regEx.test(document.getElementById('userPw').value)) {
+            document.getElementById('msgPw').textContent = '사용가능한 비밀번호 입니다.';
+            document.getElementById('userPw').style.borderColor = '#0080008a';
+            document.getElementById('userPw').style.boxShadow = '1px 1px 5px #0080008a';
+
+        } else {
+            document.getElementById('msgPw').textContent = '올바르지 않은 비밀번호입니다.';
+            document.getElementById('userPw').style.border = '1px solid #ff000030';
+            document.getElementById('userPw').style.boxShadow = '1px 1px 5px #ff000030';
+        }
+    }
+    /* --------------------------비밀번호 유효성검사---------------------------*/
+
+    /* =============================비밀번호 확인==============================*/
+    document.getElementById('pwCheck').onkeyup = function () {
+
+        if (document.getElementById('userPw').value ===
+            document.getElementById('pwCheck').value) {
+            pwChk = true;
+            document.getElementById('msgPwCheck').textContent = '비밀번호가 일치합니다.';
+            document.getElementById('pwCheck').style.borderColor = '#0080008a';
+            document.getElementById('pwCheck').style.boxShadow = '1px 1px 5px #0080008a';
+        } else {
+            pwChk = false;
+            document.getElementById('msgPwCheck').textContent = '비밀번호가 일치하지 않습니다.';
+            document.getElementById('pwCheck').style.border = '1px solid #ff000030';
+            document.getElementById('pwCheck').style.boxShadow = '1px 1px 5px #ff000030';
+        }
+
+    }
+    /* ==============================비밀번호 확인================================*/
 
     /* 회원 탈퇴 진행 */
     document.getElementById('withdrawal').onclick = () => {
@@ -201,6 +286,8 @@
                 console.log("인증번호: " + data);
                 document.getElementById('mailCheckBtn').onclick = () => {
                     if (document.getElementById('mailCheckInput').value === data) {
+                        emailChk = true;
+                        document.querySelector('.msgMailBox').style.display = none;
                         alert('이메일 인증이 완료되었습니다.');
                         document.getElementById('mailCheckInput').disabled = true;
                         document.getElementById('mailCheckBtn').disabled = true;
@@ -209,6 +296,7 @@
                         email2.setAttribute('onFocus', 'this.initialSelect = this.selectedIndex');
                         email2.setAttribute('onChange', 'this.selectedIndex = this.initialSelect');
                     } else {
+                        emailChk = false;
                         alert('인증번호가 다릅니다.');
                     }
                 }
