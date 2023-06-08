@@ -192,11 +192,12 @@
 
 		}, 1500);
     window.addEventListener('scroll', handleScroll);
-    const $caption = document.querySelector('.thumbnail')
-    $caption.onclick = (e) =>{
-        
+    const $container = document.querySelector('.container')
+    $container.onclick = (e) =>{
+          
       console.log("rsv 클릭됨");
       if(!e.target.matches('.rsv')) return;
+        const $caption = e.target.parentNode.parentNode.parentNode;
         window.location.href = $caption.querySelector('a').getAttribute('href');
         console.log($caption.querySelector('a').getAttribute('href'));
 
