@@ -264,8 +264,7 @@
 /* ------------ 댓글 창 ---------------- */
 .reply {
     width: 1100px;
-    height: 400px;
-    margin: 0 auto;
+    margin: 0 auto 200px;
     margin-top: 50px;
 }
 
@@ -339,4 +338,9 @@
     font-size: 16px;
     resize: none;
     outline: none;
+}
+
+/* 더보기 버튼 */
+.reply #moreList {
+    margin-top: 10px;
 }

@@ -34,6 +34,8 @@
   <link href="${pageContext.request.contextPath}/css/header-style.css" rel="stylesheet">
 </head>
 
+<body>
+
 <header>
   <div class="section">
     <img class="logo" src="${pageContext.request.contextPath}/img/logo.png" alt="logo">

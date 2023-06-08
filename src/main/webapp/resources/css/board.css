@@ -47,7 +47,6 @@ a {
 
 .board .tab .write {
     width: 100px;
-
 }
 
 .board .tab .search {
@@ -75,7 +74,7 @@ a {
 .board table {
     width: 100%;
     border-top: 1px solid #777;
-    
+    text-align: center;
 }
 
 .board table th {
@@ -104,7 +103,7 @@ a {
 .board table tr td:nth-child(2) {
     /* 제목 */
     text-align: left;
-    text-indent: 120px;
+    text-indent: 100px;
     
 }
 

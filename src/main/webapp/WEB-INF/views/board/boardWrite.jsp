@@ -27,10 +27,10 @@
             <button class="submit btn btn-secondary" type="button" id="submitBtn">글 올리기</button>
         </div>
 
-        <div class="filebox">
+        <!-- <div class="filebox">
             <label for="file" id="inputFile" style="display: none;">파일첨부</label>
             <input type="file" name="file" id="file" style="display: none;">
-        </div>
+        </div> -->
 
         <!-- <select name="rating" class="rating" style="display: none;">
             <option value="none" selected hidden>별점을 주세요!</option>
@@ -40,7 +40,7 @@
             <option value="4">⭐⭐⭐⭐</option>
             <option value="5">⭐⭐⭐⭐⭐</option>
           </select> -->
-
+          
     </form>
 
 </body>
@@ -71,26 +71,26 @@
 
     };
 
-    // 캠핌후기 말머리 클릭 시 바뀌게 틀 바뀌게 하기 + 첨부파일 + 별점
+    // 캠핑후기 말머리 클릭 시 바뀌게 틀 바뀌게 하기 + 첨부파일 + 별점
 
-    document.querySelector('select').onclick = () => {
-        const fileBox = document.querySelector('fileBox');
-        const inputFile = document.getElementById('inputFile');
-        const file = document.getElementById('file');
-        const rating = document.querySelector('.rating');
+    // document.querySelector('select').onclick = () => {
+    //     const fileBox = document.querySelector('fileBox');
+    //     const inputFile = document.getElementById('inputFile');
+    //     const file = document.getElementById('file');
+    //     const rating = document.querySelector('.rating');
 
-        console.log('select 클림됨!');
-        if (document.querySelector('select').value == 1) {
-            console.log('value 1 들어옴');
-            inputFile.style.display = 'block';
-            file.style.display = 'block';
-            rating.style.display = 'block';
-        } else {
-            console.log('value1이 아님');
-            inputFile.style.display = 'none';
-            file.style.display = 'none';
-            rating.style.display = 'none';
-        }
+    //     console.log('select 클림됨!');
+    //     if (document.querySelector('select').value == 1) {
+    //         console.log('value 1 들어옴');
+    //         inputFile.style.display = 'block';
+    //         file.style.display = 'block';
+    //         rating.style.display = 'block';
+    //     } else {
+    //         console.log('value1이 아님');
+    //         inputFile.style.display = 'none';
+    //         file.style.display = 'none';
+    //         rating.style.display = 'none';
+    //     }
 
-    };
+    // };
 </script>
