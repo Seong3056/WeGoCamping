@@ -38,7 +38,7 @@
     </div>
   </div>
   <div class="btnGroup">
-    <button class="btn btn-secondary" onclick="history.back()">목록</button>
+    <button class="btn btn-secondary" onclick="history.back()">뒤로가기</button>
     <button class="btn btn-secondary"
       onclick="location.href='${pageContext.request.contextPath}/rsv/${camp.cno}'">예약하기</button>
   </div>

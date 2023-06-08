@@ -70,6 +70,7 @@ a {
     height: 336px;
     border-bottom: 1px solid #777;
     backdrop-filter: blur(8px);
+    
 }
 .board table {
     width: 100%;

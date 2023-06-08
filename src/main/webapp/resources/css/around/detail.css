@@ -29,6 +29,8 @@ iframe {
 .detail .item {
     width: 50%;
     margin-right: 3%;
+    font-weight: 600;
+   
 }
 
 .campimg {
@@ -91,12 +93,14 @@ iframe {
     margin-bottom: 10px;
     line-height: 1.5em;
     backdrop-filter: blur(8px);
+    
 }
 
 .detail .container .item .cc {
     display: flex;
     width: 500px;
     height: 55px;
+ 
 }
 
 .detail .container .item .cc .add {
