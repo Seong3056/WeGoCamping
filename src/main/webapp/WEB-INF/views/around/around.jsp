@@ -50,11 +50,12 @@
             <hr>
     
     
+      <a href="${pageContext.request.contextPath}/rsv/${camp.cno}" class="rsv">
       <div class="button_base b03_skewed_slide_in">
           <div>예약하기</div>
           <div></div>
           <div class="rsv">예약하기</div>
-      </div>
+      </div></a>
     
           </div>
         </div>
