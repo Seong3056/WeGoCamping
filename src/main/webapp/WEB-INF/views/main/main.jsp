@@ -24,7 +24,7 @@
 	</div>
 
 
-	<div class="today">테마로 즐기는 캠핑</div>
+	<div class="today">여기는 어떠세요</div>
 	<div class="autoplay">
 		<c:forEach var="camp" items="${campList}">
 				<a href="${pageContext.request.contextPath}/detail/${camp.cno}"
