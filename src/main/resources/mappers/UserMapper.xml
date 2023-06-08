@@ -18,6 +18,15 @@
 			(#{userId}, #{userPw}, #{userName}, #{userPhone}, #{userEmail1}, #{userEmail2},
 			 #{addrBasic},#{addrDetail},#{addrZipNum})
 	</insert>
+	
+	<update id="update">
+		UPDATE users
+		SET
+			user_pw = #{userPw}, user_phone = #{userPhone},
+			user_email1 = #{userEmail1}, user_email2 = #{userEmail2},
+			addr_basic = #{addrBasic}, addr_detail = #{addrDetail}, addr_zip_num = #{addrZipNum}
+		WHERE user_id = #{userId}
+	</update>
 
 	<delete id="withdrawal">
 		DELETE FROM users WHERE user_id = #{userId}

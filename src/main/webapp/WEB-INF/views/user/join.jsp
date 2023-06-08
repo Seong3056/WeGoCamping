@@ -36,7 +36,7 @@
 
                         <div class="form-group">
                             <label for="pwCheck" class="JPCheck">비밀번호 확인</label><br>
-                            <input type="password" name="pwCheck" id="pwCheck" placeholder=" 비밀번호를 한 번 더  입력해주세요">
+                            <input type="password" name="pwCheck" id="pwCheck" placeholder="비밀번호를 한 번 더 입력해주세요.">
                             <p class="msg" id="msgPwCheck"></p>
                         </div>
 
@@ -83,10 +83,10 @@
                                     placeholder="상세주소를 입력해주세요.">
                             </div>
                         </div>
-                        
+
                         <div class="bottomBtn">
                             <div class="form-group">
-                                <button type="submit" id="joinBtn" class="fixBtn btn btn-secondary">회원가입</button>
+                                <button type="button" id="joinBtn" class="fixBtn btn btn-secondary">회원가입</button>
                             </div>
                         </div>
                     </div>
@@ -100,14 +100,32 @@
 
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
+    $joinForm = document.join;
+
+    // 비밀번호 일치 여부 확인용 변수
+    let pwChk = false;
+    // 이메일 체크 변수
+    let emailChk = false;
+
     document.getElementById('joinBtn').onclick = () => {
         console.log('회원가입 버튼이 클릭됨');
 
         //id 중복 검사
         idCheck();
-        //pw 유효성 검사
+        //pw, 이메일 유효성 검사
+        if(!pwChk || 
+        document.getElementById('userPw').value === '' || 
+        document.getElementById('pwCheck').value === '') {
+            alert('비밀번호를 다시 한번 확인해주세요!');
+            return;
+        } else if(!emailChk) {
+            alert('이메일을 인증을 진행해 주세요!');
+            return;
+        } else {
+            $joinForm.submit();
+        }
+    };
 
-    }
     /* ----------------------------아이디 유효성검사---------------------------*/
     document.getElementById('userId').onkeyup = function () {
         // console.log(document.getElementById('userId').value.length);
@@ -210,6 +228,7 @@
                 console.log("인증번호: " + data);
                 document.getElementById('mailCheckBtn').onclick = () => {
                     if (document.getElementById('mailCheckInput').value === data) {
+                        emailChk = true;
                         alert('이메일 인증이 완료되었습니다.');
                         document.getElementById('mailCheckInput').disabled = true;
                         document.getElementById('mailCheckBtn').disabled = true;
@@ -218,6 +237,7 @@
                         email2.setAttribute('onFocus', 'this.initialSelect = this.selectedIndex');
                         email2.setAttribute('onChange', 'this.selectedIndex = this.initialSelect');
                     } else {
+                        emailChk = false;
                         alert('인증번호가 다릅니다.');
                     }
                 }
@@ -225,6 +245,8 @@
             })
     }
     /*===============================이메일 인증===============================*/
+
+    // 주소 찾기
     function findAddr() {
         new daum.Postcode({
             oncomplete: function (data) {
