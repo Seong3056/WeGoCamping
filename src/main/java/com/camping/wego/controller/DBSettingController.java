@@ -37,6 +37,9 @@ public class DBSettingController {
 			
 			log.info("요금 입력");
 			return "redirect:/db/main";
+		} else if (num == 6) {
+			bservice.insertDummy();
+			return "redirect:/db/main";
 		}
 		
 		service.readOpenStoresFromJson(num);

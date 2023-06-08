@@ -35,6 +35,8 @@
 		<a class="link" href="3">세번째 Json 파일 DB에 넣기</a> <br>
 		<a class="link" href="4">네번째 Json 파일 DB에 넣기</a> <br>
 		<a class="link" href="5">캠핑장 요금</a>
+		<a class="link" href="6">게시판 더미생성</a>
+		
 	</div>
 </div>
 
