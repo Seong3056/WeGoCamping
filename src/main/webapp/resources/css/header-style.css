@@ -352,7 +352,7 @@ a:hover, a:active {
 }
 #background-left{
     position: fixed;
-    left: 297px;
+    left: 50%;
     top: 1%;
     transform: translateX(-50%);
     width: 938px;
