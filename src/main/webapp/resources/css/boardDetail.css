@@ -1,7 +1,4 @@
 @import url("https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css");
-body{
-    overflow: scroll;
-}
 .detail {
     font-family: 'Hahmlet', serif;
     width: 1100px;
@@ -10,7 +7,6 @@ body{
 }
 
 .detailB {
-	/* background: yellow; */
     width: 1100px;
     height: 600px;
     margin: 0 auto;
@@ -26,11 +22,6 @@ body{
     height: 40px;
     border: none;
     padding-top: 10px;
-}
-
-.detailB .board .flexBox {
-    display: flex;
-    justify-content: space-around;
 }
 
 .detailB h3 {
@@ -50,16 +41,15 @@ body{
     text-indent: 50px;
     font-weight: 500;
     font-size: 1.2em;
-    background-color: #fff;
+    background-color: transparent;
 }
 
 .detailB .board .content {
-	/* background: red; */
     width: 500px;
     height: 400px;
     margin: 20px 0;
     padding: 22px;
-    background-color: #fff;
+    background-color: transparent;
 }
 
 .detailB .board .imageBox {
@@ -87,6 +77,10 @@ body{
 .detailB .board .flexBox {
     position: relative;
     border-bottom: 2px solid darkgray;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 .detailB .board .flexBox .imageBox {
@@ -94,7 +88,6 @@ body{
     display: flex;
     width: 500px;
     height: 400px;
-    
 }
 
 .detailB .board .flexBox .imageBox img {
@@ -123,7 +116,6 @@ body{
 .detailB .board .flexBox .imageBox:hover div {
     opacity: 1;
     transition: 1s;
-    
 }
 
 .detailB .board select {
@@ -201,10 +193,6 @@ body{
      
 }
 
-.filebox>input {
-	margin-top: 10px;
-}
-
 .wrap button {
    	width: 60px;
     height: 35px;
@@ -267,8 +255,7 @@ body{
 /* ------------ 댓글 창 ---------------- */
 .reply {
     width: 1100px;
-    height: 400px;
-    margin: 0 auto;
+    margin: 0 auto 200px;
     margin-top: 50px;
 }
 
@@ -292,6 +279,8 @@ body{
     font-size: 16px;
     resize: none;
     outline: none;
+    background-color: transparent;
+    text-shadow: 1px 1px 2px gray;
 }
 .reply .replyWrite .registBtn {
     width: 60px;
@@ -342,4 +331,13 @@ body{
     font-size: 16px;
     resize: none;
     outline: none;
+    background-color: transparent;
+    text-shadow: 1px 1px 2px gray;
+}
+
+/* 더보기 버튼 */
+.reply #moreList {
+    margin-top: 10px;
+    color: black;
+    text-shadow: 1px 1px 2px gray;
 }

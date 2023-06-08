@@ -4,7 +4,6 @@
 * {
     padding: 0;
     margin: 0;
-    
 }
 
 a {
@@ -49,7 +48,6 @@ header:hover {
     transition: all 0.5s ease-out;
     animation-fill-mode: both;
     opacity: 1;
-    
 }
 
 header .section {
@@ -91,7 +89,6 @@ header .menu .menu-down {
 }
 
 header .menu .menu-down .in-menu {
-    
     text-align: center;
     display: flex;
     justify-items: center;
@@ -120,18 +117,15 @@ header:hover .dropdown {
     flex-flow: column;
     transition: all 2s ease-out;
     margin-top: 10px;
-
 }
-
-
 
 header .dropdown a {
     width: 100%;
     margin-bottom: 5px;
     line-height: 20px;
-    
     justify-self: center;
 }
+
 header .dropdown a:hover{
     text-decoration: underline;
     font-size: 1.1rem;
@@ -156,7 +150,6 @@ header .section .header-right {
  */
 header .section .header-right  {
     display: flex;
-    
 }
 
 /* 
@@ -179,6 +172,7 @@ header .section .header-right  {
 #loginA .profile{
     display: flex;
     flex-flow: column;
+    cursor: pointer;
 }
 
 header .section .header-right .login {

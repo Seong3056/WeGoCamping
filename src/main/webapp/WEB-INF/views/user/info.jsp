@@ -90,7 +90,7 @@
                         </div>
                         <div class="form-group">
                             <button type="button" id="goMainBtn" class="goMainBtn btn btn-secondary"
-                            onclick="location.href='${pageContext.request.contextPath}/'">메인으로</button>
+                                onclick="location.href='${pageContext.request.contextPath}/'">메인으로</button>
                         </div>
                         <div class="form-group">
                             <button type="button" id=withdrawal class="Withdrawal btn btn-secondary">탈퇴</button>
@@ -104,7 +104,7 @@
 
 <!-- 모달  -->
 <div class="infoModal" id="infoModal">
- <div class="bg"></div>
+    <div class="bg"></div>
     <div class="reText">
         <p>탈퇴를 원하시면 비밀번호를 입력해주세요.</p>
     </div>
@@ -156,18 +156,19 @@
     });
     // 메뉴 처리 끝.
 
-    // 회원 정보 수정 입력값 검증.
+    // 회원 정보 수정 입력값 검증 후 정보 수정 처리.
     document.getElementById('fixBtn').addEventListener('click', (e) => {
-        if(!pwChk || 
-        document.getElementById('userPw').value === '' || 
-        document.getElementById('pwCheck').value === '') {
+        if (!pwChk ||
+            document.getElementById('userPw').value === '' ||
+            document.getElementById('pwCheck').value === '') {
             alert('비밀번호를 다시 한번 확인해주세요!');
             return;
-        } else if(document.getElementById('email1').value === '' || document.getElementById('email2').value === '') {
+        } else if (document.getElementById('email1').value === '' || document.getElementById('email2').value ===
+            '') {
             emailChk = false;
             alert('이메일을 확인해 주세요!');
             return;
-        } else if(!emailChk) {
+        } else if (!emailChk) {
             alert('이메일 인증을 다시 진행해 주세요 !');
             return;
         } else {
@@ -177,7 +178,7 @@
 
     document.getElementById('email1').addEventListener('input', (e) => {
         console.log(e.target.value);
-        if(e.target.value === email1) {
+        if (e.target.value === email1) {
             emailChk = true;
             document.querySelector('.mailMsgBox').style.display = 'none';
         } else {
