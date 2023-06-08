@@ -65,11 +65,15 @@ a {
     width: 35px;
     height: 100%;
 }
- 
+.board .board-list{
+    width: 100%;
+    height: 336px;
+    border-bottom: 1px solid #777;
+}
 .board table {
     width: 100%;
     border-top: 1px solid #777;
-    border-bottom: 1px solid #777;
+    
 }
 
 .board table th {
@@ -91,7 +95,7 @@ a {
 }
 
 .board table tr td {
-    padding: 0 10px;
+    padding: 3px 10px;
     line-height: 16px;
 }
 
@@ -99,10 +103,12 @@ a {
     /* 제목 */
     text-align: left;
     text-indent: 120px;
+    
 }
 
-.board table tr td:nth-child(2):hover a {
+.board table tr td:nth-child(2) a:hover  {
     text-decoration: underline;
+    transform: scale(1.15);
 }
 
 .board table tr td:nth-child(2):hover tr {

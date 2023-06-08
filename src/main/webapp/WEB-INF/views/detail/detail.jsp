@@ -48,13 +48,13 @@
 
       <div class="campAdd cc">
         <p class="add">테마: ${camp.induty}</p>
-        <p class="add">별점: </p>
+        
       </div>    
 
     </div>
   </div>
   <div class="btnGroup">    
-    <button class="btn btn-secondary">목록</button>
+    <button class="btn btn-secondary"onclick="location.href='${pageContext.request.contextPath}/around/'">목록</button>
     <button class="btn btn-secondary" onclick="location.href='${pageContext.request.contextPath}/rsv/${camp.cno}'">예약하기</button>
   </div>
 </article>

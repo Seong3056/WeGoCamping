@@ -59,24 +59,12 @@
     <div class="header-right">
       <!--  <input type="text" class="search clearfix" placeholder="검색어를 입력하세요.">
               <a href=#><i class="fa fa-search" aria-hidden="true"></i></a> -->
-<<<<<<< HEAD
-
-=======
->>>>>>> 01863a9424110c6395555a3bda24f68fd58f39d5
       <div id="loginA" style="display: none;">
         <div class="profile">
           <img class="profile-img" src="${pageContext.request.contextPath}/img/profile.png" alt="profile">
-          <a href="${pageContext.request.contextPath}/user/info" class="user">홍길동님</a>
+          <a href="${pageContext.request.contextPath}/user/info" class="user">${name} (${login})님</a>
         </div>
-<<<<<<< HEAD
-     
-      <div id="login" style="display: none;">
-        <img class="profile-img" src="${pageContext.request.contextPath}/img/profile.png" alt="profile">
-        <a href="${pageContext.request.contextPath}/user/info" class="user">${name} (${login})님</a>
-        <button class="btn btn-secondary" id="logout"
-=======
         <button class="btn btn-secondary loginBtn" id="logout"
->>>>>>> 01863a9424110c6395555a3bda24f68fd58f39d5
           onclick="location.href='${pageContext.request.contextPath}/user/logout'">로그아웃</button>
       </div>
       <div id="notLogin">
