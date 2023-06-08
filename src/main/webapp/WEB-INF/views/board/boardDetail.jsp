@@ -42,9 +42,9 @@
         
   
   <div class="btn-group">
-    <button type="button" class="listBtn" id="listBtn"
+    <button type="button" class="listBtn btn btn-secondary" id="listBtn"
       onclick="location.href='${pageContext.request.contextPath}/board/boardList'">목록</button>
-    <button type="button" class="regBtn" id="regBtn"
+    <button type="button" class="regBtn btn btn-secondary" id="regBtn"
       onclick="location.href='${pageContext.request.contextPath}/board/boardModify/${vo.bno}'">수정</button>
   </div>
 </div>
@@ -58,7 +58,7 @@
   <!-- <form action=""> -->
   <div class="replyWrite">
     <textarea name="reply" class="replyInput" id="replyInput" placeholder="댓글을 작성해주세요."></textarea>
-    <button type="button" class="registBtn" id="registBtn">등록</button>
+    <button type="button" class="registBtn btn btn-secondary" id="registBtn">등록</button>
   </div>
   <!-- </form> -->
   <!-- 댓글 창 -->
