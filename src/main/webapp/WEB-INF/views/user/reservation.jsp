@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <title>예약 내역</title>
 <link href="${pageContext.request.contextPath}/css/mypage.css" rel="stylesheet">
@@ -18,25 +19,32 @@
                 </form>
             </div>
         </div>
+
         <div class="reservationInfo">
-            <div class="reservationBox">
-                <h3>예약 정보</h3>
-                <img src="../img/co.png" alt="예약한 캠핑장 사진" class="campImg"> <br>
+            
+            <div class="payList">
+                <table>
+                    <th class="pay-num">결제코드</th>
+                    <th class="item-name">캠핑장이름</th>
+                    <th class="quantity">인원</th>
+                    <th class="daterange">날짜</th>
+                    <th class="amount">결제금액</th>
+                    
+                    <c:forEach var="pay" items="${payList}">
+                        <tr>
+                    
+                            <td >${pay.payNum}</td>
+                            <td >${pay.itemName}</td>                    
+                            <td >${pay.quantity}</td>
+                            <td >${pay.daterange}</td>
+                            <td >${pay.amount}</td>
+                        </tr>          
 
-                <div class="campName">
-                    <h2>(캠핑장이름받아오기)</h2>
-                </div>
-                <div class="campInfo">
-                    <div class="resDate">예약날짜: </div>
-                    <div class="resPlace">장소: </div>
-                    <div class="resName">예약자: </div>
-                    <div class="resStatus">상태: </div>
-                </div>
 
-                <div class="go-main-btn">
-                    <button type="button" name="goMainBtn" class="goMainBtn btn btn-secondary">메인으로</button>
-                </div>
+                    </c:forEach>
+                </table>
             </div>
+
         </div>
     </div>
 </section>
@@ -64,4 +72,7 @@
         }
     });
     // 메뉴 처리 끝.
+   
+
+
 </script>

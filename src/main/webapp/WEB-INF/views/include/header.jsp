@@ -59,14 +59,16 @@
     <div class="header-right">
       <!--  <input type="text" class="search clearfix" placeholder="검색어를 입력하세요.">
               <a href=#><i class="fa fa-search" aria-hidden="true"></i></a> -->
-      <div id="login" style="display: none;">
-        <img class="profile-img" src="${pageContext.request.contextPath}/img/profile.png" alt="profile">
-        <a href="${pageContext.request.contextPath}/user/info" class="user">홍길동님</a>
-        <button class="btn btn-secondary" id="logout"
+      <div id="loginA" style="display: none;">
+        <div class="profile">
+          <img class="profile-img" src="${pageContext.request.contextPath}/img/profile.png" alt="profile">
+          <a href="${pageContext.request.contextPath}/user/info" class="user">홍길동님</a>
+        </div>
+        <button class="btn btn-secondary loginBtn" id="logout"
           onclick="location.href='${pageContext.request.contextPath}/user/logout'">로그아웃</button>
       </div>
       <div id="notLogin">
-        <button class="btn btn-secondary" id="loginH"
+        <button class="btn btn-secondary loginBtn" id="loginH"
           onclick="location.href='${pageContext.request.contextPath}/user/login'">로그인</button>
       </div>
     </div>
@@ -102,14 +104,16 @@
     </div>
   </div>
 </header>
-
+<img src="${pageContext.request.contextPath}/img/campillu.png" alt="" id="background-left">
+<img src="${pageContext.request.contextPath}/img/left.jpg" alt="" id="background-right">
+<img src="${pageContext.request.contextPath}/img/moon2.png" alt="" id="moon">
 <script>
   console.log(" ${login}");
   if ("${login}" !== '') {
-    document.getElementById('login').style.display = 'block';
+    document.getElementById('loginA').style.display = 'flex';
     document.getElementById('notLogin').style.display = 'none';
   } else {
-    document.getElementById('login').style.display = 'none';
+    document.getElementById('loginA').style.display = 'none';
     document.getElementById('notLogin').style.display = 'block';
   };
 
@@ -141,5 +145,8 @@
   document.getElementById('location').onclick = (e) =>{
     if(!e.target.matches('button')) return;
 
+  }
+  document.getElementById('moon').onclick = () =>{
+    document.getElementById('moon').setAttribute('src','${pageContext.request.contextPath}/img/moon.png')
   }
 </script>

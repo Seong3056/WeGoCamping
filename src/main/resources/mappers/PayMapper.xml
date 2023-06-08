@@ -27,7 +27,7 @@
 		SELECT COUNT(*) FROM payment WHERE pay_num = #{payNum}
 	</select>
 	
-	<select id="getList">
-		SELECT * FROM payment WHERE pay_num = #{payNum}
+	<select id="getList" resultType="pay">
+		SELECT * FROM payment WHERE partner_user_id = #{userId}
 	</select>
 </mapper>

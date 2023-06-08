@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.camping.wego.campsite.service.ICampsiteService;
+import com.camping.wego.pay.service.IPaymentService;
 import com.camping.wego.user.service.IUserService;
 import com.camping.wego.util.MailAuthService;
 import com.camping.wego.util.PageCreator;
@@ -32,6 +34,8 @@ public class UserController {
 
 	@Autowired
 	private IUserService service;
+	@Autowired
+	private IPaymentService payService;
 	@Autowired
 	private MailAuthService mailService;
 
@@ -104,7 +108,13 @@ public class UserController {
 	}
 
 	@PostMapping("/reservation")
-	public void resv(String userId, Model model) {}
+	public void resv(Model model, HttpSession session) {
+		
+		log.info(session.getAttribute("login").toString());
+		String userId = session.getAttribute("login").toString();
+		model.addAttribute("payList",payService.getList(userId));
+		
+	}
 
 	@GetMapping("/info")
 	public void info() {}
