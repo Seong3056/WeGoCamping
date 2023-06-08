@@ -218,6 +218,7 @@
         // 처음 수정 버튼 클릭 시 내용 입력을 받기 위해 readonly 해제 후 종료.
         if (e.target.parentNode.previousElementSibling.readOnly) {
           e.target.parentNode.previousElementSibling.readOnly = false;
+          e.target.parentNode.previousElementSibling.style.border = "1px dotted #eb8787";
           return;
         }
         // 다시 수정 버튼을 클릭하면 댓글 수정 요청.

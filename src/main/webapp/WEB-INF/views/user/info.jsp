@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <title>마이 페이지</title>
 <link href="${pageContext.request.contextPath}/css/mypage.css" rel="stylesheet">
@@ -22,15 +23,16 @@
 
         <div class="privacyFix">
             <div class="fixBox">
-                <h3> 개인 정보 수정(메뉴 값 받아오기)</h3>
-                <form action="#">
+                <h3> 개인 정보 수정</h3>
+                <p class="tip">* 이름과 아이디는 변경 불가능합니다.</p>
+                <form action="${pageContext.request.contextPath}/user/upadte" method="post">
                     <div class="form-group">
                         <label for="name" class="lName">이름</label> <br>
-                        <input type="text" name="userName" id="userName" placeholder="변경불가" readonly>
+                        <input type="text" name="userName" id="userName" value="${info.userName}" readonly>
                     </div>
                     <div class="form-group">
                         <label for="id" class="lId">아이디</label> <br>
-                        <input type="text" name="userId" id="userId" placeholder="변경불가" readonly>
+                        <input type="text" name="userId" id="userId" value="${info.userId}" readonly>
                     </div>
                     <div class="form-group">
                         <label for="pw" class="lPw">변경 비밀번호</label> <br>
@@ -42,36 +44,39 @@
                     </div>
                     <div class="form-group">
                         <label for="phoneNum" class="lPhone">휴대폰 번호</label> <br>
-                        <input type="text" name="phoneNum" id="phoneNum">
+                        <input type="text" name="phoneNum" id="phoneNum" value="${info.userPhone}">
                     </div>
                     <div class="form-group">
                         <label for="email" class="lEmail">이메일</label> <br>
-                        <input type="text" name="email1" id="email1" class="emailBtn">
+                        <input type="text" name="email1" id="email1" class="emailBtn" value="${info.userEmail1}">
                         <select name="email2" id="email2">
-                            <option>@naver.com</option>
-                            <option>@hanmail.net</option>
-                            <option>@gmail.com</option>
-                            <option>@nate.com</option>
+                            <option value="@naver.com" ${info.userEmail2=='@naver.com' ? 'selected' : '' }>@naver.com
+                            </option>
+                            <option value="@hanmail.net" ${info.userEmail2=='@hanmail.net' ? 'selected' : '' }>
+                                @hanmail.net</option>
+                            <option value="@gmail.com" ${info.userEmail2=='@gmail.com' ? 'selected' : '' }>@gmail.com
+                            </option>
+                            <option value="@nate.com" ${info.userEmail2=='@nate.com' ? 'selected' : '' }>@nate.com
+                            </option>
                         </select>
                     </div>
                     <div class="mailCheckBox">
-                        <input type="text" class="mail-check-input" placeholder="인증번호 6자리를 입력하세요." maxlength="6"
-                            disabled="disabled">
-                        <button type="button" id="mail-check-btn" class="checkBoxE btn btn-secondary">이메일 인증</button>
+                        <input type="text" id="mailCheckInput" class="mail-check-input" placeholder="인증번호 6자리를 입력하세요." maxlength="6" disabled="disabled">
+                        <button type="button" id="mailCheckBtn" class="checkBoxE btn btn-secondary">이메일 인증</button>
                     </div>
                     <div class="form-group">
                         <label for="address" class="lAddr">주소</label>
                         <div class="input-group">
-                            <input type="text" name="address" id="address" placeholder="우편번호" readonly>
-                            <button type="button" class="CheckBoxA btn btn-secondary"
-                                onclick="searchAddress()">주소찾기</button>
+                            <input type="text" name="addrZipNum" id="addrZipNum" value="${info.addrZipNum}" readonly>
+                            <button type="button" class="CheckBoxA btn btn-secondary" onclick="findAddr()">주소찾기</button>
                         </div>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="addrBasic" id="addrBasic" placeholder="기본주소">
+                        <input type="text" name="addrBasic" id="addrBasic" value="${info.addrBasic}" readonly>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="addrBasic" id="addrDetail" class="addrDetail" placeholder="상세주소">
+                        <input type="text" name="addrBasic" id="addrDetail" class="addrDetail"
+                            value="${info.addrDetail}" placeholder="상세주소를 입력해주세요.">
                     </div>
                     <div class="bottomBtn">
                         <div class="form-group">
@@ -106,6 +111,7 @@
 
 <%@ include file="../include/footer.jsp" %>
 
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
     // 마이페이지 메뉴 a 태그 처리
     $menuForm = document.menuForm;
@@ -165,5 +171,77 @@
                 }
             });
     });
+    // 모달 취소 버튼 클릭 시 모달 닫기
+    document.getElementById('cancle').addEventListener('click', (e) => {
+        infoModal.style.display = 'none';
+    });
     /* 회원탈퇴 끝 */
+
+    // 메일 인증
+    document.getElementById('mailCheckBtn').onclick = () => {
+        if (document.getElementById('email1').value === '') {
+            return;
+        }
+        const reqObj = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                "userId": document.getElementById('userId').value,
+                'userEmail1': document.getElementById('email1').value,
+                'userEmail2': document.getElementById('email2').value
+            }),
+
+        }
+        document.getElementById('mailCheckInput').removeAttribute('disabled');
+        fetch('${pageContext.request.contextPath}/user/authMail', reqObj)
+            .then(rs => rs.text())
+            .then(data => {
+                console.log("인증번호: " + data);
+                document.getElementById('mailCheckBtn').onclick = () => {
+                    if (document.getElementById('mailCheckInput').value === data) {
+                        alert('이메일 인증이 완료되었습니다.');
+                        document.getElementById('mailCheckInput').disabled = true;
+                        document.getElementById('mailCheckBtn').disabled = true;
+                        document.getElementById('email1').readOnly = true;
+                        const $email2 = document.getElementById('email2');
+                        email2.setAttribute('onFocus', 'this.initialSelect = this.selectedIndex');
+                        email2.setAttribute('onChange', 'this.selectedIndex = this.initialSelect');
+                    } else {
+                        alert('인증번호가 다릅니다.');
+                    }
+                }
+
+            })
+    };
+
+    // 주소 찾기
+    function findAddr() {
+        new daum.Postcode({
+            oncomplete: function (data) {
+                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                var addr = ''; // 주소 변수
+                var extraAddr = ''; // 참고항목 변수
+
+                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                    addr = data.roadAddress;
+                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                    addr = data.jibunAddress;
+                }
+
+                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                document.getElementById('addrZipNum').value = data.zonecode;
+                document.getElementById('addrBasic').value = addr;
+                // api를 통해 주소 정보를 입력받았다면 상세주소를 새로 입력받기 위해 값을 비워줌.
+                document.getElementById('addrDetail').value = '';
+                // 커서를 상세주소 필드로 이동한다.
+                document.getElementById('addrDetail').focus();
+            }
+        }).open();
+    } //주소찾기 api 끝.
 </script>

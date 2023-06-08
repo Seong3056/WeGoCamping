@@ -108,6 +108,9 @@ public class UserController {
 	public void resv(String userId, Model model) {}
 
 	@GetMapping("/info")
-	public void info() {}
+	public void info(HttpSession session, Model model) {
+		log.info(service.info((String) session.getAttribute("login")).toString());
+		model.addAttribute("info", service.info((String) session.getAttribute("login")));
+	}
 
 }

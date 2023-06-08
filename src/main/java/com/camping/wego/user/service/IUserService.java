@@ -25,6 +25,9 @@ public interface IUserService {
 	
 	// 이름
 	String getName(String userId);
+	
+	// 유저정보 가져오기
+	UserVO info(String userId);
 
 	// 내 게시글 목록
 	List<BoardVO> myContentList(String userId, PageVO vo);
