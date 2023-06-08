@@ -105,8 +105,9 @@
   </div>
 </header>
 <img src="${pageContext.request.contextPath}/img/campillu.png" alt="" id="background-left">
-<img src="${pageContext.request.contextPath}/img/leftBF.jpg" alt="" id="background-right">
+<img src="${pageContext.request.contextPath}/img/left.gif" alt="" id="background-right">
 <img src="${pageContext.request.contextPath}/img/moon2.png" alt="" id="moon">
+<img src="${pageContext.request.contextPath}/img/hae.png" alt="" id="hae">
 <script>
   console.log(" ${login}");
   if ("${login}" !== '') {

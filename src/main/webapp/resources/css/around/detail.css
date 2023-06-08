@@ -29,6 +29,7 @@ iframe {
 .detail .item {
     width: 50%;
     margin-right: 3%;
+    font-weight: 600;
 }
 
 .campimg {

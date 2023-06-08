@@ -42,7 +42,7 @@ header:hover {
 }
 @keyframes dropdown {
     
-}
+}/* 
 
 header .section{
     width: 1500px;
@@ -69,9 +69,7 @@ header .section .menu{
     flex-flow: row;
     justify-content: flex-end;
 }
-header .section .menu .in-menu{
-    margin-left: 20px;
-}
+
 header .section .header-right{
     width: 300px;
     position: absolute;
@@ -97,7 +95,7 @@ header .section .header-right .profile img{
     margin-bottom: 5px;
     width: 50px;
     height: 50px;
-}
+} */
 
 
 /* ------------------------------------- */
@@ -365,6 +363,7 @@ input::placeholder {
     width: 98%;    
     margin: 20px auto 10px;
     text-align: center;
+    font-weight: 600;
     /* background: rgb(68, 57, 57); */
     
 }
