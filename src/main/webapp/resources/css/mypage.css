@@ -210,6 +210,10 @@ input::placeholder {
     color: crimson;
 }
 
+.wrap .privacyFix .fixBox input {
+	padding: 10px;
+}
+
 .wrap .privacyFix .fixBox .form-group {
     /* background: teal; */
     margin-top: 10px;
@@ -406,6 +410,7 @@ input::placeholder {
     height: 20%;
     font-size: 25px;
     margin-bottom: 30px;
+    padding: 15px;
 }
 
 .infoModal .btnBox button{

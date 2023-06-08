@@ -141,6 +141,7 @@ header .section .header-right .profile img{
 }
 
 .wrap .login .loginAll .input-group input {
+	padding: 15px;
     width: 350px;
     height: 60px;
     margin-top: 10px;
