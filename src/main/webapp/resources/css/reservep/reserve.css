@@ -148,6 +148,11 @@
 	cursor: pointer;
 }
 
+
+input  {
+	background-color:transparent;
+}
+
 /* 
 
 .reservation > h1 {

@@ -172,6 +172,7 @@ header .section .header-right  {
 #loginA .profile{
     display: flex;
     flex-flow: column;
+    cursor: pointer;
 }
 
 header .section .header-right .login {
