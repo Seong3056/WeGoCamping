@@ -32,13 +32,13 @@
         <p class="addr">주소: ${camp.addr}</p>
       </div>
 
-      <div class="campAdd cc">
+      <div class="addtheme">
         <p class="add">테마: ${camp.induty}</p>
       </div>
     </div>
   </div>
   <div class="btnGroup">
-    <button class="btn btn-secondary" onclick="history.back()">목록</button>
+    <button class="btn btn-secondary" onclick="history.back()">뒤로가기</button>
     <button class="btn btn-secondary"
       onclick="location.href='${pageContext.request.contextPath}/rsv/${camp.cno}'">예약하기</button>
   </div>
