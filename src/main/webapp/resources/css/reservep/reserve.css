@@ -39,24 +39,28 @@
 }
 .container .form-left h2{
     margin-bottom: 10px;
+    margin-top: 50px;
     text-align: center;
     font-weight: 700;
     font-size: 20px;
 }
 #mapid {
-    width: 430px;
-    height: 430px;   
+    width: 500px;
+    height: 500px;   
 }
 .container .form-right{
+    margin-left: 30px;
     width: 550px;
     display: flex;
     flex-flow: column;
     margin-top: 15px;
+    
 }
 .container .form-right .line2{
     display: flex;
     flex-flow: row;
     margin-left: 10px;
+    margin-top: 50px;
 }
 .container .form-right .line2 .date{
     display: flex;
@@ -142,6 +146,11 @@
 
 input  {
 	background-color:transparent;
+	width: 100%;
+}
+
+#facltNm {
+	width: 100%;
 }
 
 /* 
