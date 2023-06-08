@@ -20,17 +20,16 @@
         <img id="info" src="${info.img}" alt="thumbnail">
         <div id="mapid"></div>
     </div>
-    <p class="h3">캠핑장명: ${info.itemName}</p>
-    
+    <p class="h3">캠핑장명: ${info.itemName}   </p>
     <p class="line">예약자명: ${info.name}</p>
 
     <div class="rsvPay line">
-        <p>결제번호: ${info.payNum}</p>        
+        <p>결제번호: ${info.payNum}   </p>        
         <p>결제금액: ${info.amount}</p>        
     </div>
 
     <div class="rsvInfo line">
-        <p>날짜: ${info.date}</p>
+        <p>날짜: ${info.date}   </p>
         <p>인원: ${info.quantity}명</p>
     </div>
 

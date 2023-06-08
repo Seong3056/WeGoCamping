@@ -1,5 +1,7 @@
 package com.camping.wego.pay.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,5 +35,9 @@ public class PaymentService implements IPaymentService {
 	public PayVO loadTid(String tid) {
 		log.info("-------------------------service"+mapper.loadTid(tid));
 		return mapper.loadTid(tid);
+	}
+	@Override
+	public List<PayVO> getList(String userId) {		
+		return mapper.getList(userId);
 	}
 }

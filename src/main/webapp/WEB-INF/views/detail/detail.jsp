@@ -29,7 +29,7 @@
   
   <div class="container">
     <div class="campImg">
-      <img src="${camp.firstImageUrl}" alt="camp1" 
+      <img src="${camp.firstImageUrl}" alt="camp1"
       onerror="this.src='${pageContext.request.contextPath}/img/campsiteOnerror.jpg'">
     </div>
 
