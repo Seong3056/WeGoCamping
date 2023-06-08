@@ -198,7 +198,7 @@ body{
 .wrap .btnBox {
     width: 800px;
     text-align: center;
-    
+     
 }
 
 .filebox>input {
@@ -206,7 +206,7 @@ body{
 }
 
 .wrap button {
-    width: 60px;
+   	width: 60px;
     height: 35px;
     margin-left: 20px;
 } 
@@ -292,8 +292,8 @@ body{
     margin-left: 30px;
     /* background: skyblue; */
    /*  border: none; */
-    font-size: 16px;
-    font-weight: 600; 
+   /*  font-size: 16px;
+    font-weight: 600;  */
 }
 
 /* 댓글 내용 부분 */

@@ -296,6 +296,7 @@ input::placeholder {
 /* 내 게시글 정보 시작 */
 
 .wrap .myBoard {
+	font-family: 'Hahmlet', serif;
     /* background: yellowgreen; */
     float: right;
     width: 60%;
@@ -304,6 +305,7 @@ input::placeholder {
 }
 
 .wrap .myBoard .myBoardBox h3 {
+	
     font-size: 40px;
     text-align: center;
     padding: 20px 20px;
