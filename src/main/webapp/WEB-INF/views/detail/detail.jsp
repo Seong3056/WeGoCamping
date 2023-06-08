@@ -32,7 +32,7 @@
         <p class="addr">주소: ${camp.addr}</p>
       </div>
 
-      <div class="campAdd cc">
+      <div class="addtheme">
         <p class="add">테마: ${camp.induty}</p>
       </div>
     </div>

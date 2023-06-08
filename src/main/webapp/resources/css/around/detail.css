@@ -112,6 +112,12 @@ iframe {
     height: 50px;
 }
 
+.detail .container .item .cc .addtheme {
+    width: 530px;
+    height: 50px;
+}
+
+
 .detail .btnGroup {
 	width: 1100px;
     display: flex;
