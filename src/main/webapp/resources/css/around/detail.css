@@ -108,14 +108,15 @@ iframe {
     height: 50px;
 }
 
-.detail .container .item .btnGroup {
+.detail .btnGroup {
+	width: 1100px;
     display: flex;
-    justify-content: end;
-}
-
-.detail .container .item .btnGroup {
-    width: 70px;
+    justify-content: flex-end;
+    
     height: 30px;
+}
+.detail .btnGroup btn:first-child{
+	margin-right: 10px;
 }
 
 .detail .btn1 {

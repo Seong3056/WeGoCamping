@@ -110,6 +110,12 @@ header .section .header-right .profile img{
 	
 }
 
+.privacyFix>.fixBox>.form-group>label {
+	font-size: 15px;
+}
+
+
+
 input::placeholder {
   font-size: 15px;
 }
@@ -169,14 +175,17 @@ input::placeholder {
 .wrap .privacyFix input {
     width: 300px;
     height: 30px;
+    font-size: 15px;
 }
 
 .wrap .privacyFix label {
     color: black;
+    font-size: 15px;
+    margin-bottom: 10px;
 }
 
 .wrap .privacyFix .addrDetail {
-    height: 50px;
+    height: 30px;
 }
 
 .wrap .privacyFix select {
@@ -210,6 +219,10 @@ input::placeholder {
     color: crimson;
 }
 
+.wrap .privacyFix .fixBox input {
+	padding: 10px;
+}
+
 .wrap .privacyFix .fixBox .form-group {
     /* background: teal; */
     margin-top: 10px;
@@ -217,8 +230,8 @@ input::placeholder {
 
 .wrap .privacyFix .fixBox button {
     /* color: red; */
-    width: 80px;
-    height: 35px;
+   /*  width: 80px; */
+    height: 30px;
     margin-left: 10px;
     /* background: skyblue; */
     /* border: 1px solid gray; */
@@ -235,6 +248,10 @@ input::placeholder {
     display: flex;
     margin-left: 50%;
     margin-top: 5%;
+}
+
+#msgPw, #msgPwCheck {
+	font-size: 15px;
 }
 
 .warp .privacyFix .fixBox .bottomBtn .withdrawa {
@@ -313,6 +330,7 @@ input::placeholder {
 
 .wrap .myBoard .myBoardBox {
     margin-top: 13%;
+    background-color: #fff;
 }
 
 .wrap .myBoard .titleBox {
@@ -334,14 +352,27 @@ input::placeholder {
 }
 
 /* 게시글 테이블 */
-.wrap .myBoard .myBoardList {
-    box-sizing: border-box;
+.wrap .myBoard .board-list {
     width: 100%;
     height: 500px;
+    border-bottom: 2px solid darkgray;
+    
+}
+.wrap .myBoard .myBoardList {
+    box-sizing: border-box;
+    width: 98%;    
     margin: 20px auto 10px;
     text-align: center;
     /* background: rgb(68, 57, 57); */
-    border-bottom: 2px solid darkgray;
+    
+}
+.wrap .myBoard .myBoardList th{
+    height: 23px;
+    margin-bottom: 20px;
+}
+.wrap .myBoard .myBoardList .trList {
+    height: 25px;
+
 }
 .wrap .myBoard .myBoardBtn {
     display: flex;
@@ -406,6 +437,7 @@ input::placeholder {
     height: 20%;
     font-size: 25px;
     margin-bottom: 30px;
+    padding: 15px;
 }
 
 .infoModal .btnBox button{

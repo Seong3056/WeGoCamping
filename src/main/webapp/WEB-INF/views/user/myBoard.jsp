@@ -34,33 +34,35 @@
                         <a href="4">건의사항</a>
                     </form>
                 </div>
-                <table class="myBoardList">
-                    <th class="head">카테고리</th>
-                    <th class="title">제목</th>
-                    <th class="regDate">작성일</th>
-                    <th class="hit">조회</th>
-                    <!-- 게시글 받아오기 -->
-                    <c:forEach var="content" items="${list}">
-                        <tr>
-                            <td>
-                                <c:if test="${content.cls==1}">후기</c:if>
-                                <c:if test="${content.cls==2}">꿀팁</c:if>
-                                <c:if test="${content.cls==3}">메이트찾기</c:if>
-                                <c:if test="${content.cls==4}">건의사항</c:if>
-                            </td>
-                            <td class="title" style="cursor:pointer;">
-                                <a
-                                    onclick="location.href='${pageContext.request.contextPath}/board/content/${content.bno}'">${content.title}</a>
-                            </td>
-                            <td>
-                                <fmt:parseDate value="${content.regDate}" pattern="yyyy-MM-dd'T'HH:mm"
-                                    var="parsedDateTime" type="both" />
-                                <fmt:formatDate value="${parsedDateTime}" pattern="yy-MM-dd" />
-                            </td>
-                            <td>${content.hit}</td>
-                        </tr>
-                    </c:forEach>
-                </table>
+                <div class="board-list">
+                    <table class="myBoardList">
+                        <th class="head">카테고리</th>
+                        <th class="title">제목</th>
+                        <th class="regDate">작성일</th>
+                        <th class="hit">조회</th>
+                        <!-- 게시글 받아오기 -->
+                        <c:forEach var="content" items="${list}">
+                            <tr class="trList">
+                                <td>
+                                    <c:if test="${content.cls==1}">후기</c:if>
+                                    <c:if test="${content.cls==2}">꿀팁</c:if>
+                                    <c:if test="${content.cls==3}">메이트찾기</c:if>
+                                    <c:if test="${content.cls==4}">건의사항</c:if>
+                                </td>
+                                <td class="title" style="cursor:pointer;">
+                                    <a
+                                        onclick="location.href='${pageContext.request.contextPath}/board/content/${content.bno}'">${content.title}</a>
+                                </td>
+                                <td>
+                                    <fmt:parseDate value="${content.regDate}" pattern="yyyy-MM-dd'T'HH:mm"
+                                        var="parsedDateTime" type="both" />
+                                    <fmt:formatDate value="${parsedDateTime}" pattern="yy-MM-dd" />
+                                </td>
+                                <td>${content.hit}</td>
+                            </tr>
+                        </c:forEach>
+                    </table>
+                </div>
             </div>
             <!-- 부트스트랩 페이지네이션 -->
             <form action="${pageContext.request.contextPath}/user/myBoard" name="pageForm" method="post">
