@@ -21,13 +21,15 @@
 #facltNm{
   
     border: 0;
-    font-size: 40px;
-    width: 300px;
+    font-size: 37px;
+    /* width: 535px; */
     margin-left: 50%;
     transform: translateX(-50%);
     text-align: center;
     outline: none;
     font-weight: 700;
+    backdrop-filter: blur(8px);
+    background-color: transparent;
     
 }
 .container{
@@ -71,7 +73,12 @@
     height: 50px;
 	font-size: 20px;
 	border: none;
+    backdrop-filter: blur(8px);
    
+}
+#myChart{
+    backdrop-filter: blur(8px);
+    display: none;
 }
 .container .form-right .line2 .rsvNum{
     width: 50px;
@@ -90,8 +97,9 @@
 	
 }
 .container .form-right .line3{
-    display: flex;
+    display: none;
     margin-left: 30px;
+    margin-top: 20px;
     
 }
 .container .form-right .line3 .day{
@@ -133,9 +141,12 @@
 }
 .container .form-right .line35 {
     height: 250px;
+    margin-top: 20px;
 }
 
-
+#line-body{
+    height: 380px;
+}
 
 
 

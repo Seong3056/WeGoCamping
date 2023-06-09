@@ -18,7 +18,7 @@
 }
 
 .detailB .board .id {
-    width: 150px;
+    width: 180px;
     height: 40px;
     border: none;
     padding-top: 10px;
@@ -41,15 +41,16 @@
     text-indent: 50px;
     font-weight: 500;
     font-size: 1.2em;
-    background-color: transparent;
+    backdrop-filter: blur(8px);
 }
 
 .detailB .board .content {
-    width: 500px;
+	/* background: red; */
+    width: 850px;
     height: 400px;
     margin: 20px 0;
     padding: 22px;
-    background-color: transparent;
+    backdrop-filter: blur(8px);
 }
 
 .detailB .board .imageBox {

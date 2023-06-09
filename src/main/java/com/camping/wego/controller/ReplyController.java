@@ -31,6 +31,7 @@ public class ReplyController {
 	@PostMapping("/regist")
 	public String replyRegist(@RequestBody ReplyVO vo) {
 		service.replyRegist(vo);
+		log.info(vo.getUserId());
 		return "replyRegSuccess";
 	}
 
