@@ -47,6 +47,13 @@
 		(#{writer}, #{title}, #{cls}, #{content})
 	</insert>
 	
+	<insert id="insertHit">
+		INSERT INTO board
+		(writer, title, cls, content, reg_date, hit)
+		VALUES
+		(#{writer}, #{title}, #{cls}, #{content}, #{regDate}, #{hit})
+	</insert>
+	
 	<select id="list" resultType="board">
 		SELECT * FROM board
 		<include refid="clsSearch" />

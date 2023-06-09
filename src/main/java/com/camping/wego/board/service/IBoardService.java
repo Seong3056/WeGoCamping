@@ -28,4 +28,6 @@ public interface IBoardService {
 	//게시물 업데이트
 	void update(BoardVO vo);
 
+	void insertDummy();
+
 }
