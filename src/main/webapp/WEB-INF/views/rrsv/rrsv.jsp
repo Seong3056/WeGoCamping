@@ -16,6 +16,9 @@
   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
   crossorigin="" />
 
+<!-- 차트 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
 <!-- Make sure you put this AFTER Leaflet's CSS -->
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
@@ -103,7 +106,7 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="https://service.iamport.kr/js/iamport.payment-1.1.5.js"></script> -->
 
-<script type="text/javascript">
+<script>
   var mymap = L.map("mapid").setView(["${camp.mapY}", "${camp.mapX}"], 16);
   var maker = L.marker(["${camp.mapY}", "${camp.mapX}"]).addTo(mymap);
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -264,7 +267,7 @@
   // }
 </script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
 <script type="text/javascript">
   document.getElementById('demo').onchange = () => {
     const now = new Date();

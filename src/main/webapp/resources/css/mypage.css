@@ -17,9 +17,7 @@ a{
 .clearfix:after {
     clear:both;
 }
-body{
-    
-}
+
 
 header{
     width: 100%;
@@ -248,6 +246,8 @@ input::placeholder {
     margin-top: 5%;
 }
 
+<<<<<<< HEAD
+=======
 #msgPw, #msgPwCheck {
 	font-size: 15px;
 }
@@ -256,6 +256,7 @@ input::placeholder {
     margin-left: 20px;
 }
 
+>>>>>>> e5badbf650b08a3ffd7715b36b5a2c2824145cc8
 /* ------------------------------- */
 /* 개인 수정 정보 끝 */
 
@@ -404,6 +405,17 @@ input::placeholder {
 }
 
 
+<<<<<<< HEAD
+
+
+
+
+
+
+
+
+
+=======
 /* 모달 수정 합니다. */
 .infoModal {
 	font-family: 'Hahmlet', serif;
@@ -453,6 +465,7 @@ input::placeholder {
     height: 40px;
     margin-right: 10px;
 }
+>>>>>>> e5badbf650b08a3ffd7715b36b5a2c2824145cc8
 
 
 
