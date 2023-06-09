@@ -3,6 +3,8 @@ package com.camping.wego.campsite.mapper;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.camping.wego.vo.CampsiteVO;
 
 public interface ICampsiteMapper {
@@ -25,10 +27,17 @@ public interface ICampsiteMapper {
 	CampsiteVO info(int cno);
 
 	//캠핑장 주소(도)리스트
-	CampsiteVO addrList(Map<String, String> map);
+	List<CampsiteVO> addrList(Map<String, String> map);
 	
 	//캠핑장 위치 코드(날씨)
 	String addrCode(String addrName);
+
+	List<CampsiteVO> selectSearch(Map<String, String> map);
+
+	List<CampsiteVO> selectSearchPage(@Param("addr1") String addr1,@Param("addr2") String addr2, 
+			@Param("theme") String theme,@Param("pageStart") int pageStart,@Param("cpp") int cpp);
+
+	
 
 	
 

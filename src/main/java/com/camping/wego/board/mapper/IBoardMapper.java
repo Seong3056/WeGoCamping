@@ -28,7 +28,6 @@ public interface IBoardMapper {
 	//게시물 업데이트
 	void update(BoardVO vo);
 
-	//말머리 게시물리스트
-	List<BoardVO> clsList(int cls);
+	void insertHit(BoardVO vo);
 
 }

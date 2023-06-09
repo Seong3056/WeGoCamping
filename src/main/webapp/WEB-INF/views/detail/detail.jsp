@@ -1,35 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-
 <!--달력-->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
+<title>캠핑장 상세보기</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/around/detail.css">
-
-
-
-
-
-<title>상세보기</title>
-
-
 
 <%@ include file="../include/header.jsp" %>
 
 <article class="detail">
-
-  
   <div class="container">
     <div class="campImg">
-      <img src="${camp.firstImageUrl}" alt="camp1">
+      <img src="${camp.firstImageUrl}" alt="camp1"
+        onerror="this.src='${pageContext.request.contextPath}/img/campsiteOnerror.jpg'">
     </div>
 
     <div class="item">
@@ -45,16 +32,15 @@
         <p class="addr">주소: ${camp.addr}</p>
       </div>
 
-      <div class="campAdd cc">
+      <div class="addtheme">
         <p class="add">테마: ${camp.induty}</p>
-        <p class="add">별점: </p>
-      </div>    
-
+      </div>
     </div>
   </div>
-  <div class="btnGroup">    
-    <button class="btn btn-secondary">목록</button>
-    <button class="btn btn-secondary" onclick="location.href='${pageContext.request.contextPath}/rsv/${camp.cno}'">예약하기</button>
+  <div class="btnGroup">
+    <button class="btn btn-secondary" onclick="history.back()">뒤로가기</button>
+    <button class="btn btn-secondary"
+      onclick="location.href='${pageContext.request.contextPath}/rsv/${camp.cno}'">예약하기</button>
   </div>
 </article>
 

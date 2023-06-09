@@ -27,4 +27,5 @@ public class PayVO {
 	private String tid;
 	private String tel;
 	private String addr;
+	private String daterange;
 }

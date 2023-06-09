@@ -4,6 +4,12 @@
     
 <mapper namespace="com.camping.wego.user.mapper.IUserMapper">
 
+	<sql id="cls">
+		<if test="paging.cls gt 0 and paging.cls lt 5">
+			AND cls = #{paging.cls}
+		</if>
+	</sql>
+
 	<insert id="join">
 		INSERT INTO users
 			(user_id, user_pw, user_name, user_phone, user_email1, user_email2,
@@ -12,6 +18,15 @@
 			(#{userId}, #{userPw}, #{userName}, #{userPhone}, #{userEmail1}, #{userEmail2},
 			 #{addrBasic},#{addrDetail},#{addrZipNum})
 	</insert>
+	
+	<update id="update">
+		UPDATE users
+		SET
+			user_pw = #{userPw}, user_phone = #{userPhone},
+			user_email1 = #{userEmail1}, user_email2 = #{userEmail2},
+			addr_basic = #{addrBasic}, addr_detail = #{addrDetail}, addr_zip_num = #{addrZipNum}
+		WHERE user_id = #{userId}
+	</update>
 
 	<delete id="withdrawal">
 		DELETE FROM users WHERE user_id = #{userId}
@@ -23,6 +38,33 @@
 	
 	<select id="login" resultType="string">
 		SELECT user_pw FROM users 
+		WHERE user_id = #{userId}
+	</select>
+	
+	<select id="myContentList" resultType="board">
+		SELECT * FROM board
+		WHERE writer = #{userId}
+		<include refid="cls" />
+		ORDER BY bno DESC
+		LIMIT #{paging.pageStart}, #{paging.cpp}
+	</select>
+	
+	<select id="getMyTotal" resultType="int">
+		SELECT COUNT(*)
+		FROM board
+		WHERE writer = #{userId}
+		<include refid="cls" />
+	</select>
+	
+	<select id="info" resultType="user">
+		SELECT
+		user_id, user_name, user_phone, user_email1, user_email2, addr_basic, addr_detail, addr_zip_num, reg_date
+		FROM users
+		WHERE user_id = #{userId}
+	</select>
+	
+	<select id="getName" resultType="String">
+		SELECT user_name FROM users
 		WHERE user_id = #{userId}
 	</select>
 

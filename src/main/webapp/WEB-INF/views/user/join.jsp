@@ -36,7 +36,7 @@
 
                         <div class="form-group">
                             <label for="pwCheck" class="JPCheck">비밀번호 확인</label><br>
-                            <input type="password" name="pwCheck" id="pwCheck" placeholder=" 비밀번호를 한 번 더  입력해주세요">
+                            <input type="password" name="pwCheck" id="pwCheck" placeholder="비밀번호를 한 번 더 입력해주세요.">
                             <p class="msg" id="msgPwCheck"></p>
                         </div>
 
@@ -56,17 +56,17 @@
                                         <option>@gmail.com</option>
                                         <option>@nate.com</option>
                                     </select>
-                                    <button type="button" id="mailSendBtn">인증번호 전송</button>
+                                    <button class="btn btn-secondary" type="button" id="mailSendBtn">인증번호 전송</button>
                                 </div>
 
                                 <div class="mailCheckBox">
                                     <input type="text" id="mailCheckInput" placeholder="인증번호 6자리를 입력하세요." maxlength="6"
                                         disabled="disabled">
                                     <br>
-                                    <button type="button" id="mailCheckBtn" class="checkBoxE">이메일 인증</button>
+                                    <button type="button" id="mailCheckBtn" class="checkBoxE btn btn-secondary">이메일
+                                        인증</button>
                                 </div>
                             </div>
-
                         </div>
 
                         <div class="form-group">
@@ -75,23 +75,18 @@
                                 <div class="input-group">
                                     <input type="text" name="addrZipNum" id="addrZipNum" placeholder="우편번호" readonly>
                                     <br>
-                                    <button type="button" class="CheckBoxA" onclick="findAddr()">주소찾기</button>
+                                    <button type="button" class="CheckBoxA btn btn-secondary"
+                                        onclick="findAddr()">주소찾기</button>
                                 </div>
                                 <input type="text" name="addrBasic" id="addrBasic" placeholder="기본주소">
                                 <input type="text" name="addrDetail" id="addrDetail" class="addrDetail"
-                                    placeholder="상세주소">
+                                    placeholder="상세주소를 입력해주세요.">
                             </div>
                         </div>
-                        <!-- <div class="form-group">
-                            
-                        </div>
-                        <div class="form-group">
-                            
-                        </div> -->
 
                         <div class="bottomBtn">
                             <div class="form-group">
-                                <button type="submit" id="joinBtn" class="fixBtn">회원가입</button>
+                                <button type="button" id="joinBtn" class="fixBtn btn btn-secondary">회원가입</button>
                             </div>
                         </div>
                     </div>
@@ -105,14 +100,32 @@
 
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
+    $joinForm = document.join;
+
+    // 비밀번호 일치 여부 확인용 변수
+    let pwChk = false;
+    // 이메일 체크 변수
+    let emailChk = false;
+
     document.getElementById('joinBtn').onclick = () => {
         console.log('회원가입 버튼이 클릭됨');
 
         //id 중복 검사
         idCheck();
-        //pw 유효성 검사
+        //pw, 이메일 유효성 검사
+        if(!pwChk || 
+        document.getElementById('userPw').value === '' || 
+        document.getElementById('pwCheck').value === '') {
+            alert('비밀번호를 다시 한번 확인해주세요!');
+            return;
+        } else if(!emailChk) {
+            alert('이메일을 인증을 진행해 주세요!');
+            return;
+        } else {
+            $joinForm.submit();
+        }
+    };
 
-    }
     /* ----------------------------아이디 유효성검사---------------------------*/
     document.getElementById('userId').onkeyup = function () {
         // console.log(document.getElementById('userId').value.length);
@@ -215,12 +228,16 @@
                 console.log("인증번호: " + data);
                 document.getElementById('mailCheckBtn').onclick = () => {
                     if (document.getElementById('mailCheckInput').value === data) {
+                        emailChk = true;
                         alert('이메일 인증이 완료되었습니다.');
                         document.getElementById('mailCheckInput').disabled = true;
                         document.getElementById('mailCheckBtn').disabled = true;
                         document.getElementById('email1').readOnly = true;
-                        document.getElementById('email2').readOnly = true;
+                        const $email2 = document.getElementById('email2');
+                        email2.setAttribute('onFocus', 'this.initialSelect = this.selectedIndex');
+                        email2.setAttribute('onChange', 'this.selectedIndex = this.initialSelect');
                     } else {
+                        emailChk = false;
                         alert('인증번호가 다릅니다.');
                     }
                 }
@@ -228,6 +245,8 @@
             })
     }
     /*===============================이메일 인증===============================*/
+
+    // 주소 찾기
     function findAddr() {
         new daum.Postcode({
             oncomplete: function (data) {
@@ -248,6 +267,8 @@
                 // 우편번호와 주소 정보를 해당 필드에 넣는다.
                 document.getElementById('addrZipNum').value = data.zonecode;
                 document.getElementById('addrBasic').value = addr;
+                // api를 통해 주소 정보를 입력받았다면 상세주소를 새로 입력받기 위해 값을 비워줌.
+                document.getElementById('addrDetail').value = '';
                 // 커서를 상세주소 필드로 이동한다.
                 document.getElementById('addrDetail').focus();
             }

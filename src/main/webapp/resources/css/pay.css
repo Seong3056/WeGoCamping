@@ -1,12 +1,53 @@
 @import url("https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css");
 .fin{
+	font-family: 'Hahmlet', serif;
 	width: 1100px;
     display: flex;
     flex-flow: column;
     margin: 0 auto;
-    margin-top: 200px;    
+    margin-top: 200px;  
+     
 }
 .line{
     display: flex;   
     flex-flow: row;
+    /* margin-left: 100px; */
+    margin-left: 26%;
+    
+}
+.fin .camp-info{
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+#info{
+    width: 260px;
+    height: 220px;
+    margin-right: 15px;
+    border-radius: 10px;
+}
+#mapid{
+    width: 260px;
+    height: 220px;
+    margin-left: 15px;
+    border-radius: 10px;
+}
+.fin p{
+	font-weight: 600; 
+    font-size: 20px;
+    padding: 10px 0;
+    margin-right: 25px;
+}
+
+
+.fin .h2{
+	
+    font-size: 35px;
+    font-weight: 700;
+}
+.fin .h3{
+    margin-top: 30px;
+    font-size: 25px;
+    font-weight: 600;
+    margin-left: 26%;
 }

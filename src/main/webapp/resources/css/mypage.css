@@ -40,7 +40,7 @@ header:hover {
 }
 @keyframes dropdown {
     
-}
+}/* 
 
 header .section{
     width: 1500px;
@@ -67,9 +67,7 @@ header .section .menu{
     flex-flow: row;
     justify-content: flex-end;
 }
-header .section .menu .in-menu{
-    margin-left: 20px;
-}
+
 header .section .header-right{
     width: 300px;
     position: absolute;
@@ -95,23 +93,48 @@ header .section .header-right .profile img{
     margin-bottom: 5px;
     width: 50px;
     height: 50px;
-}
+} */
 
 
 /* ------------------------------------- */
 /* 개인정보 수정 */
+
+.privacyFix>.fixBox {
+	font-family: 'Hahmlet', serif;
+	/* background: red; */
+	margin: 0 auto 200px;
+	
+}
+
+.privacyFix>.fixBox>.form-group>label {
+	font-size: 15px;
+}
+
+
+
+input::placeholder {
+  font-size: 15px;
+}
+
+#email2 {
+	font-size: 15px;
+}
+
+#addrBasic {
+	font-size: 15px;
+}
 
 /* ------------------------ */
 /* 좌측 선택창 시작 */
 .wrap {
     /* background: yellowgreen; */
     width: 1200px;
-    margin: 0 auto;
+    margin: 150px auto 150px;
     height: 100%;
     /* overflow: auto; */
     color: black;
-    border-right: 1px solid black;
-    border-left: 1px solid black;
+    /* border-right: 1px solid black; */
+    /* border-left: 1px solid black; */
 }
 
 .wrap .menuBox .infoKind {
@@ -148,14 +171,17 @@ header .section .header-right .profile img{
 .wrap .privacyFix input {
     width: 300px;
     height: 30px;
+    font-size: 15px;
 }
 
 .wrap .privacyFix label {
     color: black;
+    font-size: 15px;
+    margin-bottom: 10px;
 }
 
 .wrap .privacyFix .addrDetail {
-    height: 50px;
+    height: 30px;
 }
 
 .wrap .privacyFix select {
@@ -179,7 +205,18 @@ header .section .header-right .profile img{
 .wrap .privacyFix .fixBox h3 {
     font-size: 40px;
     text-align: center;
-    padding: 20px 20px;
+    padding: 20px 20px 10px;
+}
+
+.wrap .privacyFix .fixBox .tip {
+    font-size: 0.8em;
+    text-align: center;
+    margin: 5px;
+    color: crimson;
+}
+
+.wrap .privacyFix .fixBox input {
+	padding: 10px;
 }
 
 .wrap .privacyFix .fixBox .form-group {
@@ -189,10 +226,11 @@ header .section .header-right .profile img{
 
 .wrap .privacyFix .fixBox button {
     /* color: red; */
-    width: 80px;
-    height: 35px;
-    background: skyblue;
-    border: 1px solid gray;
+   /*  width: 80px; */
+    height: 30px;
+    margin-left: 10px;
+    /* background: skyblue; */
+    /* border: 1px solid gray; */
     
 
 }
@@ -208,6 +246,17 @@ header .section .header-right .profile img{
     margin-top: 5%;
 }
 
+<<<<<<< HEAD
+=======
+#msgPw, #msgPwCheck {
+	font-size: 15px;
+}
+
+.warp .privacyFix .fixBox .bottomBtn .withdrawa {
+    margin-left: 20px;
+}
+
+>>>>>>> e5badbf650b08a3ffd7715b36b5a2c2824145cc8
 /* ------------------------------- */
 /* 개인 수정 정보 끝 */
 
@@ -215,55 +264,52 @@ header .section .header-right .profile img{
 /* ----------------------------- */
 /* 예약 정보 시작 */
 .wrap .reservationInfo {
+	font-family: 'Hahmlet', serif;
     /* color: red; */
     float: right;
     width: 60%;
     height: 100%;
     margin: 0 auto;
+    margin-top: 7%;
+    
     /* background: yellow; */
 }
 
-.wrap .reservationBox {
-    margin-top: 13%;
-}
 
-.wrap .reservationInfo h3 {
-    font-size: 40px;
+
+.wrap .reservationInfo .payList{
+    backdrop-filter: blur(8px);
+}
+.wrap .reservationInfo .payList table{
+    font-size: 18px;
+}
+.wrap .reservationInfo .payList th{
+    border-bottom: 1px solid rgba(128, 128, 128, 0.185);
+    padding-bottom: 7px;
     text-align: center;
-    padding: 20px 20px;
-    
-}
-
-.wrap .reservationInfo h2 {
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 20px;
-}
-
-.wrap .reservationInfo img.campImg {
-  width: 400px;
-  height: 400px;
-  margin-left: 20%;
- 
-  
-}
-
-.wrap .reservationInfo .campInfo {
-    line-height: 2.5;
-    margin-left: 170px;
     font-weight: 600;
 }
-
-.wrap .reservationInfo .go-main-btn button {
-    width: 80px;
-    height: 35px;
-    background: skyblue;
-    border: 1px solid gray;
-    margin-left: 65%;
-    margin-top: 5%;
+.wrap .reservationInfo .payList td{
+    padding: 5px;
+    box-sizing: border-box;
+    
 }
-
+.wrap .reservationInfo .payList .pay-num{
+    flex: 1;
+}
+.wrap .reservationInfo .payList .item-name{
+    flex: 1.5;
+}
+.wrap .reservationInfo .payList .quantity {
+    flex: 0.3;
+}
+.wrap .reservationInfo .payList .daterange{
+    flex: 1.3;
+}
+.wrap .reservationInfo .payList .amount{
+    flex: 1.2;
+    margin-bottom: 7px;
+}
 /* --------------------------------- */
 /* 예약정보 끝 */
 
@@ -271,6 +317,7 @@ header .section .header-right .profile img{
 /* 내 게시글 정보 시작 */
 
 .wrap .myBoard {
+	font-family: 'Hahmlet', serif;
     /* background: yellowgreen; */
     float: right;
     width: 60%;
@@ -279,6 +326,7 @@ header .section .header-right .profile img{
 }
 
 .wrap .myBoard .myBoardBox h3 {
+	
     font-size: 40px;
     text-align: center;
     padding: 20px 20px;
@@ -286,6 +334,7 @@ header .section .header-right .profile img{
 
 .wrap .myBoard .myBoardBox {
     margin-top: 13%;
+    
 }
 
 .wrap .myBoard .titleBox {
@@ -298,6 +347,7 @@ header .section .header-right .profile img{
     font-size: 20px;
     border-top: 2px solid darkgray;
     border-bottom: 2px solid darkgray;
+    backdrop-filter: blur(8px);
 }
 
 .wrap .myBoard .titleBox a:hover {
@@ -306,25 +356,48 @@ header .section .header-right .profile img{
     color: rgb(58, 55, 55);
 }
 
-.wrap .myBoard .myBoardList {
-    box-sizing: border-box;
+/* 게시글 테이블 */
+.wrap .myBoard .board-list {
     width: 100%;
     height: 500px;
-    /* background: rgb(68, 57, 57); */
     border-bottom: 2px solid darkgray;
+    backdrop-filter: blur(8px);
+    
+}
+.wrap .myBoard .myBoardList {
+    box-sizing: border-box;
+    width: 98%;    
+    margin: 20px auto 10px;
+    text-align: center;
+    font-weight: 600;
+    /* background: rgb(68, 57, 57); */
+    
+}
+.wrap .myBoard .myBoardList th{
+    height: 23px;
+    margin-bottom: 20px;
+}
+.wrap .myBoard .myBoardList .trList {
+    height: 25px;
+
 }
 .wrap .myBoard .myBoardBtn {
     display: flex;
-    margin-top: 60px;
-    margin-left: 500px;
+    margin-top: 20px;
+    margin-left: 550px;
     
 }
 
+.page {
+	
+	margin-left: 38%;
+}
+
 .wrap .myBoard .myBoardBtn button {
-    width: 80px;
+   /*  width: 80px;
     height: 35px;
     background: skyblue;
-    border: 1px solid gray;
+    border: 1px solid gray; */
 }
 
 .wrap .myBoard .myBoardBtn .boardBtn {
@@ -332,6 +405,7 @@ header .section .header-right .profile img{
 }
 
 
+<<<<<<< HEAD
 
 
 
@@ -341,6 +415,57 @@ header .section .header-right .profile img{
 
 
 
+=======
+/* 모달 수정 합니다. */
+.infoModal {
+	font-family: 'Hahmlet', serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400;
+    height: 400px;
+    padding: 40px;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 6px 2px 3px 6px rgb(186 187 189 / 32%);
+    transform: translateX(-50%) translateY(-50%);
+    border: 4px solid #8a8282;
+    display: none;
+
+}
+
+.infoModal.show {
+    display: block;
+  }
+
+
+
+.infoModal .reText p{
+	line-height: 2; 
+    /* border-bottom: 2px solid gray; */
+    margin-bottom: 20px;
+    margin-top: 32px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.infoModal .pwBox .inputPw{
+	width: 100%;
+    height: 20%;
+    font-size: 25px;
+    margin-bottom: 30px;
+    padding: 15px;
+}
+
+.infoModal .btnBox button{
+	
+	background: #dcdada;
+    width: 60px;
+    height: 40px;
+    margin-right: 10px;
+}
+>>>>>>> e5badbf650b08a3ffd7715b36b5a2c2824145cc8
 
 
 

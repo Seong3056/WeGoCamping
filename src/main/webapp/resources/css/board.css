@@ -42,31 +42,39 @@ a {
     flex-flow: row;
     justify-content: space-between;
     margin-bottom: 10px;
+    margin-top: 30px;
 }
 
 .board .tab .write {
     width: 100px;
-
 }
 
 .board .tab .search {
     width: 250px;
 }
 
-.board .tab .search input {
+.board .tab  input {
     height: 100%;
     border: 1px solid #000;
+    padding: 10px;
+    margin-right: 5px;
 }
 
-.board .tab .search button {
+ .board .tab .search button {
     width: 35px;
     height: 100%;
 }
-
+.board .board-list{
+    width: 100%;
+    height: 336px;
+    border-bottom: 1px solid #777;
+    backdrop-filter: blur(8px);
+    font-weight: 600;
+}
 .board table {
     width: 100%;
     border-top: 1px solid #777;
-    border-bottom: 1px solid #777;
+    text-align: center;
 }
 
 .board table th {
@@ -88,18 +96,20 @@ a {
 }
 
 .board table tr td {
-    padding: 0 10px;
+    padding: 3px 10px;
     line-height: 16px;
 }
 
 .board table tr td:nth-child(2) {
     /* 제목 */
     text-align: left;
-    text-indent: 120px;
+    text-indent: 100px;
+    
 }
 
-.board table tr td:nth-child(2):hover a {
+.board table tr td:nth-child(2) a:hover  {
     text-decoration: underline;
+    transform: scale(1.15);
 }
 
 .board table tr td:nth-child(2):hover tr {

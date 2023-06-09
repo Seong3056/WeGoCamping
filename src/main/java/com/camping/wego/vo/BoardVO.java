@@ -28,5 +28,5 @@ public class BoardVO {
 	private LocalDateTime regDate;
 	private String content;
 	private int hit;
-	private int rating;
+	
 }

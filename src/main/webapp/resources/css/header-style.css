@@ -39,6 +39,7 @@ header {
     position: fixed;
     top: 0;
     transition: background-color 1s;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.185);
 }
 
 header:hover {
@@ -47,7 +48,6 @@ header:hover {
     transition: all 0.5s ease-out;
     animation-fill-mode: both;
     opacity: 1;
-    
 }
 
 header .section {
@@ -89,11 +89,17 @@ header .menu .menu-down {
 }
 
 header .menu .menu-down .in-menu {
-    padding: 3px 5px;
     text-align: center;
     display: flex;
     justify-items: center;
     font-weight: bold;
+}
+header .menu .menu-down a{
+    height: 20px;
+}
+header .menu .menu-down a:hover{
+    font-size: 1.1em;
+    text-decoration: underline;
 }
 
 header .dropdown {
@@ -111,19 +117,18 @@ header:hover .dropdown {
     flex-flow: column;
     transition: all 2s ease-out;
     margin-top: 10px;
-
-}
-
-header:hover a:hover {
-    text-decoration: underline;
 }
 
 header .dropdown a {
     width: 100%;
     margin-bottom: 5px;
     line-height: 20px;
-    text-align: center;
     justify-self: center;
+}
+
+header .dropdown a:hover{
+    text-decoration: underline;
+    font-size: 1.1rem;
 }
 /* 메뉴영역 끝*/
 
@@ -133,7 +138,7 @@ header .section .header-right {
     position: absolute;
     right: 10px;
     display: flex;
-    justify-content: end;
+    flex-flow: row;
 }
 
 /* header .section .header-right .search{
@@ -143,9 +148,8 @@ header .section .header-right {
     margin-right: 0px;	
 }
  */
-header .section .header-right .profile {
+header .section .header-right  {
     display: flex;
-    flex-flow: column;
 }
 
 /* 
@@ -155,10 +159,20 @@ header .section .header-right .profile {
     margin-left: 2px;
 }
  */
-#login img {
+ #loginA{
+    display: flex;
+    flex-flow: row;    
+ }
+#loginA img {
     margin-bottom: 5px;
     width: 50px;
     height: 50px;
+    margin: 0 auto;
+}
+#loginA .profile{
+    display: flex;
+    flex-flow: column;
+    cursor: pointer;
 }
 
 header .section .header-right .login {
@@ -322,3 +336,45 @@ a:hover, a:active {
 	text-decoration:none !important;
 	color: black !important;
 	}
+#background-right{
+    position: fixed;
+    right: -264px;
+    top: 64%;
+    transform: translateX(-50%);
+    width: 575px;
+    opacity: 0.2;
+    z-index: -999;
+}
+#background-left{
+    position: fixed;
+    left: 50%;
+    top: 1%;
+    transform: translateX(-50%);
+    width: 938px;
+    opacity: 0.12;
+    z-index: -999;
+}
+#moon {
+    position: fixed;
+    right: 57px;
+    top: 12%;
+    transform: translateX(-50%);
+    width: 128px;
+    opacity: 1;
+    z-index: 999;
+}
+#hae {
+        position: fixed;
+    /* right: 57px; */
+    left: 60px;
+    top: 8.6%;
+    transform: translateX(-50%);
+    width: 140px;
+    opacity: 0.15;
+    z-index: -999;
+}
+#logout {
+	    height: 33px;
+  
+    transform: translateY(50%);
+}

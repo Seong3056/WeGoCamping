@@ -54,39 +54,40 @@
         </div>
         <!-- 부트스트랩 끝 -->
     </div>
-
-    <table id="boardList">
-
-        <th class="head">카테고리</th>
-        <th class="title">제목</th>
-        <th class="writer">작성자</th>
-        <th class="regDate">작성일</th>
-        <th class="hit">조회</th>
-
-        <c:forEach var="board" items="${boardList}">
-            <tr>
-                <td>
-                    <c:if test="${board.cls==1}">후기</c:if>
-                    <c:if test="${board.cls==2}">꿀팁</c:if>
-                    <c:if test="${board.cls==3}">메이트찾기</c:if>
-                    <c:if test="${board.cls==4}">건의사항</c:if>
-                </td>
-                <td class="title" style="cursor:pointer;">
-                    <a
-                        onclick="location.href='${pageContext.request.contextPath}/board/content/${board.bno}'">${board.title}</a>
-                </td>
-                <td>${board.writer}</td>
-                <td>
-                    <fmt:parseDate value="${board.regDate}" pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateTime"
-                        type="both" />
-                    <fmt:formatDate value="${parsedDateTime}" pattern="yy-MM-dd" />
-                </td>
-                <td>${board.hit}</td>
-            </tr>
-        </c:forEach>
-
-
-    </table>
+        <div class="board-list">
+            
+                <table id="boardList">
+            
+                    <th class="head">카테고리</th>
+                    <th class="title">제목</th>
+                    <th class="writer">작성자</th>
+                    <th class="regDate">작성일</th>
+                    <th class="hit">조회</th>
+            
+                    <c:forEach var="board" items="${boardList}">
+                        <tr>
+                            <td>
+                                <c:if test="${board.cls==1}">캠핑후기</c:if>
+                                <c:if test="${board.cls==2}">꿀팁공유</c:if>
+                                <c:if test="${board.cls==3}">메이트찾기</c:if>
+                                <c:if test="${board.cls==4}">건의사항</c:if>
+                            </td>
+                            <td class="title" style="cursor:pointer;">
+                                <a
+                                    onclick="location.href='${pageContext.request.contextPath}/board/content/${board.bno}'">${board.title}</a>
+                            </td>
+                            <td>${board.writer}</td>
+                            <td>
+                                <fmt:parseDate value="${board.regDate}" pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateTime" type="both" />
+                                <fmt:formatDate value="${parsedDateTime}" pattern="yy-MM-dd" />
+                            </td>
+                            <td>${board.hit}</td>
+                        </tr>
+                    </c:forEach>
+            
+            
+                </table>
+        </div>
 
     <!-- 부트스트랩 페이지네이션 -->
     <form action="${pageContext.request.contextPath}/board/boardList" name="pageForm">
@@ -111,15 +112,13 @@
             </ul>
         </div>
 
-
         <input type="hidden" name="cls" value="${pc.paging.cls}">
         <input type="hidden" name="pageNum" value="${pc.paging.pageNum}">
         <input type="hidden" name="cpp" value="${pc.paging.cpp}">
         <input type="hidden" name="keyword" value="${pc.paging.keyword}">
         <input type="hidden" name="condition" value="${pc.paging.condition}">
-
     </form>
-    <!-- 부트스트랩 끝 -->
+    <!-- 페이지 부트스트랩 끝 -->
 
 </article>
 
@@ -138,36 +137,5 @@
 
         document.pageForm.pageNum.value = pageNum;
         document.pageForm.submit();
-
     });
-
-    // 댓글 날짜 변환 함수
-    function parseTime(regDateTime) {
-        let year, month, day, hour, minute, second;
-
-        if (regDateTime.length === 5) {
-            [year, month, day, hour, minute] = regDateTime;
-            econd = 0;
-        } else {
-            [year, month, day, hour, minute, second] = regDateTime;
-        }
-        // 원하는 날짜로 객체를 생성
-        const regTime = new Date(year, month - 1, day, hour, minute, second);
-        const date = new Date();
-        const gap = date.getTime() - regTime.getTime();
-
-        let time;
-        if (gap < 60 * 60 * 24 * 1000) { // 1000은 밀리초라 넣어줌
-            if (gap < 60 * 60 * 1000) {
-                time = '방금 전';
-            } else {
-                time = parseInt(gap / (1000 * 60 * 60)) + '시간 전';
-            }
-        } else if (gap < 60 * 60 * 24 * 30 * 1000) {
-            time = parseInt(gap / (1000 * 60 * 60 * 24)) + '일 전';
-        } else {
-            time = `${regTime.getFullYear()}년 ${regTime.getMonth()}월 ${regTime.getDate()}일`;
-        }
-        return time;
-    }
 </script>

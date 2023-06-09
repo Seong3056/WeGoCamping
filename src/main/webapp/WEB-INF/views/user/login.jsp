@@ -56,11 +56,11 @@
 
 
                 <div class="serchBox">
-                    <div class="searchId">
-                        <a href="#">아이디 찾기</a>
+                    <div class="searchId ">
+                        <a class="search" href="#">아이디 찾기</a>
                     </div>
                     <div class="searchPw">
-                        <a href="#">비밀번호 찾기</a>
+                        <a class="search" href="#">비밀번호 찾기</a>
                     </div>
                 </div>
 
@@ -77,7 +77,7 @@
         document.getElementById('loginH').style.display = 'none';
     }
     const urlParams = new URL(location.href).searchParams;
-    const cno = urlParams.get('cno');
+    const cno = "${cno}";
     console.log(cno);
 
     const msg = '${msg}';
@@ -96,14 +96,15 @@
             alert('비밀번호를 작성하세요!');
             return;
         }
-        if (cno !== '') {
-            document.loginForm.setAttribute('action', '${pageContext.request.contextPath}/user/login?cno=' + cno);
-            document.loginForm.submit();
-        }
+        // if (cno !== '') {
+        //     document.loginForm.setAttribute('action', '${pageContext.request.contextPath}/user/login?cno=' + cno);
+        //     document.loginForm.submit();
+        // }
+        document.loginForm.submit();
     }
 
         document.getElementById('joinBtn').onclick = () => {
-            console.log('회원가입버튼 클ㄹ');
+            console.log('회원가입버튼 클릭');
             location.href='${pageContext.request.contextPath}/user/join';
         }
 

@@ -47,6 +47,13 @@
 		(#{writer}, #{title}, #{cls}, #{content})
 	</insert>
 	
+	<insert id="insertHit">
+		INSERT INTO board
+		(writer, title, cls, content, reg_date, hit)
+		VALUES
+		(#{writer}, #{title}, #{cls}, #{content}, #{regDate}, #{hit})
+	</insert>
+	
 	<select id="list" resultType="board">
 		SELECT * FROM board
 		<include refid="clsSearch" />
@@ -69,10 +76,6 @@
 		title = #{title}, content= #{content}, hit= #{hit}
 		WHERE bno = #{bno}
 	</update>
-	
-	<select id="clsList" resultType="board">
-		SELECT * FROM board WHERE cls = #{cls}
-	</select>
 	
 	<delete id="delete">
 		DELETE FROM board

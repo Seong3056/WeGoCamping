@@ -3,10 +3,12 @@
 *{
     padding: 0;
     margin: 0;
+    font-family: 'Hahmlet', serif;
 }
 a{
     text-decoration: none;
     color: black;
+   
 }
 .clearfix:before, .clearfix:after {
     display: block;
@@ -24,7 +26,7 @@ a{
 /* ---------- JOIN ------------ */
 
 .wrap {
-    /* background: yellowgreen; */
+   /*  background: black;  */
     width: 1100px;
     margin: 0 auto;
     margin-top: 150px;
@@ -37,19 +39,19 @@ a{
 }
 
 .wrap .join .joinBox .joinUser {
-    /* background: yellow; */
+   /*  background: yellow;  */
     float: left;
     width: 40%;
     /* height: 700px; */
     text-align: center;
-    margin-top: 10%;
-    border-right: 2px solid darkgray;
+    margin-top: 20%;
+   /*  border-right: 2px solid darkgray; */
     
 }
 
 .wrap .join .joinBox .joinUser h3 {
     color: black;
-    
+    font-family: 'Hahmlet', serif;
     font-size: 40px;
     font-weight: bold;
 }
@@ -61,10 +63,11 @@ a{
 
 .wrap .join .joinBox .joinMain {
     /* background: yellowgreen; */
+    font-family: 'Hahmlet', serif;
     float: right;
-    width: 57%;
+    width: 58%;
     height: 600px;
-    
+    margin-top: 100px;
     font-size: 25px;
     display: flex;
     flex-flow: column;
@@ -81,15 +84,23 @@ a{
     font-size: 20px;
     width: 140px;
     line-height: 30px;
+    font-weight: 600;
 }
 
 input {
-    width: 180px;
-    height: 30px;
+    width: 250px;
+    height: 35px;
     line-height: 1.2; 
     border-radius: 5px;
     border: 1px solid gray;
+    margin-bottom: 20px;
 }
+
+input::placeholder {
+  font-size: 15px;
+ 
+}
+
 input:focus { 
     outline: none !important; 
     border-color: gray; 
@@ -102,11 +113,11 @@ input:focus {
 }
 
 .wrap .join .joinBox .joinMain button {
-    width: 80px;
+   /*  width: 80px;
     height: 25px;
     background: rgb(252, 242, 227);
     border: 0;
-    box-shadow: 1px 1px 1px 1px gray;
+    box-shadow: 1px 1px 1px 1px gray; */
 }
 #mailSendBtn {
     width: 100px;
@@ -114,6 +125,7 @@ input:focus {
 .wrap .join .joinBox .joinMain select {
     height: 30px;
     width: 130px;
+    font-size: 15px;
 
 }
 
@@ -150,11 +162,50 @@ input:focus {
     font-family: row;
 }
 
+
+.wrap .join .joinBox .joinMain .input-group> input {
+	padding: 10px;
+}
+
 .wrap .join .joinBox .joinMain .bottomBtn {
     position: absolute;
     right: 0;
     bottom: 0;
 
+}
+
+.wrap .form-group  input {
+	padding: 15px;
+	font-size: 15px;
+}
+
+#addrZipNum {
+	margin-bottom: 5px;
+	margin-right: 10px;
+}
+
+.checkboxa {
+	height: 33px;
+}
+
+#addrBasic {
+	margin-bottom: 5px;
+	font-size: 15px;
+}
+
+#addrDetail {
+	margin-bottom: 5px;
+	font-size: 15px;
+}
+
+#userPw::placeholder {
+
+  font-size: 13px;
+}
+
+#joinBtn {
+	height: 35px;
+	font-size: 18px;
 }
 
 
