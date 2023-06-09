@@ -17,9 +17,7 @@ a{
 .clearfix:after {
     clear:both;
 }
-body{
-    
-}
+
 
 header{
     width: 100%;
@@ -210,10 +208,6 @@ header .section .header-right .profile img{
     margin-top: 5%;
 }
 
-.warp .privacyFix .fixBox .bottomBtn .withdrawa {
-    margin-left: 20px;
-}
-
 /* ------------------------------- */
 /* 개인 수정 정보 끝 */
 
@@ -338,51 +332,15 @@ header .section .header-right .profile img{
 }
 
 
-/* 모달 수정 합니다. */
-.infoModal {
-   position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 400;
-    height: 200;
-    padding: 40px;
-    text-align: center;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 6px 2px 3px 6px rgb(186 187 189 / 32%);
-    transform: translateX(-50%) translateY(-50%);
-    border: 4px solid #8a8282;
-    display: none;
-
-}
-
-.infoModal.show {
-    display: block;
-  }
 
 
-.infoModal .reText p{
-	line-height: 4;
-    border-bottom: 2px solid gray;
-    margin-bottom: 20px;
-    font-size: 20px;
-    font-weight: bold;
-}
 
-.infoModal .pwBox .inputPw{
-	width: 100%;
-    height: 20%;
-    font-size: 25px;
-    margin-bottom: 30px;
-}
 
-.infoModal .btnBox button{
-	
-	background: #dcdada;
-    width: 60px;
-    height: 40px;
-    margin-right: 10px;
-}
+
+
+
+
+
 
 
 
